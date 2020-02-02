@@ -1,0 +1,23 @@
+apply plugin: 'java-library'
+
+group 'com.darichey'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 11
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    api 'com.fasterxml.jackson.core:jackson-databind:2.10.1'
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.10.1'
+    compileOnly 'io.projectreactor:reactor-core:3.3.1.RELEASE'
+
+    compileOnly 'org.immutables:value:2.8.1'
+    annotationProcessor 'org.immutables:value:2.8.1'
+
+    testCompileOnly 'org.immutables:value:2.8.1'
+    testAnnotationProcessor 'org.immutables:value:2.8.1'
+    testCompile 'junit:junit:4.12'
+}
