@@ -9,5 +9,8 @@ import java.util.Optional;
 @Value.Immutable
 @JsonDeserialize(as = ImmutableMyJson.class)
 public interface MyJson {
-    Possible<Optional<String>> myField();
+
+    default Possible<Optional<String>> myField() {
+        return Possible.absent();
+    }
 }
