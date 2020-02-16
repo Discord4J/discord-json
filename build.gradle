@@ -50,6 +50,12 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
+compileJava {
+    options.fork = false
+    options.incremental = false
+    //options.compilerArgs += ["-Xmaxerrs 1000000", "-Xlint"]
+}
+
 configurations.all {
     resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
 }
