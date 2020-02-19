@@ -21,5 +21,5 @@ public interface Ready extends Dispatch {
     List<UnavailableGuildData> guilds();
     @JsonProperty("session_id")
     String sessionId();
-    Possible<int[]> shard();
+    default Possible<int[]> shard() { return Possible.absent(); }
 }

@@ -15,29 +15,29 @@ public interface ActivityData {
 
     int type();
 
-    Possible<Optional<String>> url();
+    default Possible<Optional<String>> url() { return Possible.absent(); }
 
     @JsonProperty("created_at")
     int createdAt();
 
-    Possible<ActivityTimestampsData> timestamps();
+    default Possible<ActivityTimestampsData> timestamps() { return Possible.absent(); }
 
     @JsonProperty("application_id")
-    Possible<String> applicationId();
+    default Possible<String> applicationId() { return Possible.absent(); }
 
-    Possible<Optional<String>> details();
+    default Possible<Optional<String>> details() { return Possible.absent(); }
 
-    Possible<Optional<String>> state();
+    default Possible<Optional<String>> state() { return Possible.absent(); }
 
-    Possible<Optional<ActivityEmojiData>> emoji();
+    default Possible<Optional<ActivityEmojiData>> emoji() { return Possible.absent(); }
 
-    Possible<ActivityPartyData> party();
+    default Possible<ActivityPartyData> party() { return Possible.absent(); }
 
-    Possible<ActivityAssetsData> assets();
+    default Possible<ActivityAssetsData> assets() { return Possible.absent(); }
 
-    Possible<ActivitySecretsData> secrets();
+    default Possible<ActivitySecretsData> secrets() { return Possible.absent(); }
 
-    Possible<Boolean> instance();
+    default Possible<Boolean> instance() { return Possible.absent(); }
 
-    Possible<Integer> flags();
+    default Possible<Integer> flags() { return Possible.absent(); }
 }

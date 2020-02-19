@@ -10,14 +10,14 @@ import org.immutables.value.Value;
 public interface ActivityAssetsData {
 
     @JsonProperty("large_image")
-    Possible<String> largeImage();
+    default Possible<String> largeImage() { return Possible.absent(); }
 
     @JsonProperty("large_text")
-    Possible<String> largeText();
+    default Possible<String> largeText() { return Possible.absent(); }
 
     @JsonProperty("small_image")
-    Possible<String> smallImage();
+    default Possible<String> smallImage() { return Possible.absent(); }
 
     @JsonProperty("small_text")
-    Possible<String> smallText();
+    default Possible<String> smallText() { return Possible.absent(); }
 }

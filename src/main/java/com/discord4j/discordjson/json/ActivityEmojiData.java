@@ -10,7 +10,7 @@ public interface ActivityEmojiData {
 
     String name();
 
-    Possible<String> id();
+    default Possible<String> id() { return Possible.absent(); }
 
-    Possible<Boolean> animated();
+    default Possible<Boolean> animated() { return Possible.absent(); }
 }

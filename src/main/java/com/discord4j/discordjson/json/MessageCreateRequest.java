@@ -8,8 +8,8 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableMessageCreateRequest.class)
 public interface MessageCreateRequest {
 
-    Possible<String> content();
-    Possible<Object> nonce();
-    Possible<Boolean> tts();
-    Possible<EmbedData> embed();
+    default Possible<String> content() { return Possible.absent(); }
+    default Possible<Object> nonce() { return Possible.absent(); }
+    default Possible<Boolean> tts() { return Possible.absent(); }
+    default Possible<EmbedData> embed() { return Possible.absent(); }
 }

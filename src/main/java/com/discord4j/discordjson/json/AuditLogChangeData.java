@@ -10,10 +10,10 @@ import org.immutables.value.Value;
 public interface AuditLogChangeData {
 
     @JsonProperty("new_value")
-    Possible<Object> newValue();
+    default Possible<Object> newValue() { return Possible.absent(); }
 
     @JsonProperty("old_value")
-    Possible<Object> oldValue();
+    default Possible<Object> oldValue() { return Possible.absent(); }
 
     String key();
 }

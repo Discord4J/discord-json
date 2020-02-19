@@ -8,9 +8,9 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableActivitySecretsData.class)
 public interface ActivitySecretsData {
 
-    Possible<String> join();
+    default Possible<String> join() { return Possible.absent(); }
 
-    Possible<String> spectate();
+    default Possible<String> spectate() { return Possible.absent(); }
 
-    Possible<String> match();
+    default Possible<String> match() { return Possible.absent(); }
 }

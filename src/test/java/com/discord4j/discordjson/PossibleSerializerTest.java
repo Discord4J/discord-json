@@ -1,6 +1,6 @@
 package com.discord4j.discordjson;
 
-import com.darichey.discordjson.json.ImmutableMyJson;
+import com.discord4j.discordjson.json.ImmutableMyJson;
 import com.discord4j.discordjson.json.MyJson;
 import com.discord4j.discordjson.possible.Possible;
 import com.discord4j.discordjson.possible.PossibleFilter;

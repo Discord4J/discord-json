@@ -10,7 +10,7 @@ import org.immutables.value.Value;
 public interface ChannelPinsUpdate extends Dispatch {
 
     @JsonProperty("guild_id")
-    Possible<String> guildId();
+    default Possible<String> guildId() { return Possible.absent(); }
     @JsonProperty("channel_id")
     String channelId();
     @JsonProperty("last_pin_timestamp")

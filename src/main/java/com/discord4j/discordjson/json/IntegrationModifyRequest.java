@@ -10,9 +10,9 @@ import org.immutables.value.Value;
 public interface IntegrationModifyRequest {
 
     @JsonProperty("expire_behavior")
-    Possible<Integer> expireBehavior();
+    default Possible<Integer> expireBehavior() { return Possible.absent(); }
     @JsonProperty("expire_grace_period")
-    Possible<Integer> expireGracePeriod();
+    default Possible<Integer> expireGracePeriod() { return Possible.absent(); }
     @JsonProperty("enable_emoticons")
-    Possible<Boolean> enableEmoticons();
+    default Possible<Boolean> enableEmoticons() { return Possible.absent(); }
 }

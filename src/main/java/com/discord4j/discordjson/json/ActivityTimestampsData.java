@@ -8,7 +8,7 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableActivityTimestampsData.class)
 public interface ActivityTimestampsData {
 
-    Possible<Integer> start();
+    default Possible<Integer> start() { return Possible.absent(); }
 
-    Possible<Integer> end();
+    default Possible<Integer> end() { return Possible.absent(); }
 }

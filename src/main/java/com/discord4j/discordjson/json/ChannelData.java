@@ -17,43 +17,43 @@ public interface ChannelData {
     int type();
 
     @JsonProperty("guild_id")
-    Possible<String> guildId();
+    default Possible<String> guildId() { return Possible.absent(); }
 
-    Possible<Integer> position();
+    default Possible<Integer> position() { return Possible.absent(); }
 
     @JsonProperty("permission_overwrites")
-    Possible<List<OverwriteData>> permissionOverwrites();
+    default Possible<List<OverwriteData>> permissionOverwrites() { return Possible.absent(); }
 
-    Possible<String> name();
+    default Possible<String> name() { return Possible.absent(); }
 
-    Possible<Optional<String>> topic();
+    default Possible<Optional<String>> topic() { return Possible.absent(); }
 
-    Possible<Boolean> nsfw();
+    default Possible<Boolean> nsfw() { return Possible.absent(); }
 
     @JsonProperty("last_message_id")
-    Possible<Optional<String>> lastMessageId();
+    default Possible<Optional<String>> lastMessageId() { return Possible.absent(); }
 
-    Possible<Integer> bitrate();
+    default Possible<Integer> bitrate() { return Possible.absent(); }
 
     @JsonProperty("user_limit")
-    Possible<Integer> userLimit();
+    default Possible<Integer> userLimit() { return Possible.absent(); }
 
     @JsonProperty("rate_limit_per_user")
-    Possible<Integer> rateLimitPerUser();
+    default Possible<Integer> rateLimitPerUser() { return Possible.absent(); }
 
-    Possible<List<UserData>> recipients();
+    default Possible<List<UserData>> recipients() { return Possible.absent(); }
 
-    Possible<Optional<String>> icon();
+    default Possible<Optional<String>> icon() { return Possible.absent(); }
 
     @JsonProperty("owner_id")
-    Possible<String> ownerId();
+    default Possible<String> ownerId() { return Possible.absent(); }
 
     @JsonProperty("application_id")
-    Possible<String> applicationId();
+    default Possible<String> applicationId() { return Possible.absent(); }
 
     @JsonProperty("parent_id")
-    Possible<Optional<String>> parentId();
+    default Possible<Optional<String>> parentId() { return Possible.absent(); }
 
     @JsonProperty("last_pin_timestamp")
-    Possible<String> lastPinTimestamp();
+    default Possible<String> lastPinTimestamp() { return Possible.absent(); }
 }

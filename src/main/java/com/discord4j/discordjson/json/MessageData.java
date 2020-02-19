@@ -18,11 +18,11 @@ public interface MessageData {
     String channelId();
 
     @JsonProperty("guild_id")
-    Possible<String> guildId();
+    default Possible<String> guildId() { return Possible.absent(); }
 
     UserData author();
 
-    Possible<MemberData> member();
+    default Possible<MemberData> member() { return Possible.absent(); }
 
     String content();
 
@@ -42,31 +42,31 @@ public interface MessageData {
     List<String> mentionRoles();
 
     @JsonProperty("mention_channels")
-    Possible<List<ChannelMentionData>> mentionChannels();
+    default Possible<List<ChannelMentionData>> mentionChannels() { return Possible.absent(); }
 
     List<AttachmentData> attachments();
 
     List<EmbedData> embeds();
 
-    Possible<List<ReactionData>> reactions();
+    default Possible<List<ReactionData>> reactions() { return Possible.absent(); }
 
-    Possible<Object> nonce();
+    default Possible<Object> nonce() { return Possible.absent(); }
 
     boolean pinned();
 
     @JsonProperty("webhook_id")
-    Possible<String> webhookId();
+    default Possible<String> webhookId() { return Possible.absent(); }
 
     int type();
 
-    Possible<MessageActivityData> activity();
+    default Possible<MessageActivityData> activity() { return Possible.absent(); }
 
-    Possible<MessageApplicationData> application();
+    default Possible<MessageApplicationData> application() { return Possible.absent(); }
 
     @JsonProperty("message_reference")
-    Possible<MessageReferenceData> messageReference();
+    default Possible<MessageReferenceData> messageReference() { return Possible.absent(); }
 
-    Possible<Integer> flags();
+    default Possible<Integer> flags() { return Possible.absent(); }
 
     interface UserWithMemberData extends UserData {
         MemberData member();

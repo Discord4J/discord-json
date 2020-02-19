@@ -9,8 +9,8 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableWebhookModifyRequest.class)
 public interface WebhookModifyRequest {
 
-    Possible<String> name();
-    Possible<String> avatar();
+    default Possible<String> name() { return Possible.absent(); }
+    default Possible<String> avatar() { return Possible.absent(); }
     @JsonProperty("channel_id")
-    Possible<String> channelId();
+    default Possible<String> channelId() { return Possible.absent(); }
 }

@@ -10,23 +10,23 @@ import org.immutables.value.Value;
 public interface AuditEntryInfoData {
 
     @JsonProperty("delete_member_days")
-    Possible<String> deleteMemberDays();
+    default Possible<String> deleteMemberDays() { return Possible.absent(); }
 
     @JsonProperty("members_removed")
-    Possible<String> membersRemoved();
+    default Possible<String> membersRemoved() { return Possible.absent(); }
 
     @JsonProperty("channel_id")
-    Possible<String> channelId();
+    default Possible<String> channelId() { return Possible.absent(); }
 
     @JsonProperty("message_id")
-    Possible<String> messageId();
+    default Possible<String> messageId() { return Possible.absent(); }
 
-    Possible<String> count();
+    default Possible<String> count() { return Possible.absent(); }
 
-    Possible<String> id();
+    default Possible<String> id() { return Possible.absent(); }
 
-    Possible<String> type();
+    default Possible<String> type() { return Possible.absent(); }
 
     @JsonProperty("role_name")
-    Possible<String> roleName();
+    default Possible<String> roleName() { return Possible.absent(); }
 }
