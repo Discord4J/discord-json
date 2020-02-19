@@ -11,9 +11,9 @@ public interface RequestGuildMembers extends PayloadData {
 
     @JsonProperty("guild_id")
     String guildId();
-    Possible<String> query();
+    default Possible<String> query() { return Possible.absent(); }
     int limit();
-    Possible<Boolean> presences();
+    default Possible<Boolean> presences() { return Possible.absent(); }
     @JsonProperty("user_ids")
-    Possible<Boolean> userIds();
+    default Possible<Boolean> userIds() { return Possible.absent(); }
 }

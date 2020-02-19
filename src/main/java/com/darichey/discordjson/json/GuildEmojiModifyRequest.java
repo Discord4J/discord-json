@@ -10,6 +10,6 @@ import java.util.List;
 @JsonDeserialize(as = ImmutableGuildEmojiModifyRequest.class)
 public interface GuildEmojiModifyRequest {
 
-    Possible<String> name();
-    Possible<List<String>> roles();
+    default Possible<String> name() { return Possible.absent(); }
+    default Possible<List<String>> roles() { return Possible.absent(); }
 }

@@ -9,12 +9,12 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableEmbedThumbnailData.class)
 public interface EmbedThumbnailData {
 
-    Possible<String> url();
+    default Possible<String> url() { return Possible.absent(); }
 
     @JsonProperty("proxy_url")
-    Possible<String> proxyUrl();
+    default Possible<String> proxyUrl() { return Possible.absent(); }
 
-    Possible<Integer> height();
+    default Possible<Integer> height() { return Possible.absent(); }
 
-    Possible<Integer> width();
+    default Possible<Integer> width() { return Possible.absent(); }
 }

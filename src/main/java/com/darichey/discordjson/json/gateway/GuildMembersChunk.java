@@ -16,7 +16,7 @@ public interface GuildMembersChunk extends Dispatch {
     String guildId();
     List<MemberData> members();
     @JsonProperty("not_found")
-    Possible<List<String>> notFound();
-    Possible<PresenceUpdate> presences();
+    default Possible<List<String>> notFound() { return Possible.absent(); }
+    default Possible<PresenceUpdate> presences() { return Possible.absent(); }
 
 }

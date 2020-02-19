@@ -16,5 +16,5 @@ public interface ReadyData {
     List<UnavailableGuildData> guilds();
     @JsonProperty("session_id")
     String sessionId();
-    Possible<List<Integer>> shard();
+    default Possible<List<Integer>> shard() { return Possible.absent(); }
 }

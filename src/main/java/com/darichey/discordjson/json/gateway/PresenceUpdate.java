@@ -32,7 +32,7 @@ public interface PresenceUpdate extends Dispatch {
     ClientStatusData clientStatus();
 
     @JsonProperty("premium_since")
-    Possible<Optional<String>> premiumSince();
+    default Possible<Optional<String>> premiumSince() { return Possible.absent(); }
 
-    Possible<Optional<String>> nick();
+    default Possible<Optional<String>> nick() { return Possible.absent(); }
 }

@@ -8,9 +8,9 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableClientStatusData.class)
 public interface ClientStatusData {
 
-    Possible<String> desktop();
+    default Possible<String> desktop() { return Possible.absent(); }
 
-    Possible<String> mobile();
+    default Possible<String> mobile() { return Possible.absent(); }
 
-    Possible<String> web();
+    default Possible<String> web() { return Possible.absent(); }
 }

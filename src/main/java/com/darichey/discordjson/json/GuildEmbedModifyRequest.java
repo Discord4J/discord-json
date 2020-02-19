@@ -11,7 +11,7 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutableGuildEmbedModifyRequest.class)
 public interface GuildEmbedModifyRequest {
 
-    Possible<Boolean> enabled();
+    default Possible<Boolean> enabled() { return Possible.absent(); }
     @JsonProperty("channel_id")
-    Possible<Optional<String>> channelId();
+    default Possible<Optional<String>> channelId() { return Possible.absent(); }
 }

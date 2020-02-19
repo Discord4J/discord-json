@@ -12,17 +12,17 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutableChannelModifyRequest.class)
 public interface ChannelModifyRequest {
 
-    Possible<String> name();
-    Possible<Integer> position();
-    Possible<String> topic();
-    Possible<Boolean> nsfw();
+    default Possible<String> name() { return Possible.absent(); }
+    default Possible<Integer> position() { return Possible.absent(); }
+    default Possible<String> topic() { return Possible.absent(); }
+    default Possible<Boolean> nsfw() { return Possible.absent(); }
     @JsonProperty("rate_limit_per_user")
-    Possible<Integer> rateLimitPerUser();
-    Possible<Integer> bitrate();
+    default Possible<Integer> rateLimitPerUser() { return Possible.absent(); }
+    default Possible<Integer> bitrate() { return Possible.absent(); }
     @JsonProperty("user_limit")
-    Possible<Integer> userLimit();
+    default Possible<Integer> userLimit() { return Possible.absent(); }
     @JsonProperty("permission_overwrites")
-    Possible<List<OverwriteData>> permissionOverwrites();
+    default Possible<List<OverwriteData>> permissionOverwrites() { return Possible.absent(); }
     @JsonProperty("parent_id")
-    Possible<Optional<String>> parentId();
+    default Possible<Optional<String>> parentId() { return Possible.absent(); }
 }

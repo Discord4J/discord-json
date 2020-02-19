@@ -17,7 +17,7 @@ public interface ApplicationInfoData {
     Optional<String> icon();
     String description();
     @JsonProperty("rpc_origins")
-    Possible<List<String>> rpcOrigins();
+    default Possible<List<String>> rpcOrigins() { return Possible.absent(); }
     @JsonProperty("bot_public")
     boolean botPublic();
     @JsonProperty("bot_require_code_grant")
@@ -28,10 +28,10 @@ public interface ApplicationInfoData {
     String verifyKey();
     Optional<ApplicationTeamData> team();
     @JsonProperty("guild_id")
-    Possible<String> guildId();
+    default Possible<String> guildId() { return Possible.absent(); }
     @JsonProperty("primary_sku_id")
-    Possible<String> primarySkuId();
-    Possible<String> slug();
+    default Possible<String> primarySkuId() { return Possible.absent(); }
+    default Possible<String> slug() { return Possible.absent(); }
     @JsonProperty("cover_image")
-    Possible<String> coverImage();
+    default Possible<String> coverImage() { return Possible.absent(); }
 }

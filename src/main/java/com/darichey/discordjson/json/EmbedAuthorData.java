@@ -9,13 +9,13 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableEmbedAuthorData.class)
 public interface EmbedAuthorData {
 
-    Possible<String> name();
+    default Possible<String> name() { return Possible.absent(); }
 
-    Possible<String> url();
+    default Possible<String> url() { return Possible.absent(); }
 
     @JsonProperty("icon_url")
-    Possible<String> iconUrl();
+    default Possible<String> iconUrl() { return Possible.absent(); }
 
     @JsonProperty("proxy_icon_url")
-    Possible<String> proxyIconUrl();
+    default Possible<String> proxyIconUrl() { return Possible.absent(); }
 }

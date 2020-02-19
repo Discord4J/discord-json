@@ -10,7 +10,7 @@ import org.immutables.value.Value;
 public interface GatewayData {
 
     String url();
-    Possible<Integer> shards();
+    default Possible<Integer> shards() { return Possible.absent(); }
     @JsonProperty("session_start_limit")
-    Possible<SessionStartLimitData> sessionStartLimit();
+    default Possible<SessionStartLimitData> sessionStartLimit() { return Possible.absent(); }
 }
