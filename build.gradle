@@ -24,7 +24,7 @@ ext {
 group 'com.discord4j'
 description 'Discord entity domain as immutable Jackson objects'
 
-sourceCompatibility = 8
+sourceCompatibility = 11
 
 repositories {
     mavenLocal()
@@ -58,6 +58,11 @@ compileJava {
 
 configurations.all {
     resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+    options.incremental = true
 }
 
 tasks.withType(Javadoc) {
