@@ -11,34 +11,34 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutableGuildModifyRequest.class)
 public interface GuildModifyRequest {
 
-    default Possible<String> name() { return Possible.absent(); }
+    Possible<String> name();
 
-    default Possible<String> region() { return Possible.absent(); }
+    Possible<String> region();
 
     @JsonProperty("verification_level")
-    default Possible<Integer> verificationLevel() { return Possible.absent(); }
+    Possible<Integer> verificationLevel();
 
     @JsonProperty("default_message_notifications")
-    default Possible<Integer> defaultMessageNotifications() { return Possible.absent(); }
+    Possible<Integer> defaultMessageNotifications();
 
     @JsonProperty("explicit_content_filter")
-    default Possible<Integer> explicitContentFilter() { return Possible.absent(); }
+    Possible<Integer> explicitContentFilter();
 
     @JsonProperty("afk_channel_id")
-    default Possible<Optional<String>> afkChannelId() { return Possible.absent(); }
+    Possible<Optional<String>> afkChannelId();
 
     @JsonProperty("afk_timeout")
-    default Possible<Integer> afkTimeout() { return Possible.absent(); }
+    Possible<Integer> afkTimeout();
 
-    default Possible<Optional<String>> icon() { return Possible.absent(); }
+    Possible<Optional<String>> icon();
 
     @JsonProperty("owner_id")
-    default Possible<String> ownerId() { return Possible.absent(); }
+    Possible<String> ownerId();
 
-    default Possible<Optional<String>> splash() { return Possible.absent(); }
+    Possible<Optional<String>> splash();
 
-    default Possible<Optional<String>> banner() { return Possible.absent(); }
+    Possible<Optional<String>> banner();
 
     @JsonProperty("system_channel_id")
-    default Possible<String> systemChannelId() { return Possible.absent(); }
+    Possible<String> systemChannelId();
 }

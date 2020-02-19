@@ -16,14 +16,14 @@ public interface EmojiData {
 
     Optional<String> name();
 
-    default Possible<List<String>> roles() { return Possible.absent(); }
+    Possible<List<String>> roles();
 
-    default Possible<UserData> user() { return Possible.absent(); }
+    Possible<UserData> user();
 
     @JsonProperty("require_colons")
-    default Possible<Boolean> requireColons() { return Possible.absent(); }
+    Possible<Boolean> requireColons();
 
-    default Possible<Boolean> managed() { return Possible.absent(); }
+    Possible<Boolean> managed();
 
-    default Possible<Boolean> animated() { return Possible.absent(); }
+    Possible<Boolean> animated();
 }

@@ -12,10 +12,10 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutableGuildMemberModifyRequest.class)
 public interface GuildMemberModifyRequest {
 
-    default Possible<String> nick() { return Possible.absent(); }
-    default Possible<List<String>> roles() { return Possible.absent(); }
-    default Possible<Boolean> mute() { return Possible.absent(); }
-    default Possible<Boolean> deaf() { return Possible.absent(); }
+    Possible<String> nick();
+    Possible<List<String>> roles();
+    Possible<Boolean> mute();
+    Possible<Boolean> deaf();
     @JsonProperty("channel_id")
     Optional<String> channelId();
 }

@@ -12,7 +12,7 @@ import java.util.Optional;
 public interface VoiceStateData {
 
     @JsonProperty("guild_id")
-    default Possible<String> guildId() { return Possible.absent(); }
+    Possible<String> guildId();
 
     @JsonProperty("channel_id")
     Optional<String> channelId();
@@ -20,7 +20,7 @@ public interface VoiceStateData {
     @JsonProperty("user_id")
     String userId();
 
-    default Possible<MemberData> member() { return Possible.absent(); }
+    Possible<MemberData> member();
 
     @JsonProperty("session_id")
     String sessionId();
@@ -36,7 +36,7 @@ public interface VoiceStateData {
     boolean selfMute();
 
     @JsonProperty("self_stream")
-    default Possible<Boolean> selfStream() { return Possible.absent(); }
+    Possible<Boolean> selfStream();
 
     boolean suppress();
 }

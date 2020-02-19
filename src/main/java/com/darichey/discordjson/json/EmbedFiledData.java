@@ -12,5 +12,5 @@ public interface EmbedFiledData {
 
     String value();
 
-    default Possible<Boolean> inline() { return Possible.absent(); }
+    Possible<Boolean> inline();
 }

@@ -10,29 +10,29 @@ import java.util.List;
 @JsonDeserialize(as = ImmutableEmbedData.class)
 public interface EmbedData {
 
-    default Possible<String> title() { return Possible.absent(); }
+    Possible<String> title();
 
-    default Possible<String> type() { return Possible.absent(); }
+    Possible<String> type();
 
-    default Possible<String> description() { return Possible.absent(); }
+    Possible<String> description();
 
-    default Possible<String> url() { return Possible.absent(); }
+    Possible<String> url();
 
-    default Possible<String> timestamp() { return Possible.absent(); }
+    Possible<String> timestamp();
 
-    default Possible<Integer> color() { return Possible.absent(); }
+    Possible<Integer> color();
 
-    default Possible<EmbedFooterData> footer() { return Possible.absent(); }
+    Possible<EmbedFooterData> footer();
 
-    default Possible<EmbedImageData> image() { return Possible.absent(); }
+    Possible<EmbedImageData> image();
 
-    default Possible<EmbedThumbnailData> thumbnail() { return Possible.absent(); }
+    Possible<EmbedThumbnailData> thumbnail();
 
-    default Possible<EmbedVideoData> video() { return Possible.absent(); }
+    Possible<EmbedVideoData> video();
 
-    default Possible<EmbedProviderData> provider() { return Possible.absent(); }
+    Possible<EmbedProviderData> provider();
 
-    default Possible<EmbedAuthorData> author() { return Possible.absent(); }
+    Possible<EmbedAuthorData> author();
 
-    default Possible<List<EmbedFiledData>> fields() { return Possible.absent(); }
+    Possible<List<EmbedFiledData>> fields();
 }

@@ -10,11 +10,11 @@ import org.immutables.value.Value;
 public interface MessageReferenceData {
 
     @JsonProperty("message_id")
-    default Possible<String> messageId() { return Possible.absent(); }
+    Possible<String> messageId();
 
     @JsonProperty("channel_id")
-    default Possible<String> channelId() { return Possible.absent(); }
+    Possible<String> channelId();
 
     @JsonProperty("guild_id")
-    default Possible<String> guildId() { return Possible.absent(); }
+    Possible<String> guildId();
 }

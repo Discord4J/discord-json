@@ -10,7 +10,7 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutableMessageEditRequest.class)
 public interface MessageEditRequest {
 
-    default Possible<Optional<String>> content() { return Possible.absent(); }
-    default Possible<Optional<EmbedData>> embed() { return Possible.absent(); }
-    default Possible<Integer> flags() { return Possible.absent(); }
+    Possible<Optional<String>> content();
+    Possible<Optional<EmbedData>> embed();
+    Possible<Integer> flags();
 }

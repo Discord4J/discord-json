@@ -11,11 +11,11 @@ public interface Identify extends PayloadData {
 
     String token();
     IdentifyProperties properties();
-    default Possible<Boolean> compress() { return Possible.absent(); }
+    Possible<Boolean> compress();
     @JsonProperty("large_threshold")
     int largeThreshold();
-    default Possible<int[]> shard() { return Possible.absent(); }
-    default Possible<StatusUpdate> presence() { return Possible.absent(); }
+    Possible<int[]> shard();
+    Possible<StatusUpdate> presence();
     @JsonProperty("guild_subscriptions")
-    default Possible<Boolean> guildSubscriptions() { return Possible.absent(); }
+    Possible<Boolean> guildSubscriptions();
 }

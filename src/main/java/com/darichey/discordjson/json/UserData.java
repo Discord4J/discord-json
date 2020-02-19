@@ -19,21 +19,21 @@ public interface UserData {
 
     Optional<String> avatar();
 
-    default Possible<Boolean> bot() { return Possible.absent(); }
+    Possible<Boolean> bot();
 
-    default Possible<Boolean> system() { return Possible.absent(); }
+    Possible<Boolean> system();
 
     @JsonProperty("mfa_enabled")
-    default Possible<Boolean> mfaEnabled() { return Possible.absent(); }
+    Possible<Boolean> mfaEnabled();
 
-    default Possible<String> locale() { return Possible.absent(); }
+    Possible<String> locale();
 
-    default Possible<Boolean> verified() { return Possible.absent(); }
+    Possible<Boolean> verified();
 
-    default Possible<String> email() { return Possible.absent(); }
+    Possible<String> email();
 
-    default Possible<Integer> flags() { return Possible.absent(); }
+    Possible<Integer> flags();
 
     @JsonProperty("premium_type")
-    default Possible<Integer> premiumType() { return Possible.absent(); }
+    Possible<Integer> premiumType();
 }

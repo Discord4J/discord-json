@@ -8,7 +8,7 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableEmbedProviderData.class)
 public interface EmbedProviderData {
 
-    default Possible<String> name() { return Possible.absent(); }
+    Possible<String> name();
 
-    default Possible<String> url() { return Possible.absent(); }
+    Possible<String> url();
 }

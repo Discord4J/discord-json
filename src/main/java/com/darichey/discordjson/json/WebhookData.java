@@ -16,16 +16,16 @@ public interface WebhookData {
     int type();
 
     @JsonProperty("guild_id")
-    default Possible<String> guildId() { return Possible.absent(); }
+    Possible<String> guildId();
 
     @JsonProperty("channel_id")
     String channelId();
 
-    default Possible<UserData> user() { return Possible.absent(); }
+    Possible<UserData> user();
 
     Optional<String> name();
 
     Optional<String> avatar();
 
-    default Possible<String> token() { return Possible.absent(); }
+    Possible<String> token();
 }

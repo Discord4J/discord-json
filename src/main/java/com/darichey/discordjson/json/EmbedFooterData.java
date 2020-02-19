@@ -12,8 +12,8 @@ public interface EmbedFooterData {
     String text();
 
     @JsonProperty("icon_url")
-    default Possible<String> iconUrl() { return Possible.absent(); }
+    Possible<String> iconUrl();
 
     @JsonProperty("proxy_icon_url")
-    default Possible<String> proxyIconUrl() { return Possible.absent(); }
+    Possible<String> proxyIconUrl();
 }

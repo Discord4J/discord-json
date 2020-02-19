@@ -21,12 +21,12 @@ public interface GuildData {
 
     Optional<String> splash();
 
-    default Possible<Boolean> owner() { return Possible.absent(); }
+    Possible<Boolean> owner();
 
     @JsonProperty("owner_id")
     String ownerId();
 
-    default Possible<Long> permissions() { return Possible.absent(); }
+    Possible<Long> permissions();
 
     String region();
 
@@ -37,10 +37,10 @@ public interface GuildData {
     int afkTimeout();
 
     @JsonProperty("embed_enabled")
-    default Possible<Boolean> embedEnabled() { return Possible.absent(); }
+    Possible<Boolean> embedEnabled();
 
     @JsonProperty("embed_channel_id")
-    default Possible<String> embedChannelId() { return Possible.absent(); }
+    Possible<String> embedChannelId();
 
     @JsonProperty("verification_level")
     int verificationLevel();
@@ -64,38 +64,38 @@ public interface GuildData {
     Optional<String> applicationId();
 
     @JsonProperty("widget_enabled")
-    default Possible<Boolean> widgetEnabled() { return Possible.absent(); }
+    Possible<Boolean> widgetEnabled();
 
     @JsonProperty("widget_channel_id")
-    default Possible<String> widgetChannelId() { return Possible.absent(); }
+    Possible<String> widgetChannelId();
 
     @JsonProperty("system_channel_id")
     Optional<String> systemChannelId();
 
     @JsonProperty("joined_at")
-    default Possible<String> joinedAt() { return Possible.absent(); }
+    Possible<String> joinedAt();
 
-    default Possible<Boolean> large() { return Possible.absent(); }
+    Possible<Boolean> large();
 
-    default Possible<Boolean> unavailable() { return Possible.absent(); }
+    Possible<Boolean> unavailable();
 
     @JsonProperty("member_count")
-    default Possible<Integer> memberCount() { return Possible.absent(); }
+    Possible<Integer> memberCount();
 
     @JsonProperty("voice_states")
-    default Possible<List<VoiceStateData>> voiceStates() { return Possible.absent(); }
+    Possible<List<VoiceStateData>> voiceStates();
 
-    default Possible<List<MemberData>> members() { return Possible.absent(); }
+    Possible<List<MemberData>> members();
 
-    default Possible<List<ChannelData>> channels() { return Possible.absent(); }
+    Possible<List<ChannelData>> channels();
 
-    default Possible<List<PresenceUpdate>> presences() { return Possible.absent(); }
+    Possible<List<PresenceUpdate>> presences();
 
     @JsonProperty("max_presences")
-    default Possible<Optional<Integer>> maxPresences() { return Possible.absent(); }
+    Possible<Optional<Integer>> maxPresences();
 
     @JsonProperty("max_members")
-    default Possible<Integer> maxMembers() { return Possible.absent(); }
+    Possible<Integer> maxMembers();
 
     @JsonProperty("vanity_url_code")
     Optional<String> vanityUrlCode();
@@ -108,7 +108,7 @@ public interface GuildData {
     int premiumTier();
 
     @JsonProperty("premium_subscription_count")
-    default Possible<Integer> premiumSubscriptionCount() { return Possible.absent(); }
+    Possible<Integer> premiumSubscriptionCount();
 
     @JsonProperty("preferred_locale")
     String preferredLocale();

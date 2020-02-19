@@ -14,7 +14,7 @@ public interface MemberData {
 
     UserData user();
 
-    default Possible<String> nick() { return Possible.absent(); }
+    Possible<String> nick();
 
     List<String> roles();
 
