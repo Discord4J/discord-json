@@ -12,7 +12,7 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutableMemberData.class)
 public interface MemberData {
 
-    UserData user();
+    default Possible<UserData> user() { return Possible.absent(); }
 
     default Possible<String> nick() { return Possible.absent(); }
 
@@ -23,6 +23,9 @@ public interface MemberData {
 
     @JsonProperty("premium_since")
     Optional<String> premiumSince();
+
+    @JsonProperty("hoisted_role")
+    Optional<String> hoistedRole();
 
     boolean deaf();
 

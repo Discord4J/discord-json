@@ -1,0 +1,284 @@
+{
+  "t": "GUILD_UPDATE",
+  "s": 27647,
+  "op": 0,
+  "d": {
+    "widget_channel_id": null,
+    "system_channel_id": "185949590652977152",
+    "premium_tier": 0,
+    "system_channel_flags": 0,
+    "discovery_splash": null,
+    "application_id": null,
+    "owner_id": "123456789012345678",
+    "banner": null,
+    "guild_id": "123456789012345678",
+    "features": [],
+    "id": "123456789012345678",
+    "public_updates_channel_id": null,
+    "verification_level": 0,
+    "roles": [
+      {
+        "position": 0,
+        "permissions": 104324672,
+        "name": "@everyone",
+        "mentionable": false,
+        "managed": false,
+        "id": "185949590652977152",
+        "hoist": false,
+        "color": 0
+      },
+      {
+        "position": 6,
+        "permissions": 536346232,
+        "name": "a",
+        "mentionable": false,
+        "managed": false,
+        "id": "186563072540934144",
+        "hoist": false,
+        "color": 0
+      },
+      {
+        "position": 4,
+        "permissions": 3485248,
+        "name": "b",
+        "mentionable": false,
+        "managed": false,
+        "id": "186591212076138496",
+        "hoist": false,
+        "color": 6323595
+      },
+      {
+        "position": 5,
+        "permissions": 104324672,
+        "name": "c",
+        "mentionable": false,
+        "managed": false,
+        "id": "186604389035802624",
+        "hoist": false,
+        "color": 10181046
+      },
+      {
+        "position": 3,
+        "permissions": 104324672,
+        "name": "d",
+        "mentionable": false,
+        "managed": false,
+        "id": "186605392971694081",
+        "hoist": false,
+        "color": 16103172
+      },
+      {
+        "position": 2,
+        "permissions": 3485248,
+        "name": "q",
+        "mentionable": false,
+        "managed": false,
+        "id": "187305132801785857",
+        "hoist": false,
+        "color": 0
+      },
+      {
+        "position": 1,
+        "permissions": 3214848,
+        "name": "w",
+        "mentionable": false,
+        "managed": true,
+        "id": "563420873307193354",
+        "hoist": false,
+        "color": 0
+      }
+    ],
+    "embed_channel_id": null,
+    "splash": null,
+    "afk_timeout": 300,
+    "vanity_url_code": null,
+    "icon": "64e1903a5932090a6ab075db4ded21b6",
+    "emojis": [
+      {
+        "roles": [],
+        "require_colons": true,
+        "name": "1",
+        "managed": false,
+        "id": "231642538166059009",
+        "available": true,
+        "animated": false
+      },
+      {
+        "roles": [],
+        "require_colons": true,
+        "name": "2",
+        "managed": false,
+        "id": "231643242918051840",
+        "available": true,
+        "animated": false
+      },
+      {
+        "roles": [],
+        "require_colons": true,
+        "name": "3",
+        "managed": false,
+        "id": "231647192127897600",
+        "available": true,
+        "animated": false
+      },
+      {
+        "roles": [],
+        "require_colons": true,
+        "name": "4",
+        "managed": false,
+        "id": "234084746206904321",
+        "available": true,
+        "animated": false
+      },
+      {
+        "roles": [],
+        "require_colons": true,
+        "name": "11",
+        "managed": false,
+        "id": "236697858911371275",
+        "available": true,
+        "animated": false
+      },
+      {
+        "roles": [],
+        "require_colons": true,
+        "name": "12",
+        "managed": false,
+        "id": "236703965574725634",
+        "available": true,
+        "animated": false
+      },
+      {
+        "roles": [],
+        "require_colons": true,
+        "name": "13",
+        "managed": false,
+        "id": "236708568613519362",
+        "available": true,
+        "animated": false
+      },
+      {
+        "roles": [],
+        "require_colons": true,
+        "name": "14",
+        "managed": false,
+        "id": "236718746561937408",
+        "available": true,
+        "animated": false
+      },
+      {
+        "roles": [],
+        "require_colons": true,
+        "name": "21",
+        "managed": false,
+        "id": "236721303539679232",
+        "available": true,
+        "animated": false
+      },
+      {
+        "roles": [],
+        "require_colons": true,
+        "name": "22",
+        "managed": false,
+        "id": "237068368643883010",
+        "available": true,
+        "animated": false
+      },
+      {
+        "roles": [],
+        "require_colons": true,
+        "name": "23",
+        "managed": false,
+        "id": "237073764783751169",
+        "available": true,
+        "animated": false
+      },
+      {
+        "roles": [],
+        "require_colons": true,
+        "name": "24",
+        "managed": false,
+        "id": "237076752474570753",
+        "available": true,
+        "animated": false
+      },
+      {
+        "roles": [],
+        "require_colons": true,
+        "name": "25",
+        "managed": false,
+        "id": "237080010886873088",
+        "available": true,
+        "animated": false
+      },
+      {
+        "roles": [],
+        "require_colons": true,
+        "name": "31",
+        "managed": false,
+        "id": "237084024059723776",
+        "available": true,
+        "animated": false
+      },
+      {
+        "roles": [],
+        "require_colons": true,
+        "name": "32",
+        "managed": false,
+        "id": "275539759818866690",
+        "available": true,
+        "animated": false
+      },
+      {
+        "roles": [],
+        "require_colons": true,
+        "name": "33",
+        "managed": false,
+        "id": "305779169034371074",
+        "available": true,
+        "animated": false
+      },
+      {
+        "roles": [],
+        "require_colons": true,
+        "name": "34",
+        "managed": false,
+        "id": "346763893265268738",
+        "available": true,
+        "animated": false
+      },
+      {
+        "roles": [],
+        "require_colons": true,
+        "name": "35",
+        "managed": false,
+        "id": "429147141009702912",
+        "available": true,
+        "animated": true
+      },
+      {
+        "roles": [],
+        "require_colons": true,
+        "name": "41",
+        "managed": false,
+        "id": "680866557311844358",
+        "available": true,
+        "animated": false
+      }
+    ],
+    "preferred_locale": "en-US",
+    "region": "us-south",
+    "explicit_content_filter": 0,
+    "rules_channel_id": null,
+    "default_message_notifications": 0,
+    "name": "TEST",
+    "max_members": 250000,
+    "widget_enabled": false,
+    "description": null,
+    "embed_enabled": false,
+    "premium_subscription_count": 0,
+    "mfa_level": 0,
+    "afk_channel_id": null,
+    "max_presences": null
+  }
+}

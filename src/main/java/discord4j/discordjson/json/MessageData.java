@@ -68,6 +68,8 @@ public interface MessageData {
 
     default Possible<Integer> flags() { return Possible.absent(); }
 
+    @Value.Immutable
+    @JsonDeserialize(as = ImmutableUserWithMemberData.class)
     interface UserWithMemberData extends UserData {
         MemberData member();
     }

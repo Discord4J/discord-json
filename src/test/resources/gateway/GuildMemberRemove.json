@@ -1,0 +1,1 @@
+{"t":"GUILD_MEMBER_REMOVE","s":3641,"op":0,"d":{"user":{"username":"abcd","id":"123456789012345678","discriminator":"8871","bot":true,"avatar":null},"guild_id":"123456789012345678"}}

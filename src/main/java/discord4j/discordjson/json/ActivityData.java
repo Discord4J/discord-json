@@ -18,7 +18,7 @@ public interface ActivityData {
     default Possible<Optional<String>> url() { return Possible.absent(); }
 
     @JsonProperty("created_at")
-    int createdAt();
+    long createdAt();
 
     default Possible<ActivityTimestampsData> timestamps() { return Possible.absent(); }
 

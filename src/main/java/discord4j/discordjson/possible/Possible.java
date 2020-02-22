@@ -51,8 +51,12 @@ public final class Possible<T> {
 
     @Override
     public boolean equals(@Nullable Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Possible<?> possible = (Possible<?>) o;
         return Objects.equals(value, possible.value);
     }
@@ -60,5 +64,13 @@ public final class Possible<T> {
     @Override
     public int hashCode() {
         return Objects.hash(value);
+    }
+
+    @Override
+    public String toString() {
+        if (isAbsent()) {
+            return "Possible.absent";
+        }
+        return "Possible{" + value + '}';
     }
 }

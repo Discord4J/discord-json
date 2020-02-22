@@ -13,11 +13,11 @@ public interface UserData {
 
     String id();
 
-    String username();
+    default Possible<String> username() { return Possible.absent(); }
 
-    String discriminator();
+    default Possible<String> discriminator() { return Possible.absent(); }
 
-    Optional<String> avatar();
+    default Possible<String> avatar() { return Possible.absent(); }
 
     default Possible<Boolean> bot() { return Possible.absent(); }
 

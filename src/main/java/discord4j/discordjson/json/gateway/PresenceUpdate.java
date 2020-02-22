@@ -22,7 +22,7 @@ public interface PresenceUpdate extends Dispatch {
     Optional<ActivityData> game();
 
     @JsonProperty("guild_id")
-    String guildId();
+    default Possible<String> guildId() { return Possible.absent(); }
 
     String status();
 

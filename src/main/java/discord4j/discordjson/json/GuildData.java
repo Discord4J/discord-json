@@ -8,6 +8,7 @@ import org.immutables.value.Value;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.OptionalInt;
 
 @Value.Immutable
 @JsonDeserialize(as = ImmutableGuildData.class)
@@ -20,6 +21,9 @@ public interface GuildData {
     Optional<String> icon();
 
     Optional<String> splash();
+
+    @JsonProperty("discovery_splash")
+    Optional<String> discoverySplash();
 
     default Possible<Boolean> owner() { return Possible.absent(); }
 
@@ -71,6 +75,12 @@ public interface GuildData {
 
     @JsonProperty("system_channel_id")
     Optional<String> systemChannelId();
+
+    @JsonProperty("system_channel_flags")
+    OptionalInt systemChannelFlags();
+
+    @JsonProperty("rules_channel_id")
+    Optional<String> rulesChannelId();
 
     @JsonProperty("joined_at")
     default Possible<String> joinedAt() { return Possible.absent(); }

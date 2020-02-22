@@ -1,0 +1,181 @@
+{
+  "t": "GUILD_EMOJIS_UPDATE",
+  "s": 26850,
+  "op": 0,
+  "d": {
+    "guild_id": "123456789012345678",
+    "emojis": [
+      {
+        "roles": [],
+        "require_colons": true,
+        "name": "s",
+        "managed": false,
+        "id": "231642538166059009",
+        "available": true,
+        "animated": false
+      },
+      {
+        "roles": [],
+        "require_colons": true,
+        "name": "r",
+        "managed": false,
+        "id": "231643242918051840",
+        "available": true,
+        "animated": false
+      },
+      {
+        "roles": [],
+        "require_colons": true,
+        "name": "q",
+        "managed": false,
+        "id": "231647192127897600",
+        "available": true,
+        "animated": false
+      },
+      {
+        "roles": [],
+        "require_colons": true,
+        "name": "p",
+        "managed": false,
+        "id": "234084746206904321",
+        "available": true,
+        "animated": false
+      },
+      {
+        "roles": [],
+        "require_colons": true,
+        "name": "o",
+        "managed": false,
+        "id": "236697858911371275",
+        "available": true,
+        "animated": false
+      },
+      {
+        "roles": [],
+        "require_colons": true,
+        "name": "n",
+        "managed": false,
+        "id": "236703965574725634",
+        "available": true,
+        "animated": false
+      },
+      {
+        "roles": [],
+        "require_colons": true,
+        "name": "m",
+        "managed": false,
+        "id": "236708568613519362",
+        "available": true,
+        "animated": false
+      },
+      {
+        "roles": [],
+        "require_colons": true,
+        "name": "l",
+        "managed": false,
+        "id": "236718746561937408",
+        "available": true,
+        "animated": false
+      },
+      {
+        "roles": [],
+        "require_colons": true,
+        "name": "k",
+        "managed": false,
+        "id": "236721303539679232",
+        "available": true,
+        "animated": false
+      },
+      {
+        "roles": [],
+        "require_colons": true,
+        "name": "j",
+        "managed": false,
+        "id": "237068368643883010",
+        "available": true,
+        "animated": false
+      },
+      {
+        "roles": [],
+        "require_colons": true,
+        "name": "i",
+        "managed": false,
+        "id": "237073764783751169",
+        "available": true,
+        "animated": false
+      },
+      {
+        "roles": [],
+        "require_colons": true,
+        "name": "h",
+        "managed": false,
+        "id": "237076752474570753",
+        "available": true,
+        "animated": false
+      },
+      {
+        "roles": [],
+        "require_colons": true,
+        "name": "g",
+        "managed": false,
+        "id": "237080010886873088",
+        "available": true,
+        "animated": false
+      },
+      {
+        "roles": [],
+        "require_colons": true,
+        "name": "f",
+        "managed": false,
+        "id": "237084024059723776",
+        "available": true,
+        "animated": false
+      },
+      {
+        "roles": [],
+        "require_colons": true,
+        "name": "e",
+        "managed": false,
+        "id": "275539759818866690",
+        "available": true,
+        "animated": false
+      },
+      {
+        "roles": [],
+        "require_colons": true,
+        "name": "d",
+        "managed": false,
+        "id": "305779169034371074",
+        "available": true,
+        "animated": false
+      },
+      {
+        "roles": [],
+        "require_colons": true,
+        "name": "c",
+        "managed": false,
+        "id": "346763893265268738",
+        "available": true,
+        "animated": false
+      },
+      {
+        "roles": [],
+        "require_colons": true,
+        "name": "b",
+        "managed": false,
+        "id": "429147141009702912",
+        "available": true,
+        "animated": true
+      },
+      {
+        "roles": [],
+        "require_colons": true,
+        "name": "a",
+        "managed": false,
+        "id": "680866557311844358",
+        "available": true,
+        "animated": false
+      }
+    ]
+  }
+}

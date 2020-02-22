@@ -1,6 +1,7 @@
 package discord4j.discordjson.json;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
 @Value.Immutable
@@ -8,5 +9,5 @@ import org.immutables.value.Value;
 public interface UnavailableGuildData {
 
     String id();
-    boolean unavailable();
+    default Possible<Boolean> unavailable() { return Possible.absent(); }
 }

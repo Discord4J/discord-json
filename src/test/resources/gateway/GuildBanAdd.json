@@ -1,0 +1,1 @@
+{"t":"GUILD_BAN_ADD","s":3637,"op":0,"d":{"user":{"username":"Username","id":"123456789012345678","discriminator":"1234","bot":true,"avatar":null},"guild_id":"123456789012345678"}}

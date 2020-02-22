@@ -25,5 +25,7 @@ public interface EmojiData {
 
     default Possible<Boolean> managed() { return Possible.absent(); }
 
+    default Possible<Boolean> available() { return Possible.absent(); }
+
     default Possible<Boolean> animated() { return Possible.absent(); }
 }
