@@ -122,4 +122,7 @@ public interface GuildData {
 
     @JsonProperty("preferred_locale")
     String preferredLocale();
+
+    @JsonProperty("public_updates_channel_id")
+    Optional<String> publicUpdatesChannelId();
 }
