@@ -199,6 +199,9 @@ public class GatewayDeserializationTest {
         GatewayPayload<?> json = mapper.readValue(getClass().getResourceAsStream("/gateway/MessageUpdate.json"),
                 new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json.getData());
+        GatewayPayload<?> json2 = mapper.readValue(getClass().getResourceAsStream("/gateway/MessageUpdate_2.json"),
+                new TypeReference<GatewayPayload<?>>() {});
+        log.info("{}", json2.getData());
     }
 
     @Test
