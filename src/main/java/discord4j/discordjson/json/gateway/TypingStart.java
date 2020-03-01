@@ -19,7 +19,7 @@ public interface TypingStart extends Dispatch {
     @JsonProperty("user_id")
     String userId();
 
-    int timestamp();
+    long timestamp();
 
     default Possible<MemberData> member() { return Possible.absent(); }
 }

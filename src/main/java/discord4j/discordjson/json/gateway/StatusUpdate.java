@@ -10,7 +10,7 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutableStatusUpdate.class)
 public interface StatusUpdate extends PayloadData {
 
-    Optional<Integer> since();
+    Optional<Long> since();
     Optional<ActivityData> game();
     String status();
     boolean afk();

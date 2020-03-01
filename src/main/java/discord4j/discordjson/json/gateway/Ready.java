@@ -22,4 +22,6 @@ public interface Ready extends Dispatch {
     @JsonProperty("session_id")
     String sessionId();
     default Possible<int[]> shard() { return Possible.absent(); }
+    @JsonProperty("_trace")
+    List<String> trace();
 }
