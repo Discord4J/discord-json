@@ -47,7 +47,7 @@ public interface GuildData {
     default Possible<String> embedChannelId() { return Possible.absent(); }
 
     @JsonProperty("verification_level")
-    int verificationLevel();
+    default Possible<Integer> verificationLevel() { return Possible.absent(); }
 
     @JsonProperty("default_message_notifications")
     default Possible<Integer> defaultMessageNotifications() { return Possible.absent(); }
