@@ -168,6 +168,13 @@ public class GatewayDeserializationTest {
     }
 
     @Test
+    public void testInviteCreate() throws IOException {
+        GatewayPayload<?> json = mapper.readValue(getClass().getResourceAsStream("/gateway/InviteCreate.json"),
+                new TypeReference<GatewayPayload<?>>() {});
+        log.info("{}", json.getData());
+    }
+
+    @Test
     public void testMessageCreate() throws IOException {
         GatewayPayload<?> json = mapper.readValue(getClass().getResourceAsStream("/gateway/MessageCreate.Type0.json"),
                 new TypeReference<GatewayPayload<?>>() {});

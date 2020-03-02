@@ -69,6 +69,8 @@ public class PayloadDeserializer extends StdDeserializer<GatewayPayload<?>> {
         dispatchTypes.put("VOICE_STATE_UPDATE", VoiceStateUpdateDispatch.class);
         dispatchTypes.put("VOICE_SERVER_UPDATE", VoiceServerUpdate.class);
         dispatchTypes.put("WEBHOOKS_UPDATE", WebhooksUpdate.class);
+        dispatchTypes.put("INVITE_CREATE", InviteCreate.class);
+        dispatchTypes.put("INVITE_DELETE", InviteDelete.class);
 
         // Ignored
         dispatchTypes.put("PRESENCES_REPLACE", null);
