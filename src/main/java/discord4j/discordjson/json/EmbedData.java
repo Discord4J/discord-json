@@ -34,5 +34,5 @@ public interface EmbedData {
 
     default Possible<EmbedAuthorData> author() { return Possible.absent(); }
 
-    default Possible<List<EmbedFiledData>> fields() { return Possible.absent(); }
+    default Possible<List<EmbedFieldData>> fields() { return Possible.absent(); }
 }

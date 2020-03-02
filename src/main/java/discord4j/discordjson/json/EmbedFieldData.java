@@ -5,8 +5,8 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import org.immutables.value.Value;
 
 @Value.Immutable
-@JsonDeserialize(as = ImmutableEmbedFiledData.class)
-public interface EmbedFiledData {
+@JsonDeserialize(as = ImmutableEmbedFieldData.class)
+public interface EmbedFieldData {
 
     String name();
 
