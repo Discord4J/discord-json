@@ -2,6 +2,7 @@ package discord4j.discordjson.json;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
 import java.util.List;
@@ -11,17 +12,17 @@ import java.util.List;
 public interface ChannelCreateRequest {
 
     String name();
-    int type();
-    String topic();
-    int bitrate();
+    default Possible<Integer> type() { return Possible.absent(); }
+    default Possible<String> topic() { return Possible.absent(); }
+    default Possible<Integer> bitrate() { return Possible.absent(); }
     @JsonProperty("user_limit")
-    int userLimit();
+    default Possible<Integer> userLimit() { return Possible.absent(); }
     @JsonProperty("rate_limit_per_user")
-    int rateLimitPerUser();
-    int position();
+    default Possible<Integer> rateLimitPerUser() { return Possible.absent(); }
+    default Possible<Integer> position() { return Possible.absent(); }
     @JsonProperty("permission_overwrites")
-    List<OverwriteData> permissionOverwrites();
+    default Possible<List<OverwriteData>> permissionOverwrites() { return Possible.absent(); }
     @JsonProperty("parent_id")
-    String parentId();
-    boolean nsfw();
+    default Possible<String> parentId() { return Possible.absent(); }
+    default Possible<Boolean> nsfw() { return Possible.absent(); }
 }

@@ -31,6 +31,30 @@ import java.util.Objects;
 @JsonDeserialize(using = PayloadDeserializer.class)
 public class GatewayPayload<T extends PayloadData> {
 
+    public static GatewayPayload<Heartbeat> heartbeat(Heartbeat data) {
+        return new GatewayPayload<>(Opcode.HEARTBEAT, data, null, null);
+    }
+
+    public static GatewayPayload<Identify> identify(Identify data) {
+        return new GatewayPayload<>(Opcode.IDENTIFY, data, null, null);
+    }
+
+    public static GatewayPayload<StatusUpdate> statusUpdate(StatusUpdate data) {
+        return new GatewayPayload<>(Opcode.STATUS_UPDATE, data, null, null);
+    }
+
+    public static GatewayPayload<VoiceStateUpdate> voiceStateUpdate(VoiceStateUpdate data) {
+        return new GatewayPayload<>(Opcode.VOICE_STATE_UPDATE, data, null, null);
+    }
+
+    public static GatewayPayload<Resume> resume(Resume data) {
+        return new GatewayPayload<>(Opcode.RESUME, data, null, null);
+    }
+
+    public static GatewayPayload<RequestGuildMembers> requestGuildMembers(RequestGuildMembers data) {
+        return new GatewayPayload<>(Opcode.REQUEST_GUILD_MEMBERS, data, null, null);
+    }
+
     @JsonSerialize(converter = OpcodeConverter.class)
     private Opcode<T> op;
     @JsonProperty("d")

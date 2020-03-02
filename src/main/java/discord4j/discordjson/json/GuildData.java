@@ -28,17 +28,17 @@ public interface GuildData {
     default Possible<Boolean> owner() { return Possible.absent(); }
 
     @JsonProperty("owner_id")
-    String ownerId();
+    default Possible<String> ownerId() { return Possible.absent(); }
 
     default Possible<Long> permissions() { return Possible.absent(); }
 
-    String region();
+    default Possible<String> region() { return Possible.absent(); }
 
     @JsonProperty("afk_channel_id")
     Optional<String> afkChannelId();
 
     @JsonProperty("afk_timeout")
-    int afkTimeout();
+    default Possible<Integer> afkTimeout() { return Possible.absent(); }
 
     @JsonProperty("embed_enabled")
     default Possible<Boolean> embedEnabled() { return Possible.absent(); }
@@ -50,10 +50,10 @@ public interface GuildData {
     int verificationLevel();
 
     @JsonProperty("default_message_notifications")
-    int defaultMessageNotifications();
+    default Possible<Integer> defaultMessageNotifications() { return Possible.absent(); }
 
     @JsonProperty("explicit_content_filter")
-    int explicitContentFilter();
+    default Possible<Integer> explicitContentFilter() { return Possible.absent(); }
 
     List<RoleData> roles();
 
@@ -62,7 +62,7 @@ public interface GuildData {
     List<String> features();
 
     @JsonProperty("mfa_level")
-    int mfaLevel();
+    default Possible<Integer> mfaLevel() { return Possible.absent(); }
 
     @JsonProperty("application_id")
     Optional<String> applicationId();
@@ -115,13 +115,13 @@ public interface GuildData {
     Optional<String> banner();
 
     @JsonProperty("premium_tier")
-    int premiumTier();
+    default Possible<Integer> premiumTier() { return Possible.absent(); }
 
     @JsonProperty("premium_subscription_count")
     default Possible<Integer> premiumSubscriptionCount() { return Possible.absent(); }
 
     @JsonProperty("preferred_locale")
-    String preferredLocale();
+    default Possible<String> preferredLocale() { return Possible.absent(); }
 
     @JsonProperty("public_updates_channel_id")
     Optional<String> publicUpdatesChannelId();

@@ -18,7 +18,7 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 
 public class GatewayDeserializationTest {
-    
+
     private static final Logger log = LoggerFactory.getLogger(GatewayDeserializationTest.class);
 
     ObjectMapper mapper;
@@ -37,7 +37,8 @@ public class GatewayDeserializationTest {
                         return true;
                     }
                 })
-                .setDefaultPropertyInclusion(JsonInclude.Value.construct(JsonInclude.Include.CUSTOM, JsonInclude.Include.ALWAYS, PossibleFilter.class, null));
+                .setDefaultPropertyInclusion(JsonInclude.Value.construct(JsonInclude.Include.CUSTOM,
+                        JsonInclude.Include.ALWAYS, PossibleFilter.class, null));
     }
 
     @Test
@@ -168,9 +169,12 @@ public class GatewayDeserializationTest {
 
     @Test
     public void testMessageCreate() throws IOException {
-        GatewayPayload<?> json = mapper.readValue(getClass().getResourceAsStream("/gateway/MessageCreate.json"),
+        GatewayPayload<?> json = mapper.readValue(getClass().getResourceAsStream("/gateway/MessageCreate.Type0.json"),
                 new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json.getData());
+        GatewayPayload<?> json2 = mapper.readValue(getClass().getResourceAsStream("/gateway/MessageCreate.Type6.json"),
+                new TypeReference<GatewayPayload<?>>() {});
+        log.info("{}", json2.getData());
     }
 
     @Test
@@ -196,19 +200,26 @@ public class GatewayDeserializationTest {
 
     @Test
     public void testMessageUpdate() throws IOException {
-        GatewayPayload<?> json = mapper.readValue(getClass().getResourceAsStream("/gateway/MessageUpdate.json"),
+        GatewayPayload<?> json = mapper.readValue(
+                getClass().getResourceAsStream("/gateway/MessageUpdate.NoEmbeds.json"),
                 new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json.getData());
-        GatewayPayload<?> json2 = mapper.readValue(getClass().getResourceAsStream("/gateway/MessageUpdate_2.json"),
+        GatewayPayload<?> json2 = mapper.readValue(
+                getClass().getResourceAsStream("/gateway/MessageUpdate.Embeds.json"),
                 new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json2.getData());
     }
 
     @Test
     public void testPresenceUpdate() throws IOException {
-        GatewayPayload<?> json = mapper.readValue(getClass().getResourceAsStream("/gateway/PresenceUpdate.json"),
+        GatewayPayload<?> json = mapper.readValue(
+                getClass().getResourceAsStream("/gateway/PresenceUpdate.NoActivities.json"),
                 new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json.getData());
+        GatewayPayload<?> json2 = mapper.readValue(
+                getClass().getResourceAsStream("/gateway/PresenceUpdate.Activities.json"),
+                new TypeReference<GatewayPayload<?>>() {});
+        log.info("{}", json2.getData());
     }
 
     @Test

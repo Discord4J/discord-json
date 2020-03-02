@@ -1,0 +1,39 @@
+{
+  "t": "MESSAGE_CREATE",
+  "s": 324,
+  "op": 0,
+  "d": {
+    "type": 0,
+    "tts": false,
+    "timestamp": "2020-03-01T21:02:35.282000+00:00",
+    "pinned": false,
+    "nonce": "123456789012345678",
+    "mentions": [],
+    "mention_roles": [],
+    "mention_everyone": false,
+    "member": {
+      "roles": [
+        "208024476963700736",
+        "208024600892801026"
+      ],
+      "mute": false,
+      "joined_at": "2017-01-21T04:22:35.549000+00:00",
+      "hoisted_role": "208024476963700736",
+      "deaf": false
+    },
+    "id": "123456789012345678",
+    "flags": 0,
+    "embeds": [],
+    "edited_timestamp": null,
+    "content": "different message",
+    "channel_id": "123456789012345678",
+    "author": {
+      "username": "usr",
+      "id": "123456789012345678",
+      "discriminator": "1234",
+      "avatar": "25a09a99ac0487bf846125084d9c7346"
+    },
+    "attachments": [],
+    "guild_id": "123456789012345678"
+  }
+}

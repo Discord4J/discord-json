@@ -1,0 +1,22 @@
+{
+  "t": "PRESENCE_UPDATE",
+  "s": 3640,
+  "op": 0,
+  "d": {
+    "user": {
+      "id": "123456789012345678"
+    },
+    "status": "idle",
+    "roles": [
+      "561971313451728917"
+    ],
+    "premium_since": null,
+    "nick": null,
+    "guild_id": "123456789012345678",
+    "game": null,
+    "client_status": {
+      "desktop": "idle"
+    },
+    "activities": []
+  }
+}
