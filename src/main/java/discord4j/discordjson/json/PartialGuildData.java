@@ -10,8 +10,8 @@ import java.util.Optional;
 import java.util.OptionalInt;
 
 @Value.Immutable
-@JsonDeserialize(as = ImmutableGuildData.class)
-public interface GuildData {
+@JsonDeserialize(as = ImmutablePartialGuildData.class)
+public interface PartialGuildData {
 
     String id();
 
@@ -80,25 +80,6 @@ public interface GuildData {
 
     @JsonProperty("rules_channel_id")
     Optional<String> rulesChannelId();
-
-    @JsonProperty("joined_at")
-    default Possible<String> joinedAt() { return Possible.absent(); }
-
-    default Possible<Boolean> large() { return Possible.absent(); }
-
-    default Possible<Boolean> unavailable() { return Possible.absent(); }
-
-    @JsonProperty("member_count")
-    default Possible<Integer> memberCount() { return Possible.absent(); }
-
-    @JsonProperty("voice_states")
-    default Possible<List<VoiceStateData>> voiceStates() { return Possible.absent(); }
-
-    default Possible<List<MemberData>> members() { return Possible.absent(); }
-
-    default Possible<List<ChannelData>> channels() { return Possible.absent(); }
-
-    default Possible<List<PresenceData>> presences() { return Possible.absent(); }
 
     @JsonProperty("max_presences")
     default Possible<Optional<Integer>> maxPresences() { return Possible.absent(); }

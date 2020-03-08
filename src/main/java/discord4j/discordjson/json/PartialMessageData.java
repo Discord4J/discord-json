@@ -1,16 +1,16 @@
 package discord4j.discordjson.json;
 
-import discord4j.discordjson.possible.Possible;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
 import java.util.List;
 import java.util.Optional;
 
 @Value.Immutable
-@JsonDeserialize(as = ImmutableMessageData.class)
-public interface MessageData {
+@JsonDeserialize(as = ImmutablePartialMessageData.class)
+public interface PartialMessageData {
 
     String id();
 
@@ -20,21 +20,21 @@ public interface MessageData {
     @JsonProperty("guild_id")
     default Possible<String> guildId() { return Possible.absent(); }
 
-    UserData author();
+    default Possible<UserData> author() { return Possible.absent(); }
 
     default Possible<PartialMemberData> member() { return Possible.absent(); }
 
-    String content();
+    default Possible<String> content() { return Possible.absent(); }
 
-    String timestamp();
+    default Possible<String> timestamp() { return Possible.absent(); }
 
     @JsonProperty("edited_timestamp")
     Optional<String> editedTimestamp();
 
-    boolean tts();
+    default Possible<Boolean> tts() { return Possible.absent(); }
 
     @JsonProperty("mention_everyone")
-    boolean mentionEveryone();
+    default Possible<Boolean> mentionEveryone() { return Possible.absent(); }
 
     List<UserWithMemberData> mentions();
 
@@ -52,12 +52,12 @@ public interface MessageData {
 
     default Possible<Object> nonce() { return Possible.absent(); }
 
-    boolean pinned();
+    default Possible<Boolean> pinned() { return Possible.absent(); }
 
     @JsonProperty("webhook_id")
     default Possible<String> webhookId() { return Possible.absent(); }
 
-    int type();
+    default Possible<Integer> type() { return Possible.absent(); }
 
     default Possible<MessageActivityData> activity() { return Possible.absent(); }
 
@@ -67,5 +67,4 @@ public interface MessageData {
     default Possible<MessageReferenceData> messageReference() { return Possible.absent(); }
 
     default Possible<Integer> flags() { return Possible.absent(); }
-
 }

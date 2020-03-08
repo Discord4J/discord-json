@@ -1,1 +1,38 @@
-{"t":"MESSAGE_UPDATE","s":3114,"op":0,"d":{"type":0,"tts":false,"timestamp":"2020-02-22T18:15:15.919000+00:00","pinned":true,"mentions":[],"mention_roles":[],"mention_everyone":false,"member":{"roles":["186563072540934144","186605392971694081"],"mute":false,"joined_at":"2016-05-28T02:57:17.190000+00:00","hoisted_role":null,"deaf":false},"id":"680840044138987656","flags":0,"embeds":[],"edited_timestamp":null,"content":"test message please ignore","channel_id":"680839020124700740","author":{"username":"a","id":"123456789012345678","discriminator":"5520","avatar":"25a09a99ac0487bf846125084d9c7346"},"attachments":[],"guild_id":"123456789012345678"}}
+{
+  "t": "MESSAGE_UPDATE",
+  "s": 3114,
+  "op": 0,
+  "d": {
+    "type": 0,
+    "tts": false,
+    "timestamp": "2020-02-22T18:15:15.919000+00:00",
+    "pinned": true,
+    "mentions": [],
+    "mention_roles": [],
+    "mention_everyone": false,
+    "member": {
+      "roles": [
+        "186563072540934144",
+        "186605392971694081"
+      ],
+      "mute": false,
+      "joined_at": "2016-05-28T02:57:17.190000+00:00",
+      "hoisted_role": null,
+      "deaf": false
+    },
+    "id": "680840044138987656",
+    "flags": 0,
+    "embeds": [],
+    "edited_timestamp": null,
+    "content": "test message please ignore",
+    "channel_id": "680839020124700740",
+    "author": {
+      "username": "a",
+      "id": "123456789012345678",
+      "discriminator": "5520",
+      "avatar": "25a09a99ac0487bf846125084d9c7346"
+    },
+    "attachments": [],
+    "guild_id": "123456789012345678"
+  }
+}

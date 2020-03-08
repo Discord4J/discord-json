@@ -11,6 +11,8 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutableActivityData.class)
 public interface ActivityData {
 
+    String id();
+
     String name();
 
     int type();

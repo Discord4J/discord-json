@@ -1,8 +1,8 @@
 package discord4j.discordjson.json.gateway;
 
-import discord4j.discordjson.json.MessageData;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import discord4j.discordjson.json.PartialMessageData;
 import org.immutables.value.Value;
 
 @Value.Immutable
@@ -10,5 +10,5 @@ import org.immutables.value.Value;
 public interface MessageUpdate extends Dispatch {
 
     @JsonUnwrapped
-    MessageData message();
+    PartialMessageData message();
 }

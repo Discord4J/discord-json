@@ -1,23 +1,23 @@
 package discord4j.discordjson.json;
 
-import discord4j.discordjson.possible.Possible;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
 import java.util.Optional;
 
 @Value.Immutable
-@JsonDeserialize(as = ImmutableUserData.class)
-public interface UserData {
+@JsonDeserialize(as = ImmutablePartialUserData.class)
+public interface PartialUserData {
 
     String id();
 
-    String username();
+    default Possible<String> username() { return Possible.absent(); }
 
-    String discriminator();
+    default Possible<String> discriminator() { return Possible.absent(); }
 
-    Optional<String> avatar();
+    default Possible<Optional<String>> avatar() { return Possible.absent(); }
 
     default Possible<Boolean> bot() { return Possible.absent(); }
 

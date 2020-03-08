@@ -10,7 +10,7 @@ import org.immutables.value.Value;
 public interface InviteData {
 
     String code();
-    default Possible<GuildData> guild() { return Possible.absent(); }
+    default Possible<PartialGuildData> guild() { return Possible.absent(); }
     ChannelData channel();
     @JsonProperty("target_user")
     default Possible<UserData> targetUser() { return Possible.absent(); }

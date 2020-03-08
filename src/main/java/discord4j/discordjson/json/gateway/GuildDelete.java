@@ -1,8 +1,8 @@
 package discord4j.discordjson.json.gateway;
 
-import discord4j.discordjson.json.UnavailableGuildData;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import discord4j.discordjson.json.UnavailableGuildData;
 import org.immutables.value.Value;
 
 @Value.Immutable
