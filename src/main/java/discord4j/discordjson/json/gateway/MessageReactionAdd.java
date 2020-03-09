@@ -1,13 +1,15 @@
 package discord4j.discordjson.json.gateway;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.json.EmojiData;
 import discord4j.discordjson.json.MemberData;
 import discord4j.discordjson.possible.Possible;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import org.immutables.value.Value;
 
 @Value.Immutable
+@JsonSerialize(as = ImmutableMessageReactionAdd.class)
 @JsonDeserialize(as = ImmutableMessageReactionAdd.class)
 public interface MessageReactionAdd extends Dispatch {
 

@@ -1,11 +1,13 @@
 package discord4j.discordjson.json.gateway;
 
-import discord4j.discordjson.json.RoleData;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import discord4j.discordjson.json.RoleData;
 import org.immutables.value.Value;
 
 @Value.Immutable
+@JsonSerialize(as = ImmutableGuildRoleCreate.class)
 @JsonDeserialize(as = ImmutableGuildRoleCreate.class)
 public interface GuildRoleCreate extends Dispatch {
 

@@ -2,11 +2,11 @@ package discord4j.discordjson.json.gateway;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import discord4j.discordjson.json.UserData;
-import discord4j.discordjson.possible.Possible;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.immutables.value.Value;
 
 @Value.Immutable
+@JsonSerialize(as = ImmutableInviteDelete.class)
 @JsonDeserialize(as = ImmutableInviteDelete.class)
 public interface InviteDelete extends Dispatch {
 
