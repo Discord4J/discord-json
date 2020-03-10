@@ -32,7 +32,8 @@ public interface UserData {
 
     default Possible<Boolean> verified() { return Possible.absent(); }
 
-    default Possible<String> email() { return Possible.absent(); }
+    // TODO Ready can contain null email field!
+    default Possible<Optional<String>> email() { return Possible.absent(); }
 
     default Possible<Integer> flags() { return Possible.absent(); }
 

@@ -14,7 +14,7 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutablePartialMemberData.class)
 public interface PartialMemberData {
 
-    default Possible<String> nick() { return Possible.absent(); }
+    default Possible<Optional<String>> nick() { return Possible.absent(); }
 
     List<String> roles();
 
