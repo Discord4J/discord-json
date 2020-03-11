@@ -9,5 +9,5 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableUserWithMemberData.class)
 public interface UserWithMemberData extends UserData {
 
-    MemberData member();
+    PartialMemberData member();
 }
