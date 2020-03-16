@@ -7,9 +7,9 @@ import org.immutables.value.Value;
 import java.util.Optional;
 
 @Value.Immutable
-@JsonSerialize(as = ImmutableNicknameModifyData.class)
-@JsonDeserialize(as = ImmutableNicknameModifyData.class)
-public interface NicknameModifyData {
+@JsonSerialize(as = ImmutableActivityUpdateRequest.class)
+@JsonDeserialize(as = ImmutableActivityUpdateRequest.class)
+public interface ActivityUpdateRequest extends Activity {
 
-    Optional<String> nick();
+    Optional<String> url();
 }

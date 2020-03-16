@@ -2,7 +2,7 @@ package discord4j.discordjson.json.gateway;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import discord4j.discordjson.json.ActivityData;
+import discord4j.discordjson.json.ActivityUpdateRequest;
 import org.immutables.value.Value;
 
 import java.util.Optional;
@@ -13,7 +13,7 @@ import java.util.Optional;
 public interface StatusUpdate extends PayloadData {
 
     Optional<Long> since();
-    Optional<ActivityData> game();
+    Optional<ActivityUpdateRequest> game();
     String status();
     boolean afk();
 }

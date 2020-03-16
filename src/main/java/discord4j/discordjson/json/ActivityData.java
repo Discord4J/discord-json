@@ -11,13 +11,9 @@ import java.util.Optional;
 @Value.Immutable
 @JsonSerialize(as = ImmutableActivityData.class)
 @JsonDeserialize(as = ImmutableActivityData.class)
-public interface ActivityData {
+public interface ActivityData extends Activity {
 
     String id();
-
-    String name();
-
-    int type();
 
     default Possible<Optional<String>> url() { return Possible.absent(); }
 
