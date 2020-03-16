@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.OptionalInt;
 
-interface Guild {
+interface GuildFields {
 
     String id();
 
@@ -22,18 +22,10 @@ interface Guild {
 
     default Possible<Boolean> owner() { return Possible.absent(); }
 
-    @JsonProperty("owner_id")
-    String ownerId();
-
     default Possible<Long> permissions() { return Possible.absent(); }
-
-    String region();
 
     @JsonProperty("afk_channel_id")
     Optional<String> afkChannelId();
-
-    @JsonProperty("afk_timeout")
-    int afkTimeout();
 
     @JsonProperty("embed_enabled")
     default Possible<Boolean> embedEnabled() { return Possible.absent(); }
@@ -41,19 +33,7 @@ interface Guild {
     @JsonProperty("embed_channel_id")
     default Possible<Optional<String>> embedChannelId() { return Possible.absent(); }
 
-    @JsonProperty("verification_level")
-    int verificationLevel();
-
-    @JsonProperty("default_message_notifications")
-    int defaultMessageNotifications();
-
-    @JsonProperty("explicit_content_filter")
-    int explicitContentFilter();
-
     List<String> features();
-
-    @JsonProperty("mfa_level")
-    int mfaLevel();
 
     @JsonProperty("application_id")
     Optional<String> applicationId();
@@ -86,14 +66,8 @@ interface Guild {
 
     Optional<String> banner();
 
-    @JsonProperty("premium_tier")
-    int premiumTier();
-
     @JsonProperty("premium_subscription_count")
     default Possible<Integer> premiumSubscriptionCount() { return Possible.absent(); }
-
-    @JsonProperty("preferred_locale")
-    String preferredLocale();
 
     @JsonProperty("public_updates_channel_id")
     Optional<String> publicUpdatesChannelId();

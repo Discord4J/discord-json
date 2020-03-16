@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.immutables.value.Value;
 
 @Value.Immutable
-@JsonSerialize(as = ImmutablePartialGuildData.class)
-@JsonDeserialize(as = ImmutablePartialGuildData.class)
-public interface PartialGuildData extends GuildFields, GuildVerificationLevelField {
+@JsonSerialize(as = ImmutableGuildUpdateData.class)
+@JsonDeserialize(as = ImmutableGuildUpdateData.class)
+public interface GuildUpdateData extends GuildUpdateFields, GuildRolesEmojisFields {
 }
