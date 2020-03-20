@@ -32,11 +32,13 @@ sourceCompatibility = 8
 repositories {
     mavenLocal()
     mavenCentral()
-    jcenter()
+    if (!isRelease || isJitpack) {
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+        maven { url 'https://oss.sonatype.org/content/repositories/staging' }
+    }
     maven { url 'https://jitpack.io' }
-    maven { url 'https://oss.sonatype.org/content/repositories/staging' }
-    maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
     maven { url 'https://repo.spring.io/milestone' }
+    jcenter()
 }
 
 dependencies {
