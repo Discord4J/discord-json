@@ -89,6 +89,11 @@ tasks.withType(Javadoc) {
     }
 }
 
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
 publishing {
     publications {
         mavenJava(MavenPublication) {

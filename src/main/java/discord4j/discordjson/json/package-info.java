@@ -1,3 +1,6 @@
+/**
+ * Data objects for JSON representation across Discord.
+ */
 @Value.Style(
         jdkOnly = true,
         allParameters = true,
