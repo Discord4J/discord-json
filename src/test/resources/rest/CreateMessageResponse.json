@@ -1,0 +1,30 @@
+{
+  "id": "690957527890001990",
+  "type": 0,
+  "content": "<@134127815531560960> x",
+  "channel_id": "384091456408911874",
+  "author": {
+    "id": "344487830824943618",
+    "username": "Reacton",
+    "avatar": "1c295705ae50fdbc755f1eda5ed8d268",
+    "discriminator": "6221",
+    "bot": true
+  },
+  "attachments": [],
+  "embeds": [],
+  "mentions": [{
+    "id": "134127815531560960",
+    "username": "quantic",
+    "avatar": "25a09a99ac0487bf846125084d9c7346",
+    "discriminator": "5520"
+  }
+  ],
+  "mention_roles": [],
+  "pinned": false,
+  "mention_everyone": false,
+  "tts": false,
+  "timestamp": "2020-03-21T16:18:32.019000+00:00",
+  "edited_timestamp": null,
+  "flags": 0,
+  "nonce": null
+}
