@@ -7,10 +7,7 @@ import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.deser.DeserializationProblemHandler;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
-import discord4j.discordjson.json.GuildUpdateData;
-import discord4j.discordjson.json.InviteData;
-import discord4j.discordjson.json.MessageData;
-import discord4j.discordjson.json.UserGuildData;
+import discord4j.discordjson.json.*;
 import discord4j.discordjson.possible.PossibleFilter;
 import discord4j.discordjson.possible.PossibleModule;
 import org.junit.Before;
@@ -67,5 +64,12 @@ public class RestDeserializationTest {
     public void testCreateMessageResponse() throws IOException {
         MessageData res = mapper.readValue(getClass().getResourceAsStream("/rest/CreateMessageResponse.json"), MessageData.class);
         log.info("{}", res);
+    }
+
+    @Test
+    public void testGetGuildPreview() throws IOException {
+        GuildPreviewData guildPreview = mapper.readValue(getClass()
+                .getResourceAsStream("/rest/GuildPreview.json"), GuildPreviewData.class);
+        log.info("{}", guildPreview);
     }
 }
