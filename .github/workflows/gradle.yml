@@ -1,6 +1,13 @@
 name: Java CI
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - '**'
+    tags-ignore:
+      - '*.*'
+  pull_request:
+    types: [opened, synchronize, reopened]
 
 jobs:
   build:
@@ -26,6 +33,7 @@ jobs:
   release:
     name: Publish artifacts
     runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request'
     needs: build
     steps:
       - uses: actions/checkout@v2
