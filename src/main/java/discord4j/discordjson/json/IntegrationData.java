@@ -3,6 +3,7 @@ package discord4j.discordjson.json;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
 @Value.Immutable
@@ -22,6 +23,11 @@ public interface IntegrationData {
 
     @JsonProperty("role_id")
     String roleId();
+
+    @JsonProperty("enable_emoticons")
+    default Possible<Boolean> enable_emoticons() {
+        return Possible.absent();
+    }
 
     @JsonProperty("expire_behavior")
     int expireBehavior();
