@@ -20,4 +20,5 @@ public interface Identify extends PayloadData {
     default Possible<StatusUpdate> presence() { return Possible.absent(); }
     @JsonProperty("guild_subscriptions")
     default Possible<Boolean> guildSubscriptions() { return Possible.absent(); }
+    default Possible<Long> intents() { return Possible.absent(); }
 }
