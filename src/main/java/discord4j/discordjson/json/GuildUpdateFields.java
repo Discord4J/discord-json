@@ -2,6 +2,8 @@ package discord4j.discordjson.json;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.Optional;
+
 interface GuildUpdateFields extends GuildFields, GuildVerificationLevelField {
 
     @JsonProperty("owner_id")
@@ -24,6 +26,7 @@ interface GuildUpdateFields extends GuildFields, GuildVerificationLevelField {
     @JsonProperty("premium_tier")
     int premiumTier();
 
+    // TODO: FIX discord docs, as this can be null from GUILD_CREATE
     @JsonProperty("preferred_locale")
-    String preferredLocale();
+    Optional<String> preferredLocale();
 }
