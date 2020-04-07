@@ -19,5 +19,5 @@ public interface GuildMemberModifyRequest {
     default Possible<Boolean> mute() { return Possible.absent(); }
     default Possible<Boolean> deaf() { return Possible.absent(); }
     @JsonProperty("channel_id")
-    Optional<String> channelId();
+    default Possible<Optional<String>> channelId() { return Possible.absent(); }
 }
