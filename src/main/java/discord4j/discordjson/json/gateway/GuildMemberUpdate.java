@@ -19,7 +19,7 @@ public interface GuildMemberUpdate extends Dispatch {
     String guildId();
     List<String> roles();
     UserData user();
-    Possible<Optional<String>> nick() { return Possible.absent(); };
+    Possible<Optional<String>> nick() { return Possible.absent(); }
     @JsonProperty("premium_since")
-    Possible<Optional<String>> premiumSince() { return Possible.absent(); };
+    Possible<Optional<String>> premiumSince() { return Possible.absent(); }
 }
