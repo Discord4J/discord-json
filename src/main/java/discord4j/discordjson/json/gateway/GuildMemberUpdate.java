@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.json.UserData;
+import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
 import java.util.List;
@@ -18,7 +19,7 @@ public interface GuildMemberUpdate extends Dispatch {
     String guildId();
     List<String> roles();
     UserData user();
-    Optional<String> nick();
+    Possible<Optional<String>> nick() { return Possible.absent(); };
     @JsonProperty("premium_since")
-    Optional<String> premiumSince();
+    Possible<Optional<String>> premiumSince() { return Possible.absent(); };
 }
