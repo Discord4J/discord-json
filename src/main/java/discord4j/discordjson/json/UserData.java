@@ -38,4 +38,7 @@ public interface UserData {
 
     @JsonProperty("premium_type")
     default Possible<Integer> premiumType() { return Possible.absent(); }
+
+    @JsonProperty("public_flags")
+    default Possible<Integer> publicFlags() { return Possible.absent(); }
 }
