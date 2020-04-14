@@ -16,5 +16,5 @@ public interface ChannelPinsUpdate extends Dispatch {
     @JsonProperty("channel_id")
     String channelId();
     @JsonProperty("last_pin_timestamp")
-    String lastPinTimestamp();
+    default Possible<String> lastPinTimestamp() { return Possible.absent(); }
 }
