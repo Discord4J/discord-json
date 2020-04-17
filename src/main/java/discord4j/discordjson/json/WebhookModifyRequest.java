@@ -11,6 +11,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableWebhookModifyRequest.class)
 public interface WebhookModifyRequest {
 
+    static ImmutableWebhookModifyRequest.Builder builder() {
+        return ImmutableWebhookModifyRequest.builder();
+    }
+
     Possible<String> name();
     Possible<String> avatar();
     @JsonProperty("channel_id")

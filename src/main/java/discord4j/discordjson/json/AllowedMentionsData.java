@@ -12,6 +12,10 @@ import java.util.List;
 @JsonDeserialize(as = ImmutableAllowedMentionsData.class)
 public interface AllowedMentionsData {
 
+    static ImmutableAllowedMentionsData.Builder builder() {
+        return ImmutableAllowedMentionsData.builder();
+    }
+
     Possible<List<String>> parse();
 
     Possible<List<String>> roles();

@@ -9,5 +9,9 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableHeartbeat.class)
 public interface Heartbeat extends PayloadData {
 
+    static ImmutableHeartbeat.Builder builder() {
+        return ImmutableHeartbeat.builder();
+    }
+
     int seq();
 }

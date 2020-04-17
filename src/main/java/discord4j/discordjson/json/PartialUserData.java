@@ -13,6 +13,10 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutablePartialUserData.class)
 public interface PartialUserData {
 
+    static ImmutablePartialUserData.Builder builder() {
+        return ImmutablePartialUserData.builder();
+    }
+
     String id();
 
     Possible<String> username();

@@ -11,6 +11,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableEmbedFooterData.class)
 public interface EmbedFooterData {
 
+    static ImmutableEmbedFooterData.Builder builder() {
+        return ImmutableEmbedFooterData.builder();
+    }
+
     String text();
 
     @JsonProperty("icon_url")

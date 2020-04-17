@@ -10,6 +10,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableVoiceServerUpdate.class)
 public interface VoiceServerUpdate extends Dispatch {
 
+    static ImmutableVoiceServerUpdate.Builder builder() {
+        return ImmutableVoiceServerUpdate.builder();
+    }
+
     String token();
     @JsonProperty("guild_id")
     String guildId();

@@ -9,6 +9,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableIntegrationAccountData.class)
 public interface IntegrationAccountData {
 
+    static ImmutableIntegrationAccountData.Builder builder() {
+        return ImmutableIntegrationAccountData.builder();
+    }
+
     String id();
 
     String name();

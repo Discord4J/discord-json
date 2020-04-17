@@ -10,6 +10,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableClientStatusData.class)
 public interface ClientStatusData {
 
+    static ImmutableClientStatusData.Builder builder() {
+        return ImmutableClientStatusData.builder();
+    }
+
     Possible<String> desktop();
 
     Possible<String> mobile();

@@ -13,6 +13,10 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutableGuildPreviewData.class)
 public interface GuildPreviewData {
 
+    static ImmutableGuildPreviewData.Builder builder() {
+        return ImmutableGuildPreviewData.builder();
+    }
+
     String id();
     String name();
     Optional<String> icon();

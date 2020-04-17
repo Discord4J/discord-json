@@ -14,6 +14,10 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutableAuditLogEntryData.class)
 public interface AuditLogEntryData {
 
+    static ImmutableAuditLogEntryData.Builder builder() {
+        return ImmutableAuditLogEntryData.builder();
+    }
+
     @JsonProperty("target_id")
     Optional<String> targetId();
 

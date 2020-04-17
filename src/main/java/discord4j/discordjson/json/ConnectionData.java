@@ -13,6 +13,10 @@ import java.util.List;
 @JsonDeserialize(as = ImmutableConnectionData.class)
 public interface ConnectionData {
 
+    static ImmutableConnectionData.Builder builder() {
+        return ImmutableConnectionData.builder();
+    }
+
     String id();
     String name();
     String type();

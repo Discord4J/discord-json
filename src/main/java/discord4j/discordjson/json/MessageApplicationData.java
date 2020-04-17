@@ -13,6 +13,10 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutableMessageApplicationData.class)
 public interface MessageApplicationData {
 
+    static ImmutableMessageApplicationData.Builder builder() {
+        return ImmutableMessageApplicationData.builder();
+    }
+
     String id();
 
     @JsonProperty("cover_image")

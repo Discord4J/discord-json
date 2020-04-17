@@ -9,6 +9,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableRegionData.class)
 public interface RegionData {
 
+    static ImmutableRegionData.Builder builder() {
+        return ImmutableRegionData.builder();
+    }
+
     String id();
     String name();
     boolean vip();

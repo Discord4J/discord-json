@@ -17,6 +17,10 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutablePresenceUpdate.class)
 public interface PresenceUpdate extends Dispatch {
 
+    static ImmutablePresenceUpdate.Builder builder() {
+        return ImmutablePresenceUpdate.builder();
+    }
+
     PartialUserData user();
 
     List<String> roles();

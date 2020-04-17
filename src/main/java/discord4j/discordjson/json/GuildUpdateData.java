@@ -8,4 +8,8 @@ import org.immutables.value.Value;
 @JsonSerialize(as = ImmutableGuildUpdateData.class)
 @JsonDeserialize(as = ImmutableGuildUpdateData.class)
 public interface GuildUpdateData extends GuildUpdateFields, GuildRolesEmojisFields {
+
+    static ImmutableGuildUpdateData.Builder builder() {
+        return ImmutableGuildUpdateData.builder();
+    }
 }

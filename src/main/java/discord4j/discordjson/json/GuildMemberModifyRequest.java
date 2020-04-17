@@ -14,6 +14,10 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutableGuildMemberModifyRequest.class)
 public interface GuildMemberModifyRequest {
 
+    static ImmutableGuildMemberModifyRequest.Builder builder() {
+        return ImmutableGuildMemberModifyRequest.builder();
+    }
+
     Possible<String> nick();
     Possible<List<String>> roles();
     Possible<Boolean> mute();

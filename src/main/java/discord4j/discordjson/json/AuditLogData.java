@@ -12,6 +12,10 @@ import java.util.List;
 @JsonDeserialize(as = ImmutableAuditLogData.class)
 public interface AuditLogData {
 
+    static ImmutableAuditLogData.Builder builder() {
+        return ImmutableAuditLogData.builder();
+    }
+
     List<WebhookData> webhooks();
 
     List<UserData> users();

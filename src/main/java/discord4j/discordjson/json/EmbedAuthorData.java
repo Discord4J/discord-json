@@ -11,6 +11,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableEmbedAuthorData.class)
 public interface EmbedAuthorData {
 
+    static ImmutableEmbedAuthorData.Builder builder() {
+        return ImmutableEmbedAuthorData.builder();
+    }
+
     Possible<String> name();
 
     Possible<String> url();

@@ -9,6 +9,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutablePositionModifyRequest.class)
 public interface PositionModifyRequest {
 
+    static ImmutablePositionModifyRequest.Builder builder() {
+        return ImmutablePositionModifyRequest.builder();
+    }
+
     String id();
     int position();
 }

@@ -12,6 +12,10 @@ import java.util.List;
 @JsonDeserialize(as = ImmutableEmbedData.class)
 public interface EmbedData {
 
+    static ImmutableEmbedData.Builder builder() {
+        return ImmutableEmbedData.builder();
+    }
+
     Possible<String> title();
 
     Possible<String> type();

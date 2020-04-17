@@ -10,5 +10,9 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableUserWithMemberData.class)
 public interface UserWithMemberData extends UserData {
 
+    static ImmutableUserWithMemberData.Builder builder() {
+        return ImmutableUserWithMemberData.builder();
+    }
+
     Possible<PartialMemberData> member();
 }

@@ -11,6 +11,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableEmbedThumbnailData.class)
 public interface EmbedThumbnailData {
 
+    static ImmutableEmbedThumbnailData.Builder builder() {
+        return ImmutableEmbedThumbnailData.builder();
+    }
+
     Possible<String> url();
 
     @JsonProperty("proxy_url")

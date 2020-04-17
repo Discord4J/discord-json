@@ -13,6 +13,10 @@ import java.util.List;
 @JsonDeserialize(as = ImmutableChannelCreateRequest.class)
 public interface ChannelCreateRequest {
 
+    static ImmutableChannelCreateRequest.Builder builder() {
+        return ImmutableChannelCreateRequest.builder();
+    }
+
     String name();
     Possible<Integer> type();
     Possible<String> topic();

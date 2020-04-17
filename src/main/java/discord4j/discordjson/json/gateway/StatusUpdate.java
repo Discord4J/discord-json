@@ -12,6 +12,10 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutableStatusUpdate.class)
 public interface StatusUpdate extends PayloadData {
 
+    static ImmutableStatusUpdate.Builder builder() {
+        return ImmutableStatusUpdate.builder();
+    }
+
     Optional<Long> since();
     Optional<ActivityUpdateRequest> game();
     String status();

@@ -10,6 +10,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableResume.class)
 public interface Resume extends PayloadData {
 
+    static ImmutableResume.Builder builder() {
+        return ImmutableResume.builder();
+    }
+
     String token();
     @JsonProperty("session_id")
     String sessionId();

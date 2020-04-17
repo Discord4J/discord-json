@@ -11,6 +11,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableGuildDelete.class)
 public interface GuildDelete extends Dispatch {
 
+    static ImmutableGuildDelete.Builder builder() {
+        return ImmutableGuildDelete.builder();
+    }
+
     @JsonUnwrapped
     UnavailableGuildData guild();
 }

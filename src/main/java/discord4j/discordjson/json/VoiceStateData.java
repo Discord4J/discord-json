@@ -13,6 +13,10 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutableVoiceStateData.class)
 public interface VoiceStateData {
 
+    static ImmutableVoiceStateData.Builder builder() {
+        return ImmutableVoiceStateData.builder();
+    }
+
     @JsonProperty("guild_id")
     Possible<String> guildId();
 

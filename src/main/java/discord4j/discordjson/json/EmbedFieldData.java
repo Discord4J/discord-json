@@ -10,6 +10,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableEmbedFieldData.class)
 public interface EmbedFieldData {
 
+    static ImmutableEmbedFieldData.Builder builder() {
+        return ImmutableEmbedFieldData.builder();
+    }
+
     String name();
 
     String value();

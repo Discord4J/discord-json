@@ -13,6 +13,10 @@ import java.util.List;
 @JsonDeserialize(as = ImmutableGuildEmojisUpdate.class)
 public interface GuildEmojisUpdate extends Dispatch {
 
+    static ImmutableGuildEmojisUpdate.Builder builder() {
+        return ImmutableGuildEmojisUpdate.builder();
+    }
+
     @JsonProperty("guild_id")
     String guild();
     List<EmojiData> emojis();

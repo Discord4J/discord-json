@@ -12,6 +12,10 @@ import java.util.List;
 @JsonDeserialize(as = ImmutableGuildMemberAddRequest.class)
 public interface GuildMemberAddRequest {
 
+    static ImmutableGuildMemberAddRequest.Builder builder() {
+        return ImmutableGuildMemberAddRequest.builder();
+    }
+
     @JsonProperty("access_token")
     String accessToken();
     String nick();

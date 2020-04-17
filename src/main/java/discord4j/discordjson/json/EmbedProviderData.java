@@ -12,6 +12,10 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutableEmbedProviderData.class)
 public interface EmbedProviderData {
 
+    static ImmutableEmbedProviderData.Builder builder() {
+        return ImmutableEmbedProviderData.builder();
+    }
+
     Possible<String> name();
 
     // TODO [wtf-docs] embed provider can be null

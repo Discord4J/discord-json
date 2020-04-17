@@ -9,5 +9,9 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableSuppressEmbedsRequest.class)
 public interface SuppressEmbedsRequest {
 
+    static ImmutableSuppressEmbedsRequest.Builder builder() {
+        return ImmutableSuppressEmbedsRequest.builder();
+    }
+
     boolean suppress();
 }

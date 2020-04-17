@@ -9,5 +9,9 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutablePruneData.class)
 public interface PruneData {
 
+    static ImmutablePruneData.Builder builder() {
+        return ImmutablePruneData.builder();
+    }
+
     int pruned();
 }

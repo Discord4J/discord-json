@@ -11,6 +11,10 @@ import java.util.List;
 @JsonDeserialize(as = ImmutableGuildData.class)
 public interface GuildData extends GuildCreateFields {
 
+    static ImmutableGuildData.Builder builder() {
+        return ImmutableGuildData.builder();
+    }
+
     List<String> roles();
 
     List<String> emojis();

@@ -12,6 +12,10 @@ import java.util.List;
 @JsonDeserialize(as = ImmutableResumed.class)
 public interface Resumed extends Dispatch {
 
+    static ImmutableResumed.Builder builder() {
+        return ImmutableResumed.builder();
+    }
+
     @JsonProperty("_trace")
     List<String> trace();
 }

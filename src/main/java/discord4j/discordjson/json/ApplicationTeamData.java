@@ -13,6 +13,10 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutableApplicationTeamData.class)
 public interface ApplicationTeamData {
 
+    static ImmutableApplicationTeamData.Builder builder() {
+        return ImmutableApplicationTeamData.builder();
+    }
+
     Optional<String> icon();
     String id();
     List<ApplicationTeamMemberData> members();

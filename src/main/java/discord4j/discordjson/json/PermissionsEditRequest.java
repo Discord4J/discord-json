@@ -9,6 +9,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutablePermissionsEditRequest.class)
 public interface PermissionsEditRequest {
 
+    static ImmutablePermissionsEditRequest.Builder builder() {
+        return ImmutablePermissionsEditRequest.builder();
+    }
+
     long allow();
     long deny();
     String type();

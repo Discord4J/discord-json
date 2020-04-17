@@ -14,6 +14,10 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutablePartialMemberData.class)
 public interface PartialMemberData {
 
+    static ImmutablePartialMemberData.Builder builder() {
+        return ImmutablePartialMemberData.builder();
+    }
+
     Possible<Optional<String>> nick();
 
     List<String> roles();

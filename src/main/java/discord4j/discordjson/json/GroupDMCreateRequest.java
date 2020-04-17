@@ -13,6 +13,10 @@ import java.util.Map;
 @JsonDeserialize(as = ImmutableGroupDMCreateRequest.class)
 public interface GroupDMCreateRequest {
 
+    static ImmutableGroupDMCreateRequest.Builder builder() {
+        return ImmutableGroupDMCreateRequest.builder();
+    }
+
     @JsonProperty("access_tokens")
     List<String> accessTokens();
     Map<String, String> nicks();

@@ -11,5 +11,9 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutableActivityUpdateRequest.class)
 public interface ActivityUpdateRequest extends Activity {
 
+    static ImmutableActivityUpdateRequest.Builder builder() {
+        return ImmutableActivityUpdateRequest.builder();
+    }
+
     Optional<String> url();
 }

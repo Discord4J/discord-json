@@ -11,6 +11,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableGuildCreate.class)
 public interface GuildCreate extends Dispatch {
 
+    static ImmutableGuildCreate.Builder builder() {
+        return ImmutableGuildCreate.builder();
+    }
+
     @JsonUnwrapped
     GuildCreateData guild();
 }

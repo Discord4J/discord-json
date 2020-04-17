@@ -12,6 +12,10 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutableVoiceStateUpdate.class)
 public interface VoiceStateUpdate extends PayloadData {
 
+    static ImmutableVoiceStateUpdate.Builder builder() {
+        return ImmutableVoiceStateUpdate.builder();
+    }
+
     @JsonProperty("guild_id")
     String guildId();
     @JsonProperty("channel_id")

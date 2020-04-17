@@ -10,6 +10,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableRoleCreateRequest.class)
 public interface RoleCreateRequest {
 
+    static ImmutableRoleCreateRequest.Builder builder() {
+        return ImmutableRoleCreateRequest.builder();
+    }
+
     Possible<String> name();
     Possible<Long> permissions();
     Possible<Integer> color();

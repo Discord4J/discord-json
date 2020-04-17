@@ -10,6 +10,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableSessionStartLimitData.class)
 public interface SessionStartLimitData {
 
+    static ImmutableSessionStartLimitData.Builder builder() {
+        return ImmutableSessionStartLimitData.builder();
+    }
+
     int total();
     int remaining();
     @JsonProperty("reset_after")

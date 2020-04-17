@@ -14,6 +14,10 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutableApplicationInfoData.class)
 public interface ApplicationInfoData {
 
+    static ImmutableApplicationInfoData.Builder builder() {
+        return ImmutableApplicationInfoData.builder();
+    }
+
     String id();
     String name();
     Optional<String> icon();

@@ -15,6 +15,10 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutableGuildMemberUpdate.class)
 public interface GuildMemberUpdate extends Dispatch {
 
+    static ImmutableGuildMemberUpdate.Builder builder() {
+        return ImmutableGuildMemberUpdate.builder();
+    }
+
     @JsonProperty("guild_id")
     String guildId();
     List<String> roles();

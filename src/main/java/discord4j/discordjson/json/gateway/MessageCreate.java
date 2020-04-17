@@ -11,6 +11,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableMessageCreate.class)
 public interface MessageCreate extends Dispatch {
 
+    static ImmutableMessageCreate.Builder builder() {
+        return ImmutableMessageCreate.builder();
+    }
+
     @JsonUnwrapped
     MessageData message();
 }

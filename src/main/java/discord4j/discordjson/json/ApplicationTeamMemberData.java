@@ -12,6 +12,10 @@ import java.util.List;
 @JsonDeserialize(as = ImmutableApplicationTeamMemberData.class)
 public interface ApplicationTeamMemberData {
 
+    static ImmutableApplicationTeamMemberData.Builder builder() {
+        return ImmutableApplicationTeamMemberData.builder();
+    }
+
     @JsonProperty("membership_state")
     int membershipState();
     List<String> permissions();

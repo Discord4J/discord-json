@@ -10,6 +10,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableActivityTimestampsData.class)
 public interface ActivityTimestampsData {
 
+    static ImmutableActivityTimestampsData.Builder builder() {
+        return ImmutableActivityTimestampsData.builder();
+    }
+
     Possible<Long> start();
 
     Possible<Long> end();

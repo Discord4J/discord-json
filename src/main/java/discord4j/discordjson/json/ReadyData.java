@@ -13,6 +13,10 @@ import java.util.List;
 @JsonDeserialize(as = ImmutableReadyData.class)
 public interface ReadyData {
 
+    static ImmutableReadyData.Builder builder() {
+        return ImmutableReadyData.builder();
+    }
+
     int v();
     UserData user();
     List<UnavailableGuildData> guilds();

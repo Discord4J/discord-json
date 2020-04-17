@@ -13,6 +13,10 @@ import java.util.List;
 @JsonDeserialize(as = ImmutableGuildCreateRequest.class)
 public interface GuildCreateRequest {
 
+    static ImmutableGuildCreateRequest.Builder builder() {
+        return ImmutableGuildCreateRequest.builder();
+    }
+
     String name();
     String region();
     @Nullable

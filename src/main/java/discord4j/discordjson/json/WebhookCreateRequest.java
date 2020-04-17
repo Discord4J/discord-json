@@ -11,6 +11,10 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutableWebhookCreateRequest.class)
 public interface WebhookCreateRequest {
 
+    static ImmutableWebhookCreateRequest.Builder builder() {
+        return ImmutableWebhookCreateRequest.builder();
+    }
+
     String name();
     Optional<String> avatar();
 }

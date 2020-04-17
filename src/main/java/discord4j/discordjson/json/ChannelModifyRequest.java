@@ -14,6 +14,10 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutableChannelModifyRequest.class)
 public interface ChannelModifyRequest {
 
+    static ImmutableChannelModifyRequest.Builder builder() {
+        return ImmutableChannelModifyRequest.builder();
+    }
+
     Possible<String> name();
     Possible<Integer> position();
     Possible<String> topic();

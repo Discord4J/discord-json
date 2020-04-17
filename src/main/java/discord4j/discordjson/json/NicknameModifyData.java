@@ -11,5 +11,9 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutableNicknameModifyData.class)
 public interface NicknameModifyData {
 
+    static ImmutableNicknameModifyData.Builder builder() {
+        return ImmutableNicknameModifyData.builder();
+    }
+
     Optional<String> nick();
 }

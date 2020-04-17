@@ -10,6 +10,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableGroupAddRecipientRequest.class)
 public interface GroupAddRecipientRequest {
 
+    static ImmutableGroupAddRecipientRequest.Builder builder() {
+        return ImmutableGroupAddRecipientRequest.builder();
+    }
+
     @JsonProperty("access_token")
     String accessToken();
     String nick();

@@ -10,6 +10,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableDMCreateRequest.class)
 public interface DMCreateRequest {
 
+    static ImmutableDMCreateRequest.Builder builder() {
+        return ImmutableDMCreateRequest.builder();
+    }
+
     @JsonProperty("recipient_id")
     String recipientId();
 }

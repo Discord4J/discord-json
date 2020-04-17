@@ -11,6 +11,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableChannelPinsUpdate.class)
 public interface ChannelPinsUpdate extends Dispatch {
 
+    static ImmutableChannelPinsUpdate.Builder builder() {
+        return ImmutableChannelPinsUpdate.builder();
+    }
+
     @JsonProperty("guild_id")
     Possible<String> guildId();
     @JsonProperty("channel_id")

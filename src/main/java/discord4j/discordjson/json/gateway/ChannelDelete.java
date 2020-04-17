@@ -11,6 +11,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableChannelDelete.class)
 public interface ChannelDelete extends Dispatch {
 
+    static ImmutableChannelDelete.Builder builder() {
+        return ImmutableChannelDelete.builder();
+    }
+
     @JsonUnwrapped
     ChannelData channel();
 }

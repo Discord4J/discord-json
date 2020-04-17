@@ -11,6 +11,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableUserUpdate.class)
 public interface UserUpdate extends Dispatch {
 
+    static ImmutableUserUpdate.Builder builder() {
+        return ImmutableUserUpdate.builder();
+    }
+
     @JsonUnwrapped
     UserData user();
 }

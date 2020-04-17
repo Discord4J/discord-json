@@ -11,6 +11,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableInviteData.class)
 public interface InviteData {
 
+    static ImmutableInviteData.Builder builder() {
+        return ImmutableInviteData.builder();
+    }
+
     String code();
     Possible<PartialGuildData> guild();
     ChannelData channel();

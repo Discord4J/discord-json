@@ -12,6 +12,10 @@ import java.util.List;
 @JsonDeserialize(as = ImmutableGuildEmojiModifyRequest.class)
 public interface GuildEmojiModifyRequest {
 
+    static ImmutableGuildEmojiModifyRequest.Builder builder() {
+        return ImmutableGuildEmojiModifyRequest.builder();
+    }
+
     Possible<String> name();
     Possible<List<String>> roles();
 }

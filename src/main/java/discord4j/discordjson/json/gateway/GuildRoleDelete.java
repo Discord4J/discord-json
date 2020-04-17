@@ -10,6 +10,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableGuildRoleDelete.class)
 public interface GuildRoleDelete extends Dispatch {
 
+    static ImmutableGuildRoleDelete.Builder builder() {
+        return ImmutableGuildRoleDelete.builder();
+    }
+
     @JsonProperty("guild_id")
     String guildId();
 

@@ -10,6 +10,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableIdentifyProperties.class)
 public interface IdentifyProperties {
 
+    static ImmutableIdentifyProperties.Builder builder() {
+        return ImmutableIdentifyProperties.builder();
+    }
+
     @JsonProperty("$os")
     String os();
     @JsonProperty("$browser")

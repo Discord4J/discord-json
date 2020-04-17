@@ -9,5 +9,9 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableInvalidSession.class)
 public interface InvalidSession extends PayloadData {
 
+    static ImmutableInvalidSession.Builder builder() {
+        return ImmutableInvalidSession.builder();
+    }
+
     boolean resumable();
 }

@@ -10,6 +10,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableHelloData.class)
 public interface HelloData {
 
+    static ImmutableHelloData.Builder builder() {
+        return ImmutableHelloData.builder();
+    }
+
     @JsonProperty("heartbeat_interval")
     int heartbeatInterval();
 }

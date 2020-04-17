@@ -11,6 +11,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableChannelUpdate.class)
 public interface ChannelUpdate extends Dispatch {
 
+    static ImmutableChannelUpdate.Builder builder() {
+        return ImmutableChannelUpdate.builder();
+    }
+
     @JsonUnwrapped
     ChannelData channel();
 }

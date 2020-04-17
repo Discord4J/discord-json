@@ -11,6 +11,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableIdentify.class)
 public interface Identify extends PayloadData {
 
+    static ImmutableIdentify.Builder builder() {
+        return ImmutableIdentify.builder();
+    }
+
     String token();
     IdentifyProperties properties();
     Possible<Boolean> compress();

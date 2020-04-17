@@ -11,6 +11,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableGuildRoleUpdate.class)
 public interface GuildRoleUpdate extends Dispatch {
 
+    static ImmutableGuildRoleUpdate.Builder builder() {
+        return ImmutableGuildRoleUpdate.builder();
+    }
+
     @JsonProperty("guild_id")
     String guildId();
     RoleData role();

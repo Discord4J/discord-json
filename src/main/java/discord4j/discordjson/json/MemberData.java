@@ -14,6 +14,10 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutableMemberData.class)
 public interface MemberData {
 
+    static ImmutableMemberData.Builder builder() {
+        return ImmutableMemberData.builder();
+    }
+
     UserData user();
 
     Possible<Optional<String>> nick();

@@ -9,6 +9,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableReactionData.class)
 public interface ReactionData {
 
+    static ImmutableReactionData.Builder builder() {
+        return ImmutableReactionData.builder();
+    }
+
     int count();
 
     boolean me();

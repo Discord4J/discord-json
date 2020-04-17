@@ -13,6 +13,10 @@ import java.util.List;
 @JsonDeserialize(as = ImmutableMessageDeleteBulk.class)
 public interface MessageDeleteBulk extends Dispatch {
 
+    static ImmutableMessageDeleteBulk.Builder builder() {
+        return ImmutableMessageDeleteBulk.builder();
+    }
+
     List<String> ids();
     @JsonProperty("channel_id")
     String channelId();

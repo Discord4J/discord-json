@@ -9,6 +9,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutablePartialChannelCreateRequest.class)
 public interface PartialChannelCreateRequest {
 
+    static ImmutablePartialChannelCreateRequest.Builder builder() {
+        return ImmutablePartialChannelCreateRequest.builder();
+    }
+
     String name();
     int type();
 }

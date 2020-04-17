@@ -16,6 +16,10 @@ import java.util.List;
 @JsonDeserialize(as = ImmutableReady.class)
 public interface Ready extends Dispatch {
 
+    static ImmutableReady.Builder builder() {
+        return ImmutableReady.builder();
+    }
+
     int v();
     UserData user();
     @JsonProperty("private_channels")

@@ -9,6 +9,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableIntegrationCreateRequest.class)
 public interface IntegrationCreateRequest {
 
+    static ImmutableIntegrationCreateRequest.Builder builder() {
+        return ImmutableIntegrationCreateRequest.builder();
+    }
+
     String type();
     String id();
 }

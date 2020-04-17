@@ -11,6 +11,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableRequestGuildMembers.class)
 public interface RequestGuildMembers extends PayloadData {
 
+    static ImmutableRequestGuildMembers.Builder builder() {
+        return ImmutableRequestGuildMembers.builder();
+    }
+
     @JsonProperty("guild_id")
     String guildId();
     Possible<String> query();

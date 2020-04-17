@@ -10,6 +10,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableActivitySecretsData.class)
 public interface ActivitySecretsData {
 
+    static ImmutableActivitySecretsData.Builder builder() {
+        return ImmutableActivitySecretsData.builder();
+    }
+
     Possible<String> join();
 
     Possible<String> spectate();

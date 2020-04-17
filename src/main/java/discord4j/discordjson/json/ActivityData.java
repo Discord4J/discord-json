@@ -13,6 +13,10 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutableActivityData.class)
 public interface ActivityData extends Activity {
 
+    static ImmutableActivityData.Builder builder() {
+        return ImmutableActivityData.builder();
+    }
+
     String id();
 
     Possible<Optional<String>> url();

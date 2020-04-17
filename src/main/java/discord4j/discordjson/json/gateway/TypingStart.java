@@ -12,6 +12,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableTypingStart.class)
 public interface TypingStart extends Dispatch {
 
+    static ImmutableTypingStart.Builder builder() {
+        return ImmutableTypingStart.builder();
+    }
+
     @JsonProperty("channel_id")
     String channelId();
 

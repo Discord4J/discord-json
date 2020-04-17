@@ -11,6 +11,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableMessageCreateRequest.class)
 public interface MessageCreateRequest {
 
+    static ImmutableMessageCreateRequest.Builder builder() {
+        return ImmutableMessageCreateRequest.builder();
+    }
+
     Possible<String> content();
     Possible<Object> nonce();
     Possible<Boolean> tts();

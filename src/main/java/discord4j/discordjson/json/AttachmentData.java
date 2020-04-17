@@ -12,6 +12,10 @@ import java.util.OptionalInt;
 @JsonDeserialize(as = ImmutableAttachmentData.class)
 public interface AttachmentData {
 
+    static ImmutableAttachmentData.Builder builder() {
+        return ImmutableAttachmentData.builder();
+    }
+
     String id();
 
     String filename();

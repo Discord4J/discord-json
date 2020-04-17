@@ -11,6 +11,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableMessageActivityData.class)
 public interface MessageActivityData {
 
+    static ImmutableMessageActivityData.Builder builder() {
+        return ImmutableMessageActivityData.builder();
+    }
+
     int type();
 
     @JsonProperty("party_id")

@@ -11,6 +11,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableAuditEntryInfoData.class)
 public interface AuditEntryInfoData {
 
+    static ImmutableAuditEntryInfoData.Builder builder() {
+        return ImmutableAuditEntryInfoData.builder();
+    }
+
     @JsonProperty("delete_member_days")
     Possible<String> deleteMemberDays();
 

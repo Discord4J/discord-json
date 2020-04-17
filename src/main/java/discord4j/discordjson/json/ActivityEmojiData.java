@@ -10,6 +10,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableActivityEmojiData.class)
 public interface ActivityEmojiData {
 
+    static ImmutableActivityEmojiData.Builder builder() {
+        return ImmutableActivityEmojiData.builder();
+    }
+
     String name();
 
     Possible<String> id();

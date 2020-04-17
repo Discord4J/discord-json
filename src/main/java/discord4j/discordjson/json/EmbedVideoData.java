@@ -10,6 +10,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableEmbedVideoData.class)
 public interface EmbedVideoData {
 
+    static ImmutableEmbedVideoData.Builder builder() {
+        return ImmutableEmbedVideoData.builder();
+    }
+
     Possible<String> url();
 
     Possible<Integer> height();

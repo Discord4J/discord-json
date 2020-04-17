@@ -10,6 +10,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableChannelMentionData.class)
 public interface ChannelMentionData {
 
+    static ImmutableChannelMentionData.Builder builder() {
+        return ImmutableChannelMentionData.builder();
+    }
+
     String id();
 
     @JsonProperty("guild_id")

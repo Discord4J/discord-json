@@ -12,6 +12,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableMessageReactionRemove.class)
 public interface MessageReactionRemove extends Dispatch {
 
+    static ImmutableMessageReactionRemove.Builder builder() {
+        return ImmutableMessageReactionRemove.builder();
+    }
+
     @JsonProperty("user_id")
     String userId();
 

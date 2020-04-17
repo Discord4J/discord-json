@@ -11,5 +11,9 @@ import java.util.List;
 @JsonDeserialize(as = ImmutableBulkDeleteRequest.class)
 public interface BulkDeleteRequest {
 
+    static ImmutableBulkDeleteRequest.Builder builder() {
+        return ImmutableBulkDeleteRequest.builder();
+    }
+
     List<String> messages();
 }

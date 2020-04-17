@@ -11,6 +11,10 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutableBanData.class)
 public interface BanData {
 
+    static ImmutableBanData.Builder builder() {
+        return ImmutableBanData.builder();
+    }
+
     Optional<String> reason();
     UserData user();
 }

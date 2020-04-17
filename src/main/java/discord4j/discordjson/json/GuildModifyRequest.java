@@ -13,6 +13,10 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutableGuildModifyRequest.class)
 public interface GuildModifyRequest {
 
+    static ImmutableGuildModifyRequest.Builder builder() {
+        return ImmutableGuildModifyRequest.builder();
+    }
+
     Possible<String> name();
 
     Possible<String> region();

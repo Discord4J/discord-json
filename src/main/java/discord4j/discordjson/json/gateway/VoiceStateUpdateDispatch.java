@@ -11,6 +11,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableVoiceStateUpdateDispatch.class)
 public interface VoiceStateUpdateDispatch extends Dispatch {
 
+    static ImmutableVoiceStateUpdateDispatch.Builder builder() {
+        return ImmutableVoiceStateUpdateDispatch.builder();
+    }
+
     @JsonUnwrapped
     VoiceStateData voiceState();
 }

@@ -10,6 +10,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableInviteDelete.class)
 public interface InviteDelete extends Dispatch {
 
+    static ImmutableInviteDelete.Builder builder() {
+        return ImmutableInviteDelete.builder();
+    }
+
     @JsonProperty("guild_id")
     String guildId();
 

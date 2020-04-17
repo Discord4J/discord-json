@@ -8,4 +8,8 @@ import org.immutables.value.Value;
 @JsonSerialize(as = ImmutablePartialGuildData.class)
 @JsonDeserialize(as = ImmutablePartialGuildData.class)
 public interface PartialGuildData extends GuildFields, GuildVerificationLevelField {
+
+    static ImmutablePartialGuildData.Builder builder() {
+        return ImmutablePartialGuildData.builder();
+    }
 }

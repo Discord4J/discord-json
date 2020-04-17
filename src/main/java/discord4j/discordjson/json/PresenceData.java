@@ -14,6 +14,10 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutablePresenceData.class)
 public interface PresenceData {
 
+    static ImmutablePresenceData.Builder builder() {
+        return ImmutablePresenceData.builder();
+    }
+
     PartialUserData user();
 
     List<String> roles();

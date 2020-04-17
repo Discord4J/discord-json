@@ -10,6 +10,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableWebhooksUpdate.class)
 public interface WebhooksUpdate extends Dispatch {
 
+    static ImmutableWebhooksUpdate.Builder builder() {
+        return ImmutableWebhooksUpdate.builder();
+    }
+
     @JsonProperty("guild_id")
     String guildId();
     @JsonProperty("channel_id")

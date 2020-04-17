@@ -11,6 +11,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableMessageReferenceData.class)
 public interface MessageReferenceData {
 
+    static ImmutableMessageReferenceData.Builder builder() {
+        return ImmutableMessageReferenceData.builder();
+    }
+
     @JsonProperty("message_id")
     Possible<String> messageId();
 

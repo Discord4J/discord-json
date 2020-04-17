@@ -11,6 +11,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableIntegrationModifyRequest.class)
 public interface IntegrationModifyRequest {
 
+    static ImmutableIntegrationModifyRequest.Builder builder() {
+        return ImmutableIntegrationModifyRequest.builder();
+    }
+
     @JsonProperty("expire_behavior")
     Possible<Integer> expireBehavior();
     @JsonProperty("expire_grace_period")

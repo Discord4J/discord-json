@@ -12,6 +12,10 @@ import java.util.List;
 @JsonDeserialize(as = ImmutableGuildCreateData.class)
 public interface GuildCreateData extends GuildCreateFields, GuildRolesEmojisFields {
 
+    static ImmutableGuildCreateData.Builder builder() {
+        return ImmutableGuildCreateData.builder();
+    }
+
     @JsonProperty("voice_states")
     List<VoiceStateData> voiceStates();
 

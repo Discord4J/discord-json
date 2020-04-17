@@ -11,6 +11,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableActivityAssetsData.class)
 public interface ActivityAssetsData {
 
+    static ImmutableActivityAssetsData.Builder builder() {
+        return ImmutableActivityAssetsData.builder();
+    }
+
     @JsonProperty("large_image")
     Possible<String> largeImage();
 

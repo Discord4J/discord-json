@@ -13,6 +13,10 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutableWebhookData.class)
 public interface WebhookData {
 
+    static ImmutableWebhookData.Builder builder() {
+        return ImmutableWebhookData.builder();
+    }
+
     String id();
 
     int type();

@@ -12,6 +12,10 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutableGuildEmbedData.class)
 public interface GuildEmbedData {
 
+    static ImmutableGuildEmbedData.Builder builder() {
+        return ImmutableGuildEmbedData.builder();
+    }
+
     boolean enabled();
     @JsonProperty("channel_id")
     Optional<String> channelId();

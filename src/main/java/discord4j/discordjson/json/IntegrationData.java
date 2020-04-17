@@ -11,6 +11,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableIntegrationData.class)
 public interface IntegrationData {
 
+    static ImmutableIntegrationData.Builder builder() {
+        return ImmutableIntegrationData.builder();
+    }
+
     String id();
 
     String name();

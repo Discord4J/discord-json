@@ -13,6 +13,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableInviteCreate.class)
 public interface InviteCreate extends Dispatch {
 
+    static ImmutableInviteCreate.Builder builder() {
+        return ImmutableInviteCreate.builder();
+    }
+
     @JsonProperty("guild_id")
     String guildId();
 

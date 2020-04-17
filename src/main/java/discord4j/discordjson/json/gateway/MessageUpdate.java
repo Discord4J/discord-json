@@ -11,6 +11,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableMessageUpdate.class)
 public interface MessageUpdate extends Dispatch {
 
+    static ImmutableMessageUpdate.Builder builder() {
+        return ImmutableMessageUpdate.builder();
+    }
+
     @JsonUnwrapped
     PartialMessageData message();
 }

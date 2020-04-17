@@ -10,6 +10,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableUserModifyRequest.class)
 public interface UserModifyRequest {
 
+    static ImmutableUserModifyRequest.Builder builder() {
+        return ImmutableUserModifyRequest.builder();
+    }
+
     Possible<String> username();
     Possible<String> avatar();
 }

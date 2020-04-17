@@ -11,6 +11,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableGatewayData.class)
 public interface GatewayData {
 
+    static ImmutableGatewayData.Builder builder() {
+        return ImmutableGatewayData.builder();
+    }
+
     String url();
     Possible<Integer> shards();
     @JsonProperty("session_start_limit")

@@ -9,6 +9,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableRoleData.class)
 public interface RoleData {
 
+    static ImmutableRoleData.Builder builder() {
+        return ImmutableRoleData.builder();
+    }
+
     String id();
 
     String name();

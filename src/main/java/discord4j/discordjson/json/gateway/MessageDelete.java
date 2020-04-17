@@ -11,6 +11,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableMessageDelete.class)
 public interface MessageDelete extends Dispatch {
 
+    static ImmutableMessageDelete.Builder builder() {
+        return ImmutableMessageDelete.builder();
+    }
+
     String id();
 
     @JsonProperty("channel_id")

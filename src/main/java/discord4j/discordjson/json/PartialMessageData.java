@@ -14,6 +14,10 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutablePartialMessageData.class)
 public interface PartialMessageData {
 
+    static ImmutablePartialMessageData.Builder builder() {
+        return ImmutablePartialMessageData.builder();
+    }
+
     String id();
 
     @JsonProperty("channel_id")

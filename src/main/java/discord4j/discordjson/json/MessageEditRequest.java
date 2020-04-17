@@ -13,6 +13,10 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutableMessageEditRequest.class)
 public interface MessageEditRequest {
 
+    static ImmutableMessageEditRequest.Builder builder() {
+        return ImmutableMessageEditRequest.builder();
+    }
+
     Possible<Optional<String>> content();
     Possible<Optional<EmbedData>> embed();
     @JsonProperty("allowed_mentions ")

@@ -9,6 +9,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableOverwriteData.class)
 public interface OverwriteData {
 
+    static ImmutableOverwriteData.Builder builder() {
+        return ImmutableOverwriteData.builder();
+    }
+
     String id();
 
     String type();

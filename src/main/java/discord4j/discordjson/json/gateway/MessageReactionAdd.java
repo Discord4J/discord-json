@@ -13,6 +13,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableMessageReactionAdd.class)
 public interface MessageReactionAdd extends Dispatch {
 
+    static ImmutableMessageReactionAdd.Builder builder() {
+        return ImmutableMessageReactionAdd.builder();
+    }
+
     @JsonProperty("user_id")
     String userId();
     @JsonProperty("channel_id")

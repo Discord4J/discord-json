@@ -14,6 +14,10 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutableEmojiData.class)
 public interface EmojiData {
 
+    static ImmutableEmojiData.Builder builder() {
+        return ImmutableEmojiData.builder();
+    }
+
     Optional<String> id();
 
     Optional<String> name();

@@ -11,6 +11,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableGuildBanRemove.class)
 public interface GuildBanRemove extends Dispatch {
 
+    static ImmutableGuildBanRemove.Builder builder() {
+        return ImmutableGuildBanRemove.builder();
+    }
+
     @JsonProperty("guild_id")
     String guild();
     UserData user();

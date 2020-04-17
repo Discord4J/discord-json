@@ -13,6 +13,10 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutableUserData.class)
 public interface UserData {
 
+    static ImmutableUserData.Builder builder() {
+        return ImmutableUserData.builder();
+    }
+
     String id();
 
     String username();

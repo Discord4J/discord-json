@@ -12,6 +12,10 @@ import java.util.List;
 @JsonDeserialize(as = ImmutableActivityPartyData.class)
 public interface ActivityPartyData {
 
+    static ImmutableActivityPartyData.Builder builder() {
+        return ImmutableActivityPartyData.builder();
+    }
+
     Possible<String> id();
 
     Possible<List<Long>> size();

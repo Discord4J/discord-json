@@ -11,6 +11,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableAuditLogChangeData.class)
 public interface AuditLogChangeData {
 
+    static ImmutableAuditLogChangeData.Builder builder() {
+        return ImmutableAuditLogChangeData.builder();
+    }
+
     @JsonProperty("new_value")
     Possible<Object> newValue();
 

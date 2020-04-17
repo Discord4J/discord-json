@@ -14,6 +14,10 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutableChannelData.class)
 public interface ChannelData {
 
+    static ImmutableChannelData.Builder builder() {
+        return ImmutableChannelData.builder();
+    }
+
     String id();
 
     int type();

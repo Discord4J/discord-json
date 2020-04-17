@@ -10,6 +10,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableInviteCreateRequest.class)
 public interface InviteCreateRequest {
 
+    static ImmutableInviteCreateRequest.Builder builder() {
+        return ImmutableInviteCreateRequest.builder();
+    }
+
     @JsonProperty("max_age")
     int maxAge();
     @JsonProperty("max_uses")

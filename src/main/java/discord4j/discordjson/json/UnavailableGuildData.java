@@ -10,6 +10,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableUnavailableGuildData.class)
 public interface UnavailableGuildData {
 
+    static ImmutableUnavailableGuildData.Builder builder() {
+        return ImmutableUnavailableGuildData.builder();
+    }
+
     String id();
     Possible<Boolean> unavailable();
 }

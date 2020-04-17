@@ -1,12 +1,12 @@
 package discord4j.discordjson;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 import discord4j.discordjson.json.MyJson;
 import discord4j.discordjson.possible.Possible;
 import discord4j.discordjson.possible.PossibleFilter;
 import discord4j.discordjson.possible.PossibleModule;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -25,7 +25,8 @@ public class PossibleDeserializerTest {
         mapper = new ObjectMapper()
                 .registerModule(new PossibleModule())
                 .registerModule(new Jdk8Module())
-                .setDefaultPropertyInclusion(JsonInclude.Value.construct(JsonInclude.Include.CUSTOM, JsonInclude.Include.ALWAYS, PossibleFilter.class, null));
+                .setDefaultPropertyInclusion(JsonInclude.Value.construct(JsonInclude.Include.CUSTOM,
+                        JsonInclude.Include.ALWAYS, PossibleFilter.class, null));
     }
 
     @Test

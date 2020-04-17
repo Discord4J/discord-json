@@ -14,6 +14,10 @@ import java.util.List;
 @JsonDeserialize(as = ImmutableGuildMembersChunk.class)
 public interface GuildMembersChunk extends Dispatch {
 
+    static ImmutableGuildMembersChunk.Builder builder() {
+        return ImmutableGuildMembersChunk.builder();
+    }
+
     @JsonProperty("guild_id")
     String guildId();
     List<MemberData> members();
