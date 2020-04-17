@@ -10,9 +10,9 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableRoleCreateRequest.class)
 public interface RoleCreateRequest {
 
-    default Possible<String> name() { return Possible.absent(); }
-    default Possible<Long> permissions() { return Possible.absent(); }
-    default Possible<Integer> color() { return Possible.absent(); }
-    default Possible<Boolean> hoist() { return Possible.absent(); }
-    default Possible<Boolean> mentionable() { return Possible.absent(); }
+    Possible<String> name();
+    Possible<Long> permissions();
+    Possible<Integer> color();
+    Possible<Boolean> hoist();
+    Possible<Boolean> mentionable();
 }

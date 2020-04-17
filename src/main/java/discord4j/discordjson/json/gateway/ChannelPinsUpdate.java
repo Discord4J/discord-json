@@ -12,9 +12,9 @@ import org.immutables.value.Value;
 public interface ChannelPinsUpdate extends Dispatch {
 
     @JsonProperty("guild_id")
-    default Possible<String> guildId() { return Possible.absent(); }
+    Possible<String> guildId();
     @JsonProperty("channel_id")
     String channelId();
     @JsonProperty("last_pin_timestamp")
-    default Possible<String> lastPinTimestamp() { return Possible.absent(); }
+    Possible<String> lastPinTimestamp();
 }

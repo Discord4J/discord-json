@@ -34,11 +34,11 @@ public interface InviteCreate extends Dispatch {
 
     boolean temporary();
 
-    default Possible<UserData> inviter() { return Possible.absent(); }
+    Possible<UserData> inviter();
 
     @JsonProperty("target_user")
-    default Possible<PartialUserData> targetUser() { return Possible.absent(); }
+    Possible<PartialUserData> targetUser();
 
     @JsonProperty("target_user_type")
-    default Possible<Integer> targetUserType() { return Possible.absent(); }
+    Possible<Integer> targetUserType();
 }

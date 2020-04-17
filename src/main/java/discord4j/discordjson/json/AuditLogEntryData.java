@@ -17,7 +17,7 @@ public interface AuditLogEntryData {
     @JsonProperty("target_id")
     Optional<String> targetId();
 
-    default Possible<List<AuditLogChangeData>> changes() { return Possible.absent(); }
+    Possible<List<AuditLogChangeData>> changes();
 
     @JsonProperty("user_id")
     String userId();
@@ -27,7 +27,7 @@ public interface AuditLogEntryData {
     @JsonProperty("action_type")
     int actionType();
 
-    default Possible<AuditEntryInfoData> options() { return Possible.absent(); }
+    Possible<AuditEntryInfoData> options();
 
-    default Possible<String> reason() { return Possible.absent(); }
+    Possible<String> reason();
 }

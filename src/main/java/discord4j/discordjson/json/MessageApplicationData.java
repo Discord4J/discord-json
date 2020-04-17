@@ -16,7 +16,7 @@ public interface MessageApplicationData {
     String id();
 
     @JsonProperty("cover_image")
-    default Possible<String> coverImage() { return Possible.absent(); }
+    Possible<String> coverImage();
 
     String description();
 

@@ -24,28 +24,77 @@ ext {
     isRelease = !version.toString().endsWith('-SNAPSHOT')
 }
 
-group 'com.discord4j'
-description 'Discord entity domain as immutable Jackson objects'
-
-sourceCompatibility = 8
-
-repositories {
-    mavenLocal()
-    mavenCentral()
-    if (!isRelease || isJitpack) {
-        maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
-        maven { url 'https://oss.sonatype.org/content/repositories/staging' }
+allprojects {
+    apply plugin: 'java-library'
+    apply plugin: 'com.github.ben-manes.versions'
+    apply plugin: 'maven-publish'
+    if (!isJitpack && isRelease) {
+        apply plugin: 'signing'
     }
-    maven { url 'https://jitpack.io' }
-    maven { url 'https://repo.spring.io/milestone' }
-    jcenter()
+
+    group 'com.discord4j'
+    description 'Discord entity domain as immutable Jackson objects'
+
+    sourceCompatibility = 8
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        if (!isRelease || isJitpack) {
+            maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+            maven { url 'https://oss.sonatype.org/content/repositories/staging' }
+        }
+        maven { url 'https://jitpack.io' }
+        maven { url 'https://repo.spring.io/milestone' }
+        jcenter()
+    }
+
+    dependencies {
+        compileOnly platform("io.projectreactor:reactor-bom:$reactor_bom_version")
+        compileOnly 'io.projectreactor:reactor-core'
+    }
+
+    configurations.all {
+        resolutionStrategy.cacheChangingModulesFor 600, 'seconds'
+    }
+
+    tasks.withType(Javadoc) {
+        options {
+            encoding = 'UTF-8'
+            tags = ["apiNote:a:API Note:",
+                    "implSpec:a:Implementation Requirements:",
+                    "implNote:a:Implementation Note:"]
+            addStringOption 'Xdoclint:none', '-quiet'
+            addStringOption 'encoding', 'UTF-8'
+            // adding links to javadocs for filling specific classes when not existing inside current javadoc
+            links = [
+                    jdk_javadoc,
+                    "https://fasterxml.github.io/jackson-databind/javadoc/2.10/"
+            ]
+        }
+        if (JavaVersion.current().isJava9Compatible()) {
+            options.addBooleanOption('html5', true)
+        }
+    }
+
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+        options.incremental = true
+    }
+
+    java {
+        withJavadocJar()
+        withSourcesJar()
+    }
+
 }
 
 dependencies {
+    api project(':api')
+    compileOnly project(':encoding')
+
     api "com.fasterxml.jackson.core:jackson-databind:$jackson_version"
     implementation "com.fasterxml.jackson.datatype:jackson-datatype-jdk8:$jackson_version"
-    compileOnly platform("io.projectreactor:reactor-bom:$reactor_bom_version")
-    compileOnly 'io.projectreactor:reactor-core'
 
     compileOnly "org.immutables:value:$immutables_version"
     annotationProcessor "org.immutables:value:$immutables_version"
@@ -55,43 +104,6 @@ dependencies {
     testCompileOnly "org.immutables:value:$immutables_version"
     testAnnotationProcessor "org.immutables:value:$immutables_version"
     testCompile "junit:junit:$junit_version"
-}
-
-configurations.all {
-    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
-}
-
-tasks.withType(JavaCompile) {
-    options.encoding = 'UTF-8'
-    options.incremental = true
-}
-
-tasks.withType(Javadoc) {
-    title = "$archivesBaseName ${version} API"
-    options {
-        windowTitle = "$archivesBaseName ($version)"
-        encoding = 'UTF-8'
-        tags = ["apiNote:a:API Note:",
-                "implSpec:a:Implementation Requirements:",
-                "implNote:a:Implementation Note:"]
-        addStringOption 'Xdoclint:none', '-quiet'
-        addStringOption 'encoding', 'UTF-8'
-        // adding links to javadocs for filling specific classes when not existing inside current javadoc
-        links = [
-                jdk_javadoc,
-                "https://fasterxml.github.io/jackson-databind/javadoc/2.10/",
-                "http://www.reactive-streams.org/reactive-streams-1.0.3-javadoc/",
-                "https://projectreactor.io/docs/core/release/api/"
-        ]
-    }
-    if (JavaVersion.current().isJava9Compatible()) {
-        options.addBooleanOption('html5', true)
-    }
-}
-
-java {
-    withJavadocJar()
-    withSourcesJar()
 }
 
 publishing {

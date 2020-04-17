@@ -12,10 +12,10 @@ import java.util.List;
 @JsonDeserialize(as = ImmutableAllowedMentionsData.class)
 public interface AllowedMentionsData {
 
-    default Possible<List<String>> parse() { return Possible.absent(); }
+    Possible<List<String>> parse();
 
-    default Possible<List<String>> roles() { return Possible.absent(); }
+    Possible<List<String>> roles();
 
-    default Possible<List<String>> users() { return Possible.absent(); }
+    Possible<List<String>> users();
 
 }

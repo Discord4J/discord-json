@@ -1,3 +1,4 @@
 rootProject.name = 'discord-json'
 
-include 'base'
+include 'api'
+include 'encoding'

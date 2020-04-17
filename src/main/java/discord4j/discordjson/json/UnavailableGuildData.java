@@ -11,5 +11,5 @@ import org.immutables.value.Value;
 public interface UnavailableGuildData {
 
     String id();
-    default Possible<Boolean> unavailable() { return Possible.absent(); }
+    Possible<Boolean> unavailable();
 }

@@ -11,7 +11,7 @@ interface GuildCreateFields extends GuildUpdateFields {
     boolean large();
 
     // TODO: FIX discord docs, as this can be absent from GUILD_CREATE
-    default Possible<Boolean> unavailable() { return Possible.absent(); }
+    Possible<Boolean> unavailable();
 
     @JsonProperty("member_count")
     int memberCount();

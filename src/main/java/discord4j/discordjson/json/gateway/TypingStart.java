@@ -16,12 +16,12 @@ public interface TypingStart extends Dispatch {
     String channelId();
 
     @JsonProperty("guild_id")
-    default Possible<String> guildId() { return Possible.absent(); }
+    Possible<String> guildId();
 
     @JsonProperty("user_id")
     String userId();
 
     long timestamp();
 
-    default Possible<MemberData> member() { return Possible.absent(); }
+    Possible<MemberData> member();
 }

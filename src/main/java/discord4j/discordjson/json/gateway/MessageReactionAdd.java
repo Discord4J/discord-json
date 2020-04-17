@@ -20,7 +20,7 @@ public interface MessageReactionAdd extends Dispatch {
     @JsonProperty("message_id")
     String messageId();
     @JsonProperty("guild_id")
-    default Possible<String> guildId() { return Possible.absent(); }
-    default Possible<MemberData> member() { return Possible.absent(); }
+    Possible<String> guildId();
+    Possible<MemberData> member();
     EmojiData emoji();
 }

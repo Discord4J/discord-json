@@ -14,5 +14,5 @@ public interface MessageActivityData {
     int type();
 
     @JsonProperty("party_id")
-    default Possible<String> partyId() { return Possible.absent(); }
+    Possible<String> partyId();
 }

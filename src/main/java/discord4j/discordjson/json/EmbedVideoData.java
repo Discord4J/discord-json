@@ -10,9 +10,9 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableEmbedVideoData.class)
 public interface EmbedVideoData {
 
-    default Possible<String> url() { return Possible.absent(); }
+    Possible<String> url();
 
-    default Possible<Integer> height() { return Possible.absent(); }
+    Possible<Integer> height();
 
-    default Possible<Integer> width() { return Possible.absent(); }
+    Possible<Integer> width();
 }

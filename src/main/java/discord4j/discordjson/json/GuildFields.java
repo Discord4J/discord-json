@@ -20,18 +20,18 @@ interface GuildFields {
     @JsonProperty("discovery_splash")
     Optional<String> discoverySplash();
 
-    default Possible<Boolean> owner() { return Possible.absent(); }
+    Possible<Boolean> owner();
 
-    default Possible<Long> permissions() { return Possible.absent(); }
+    Possible<Long> permissions();
 
     @JsonProperty("afk_channel_id")
     Optional<String> afkChannelId();
 
     @JsonProperty("embed_enabled")
-    default Possible<Boolean> embedEnabled() { return Possible.absent(); }
+    Possible<Boolean> embedEnabled();
 
     @JsonProperty("embed_channel_id")
-    default Possible<Optional<String>> embedChannelId() { return Possible.absent(); }
+    Possible<Optional<String>> embedChannelId();
 
     List<String> features();
 
@@ -39,10 +39,10 @@ interface GuildFields {
     Optional<String> applicationId();
 
     @JsonProperty("widget_enabled")
-    default Possible<Boolean> widgetEnabled() { return Possible.absent(); }
+    Possible<Boolean> widgetEnabled();
 
     @JsonProperty("widget_channel_id")
-    default Possible<Optional<String>> widgetChannelId() { return Possible.absent(); }
+    Possible<Optional<String>> widgetChannelId();
 
     @JsonProperty("system_channel_id")
     Optional<String> systemChannelId();
@@ -54,10 +54,10 @@ interface GuildFields {
     Optional<String> rulesChannelId();
 
     @JsonProperty("max_presences")
-    default Possible<Optional<Integer>> maxPresences() { return Possible.absent(); }
+    Possible<Optional<Integer>> maxPresences();
 
     @JsonProperty("max_members")
-    default Possible<Integer> maxMembers() { return Possible.absent(); }
+    Possible<Integer> maxMembers();
 
     @JsonProperty("vanity_url_code")
     Optional<String> vanityUrlCode();
@@ -68,7 +68,7 @@ interface GuildFields {
 
     // TODO: while https://github.com/discordapp/discord-api-docs/pull/1443 is resolved
     @JsonProperty("premium_subscription_count")
-    default Possible<Optional<Integer>> premiumSubscriptionCount() { return Possible.absent(); }
+    Possible<Optional<Integer>> premiumSubscriptionCount();
 
     @JsonProperty("public_updates_channel_id")
     Optional<String> publicUpdatesChannelId();

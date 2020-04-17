@@ -12,8 +12,8 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutableEmbedProviderData.class)
 public interface EmbedProviderData {
 
-    default Possible<String> name() { return Possible.absent(); }
+    Possible<String> name();
 
     // TODO [wtf-docs] embed provider can be null
-    default Possible<Optional<String>> url() { return Possible.absent(); }
+    Possible<Optional<String>> url();
 }

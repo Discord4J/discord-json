@@ -14,5 +14,5 @@ public interface EmbedFieldData {
 
     String value();
 
-    default Possible<Boolean> inline() { return Possible.absent(); }
+    Possible<Boolean> inline();
 }

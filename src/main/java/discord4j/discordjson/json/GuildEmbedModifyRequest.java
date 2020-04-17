@@ -13,7 +13,7 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutableGuildEmbedModifyRequest.class)
 public interface GuildEmbedModifyRequest {
 
-    default Possible<Boolean> enabled() { return Possible.absent(); }
+    Possible<Boolean> enabled();
     @JsonProperty("channel_id")
-    default Possible<Optional<String>> channelId() { return Possible.absent(); }
+    Possible<Optional<String>> channelId();
 }

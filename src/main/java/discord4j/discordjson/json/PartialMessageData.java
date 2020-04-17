@@ -20,23 +20,23 @@ public interface PartialMessageData {
     String channelId();
 
     @JsonProperty("guild_id")
-    default Possible<String> guildId() { return Possible.absent(); }
+    Possible<String> guildId();
 
-    default Possible<UserData> author() { return Possible.absent(); }
+    Possible<UserData> author();
 
-    default Possible<PartialMemberData> member() { return Possible.absent(); }
+    Possible<PartialMemberData> member();
 
-    default Possible<String> content() { return Possible.absent(); }
+    Possible<String> content();
 
-    default Possible<String> timestamp() { return Possible.absent(); }
+    Possible<String> timestamp();
 
     @JsonProperty("edited_timestamp")
     Optional<String> editedTimestamp();
 
-    default Possible<Boolean> tts() { return Possible.absent(); }
+    Possible<Boolean> tts();
 
     @JsonProperty("mention_everyone")
-    default Possible<Boolean> mentionEveryone() { return Possible.absent(); }
+    Possible<Boolean> mentionEveryone();
 
     List<UserWithMemberData> mentions();
 
@@ -44,29 +44,29 @@ public interface PartialMessageData {
     List<String> mentionRoles();
 
     @JsonProperty("mention_channels")
-    default Possible<List<ChannelMentionData>> mentionChannels() { return Possible.absent(); }
+    Possible<List<ChannelMentionData>> mentionChannels();
 
     List<AttachmentData> attachments();
 
     List<EmbedData> embeds();
 
-    default Possible<List<ReactionData>> reactions() { return Possible.absent(); }
+    Possible<List<ReactionData>> reactions();
 
-    default Possible<Object> nonce() { return Possible.absent(); }
+    Possible<Object> nonce();
 
-    default Possible<Boolean> pinned() { return Possible.absent(); }
+    Possible<Boolean> pinned();
 
     @JsonProperty("webhook_id")
-    default Possible<String> webhookId() { return Possible.absent(); }
+    Possible<String> webhookId();
 
-    default Possible<Integer> type() { return Possible.absent(); }
+    Possible<Integer> type();
 
-    default Possible<MessageActivityData> activity() { return Possible.absent(); }
+    Possible<MessageActivityData> activity();
 
-    default Possible<MessageApplicationData> application() { return Possible.absent(); }
+    Possible<MessageApplicationData> application();
 
     @JsonProperty("message_reference")
-    default Possible<MessageReferenceData> messageReference() { return Possible.absent(); }
+    Possible<MessageReferenceData> messageReference();
 
-    default Possible<Integer> flags() { return Possible.absent(); }
+    Possible<Integer> flags();
 }

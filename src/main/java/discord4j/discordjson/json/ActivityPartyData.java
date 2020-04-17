@@ -12,7 +12,7 @@ import java.util.List;
 @JsonDeserialize(as = ImmutableActivityPartyData.class)
 public interface ActivityPartyData {
 
-    default Possible<String> id() { return Possible.absent(); }
+    Possible<String> id();
 
-    default Possible<List<Long>> size() { return Possible.absent(); }
+    Possible<List<Long>> size();
 }

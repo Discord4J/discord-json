@@ -13,9 +13,9 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutableMessageEditRequest.class)
 public interface MessageEditRequest {
 
-    default Possible<Optional<String>> content() { return Possible.absent(); }
-    default Possible<Optional<EmbedData>> embed() { return Possible.absent(); }
+    Possible<Optional<String>> content();
+    Possible<Optional<EmbedData>> embed();
     @JsonProperty("allowed_mentions ")
-    default Possible<Optional<AllowedMentionsData>> allowedMentions() { return Possible.absent(); }
-    default Possible<Integer> flags() { return Possible.absent(); }
+    Possible<Optional<AllowedMentionsData>> allowedMentions();
+    Possible<Integer> flags();
 }

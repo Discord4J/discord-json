@@ -14,17 +14,17 @@ import java.util.List;
 public interface ChannelCreateRequest {
 
     String name();
-    default Possible<Integer> type() { return Possible.absent(); }
-    default Possible<String> topic() { return Possible.absent(); }
-    default Possible<Integer> bitrate() { return Possible.absent(); }
+    Possible<Integer> type();
+    Possible<String> topic();
+    Possible<Integer> bitrate();
     @JsonProperty("user_limit")
-    default Possible<Integer> userLimit() { return Possible.absent(); }
+    Possible<Integer> userLimit();
     @JsonProperty("rate_limit_per_user")
-    default Possible<Integer> rateLimitPerUser() { return Possible.absent(); }
-    default Possible<Integer> position() { return Possible.absent(); }
+    Possible<Integer> rateLimitPerUser();
+    Possible<Integer> position();
     @JsonProperty("permission_overwrites")
-    default Possible<List<OverwriteData>> permissionOverwrites() { return Possible.absent(); }
+    Possible<List<OverwriteData>> permissionOverwrites();
     @JsonProperty("parent_id")
-    default Possible<String> parentId() { return Possible.absent(); }
-    default Possible<Boolean> nsfw() { return Possible.absent(); }
+    Possible<String> parentId();
+    Possible<Boolean> nsfw();
 }

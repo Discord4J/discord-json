@@ -12,23 +12,23 @@ import org.immutables.value.Value;
 public interface InviteData {
 
     String code();
-    default Possible<PartialGuildData> guild() { return Possible.absent(); }
+    Possible<PartialGuildData> guild();
     ChannelData channel();
     @JsonProperty("target_user")
-    default Possible<UserData> targetUser() { return Possible.absent(); }
+    Possible<UserData> targetUser();
     @JsonProperty("target_user_type")
-    default Possible<Integer> targetUserType() { return Possible.absent(); }
+    Possible<Integer> targetUserType();
     @JsonProperty("approximate_presence_count")
-    default Possible<Integer> approximatePresenceCount() { return Possible.absent(); }
+    Possible<Integer> approximatePresenceCount();
     @JsonProperty("approximate_member_count")
-    default Possible<Integer> approximateMemberCount() { return Possible.absent(); }
-    default Possible<UserData> inviter() { return Possible.absent(); }
-    default Possible<Integer> uses() { return Possible.absent(); }
+    Possible<Integer> approximateMemberCount();
+    Possible<UserData> inviter();
+    Possible<Integer> uses();
     @JsonProperty("max_uses")
-    default Possible<Integer> maxUses() { return Possible.absent(); }
+    Possible<Integer> maxUses();
     @JsonProperty("max_age")
-    default Possible<Integer> maxAge() { return Possible.absent(); }
-    default Possible<Boolean> temporary() { return Possible.absent(); }
+    Possible<Integer> maxAge();
+    Possible<Boolean> temporary();
     @JsonProperty("created_at")
-    default Possible<String> createdAt() { return Possible.absent(); }
+    Possible<String> createdAt();
 }

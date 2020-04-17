@@ -10,5 +10,5 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableUserWithMemberData.class)
 public interface UserWithMemberData extends UserData {
 
-    default Possible<PartialMemberData> member() { return Possible.absent(); }
+    Possible<PartialMemberData> member();
 }

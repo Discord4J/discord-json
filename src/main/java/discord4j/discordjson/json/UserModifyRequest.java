@@ -10,6 +10,6 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableUserModifyRequest.class)
 public interface UserModifyRequest {
 
-    default Possible<String> username() { return Possible.absent(); }
-    default Possible<String> avatar() { return Possible.absent(); }
+    Possible<String> username();
+    Possible<String> avatar();
 }

@@ -16,8 +16,8 @@ public interface ConnectionData {
     String id();
     String name();
     String type();
-    default Possible<Boolean> revoked() { return Possible.absent(); }
-    default Possible<List<IntegrationData>> integrations() { return Possible.absent(); }
+    Possible<Boolean> revoked();
+    Possible<List<IntegrationData>> integrations();
     boolean verified();
     @JsonProperty("friend_sync")
     boolean friendSync();

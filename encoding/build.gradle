@@ -1,0 +1,6 @@
+dependencies {
+    compileOnly project(':api')
+    compileOnly "org.immutables:value:$immutables_version"
+    annotationProcessor "org.immutables:value:$immutables_version"
+    api "org.immutables:encode:$immutables_version"
+}
