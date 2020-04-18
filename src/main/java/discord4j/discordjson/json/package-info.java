@@ -2,6 +2,7 @@
  * Data objects for JSON representation across Discord.
  */
 @Value.Style(
+        depluralize = true,
         jdkOnly = true,
         allParameters = true,
         defaults = @Value.Immutable(
