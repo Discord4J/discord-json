@@ -41,219 +41,190 @@ public class GatewayDeserializationTest {
                         JsonInclude.Include.ALWAYS, PossibleFilter.class, null));
     }
 
+    private <T> T read(String from, TypeReference<T> into) throws IOException {
+        return mapper.readValue(getClass().getResourceAsStream(from), into);
+    }
+
     @Test
     public void testChannelCreate() throws IOException {
-        GatewayPayload<?> json = mapper.readValue(getClass().getResourceAsStream("/gateway/ChannelCreate.json"),
-                new TypeReference<GatewayPayload<?>>() {});
+        GatewayPayload<?> json = read("/gateway/ChannelCreate.json", new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json.getData());
     }
 
     @Test
     public void testChannelDelete() throws IOException {
-        GatewayPayload<?> json = mapper.readValue(getClass().getResourceAsStream("/gateway/ChannelDelete.json"),
-                new TypeReference<GatewayPayload<?>>() {});
+        GatewayPayload<?> json = read("/gateway/ChannelDelete.json", new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json.getData());
     }
 
     @Test
     public void testChannelPinsUpdate() throws IOException {
-        GatewayPayload<?> json = mapper.readValue(getClass().getResourceAsStream("/gateway/ChannelPinsUpdate.json"),
-                new TypeReference<GatewayPayload<?>>() {});
+        GatewayPayload<?> json = read("/gateway/ChannelPinsUpdate.json", new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json.getData());
     }
 
     @Test
     public void testChannelUpdate() throws IOException {
-        GatewayPayload<?> json = mapper.readValue(getClass().getResourceAsStream("/gateway/ChannelUpdate.json"),
-                new TypeReference<GatewayPayload<?>>() {});
+        GatewayPayload<?> json = read("/gateway/ChannelUpdate.json", new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json.getData());
     }
 
     @Test
     public void testGuildBanAdd() throws IOException {
-        GatewayPayload<?> json = mapper.readValue(getClass().getResourceAsStream("/gateway/GuildBanAdd.json"),
-                new TypeReference<GatewayPayload<?>>() {});
+        GatewayPayload<?> json = read("/gateway/GuildBanAdd.json", new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json.getData());
     }
 
     @Test
     public void testGuildBanRemove() throws IOException {
-        GatewayPayload<?> json = mapper.readValue(getClass().getResourceAsStream("/gateway/GuildBanRemove.json"),
-                new TypeReference<GatewayPayload<?>>() {});
+        GatewayPayload<?> json = read("/gateway/GuildBanRemove.json", new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json.getData());
     }
 
     @Test
     public void testGuildCreate() throws IOException {
-        GatewayPayload<?> json = mapper.readValue(getClass().getResourceAsStream("/gateway/GuildCreate.json"),
-                new TypeReference<GatewayPayload<?>>() {});
+        GatewayPayload<?> json = read("/gateway/GuildCreate.json", new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json.getData());
     }
 
     @Test
     public void testGuildDelete() throws IOException {
-        GatewayPayload<?> json = mapper.readValue(getClass().getResourceAsStream("/gateway/GuildDelete.json"),
-                new TypeReference<GatewayPayload<?>>() {});
+        GatewayPayload<?> json = read("/gateway/GuildDelete.json", new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json.getData());
     }
 
     @Test
     public void testGuildEmojisUpdate() throws IOException {
-        GatewayPayload<?> json = mapper.readValue(getClass().getResourceAsStream("/gateway/GuildEmojisUpdate.json"),
-                new TypeReference<GatewayPayload<?>>() {});
+        GatewayPayload<?> json = read("/gateway/GuildEmojisUpdate.json", new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json.getData());
     }
 
     @Test
     public void testGuildMemberAdd() throws IOException {
-        GatewayPayload<?> json = mapper.readValue(getClass().getResourceAsStream("/gateway/GuildMemberAdd.json"),
-                new TypeReference<GatewayPayload<?>>() {});
+        GatewayPayload<?> json = read("/gateway/GuildMemberAdd.json", new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json.getData());
     }
 
     @Test
     public void testGuildMemberRemove() throws IOException {
-        GatewayPayload<?> json = mapper.readValue(getClass().getResourceAsStream("/gateway/GuildMemberRemove.json"),
-                new TypeReference<GatewayPayload<?>>() {});
+        GatewayPayload<?> json = read("/gateway/GuildMemberRemove.json", new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json.getData());
     }
 
     @Test
     public void testGuildMembersChunk() throws IOException {
-        GatewayPayload<?> json = mapper.readValue(getClass().getResourceAsStream("/gateway/GuildMembersChunk.json"),
-                new TypeReference<GatewayPayload<?>>() {});
+        GatewayPayload<?> json = read("/gateway/GuildMembersChunk.json", new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json.getData());
     }
 
     @Test
     public void testGuildMemberUpdate() throws IOException {
-        GatewayPayload<?> json = mapper.readValue(getClass().getResourceAsStream("/gateway/GuildMemberUpdate.json"),
-                new TypeReference<GatewayPayload<?>>() {});
+        GatewayPayload<?> json = read("/gateway/GuildMemberUpdate.json", new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json.getData());
     }
 
     @Test
     public void testGuildRoleCreate() throws IOException {
-        GatewayPayload<?> json = mapper.readValue(getClass().getResourceAsStream("/gateway/GuildRoleCreate.json"),
-                new TypeReference<GatewayPayload<?>>() {});
+        GatewayPayload<?> json = read("/gateway/GuildRoleCreate.json", new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json.getData());
     }
 
     @Test
     public void testGuildRoleDelete() throws IOException {
-        GatewayPayload<?> json = mapper.readValue(getClass().getResourceAsStream("/gateway/GuildRoleDelete.json"),
-                new TypeReference<GatewayPayload<?>>() {});
+        GatewayPayload<?> json = read("/gateway/GuildRoleDelete.json", new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json.getData());
     }
 
     @Test
     public void testGuildRoleUpdate() throws IOException {
-        GatewayPayload<?> json = mapper.readValue(getClass().getResourceAsStream("/gateway/GuildRoleUpdate.json"),
-                new TypeReference<GatewayPayload<?>>() {});
+        GatewayPayload<?> json = read("/gateway/GuildRoleUpdate.json", new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json.getData());
     }
 
     @Test
     public void testGuildUpdate() throws IOException {
-        GatewayPayload<?> json = mapper.readValue(getClass().getResourceAsStream("/gateway/GuildUpdate.json"),
-                new TypeReference<GatewayPayload<?>>() {});
+        GatewayPayload<?> json = read("/gateway/GuildUpdate.json", new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json.getData());
     }
 
     @Test
     public void testHello() throws IOException {
-        GatewayPayload<?> json = mapper.readValue(getClass().getResourceAsStream("/gateway/Hello.json"),
-                new TypeReference<GatewayPayload<?>>() {});
+        GatewayPayload<?> json = read("/gateway/Hello.json", new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json.getData());
     }
 
     @Test
     public void testInviteCreate() throws IOException {
-        GatewayPayload<?> json = mapper.readValue(getClass().getResourceAsStream("/gateway/InviteCreate.json"),
-                new TypeReference<GatewayPayload<?>>() {});
+        GatewayPayload<?> json = read("/gateway/InviteCreate.json", new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json.getData());
     }
 
     @Test
     public void testMessageCreate() throws IOException {
-        GatewayPayload<?> json = mapper.readValue(getClass().getResourceAsStream("/gateway/MessageCreate.Type0.json"),
-                new TypeReference<GatewayPayload<?>>() {});
+        GatewayPayload<?> json = read("/gateway/MessageCreate.Type0.json", new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json.getData());
-        GatewayPayload<?> json2 = mapper.readValue(getClass().getResourceAsStream("/gateway/MessageCreate.Type6.json"),
-                new TypeReference<GatewayPayload<?>>() {});
+        GatewayPayload<?> json2 = read("/gateway/MessageCreate.Type6.json", new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json2.getData());
     }
 
     @Test
     public void testMessageDelete() throws IOException {
-        GatewayPayload<?> json = mapper.readValue(getClass().getResourceAsStream("/gateway/MessageDelete.json"),
-                new TypeReference<GatewayPayload<?>>() {});
+        GatewayPayload<?> json = read("/gateway/MessageDelete.json", new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json.getData());
     }
 
     @Test
     public void testMessageReactionAdd() throws IOException {
-        GatewayPayload<?> json = mapper.readValue(getClass().getResourceAsStream("/gateway/MessageReactionAdd.json"),
-                new TypeReference<GatewayPayload<?>>() {});
+        GatewayPayload<?> json = read("/gateway/MessageReactionAdd.json", new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json.getData());
     }
 
     @Test
     public void testMessageReactionRemove() throws IOException {
-        GatewayPayload<?> json = mapper.readValue(getClass().getResourceAsStream("/gateway/MessageReactionRemove.json"),
-                new TypeReference<GatewayPayload<?>>() {});
+        GatewayPayload<?> json = read("/gateway/MessageReactionRemove.json", new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json.getData());
     }
 
     @Test
     public void testMessageUpdate() throws IOException {
-        GatewayPayload<?> json = mapper.readValue(
-                getClass().getResourceAsStream("/gateway/MessageUpdate.NoEmbeds.json"),
+        GatewayPayload<?> json = read("/gateway/MessageUpdate.NoEmbeds.json",
                 new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json.getData());
-        GatewayPayload<?> json2 = mapper.readValue(
-                getClass().getResourceAsStream("/gateway/MessageUpdate.Embeds.json"),
-                new TypeReference<GatewayPayload<?>>() {});
+        GatewayPayload<?> json2 = read("/gateway/MessageUpdate.Embeds.json", new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json2.getData());
     }
 
     @Test
     public void testPresenceUpdate() throws IOException {
-        GatewayPayload<?> json = mapper.readValue(
-                getClass().getResourceAsStream("/gateway/PresenceUpdate.NoActivities.json"),
+        GatewayPayload<?> json = read("/gateway/PresenceUpdate.NoActivities.json",
                 new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json.getData());
-        GatewayPayload<?> json2 = mapper.readValue(
-                getClass().getResourceAsStream("/gateway/PresenceUpdate.Activities.json"),
+        GatewayPayload<?> json2 = read("/gateway/PresenceUpdate.Activities.json",
                 new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json2.getData());
     }
 
     @Test
     public void testReady() throws IOException {
-        GatewayPayload<?> json = mapper.readValue(getClass().getResourceAsStream("/gateway/Ready.json"),
-                new TypeReference<GatewayPayload<?>>() {});
+        GatewayPayload<?> json = read("/gateway/Ready.json", new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json.getData());
     }
 
     @Test
     public void testTypingStart() throws IOException {
-        GatewayPayload<?> json = mapper.readValue(getClass().getResourceAsStream("/gateway/TypingStart.json"),
-                new TypeReference<GatewayPayload<?>>() {});
+        GatewayPayload<?> json = read("/gateway/TypingStart.json", new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json.getData());
     }
 
     @Test
     public void testVoiceStateUpdate() throws IOException {
-        GatewayPayload<?> json = mapper.readValue(getClass().getResourceAsStream("/gateway/VoiceStateUpdate.json"),
-                new TypeReference<GatewayPayload<?>>() {});
+        GatewayPayload<?> json = read("/gateway/VoiceStateUpdate.json", new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json.getData());
     }
 
     @Test
     public void testWebhooksUpdate() throws IOException {
-        GatewayPayload<?> json = mapper.readValue(getClass().getResourceAsStream("/gateway/WebhooksUpdate.json"),
-                new TypeReference<GatewayPayload<?>>() {});
+        GatewayPayload<?> json = read("/gateway/WebhooksUpdate.json", new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json.getData());
     }
 }

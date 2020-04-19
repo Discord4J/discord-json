@@ -66,6 +66,11 @@ public class PossibleListEncoding<T> {
             elements.toOptional().ifPresent(e -> getOrCreate().addAll(e));
         }
 
+        @Encoding.Init
+        void setValue(List<? extends T> elements) {
+            this.list = new ArrayList<>(elements);
+        }
+
         private List<T> getOrCreate() {
             if (this.list == null) {
                 this.list = new ArrayList<>();

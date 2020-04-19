@@ -18,6 +18,8 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.util.Arrays;
 
+import static org.junit.Assert.assertTrue;
+
 public class RestDeserializationTest {
 
     private static final Logger log = LoggerFactory.getLogger(RestDeserializationTest.class);
@@ -42,28 +44,80 @@ public class RestDeserializationTest {
                         JsonInclude.Include.ALWAYS, PossibleFilter.class, null));
     }
 
+    private <T> T read(String from, Class<T> into) throws IOException {
+        return mapper.readValue(getClass().getResourceAsStream(from), into);
+    }
+
     @Test
     public void testGetGuild() throws IOException {
-        GuildUpdateData guild = mapper.readValue(getClass().getResourceAsStream("/rest/Guild.json"), GuildUpdateData.class);
+        GuildUpdateData guild = read("/rest/Guild.json", GuildUpdateData.class);
         log.info("{}", guild);
     }
 
     @Test
     public void testGetCurrentUserGuilds() throws IOException {
-        UserGuildData guild = mapper.readValue(getClass().getResourceAsStream("/rest/UserGuildData.json"), UserGuildData.class);
+        UserGuildData guild = read("/rest/UserGuildData.json", UserGuildData.class);
         log.info("{}", guild);
     }
 
     @Test
     public void testGetChannelInvites() throws IOException {
-        InviteData[] invites = mapper.readValue(getClass().getResourceAsStream("/rest/ChannelInvites.json"), InviteData[].class);
+        InviteData[] invites = read("/rest/ChannelInvites.json", InviteData[].class);
         log.info("{}", Arrays.asList(invites));
     }
 
     @Test
     public void testCreateMessageResponse() throws IOException {
-        MessageData res = mapper.readValue(getClass().getResourceAsStream("/rest/CreateMessageResponse.json"), MessageData.class);
+        MessageData res = read("/rest/CreateMessageResponse.json", MessageData.class);
         log.info("{}", res);
+    }
+
+    @Test
+    public void testMessageCopyingCollectionMethods() throws IOException {
+        MessageData res = read("/rest/CreateMessageResponse.json", MessageData.class);
+        MessageData withReaction = MessageData.builder().from(res)
+                .addReaction(ReactionData.builder()
+                        .count(1)
+                        .me(false)
+                        .emoji(EmojiData.builder().id("1").build())
+                        .build())
+                .build();
+        MessageData withThreeReactions = MessageData.builder().from(withReaction)
+                .addAllReactions(Arrays.asList(
+                        ReactionData.builder()
+                                .count(1)
+                                .me(false)
+                                .emoji(EmojiData.builder().id("2").build())
+                                .build(),
+                        ReactionData.builder()
+                                .count(1)
+                                .me(false)
+                                .emoji(EmojiData.builder().id("3").build())
+                                .build()
+                ))
+                .build();
+        assertTrue(withThreeReactions.reactions()
+                .toOptional()
+                .map(list -> list.size() == 3)
+                .orElse(false));
+        MessageData withTwoReactions = MessageData.builder().from(withReaction)
+                .reactions(Arrays.asList(
+                        ReactionData.builder()
+                                .count(1)
+                                .me(false)
+                                .emoji(EmojiData.builder().id("2").build())
+                                .build(),
+                        ReactionData.builder()
+                                .count(1)
+                                .me(false)
+                                .emoji(EmojiData.builder().id("3").build())
+                                .build()
+                ))
+                .build();
+        assertTrue(withTwoReactions.reactions()
+                .toOptional()
+                .map(list -> list.size() == 2)
+                .orElse(false));
     }
 
     @Test
