@@ -20,7 +20,7 @@ public interface ConnectionData {
     String id();
     String name();
     String type();
-    Possible<Boolean> revoked();
+    Possible<? extends Boolean> revoked();
     Possible<List<IntegrationData>> integrations();
     boolean verified();
     @JsonProperty("friend_sync")

@@ -22,5 +22,5 @@ public interface MessageReactionRemoveAll extends Dispatch {
     String messageId();
 
     @JsonProperty("guild_id")
-    Possible<String> guildId();
+    Possible<? extends String> guildId();
 }

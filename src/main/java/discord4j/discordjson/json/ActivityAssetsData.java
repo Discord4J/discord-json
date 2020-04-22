@@ -16,14 +16,14 @@ public interface ActivityAssetsData {
     }
 
     @JsonProperty("large_image")
-    Possible<String> largeImage();
+    Possible<? extends String> largeImage();
 
     @JsonProperty("large_text")
-    Possible<String> largeText();
+    Possible<? extends String> largeText();
 
     @JsonProperty("small_image")
-    Possible<String> smallImage();
+    Possible<? extends String> smallImage();
 
     @JsonProperty("small_text")
-    Possible<String> smallText();
+    Possible<? extends String> smallText();
 }

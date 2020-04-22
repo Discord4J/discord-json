@@ -23,39 +23,39 @@ public interface ChannelData {
     int type();
 
     @JsonProperty("guild_id")
-    Possible<String> guildId();
+    Possible<? extends String> guildId();
 
-    Possible<Integer> position();
+    Possible<? extends Integer> position();
 
     @JsonProperty("permission_overwrites")
     Possible<List<OverwriteData>> permissionOverwrites();
 
-    Possible<String> name();
+    Possible<? extends String> name();
 
     Possible<Optional<String>> topic();
 
-    Possible<Boolean> nsfw();
+    Possible<? extends Boolean> nsfw();
 
     @JsonProperty("last_message_id")
     Possible<Optional<String>> lastMessageId();
 
-    Possible<Integer> bitrate();
+    Possible<? extends Integer> bitrate();
 
     @JsonProperty("user_limit")
-    Possible<Integer> userLimit();
+    Possible<? extends Integer> userLimit();
 
     @JsonProperty("rate_limit_per_user")
-    Possible<Integer> rateLimitPerUser();
+    Possible<? extends Integer> rateLimitPerUser();
 
     Possible<List<UserData>> recipients();
 
     Possible<Optional<String>> icon();
 
     @JsonProperty("owner_id")
-    Possible<String> ownerId();
+    Possible<? extends String> ownerId();
 
     @JsonProperty("application_id")
-    Possible<String> applicationId();
+    Possible<? extends String> applicationId();
 
     @JsonProperty("parent_id")
     Possible<Optional<String>> parentId();

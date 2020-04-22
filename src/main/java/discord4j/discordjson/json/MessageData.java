@@ -24,11 +24,11 @@ public interface MessageData {
     String channelId();
 
     @JsonProperty("guild_id")
-    Possible<String> guildId();
+    Possible<? extends String> guildId();
 
     UserData author();
 
-    Possible<PartialMemberData> member();
+    Possible<? extends PartialMemberData> member();
 
     String content();
 
@@ -56,22 +56,22 @@ public interface MessageData {
 
     Possible<List<ReactionData>> reactions();
 
-    Possible<Object> nonce();
+    Possible<? extends Object> nonce();
 
     boolean pinned();
 
     @JsonProperty("webhook_id")
-    Possible<String> webhookId();
+    Possible<? extends String> webhookId();
 
     int type();
 
-    Possible<MessageActivityData> activity();
+    Possible<? extends MessageActivityData> activity();
 
-    Possible<MessageApplicationData> application();
+    Possible<? extends MessageApplicationData> application();
 
     @JsonProperty("message_reference")
-    Possible<MessageReferenceData> messageReference();
+    Possible<? extends MessageReferenceData> messageReference();
 
-    Possible<Integer> flags();
+    Possible<? extends Integer> flags();
 
 }

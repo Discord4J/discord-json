@@ -17,34 +17,34 @@ public interface GuildModifyRequest {
         return ImmutableGuildModifyRequest.builder();
     }
 
-    Possible<String> name();
+    Possible<? extends String> name();
 
-    Possible<String> region();
+    Possible<? extends String> region();
 
     @JsonProperty("verification_level")
-    Possible<Integer> verificationLevel();
+    Possible<? extends Integer> verificationLevel();
 
     @JsonProperty("default_message_notifications")
-    Possible<Integer> defaultMessageNotifications();
+    Possible<? extends Integer> defaultMessageNotifications();
 
     @JsonProperty("explicit_content_filter")
-    Possible<Integer> explicitContentFilter();
+    Possible<? extends Integer> explicitContentFilter();
 
     @JsonProperty("afk_channel_id")
     Possible<Optional<String>> afkChannelId();
 
     @JsonProperty("afk_timeout")
-    Possible<Integer> afkTimeout();
+    Possible<? extends Integer> afkTimeout();
 
     Possible<Optional<String>> icon();
 
     @JsonProperty("owner_id")
-    Possible<String> ownerId();
+    Possible<? extends String> ownerId();
 
     Possible<Optional<String>> splash();
 
     Possible<Optional<String>> banner();
 
     @JsonProperty("system_channel_id")
-    Possible<String> systemChannelId();
+    Possible<? extends String> systemChannelId();
 }

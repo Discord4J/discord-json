@@ -24,23 +24,23 @@ public interface PartialMessageData {
     String channelId();
 
     @JsonProperty("guild_id")
-    Possible<String> guildId();
+    Possible<? extends String> guildId();
 
-    Possible<UserData> author();
+    Possible<? extends UserData> author();
 
-    Possible<PartialMemberData> member();
+    Possible<? extends PartialMemberData> member();
 
-    Possible<String> content();
+    Possible<? extends String> content();
 
-    Possible<String> timestamp();
+    Possible<? extends String> timestamp();
 
     @JsonProperty("edited_timestamp")
     Optional<String> editedTimestamp();
 
-    Possible<Boolean> tts();
+    Possible<? extends Boolean> tts();
 
     @JsonProperty("mention_everyone")
-    Possible<Boolean> mentionEveryone();
+    Possible<? extends Boolean> mentionEveryone();
 
     List<UserWithMemberData> mentions();
 
@@ -56,21 +56,21 @@ public interface PartialMessageData {
 
     Possible<List<ReactionData>> reactions();
 
-    Possible<Object> nonce();
+    Possible<? extends Object> nonce();
 
-    Possible<Boolean> pinned();
+    Possible<? extends Boolean> pinned();
 
     @JsonProperty("webhook_id")
-    Possible<String> webhookId();
+    Possible<? extends String> webhookId();
 
-    Possible<Integer> type();
+    Possible<? extends Integer> type();
 
-    Possible<MessageActivityData> activity();
+    Possible<? extends MessageActivityData> activity();
 
-    Possible<MessageApplicationData> application();
+    Possible<? extends MessageApplicationData> application();
 
     @JsonProperty("message_reference")
-    Possible<MessageReferenceData> messageReference();
+    Possible<? extends MessageReferenceData> messageReference();
 
-    Possible<Integer> flags();
+    Possible<? extends Integer> flags();
 }

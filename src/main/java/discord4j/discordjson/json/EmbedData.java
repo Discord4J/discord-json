@@ -16,29 +16,29 @@ public interface EmbedData {
         return ImmutableEmbedData.builder();
     }
 
-    Possible<String> title();
+    Possible<? extends String> title();
 
-    Possible<String> type();
+    Possible<? extends String> type();
 
-    Possible<String> description();
+    Possible<? extends String> description();
 
-    Possible<String> url();
+    Possible<? extends String> url();
 
-    Possible<String> timestamp();
+    Possible<? extends String> timestamp();
 
-    Possible<Integer> color();
+    Possible<? extends Integer> color();
 
-    Possible<EmbedFooterData> footer();
+    Possible<? extends EmbedFooterData> footer();
 
-    Possible<EmbedImageData> image();
+    Possible<? extends EmbedImageData> image();
 
-    Possible<EmbedThumbnailData> thumbnail();
+    Possible<? extends EmbedThumbnailData> thumbnail();
 
-    Possible<EmbedVideoData> video();
+    Possible<? extends EmbedVideoData> video();
 
-    Possible<EmbedProviderData> provider();
+    Possible<? extends EmbedProviderData> provider();
 
-    Possible<EmbedAuthorData> author();
+    Possible<? extends EmbedAuthorData> author();
 
     Possible<List<EmbedFieldData>> fields();
 }

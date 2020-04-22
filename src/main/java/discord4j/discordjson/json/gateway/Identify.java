@@ -17,12 +17,12 @@ public interface Identify extends PayloadData {
 
     String token();
     IdentifyProperties properties();
-    Possible<Boolean> compress();
+    Possible<? extends Boolean> compress();
     @JsonProperty("large_threshold")
     int largeThreshold();
     Possible<int[]> shard();
-    Possible<StatusUpdate> presence();
+    Possible<? extends StatusUpdate> presence();
     @JsonProperty("guild_subscriptions")
-    Possible<Boolean> guildSubscriptions();
-    Possible<Long> intents();
+    Possible<? extends Boolean> guildSubscriptions();
+    Possible<? extends Long> intents();
 }

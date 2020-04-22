@@ -14,9 +14,9 @@ public interface ActivitySecretsData {
         return ImmutableActivitySecretsData.builder();
     }
 
-    Possible<String> join();
+    Possible<? extends String> join();
 
-    Possible<String> spectate();
+    Possible<? extends String> spectate();
 
-    Possible<String> match();
+    Possible<? extends String> match();
 }

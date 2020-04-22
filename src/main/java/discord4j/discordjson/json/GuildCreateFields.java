@@ -12,7 +12,7 @@ interface GuildCreateFields extends GuildUpdateFields {
 
     // ambiguous discord docs mention these fields are only present during GUILD_CREATE,
     // but this value can still be absent
-    Possible<Boolean> unavailable();
+    Possible<? extends Boolean> unavailable();
 
     @JsonProperty("member_count")
     int memberCount();

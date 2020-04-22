@@ -21,5 +21,5 @@ public interface MessageDelete extends Dispatch {
     String channelId();
 
     @JsonProperty("guild_id")
-    Possible<String> guildId();
+    Possible<? extends String> guildId();
 }

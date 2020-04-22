@@ -18,17 +18,17 @@ public interface ChannelCreateRequest {
     }
 
     String name();
-    Possible<Integer> type();
-    Possible<String> topic();
-    Possible<Integer> bitrate();
+    Possible<? extends Integer> type();
+    Possible<? extends String> topic();
+    Possible<? extends Integer> bitrate();
     @JsonProperty("user_limit")
-    Possible<Integer> userLimit();
+    Possible<? extends Integer> userLimit();
     @JsonProperty("rate_limit_per_user")
-    Possible<Integer> rateLimitPerUser();
-    Possible<Integer> position();
+    Possible<? extends Integer> rateLimitPerUser();
+    Possible<? extends Integer> position();
     @JsonProperty("permission_overwrites")
     Possible<List<OverwriteData>> permissionOverwrites();
     @JsonProperty("parent_id")
-    Possible<String> parentId();
-    Possible<Boolean> nsfw();
+    Possible<? extends String> parentId();
+    Possible<? extends Boolean> nsfw();
 }

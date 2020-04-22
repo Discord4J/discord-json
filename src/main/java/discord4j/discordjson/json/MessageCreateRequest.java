@@ -15,10 +15,10 @@ public interface MessageCreateRequest {
         return ImmutableMessageCreateRequest.builder();
     }
 
-    Possible<String> content();
-    Possible<Object> nonce();
-    Possible<Boolean> tts();
-    Possible<EmbedData> embed();
+    Possible<? extends String> content();
+    Possible<? extends Object> nonce();
+    Possible<? extends Boolean> tts();
+    Possible<? extends EmbedData> embed();
     @JsonProperty("allowed_mentions")
-    Possible<AllowedMentionsData> allowedMentions();
+    Possible<? extends AllowedMentionsData> allowedMentions();
 }

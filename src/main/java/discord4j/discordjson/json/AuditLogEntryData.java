@@ -31,7 +31,7 @@ public interface AuditLogEntryData {
     @JsonProperty("action_type")
     int actionType();
 
-    Possible<AuditEntryInfoData> options();
+    Possible<? extends AuditEntryInfoData> options();
 
-    Possible<String> reason();
+    Possible<? extends String> reason();
 }

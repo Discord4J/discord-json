@@ -14,5 +14,5 @@ public interface UserWithMemberData extends UserData {
         return ImmutableUserWithMemberData.builder();
     }
 
-    Possible<PartialMemberData> member();
+    Possible<? extends PartialMemberData> member();
 }

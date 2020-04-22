@@ -16,7 +16,7 @@ public interface GatewayData {
     }
 
     String url();
-    Possible<Integer> shards();
+    Possible<? extends Integer> shards();
     @JsonProperty("session_start_limit")
-    Possible<SessionStartLimitData> sessionStartLimit();
+    Possible<? extends SessionStartLimitData> sessionStartLimit();
 }

@@ -8,26 +8,26 @@ import java.util.Objects;
 public class PossibleEncoding<T> {
 
     @Encoding.Impl
-    private Possible<T> field = discord4j.discordjson.possible.Possible.absent();
+    private Possible<? extends T> field = discord4j.discordjson.possible.Possible.absent();
 
     @Encoding.Copy
-    public Possible<T> withPossible(final Possible<T> value) {
+    public Possible<? extends T> withPossible(final Possible<T> value) {
         return Objects.requireNonNull(value);
     }
 
     @Encoding.Copy
-    public Possible<T> with(final T value) {
+    public Possible<? extends T> with(final T value) {
         return Possible.of(value);
     }
 
     @Encoding.Builder
     static class Builder<T> {
 
-        private Possible<T> possible = discord4j.discordjson.possible.Possible.absent();
+        private Possible<? extends T> possible = discord4j.discordjson.possible.Possible.absent();
 
         @Encoding.Init
         @Encoding.Copy
-        public void set(Possible<T> value) {
+        public void set(Possible<? extends T> value) {
             this.possible = value;
         }
 
@@ -37,7 +37,7 @@ public class PossibleEncoding<T> {
         }
 
         @Encoding.Build
-        Possible<T> build() {
+        Possible<? extends T> build() {
             return this.possible;
         }
     }

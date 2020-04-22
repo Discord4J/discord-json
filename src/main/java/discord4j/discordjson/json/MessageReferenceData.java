@@ -16,11 +16,11 @@ public interface MessageReferenceData {
     }
 
     @JsonProperty("message_id")
-    Possible<String> messageId();
+    Possible<? extends String> messageId();
 
     @JsonProperty("channel_id")
-    Possible<String> channelId();
+    Possible<? extends String> channelId();
 
     @JsonProperty("guild_id")
-    Possible<String> guildId();
+    Possible<? extends String> guildId();
 }

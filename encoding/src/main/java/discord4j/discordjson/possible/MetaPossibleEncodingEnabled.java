@@ -1,7 +1,7 @@
 package discord4j.discordjson.possible;
 
+@PossibleEncodingEnabled
 @PossibleListEncodingEnabled
 @PossibleOptionalEncodingEnabled
-@PossibleEncodingEnabled
 public @interface MetaPossibleEncodingEnabled {
 }

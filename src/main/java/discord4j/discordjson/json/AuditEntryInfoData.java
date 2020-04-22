@@ -16,23 +16,23 @@ public interface AuditEntryInfoData {
     }
 
     @JsonProperty("delete_member_days")
-    Possible<String> deleteMemberDays();
+    Possible<? extends String> deleteMemberDays();
 
     @JsonProperty("members_removed")
-    Possible<String> membersRemoved();
+    Possible<? extends String> membersRemoved();
 
     @JsonProperty("channel_id")
-    Possible<String> channelId();
+    Possible<? extends String> channelId();
 
     @JsonProperty("message_id")
-    Possible<String> messageId();
+    Possible<? extends String> messageId();
 
-    Possible<String> count();
+    Possible<? extends String> count();
 
-    Possible<String> id();
+    Possible<? extends String> id();
 
-    Possible<String> type();
+    Possible<? extends String> type();
 
     @JsonProperty("role_name")
-    Possible<String> roleName();
+    Possible<? extends String> roleName();
 }

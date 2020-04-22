@@ -24,7 +24,7 @@ public interface MessageReactionAdd extends Dispatch {
     @JsonProperty("message_id")
     String messageId();
     @JsonProperty("guild_id")
-    Possible<String> guildId();
-    Possible<MemberData> member();
+    Possible<? extends String> guildId();
+    Possible<? extends MemberData> member();
     EmojiData emoji();
 }

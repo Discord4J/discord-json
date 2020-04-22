@@ -29,7 +29,7 @@ public interface IntegrationData {
     String roleId();
 
     @JsonProperty("enable_emoticons")
-    Possible<Boolean> enableEmoticons();
+    Possible<? extends Boolean> enableEmoticons();
 
     @JsonProperty("expire_behavior")
     int expireBehavior();

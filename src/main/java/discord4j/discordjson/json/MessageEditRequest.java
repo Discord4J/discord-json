@@ -21,5 +21,5 @@ public interface MessageEditRequest {
     Possible<Optional<EmbedData>> embed();
     @JsonProperty("allowed_mentions ")
     Possible<Optional<AllowedMentionsData>> allowedMentions();
-    Possible<Integer> flags();
+    Possible<? extends Integer> flags();
 }

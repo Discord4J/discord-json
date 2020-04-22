@@ -18,5 +18,5 @@ public interface EmbedFieldData {
 
     String value();
 
-    Possible<Boolean> inline();
+    Possible<? extends Boolean> inline();
 }

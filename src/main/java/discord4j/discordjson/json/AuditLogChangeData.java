@@ -16,10 +16,10 @@ public interface AuditLogChangeData {
     }
 
     @JsonProperty("new_value")
-    Possible<Object> newValue();
+    Possible<? extends Object> newValue();
 
     @JsonProperty("old_value")
-    Possible<Object> oldValue();
+    Possible<? extends Object> oldValue();
 
     String key();
 }
