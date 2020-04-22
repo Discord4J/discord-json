@@ -11,13 +11,9 @@
         defaultAsDefault = true
 )
 @NonNullApi
-@PossibleListEncodingEnabled
-@PossibleOptionalEncodingEnabled
-@PossibleEncodingEnabled
+@MetaPossibleEncodingEnabled
 package discord4j.discordjson.json;
 
-import discord4j.discordjson.possible.PossibleEncodingEnabled;
-import discord4j.discordjson.possible.PossibleListEncodingEnabled;
-import discord4j.discordjson.possible.PossibleOptionalEncodingEnabled;
+import discord4j.discordjson.possible.MetaPossibleEncodingEnabled;
 import org.immutables.value.Value;
 import reactor.util.annotation.NonNullApi;
