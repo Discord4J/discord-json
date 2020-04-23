@@ -72,4 +72,10 @@ interface GuildFields {
 
     @JsonProperty("public_updates_channel_id")
     Optional<String> publicUpdatesChannelId();
+
+    @JsonProperty("approximate_member_count")
+    Possible<Integer> approximateMemberCount();
+
+    @JsonProperty("approximate_presence_count")
+    Possible<Integer> approximatePresenceCount();
 }
