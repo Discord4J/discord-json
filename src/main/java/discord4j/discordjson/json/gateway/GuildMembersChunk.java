@@ -20,9 +20,18 @@ public interface GuildMembersChunk extends Dispatch {
 
     @JsonProperty("guild_id")
     String guildId();
+
     List<MemberData> members();
+
+    @JsonProperty("chunk_index")
+    int chunkIndex();
+
+    @JsonProperty("chunk_count")
+    int chunkCount();
+
     @JsonProperty("not_found")
     Possible<List<String>> notFound();
+
     Possible<? extends PresenceUpdate> presences();
 
 }
