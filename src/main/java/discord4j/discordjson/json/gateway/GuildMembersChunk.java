@@ -34,4 +34,6 @@ public interface GuildMembersChunk extends Dispatch {
 
     Possible<? extends PresenceUpdate> presences();
 
+    Possible<? extends String> nonce();
+
 }
