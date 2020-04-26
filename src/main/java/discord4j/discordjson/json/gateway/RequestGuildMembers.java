@@ -6,6 +6,8 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
+import java.util.List;
+
 @Value.Immutable
 @JsonSerialize(as = ImmutableRequestGuildMembers.class)
 @JsonDeserialize(as = ImmutableRequestGuildMembers.class)
@@ -25,7 +27,7 @@ public interface RequestGuildMembers extends PayloadData {
     Possible<? extends Boolean> presences();
 
     @JsonProperty("user_ids")
-    Possible<? extends String> userIds();
+    Possible<List<String>> userIds();
 
     Possible<? extends String> nonce();
 }
