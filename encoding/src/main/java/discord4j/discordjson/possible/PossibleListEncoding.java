@@ -1,6 +1,7 @@
 package discord4j.discordjson.possible;
 
 import org.immutables.encode.Encoding;
+import reactor.util.annotation.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,8 +19,9 @@ public class PossibleListEncoding<T> {
     }
 
     @Encoding.Of
-    static <T> List<T> init(Possible<? extends List<T>> list) {
-        return Objects.requireNonNull(list.toOptional().<List<T>>map(ArrayList::new).orElse(null));
+    @Nullable
+    static <T> List<T> init(Possible<? extends List<T>> possible) {
+        return Objects.requireNonNull(possible).toOptional().<List<T>>map(ArrayList::new).orElse(null);
     }
 
     @Override
