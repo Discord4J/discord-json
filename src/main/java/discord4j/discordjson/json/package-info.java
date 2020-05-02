@@ -5,9 +5,6 @@
         depluralize = true,
         jdkOnly = true,
         allParameters = true,
-        defaults = @Value.Immutable(
-                copy = false
-        ),
         defaultAsDefault = true
 )
 @NonNullApi

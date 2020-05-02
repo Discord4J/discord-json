@@ -19,7 +19,7 @@ public class PossibleOptionalEncoding<T> {
 
     @Encoding.Copy
     public Possible<Optional<T>> with(final @Nullable T value) {
-        return Possible.of(Optional.ofNullable(value));
+        return discord4j.discordjson.possible.Possible.of(Optional.ofNullable(value));
     }
 
     @Encoding.Builder

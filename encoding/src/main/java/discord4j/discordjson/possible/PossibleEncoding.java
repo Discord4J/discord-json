@@ -17,7 +17,7 @@ public class PossibleEncoding<T> {
 
     @Encoding.Copy
     public Possible<? extends T> with(final T value) {
-        return Possible.of(value);
+        return discord4j.discordjson.possible.Possible.of(value);
     }
 
     @Encoding.Builder

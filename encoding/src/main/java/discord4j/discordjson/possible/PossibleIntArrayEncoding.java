@@ -17,7 +17,7 @@ public class PossibleIntArrayEncoding {
 
     @Encoding.Copy
     public Possible<int[]> with(final int[] value) {
-        return Possible.of(value);
+        return discord4j.discordjson.possible.Possible.of(value);
     }
 
     @Encoding.Builder
