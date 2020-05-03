@@ -3,6 +3,8 @@ package discord4j.discordjson;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
+import discord4j.discordjson.json.Foo;
+import discord4j.discordjson.json.ImmutableFoo;
 import discord4j.discordjson.json.MyJson;
 import discord4j.discordjson.possible.Possible;
 import discord4j.discordjson.possible.PossibleFilter;
@@ -15,6 +17,7 @@ import java.io.IOException;
 import java.util.Optional;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 public class PossibleDeserializerTest {
 
@@ -48,5 +51,18 @@ public class PossibleDeserializerTest {
         MyJson json = mapper.readValue(getClass().getResourceAsStream("/singleFieldAbsent.json"), MyJson.class);
 
         assertEquals(Possible.absent(), json.myField());
+    }
+
+    @Test
+    public void testPossibleOptionalEncoding() {
+        Foo foo = ImmutableFoo.builder()
+                .addList("element")
+                .optional("present")
+                .possible("possible")
+                .build();
+        assertFalse(foo.list().isAbsent());
+        assertEquals(1, foo.list().get().size());
+        assertFalse(foo.optional().isAbsent());
+        assertFalse(foo.possible().isAbsent());
     }
 }

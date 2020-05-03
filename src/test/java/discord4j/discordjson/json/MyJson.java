@@ -10,7 +10,5 @@ import java.util.Optional;
 @JsonDeserialize(as = ImmutableMyJson.class)
 public interface MyJson {
 
-    default Possible<Optional<String>> myField() {
-        return Possible.absent();
-    }
+    Possible<Optional<String>> myField();
 }

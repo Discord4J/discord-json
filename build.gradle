@@ -17,6 +17,8 @@ ext {
     jackson_version = '2.11.0'
     immutables_group = 'com.github.quanticc.immutables'
     immutables_version = '2.8.8-D4J.1'
+    //immutables_group = 'org.immutables'
+    //immutables_version = '2.8.7'
 
     junit_version = '4.13'
     logback_version = '1.3.0-alpha4'
@@ -52,6 +54,8 @@ allprojects {
     dependencies {
         compileOnly platform("io.projectreactor:reactor-bom:$reactor_bom_version")
         compileOnly 'io.projectreactor:reactor-core'
+        testCompileOnly platform("io.projectreactor:reactor-bom:$reactor_bom_version")
+        testCompileOnly 'io.projectreactor:reactor-core'
     }
 
     configurations.all {
@@ -99,6 +103,7 @@ dependencies {
     compileOnly "$immutables_group:value:$immutables_version"
     annotationProcessor "$immutables_group:value:$immutables_version"
 
+    testCompileOnly project(':encoding')
     testImplementation "junit:junit:$junit_version"
     testImplementation "ch.qos.logback:logback-classic:$logback_version"
     testCompileOnly "$immutables_group:value:$immutables_version"
