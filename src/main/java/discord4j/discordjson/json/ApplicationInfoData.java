@@ -34,10 +34,10 @@ public interface ApplicationInfoData {
     String verifyKey();
     Optional<ApplicationTeamData> team();
     @JsonProperty("guild_id")
-    Possible<? extends String> guildId();
+    Possible<String> guildId();
     @JsonProperty("primary_sku_id")
-    Possible<? extends String> primarySkuId();
-    Possible<? extends String> slug();
+    Possible<String> primarySkuId();
+    Possible<String> slug();
     @JsonProperty("cover_image")
-    Possible<? extends String> coverImage();
+    Possible<String> coverImage();
 }

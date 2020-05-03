@@ -18,7 +18,7 @@ public interface VoiceStateData {
     }
 
     @JsonProperty("guild_id")
-    Possible<? extends String> guildId();
+    Possible<String> guildId();
 
     @JsonProperty("channel_id")
     Optional<String> channelId();
@@ -26,7 +26,7 @@ public interface VoiceStateData {
     @JsonProperty("user_id")
     String userId();
 
-    Possible<? extends MemberData> member();
+    Possible<MemberData> member();
 
     @JsonProperty("session_id")
     String sessionId();
@@ -42,7 +42,7 @@ public interface VoiceStateData {
     boolean selfMute();
 
     @JsonProperty("self_stream")
-    Possible<? extends Boolean> selfStream();
+    Possible<Boolean> selfStream();
 
     boolean suppress();
 }

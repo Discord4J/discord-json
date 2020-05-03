@@ -16,9 +16,9 @@ public interface IntegrationModifyRequest {
     }
 
     @JsonProperty("expire_behavior")
-    Possible<? extends Integer> expireBehavior();
+    Possible<Integer> expireBehavior();
     @JsonProperty("expire_grace_period")
-    Possible<? extends Integer> expireGracePeriod();
+    Possible<Integer> expireGracePeriod();
     @JsonProperty("enable_emoticons")
-    Possible<? extends Boolean> enableEmoticons();
+    Possible<Boolean> enableEmoticons();
 }

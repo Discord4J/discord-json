@@ -38,11 +38,11 @@ public interface InviteCreate extends Dispatch {
 
     boolean temporary();
 
-    Possible<? extends UserData> inviter();
+    Possible<UserData> inviter();
 
     @JsonProperty("target_user")
-    Possible<? extends PartialUserData> targetUser();
+    Possible<PartialUserData> targetUser();
 
     @JsonProperty("target_user_type")
-    Possible<? extends Integer> targetUserType();
+    Possible<Integer> targetUserType();
 }

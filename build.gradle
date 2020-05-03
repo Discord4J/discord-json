@@ -15,7 +15,8 @@ ext {
 
     reactor_bom_version = 'Dysprosium-SR7'
     jackson_version = '2.11.0'
-    immutables_version = '2.8.7'
+    immutables_group = 'com.github.quanticc.immutables'
+    immutables_version = '2.8.8-D4J.1'
 
     junit_version = '4.13'
     logback_version = '1.3.0-alpha4'
@@ -38,7 +39,6 @@ allprojects {
     sourceCompatibility = 8
 
     repositories {
-        mavenLocal()
         mavenCentral()
         if (!isRelease || isJitpack) {
             maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
@@ -96,13 +96,13 @@ dependencies {
     api "com.fasterxml.jackson.core:jackson-databind:$jackson_version"
     implementation "com.fasterxml.jackson.datatype:jackson-datatype-jdk8:$jackson_version"
 
-    compileOnly "org.immutables:value:$immutables_version"
-    annotationProcessor "org.immutables:value:$immutables_version"
+    compileOnly "$immutables_group:value:$immutables_version"
+    annotationProcessor "$immutables_group:value:$immutables_version"
 
     testImplementation "junit:junit:$junit_version"
     testImplementation "ch.qos.logback:logback-classic:$logback_version"
-    testCompileOnly "org.immutables:value:$immutables_version"
-    testAnnotationProcessor "org.immutables:value:$immutables_version"
+    testCompileOnly "$immutables_group:value:$immutables_version"
+    testAnnotationProcessor "$immutables_group:value:$immutables_version"
     testCompile "junit:junit:$junit_version"
 }
 

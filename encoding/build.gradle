@@ -1,6 +1,6 @@
 dependencies {
     compileOnly project(':api')
-    compileOnly "org.immutables:value:$immutables_version"
-    annotationProcessor "org.immutables:value:$immutables_version"
-    api "org.immutables:encode:$immutables_version"
+    compileOnly "$immutables_group:value:$immutables_version"
+    annotationProcessor "$immutables_group:value:$immutables_version"
+    api "$immutables_group:encode:$immutables_version"
 }

@@ -16,7 +16,7 @@ public interface ActivityPartyData {
         return ImmutableActivityPartyData.builder();
     }
 
-    Possible<? extends String> id();
+    Possible<String> id();
 
     Possible<List<Long>> size();
 }

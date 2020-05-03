@@ -16,6 +16,6 @@ public interface GuildEmojiModifyRequest {
         return ImmutableGuildEmojiModifyRequest.builder();
     }
 
-    Possible<? extends String> name();
+    Possible<String> name();
     Possible<List<String>> roles();
 }

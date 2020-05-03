@@ -14,9 +14,9 @@ public interface RoleModifyRequest {
         return ImmutableRoleModifyRequest.builder();
     }
 
-    Possible<? extends String> name();
-    Possible<? extends Long> permissions();
-    Possible<? extends Integer> color();
-    Possible<? extends Boolean> hoist();
-    Possible<? extends Boolean> mentionable();
+    Possible<String> name();
+    Possible<Long> permissions();
+    Possible<Integer> color();
+    Possible<Boolean> hoist();
+    Possible<Boolean> mentionable();
 }

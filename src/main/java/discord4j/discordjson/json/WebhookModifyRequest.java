@@ -15,8 +15,8 @@ public interface WebhookModifyRequest {
         return ImmutableWebhookModifyRequest.builder();
     }
 
-    Possible<? extends String> name();
-    Possible<? extends String> avatar();
+    Possible<String> name();
+    Possible<String> avatar();
     @JsonProperty("channel_id")
-    Possible<? extends String> channelId();
+    Possible<String> channelId();
 }

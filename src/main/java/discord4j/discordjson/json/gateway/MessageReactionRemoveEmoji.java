@@ -23,7 +23,7 @@ public interface MessageReactionRemoveEmoji extends Dispatch {
     String messageId();
 
     @JsonProperty("guild_id")
-    Possible<? extends String> guildId();
+    Possible<String> guildId();
 
     EmojiData emoji();
 }

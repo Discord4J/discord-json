@@ -14,6 +14,6 @@ public interface UserModifyRequest {
         return ImmutableUserModifyRequest.builder();
     }
 
-    Possible<? extends String> username();
-    Possible<? extends String> avatar();
+    Possible<String> username();
+    Possible<String> avatar();
 }

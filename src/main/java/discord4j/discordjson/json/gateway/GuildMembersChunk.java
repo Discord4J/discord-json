@@ -32,8 +32,8 @@ public interface GuildMembersChunk extends Dispatch {
     @JsonProperty("not_found")
     Possible<List<String>> notFound();
 
-    Possible<? extends PresenceUpdate> presences();
+    Possible<PresenceUpdate> presences();
 
-    Possible<? extends String> nonce();
+    Possible<String> nonce();
 
 }

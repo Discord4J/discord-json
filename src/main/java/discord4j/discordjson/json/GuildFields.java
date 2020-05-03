@@ -20,15 +20,15 @@ interface GuildFields {
     @JsonProperty("discovery_splash")
     Optional<String> discoverySplash();
 
-    Possible<? extends Boolean> owner();
+    Possible<Boolean> owner();
 
-    Possible<? extends Long> permissions();
+    Possible<Long> permissions();
 
     @JsonProperty("afk_channel_id")
     Optional<String> afkChannelId();
 
     @JsonProperty("embed_enabled")
-    Possible<? extends Boolean> embedEnabled();
+    Possible<Boolean> embedEnabled();
 
     @JsonProperty("embed_channel_id")
     Possible<Optional<String>> embedChannelId();
@@ -39,7 +39,7 @@ interface GuildFields {
     Optional<String> applicationId();
 
     @JsonProperty("widget_enabled")
-    Possible<? extends Boolean> widgetEnabled();
+    Possible<Boolean> widgetEnabled();
 
     @JsonProperty("widget_channel_id")
     Possible<Optional<String>> widgetChannelId();
@@ -57,7 +57,7 @@ interface GuildFields {
     Possible<Optional<Integer>> maxPresences();
 
     @JsonProperty("max_members")
-    Possible<? extends Integer> maxMembers();
+    Possible<Integer> maxMembers();
 
     @JsonProperty("vanity_url_code")
     Optional<String> vanityUrlCode();
@@ -74,8 +74,8 @@ interface GuildFields {
     Optional<String> publicUpdatesChannelId();
 
     @JsonProperty("approximate_member_count")
-    Possible<? extends Integer> approximateMemberCount();
+    Possible<Integer> approximateMemberCount();
 
     @JsonProperty("approximate_presence_count")
-    Possible<? extends Integer> approximatePresenceCount();
+    Possible<Integer> approximatePresenceCount();
 }

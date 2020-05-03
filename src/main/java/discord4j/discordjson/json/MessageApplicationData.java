@@ -20,7 +20,7 @@ public interface MessageApplicationData {
     String id();
 
     @JsonProperty("cover_image")
-    Possible<? extends String> coverImage();
+    Possible<String> coverImage();
 
     String description();
 

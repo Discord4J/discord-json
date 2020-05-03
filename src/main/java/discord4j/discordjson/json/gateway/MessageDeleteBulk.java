@@ -22,5 +22,5 @@ public interface MessageDeleteBulk extends Dispatch {
     String channelId();
 
     @JsonProperty("guild_id")
-    Possible<? extends String> guildId();
+    Possible<String> guildId();
 }

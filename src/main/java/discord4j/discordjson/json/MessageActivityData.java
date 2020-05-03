@@ -18,5 +18,5 @@ public interface MessageActivityData {
     int type();
 
     @JsonProperty("party_id")
-    Possible<? extends String> partyId();
+    Possible<String> partyId();
 }

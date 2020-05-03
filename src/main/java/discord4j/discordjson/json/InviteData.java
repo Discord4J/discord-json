@@ -16,23 +16,23 @@ public interface InviteData {
     }
 
     String code();
-    Possible<? extends PartialGuildData> guild();
+    Possible<PartialGuildData> guild();
     ChannelData channel();
     @JsonProperty("target_user")
-    Possible<? extends UserData> targetUser();
+    Possible<UserData> targetUser();
     @JsonProperty("target_user_type")
-    Possible<? extends Integer> targetUserType();
+    Possible<Integer> targetUserType();
     @JsonProperty("approximate_presence_count")
-    Possible<? extends Integer> approximatePresenceCount();
+    Possible<Integer> approximatePresenceCount();
     @JsonProperty("approximate_member_count")
-    Possible<? extends Integer> approximateMemberCount();
-    Possible<? extends UserData> inviter();
-    Possible<? extends Integer> uses();
+    Possible<Integer> approximateMemberCount();
+    Possible<UserData> inviter();
+    Possible<Integer> uses();
     @JsonProperty("max_uses")
-    Possible<? extends Integer> maxUses();
+    Possible<Integer> maxUses();
     @JsonProperty("max_age")
-    Possible<? extends Integer> maxAge();
-    Possible<? extends Boolean> temporary();
+    Possible<Integer> maxAge();
+    Possible<Boolean> temporary();
     @JsonProperty("created_at")
-    Possible<? extends String> createdAt();
+    Possible<String> createdAt();
 }

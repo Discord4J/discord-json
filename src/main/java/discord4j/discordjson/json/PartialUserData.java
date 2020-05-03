@@ -19,30 +19,30 @@ public interface PartialUserData {
 
     String id();
 
-    Possible<? extends String> username();
+    Possible<String> username();
 
-    Possible<? extends String> discriminator();
+    Possible<String> discriminator();
 
     Possible<Optional<String>> avatar();
 
-    Possible<? extends Boolean> bot();
+    Possible<Boolean> bot();
 
-    Possible<? extends Boolean> system();
+    Possible<Boolean> system();
 
     @JsonProperty("mfa_enabled")
-    Possible<? extends Boolean> mfaEnabled();
+    Possible<Boolean> mfaEnabled();
 
-    Possible<? extends String> locale();
+    Possible<String> locale();
 
-    Possible<? extends Boolean> verified();
+    Possible<Boolean> verified();
 
-    Possible<? extends String> email();
+    Possible<String> email();
 
-    Possible<? extends Integer> flags();
+    Possible<Integer> flags();
 
     @JsonProperty("premium_type")
-    Possible<? extends Integer> premiumType();
+    Possible<Integer> premiumType();
 
     @JsonProperty("public_flags")
-    Possible<? extends Integer> publicFlags();
+    Possible<Integer> publicFlags();
 }

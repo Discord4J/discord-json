@@ -15,12 +15,12 @@ public interface EmbedImageData {
         return ImmutableEmbedImageData.builder();
     }
 
-    Possible<? extends String> url();
+    Possible<String> url();
 
     @JsonProperty("proxy_url")
-    Possible<? extends String> proxyUrl();
+    Possible<String> proxyUrl();
 
-    Possible<? extends Integer> height();
+    Possible<Integer> height();
 
-    Possible<? extends Integer> width();
+    Possible<Integer> width();
 }

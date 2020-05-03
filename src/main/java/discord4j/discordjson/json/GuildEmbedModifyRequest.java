@@ -17,7 +17,7 @@ public interface GuildEmbedModifyRequest {
         return ImmutableGuildEmbedModifyRequest.builder();
     }
 
-    Possible<? extends Boolean> enabled();
+    Possible<Boolean> enabled();
     @JsonProperty("channel_id")
     Possible<Optional<String>> channelId();
 }

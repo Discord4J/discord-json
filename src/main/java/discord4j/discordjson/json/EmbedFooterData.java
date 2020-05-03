@@ -18,8 +18,8 @@ public interface EmbedFooterData {
     String text();
 
     @JsonProperty("icon_url")
-    Possible<? extends String> iconUrl();
+    Possible<String> iconUrl();
 
     @JsonProperty("proxy_icon_url")
-    Possible<? extends String> proxyIconUrl();
+    Possible<String> proxyIconUrl();
 }

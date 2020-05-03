@@ -15,5 +15,5 @@ public interface UnavailableGuildData {
     }
 
     String id();
-    Possible<? extends Boolean> unavailable();
+    Possible<Boolean> unavailable();
 }

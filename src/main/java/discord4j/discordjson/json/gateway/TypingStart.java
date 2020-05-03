@@ -20,12 +20,12 @@ public interface TypingStart extends Dispatch {
     String channelId();
 
     @JsonProperty("guild_id")
-    Possible<? extends String> guildId();
+    Possible<String> guildId();
 
     @JsonProperty("user_id")
     String userId();
 
     long timestamp();
 
-    Possible<? extends MemberData> member();
+    Possible<MemberData> member();
 }

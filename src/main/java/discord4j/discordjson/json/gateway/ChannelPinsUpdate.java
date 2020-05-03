@@ -16,9 +16,9 @@ public interface ChannelPinsUpdate extends Dispatch {
     }
 
     @JsonProperty("guild_id")
-    Possible<? extends String> guildId();
+    Possible<String> guildId();
     @JsonProperty("channel_id")
     String channelId();
     @JsonProperty("last_pin_timestamp")
-    Possible<? extends String> lastPinTimestamp();
+    Possible<String> lastPinTimestamp();
 }

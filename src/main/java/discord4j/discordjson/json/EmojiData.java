@@ -24,14 +24,14 @@ public interface EmojiData {
 
     Possible<List<String>> roles();
 
-    Possible<? extends UserData> user();
+    Possible<UserData> user();
 
     @JsonProperty("require_colons")
-    Possible<? extends Boolean> requireColons();
+    Possible<Boolean> requireColons();
 
-    Possible<? extends Boolean> managed();
+    Possible<Boolean> managed();
 
-    Possible<? extends Boolean> available();
+    Possible<Boolean> available();
 
-    Possible<? extends Boolean> animated();
+    Possible<Boolean> animated();
 }

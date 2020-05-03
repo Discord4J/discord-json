@@ -16,7 +16,7 @@ public interface EmbedProviderData {
         return ImmutableEmbedProviderData.builder();
     }
 
-    Possible<? extends String> name();
+    Possible<String> name();
 
     // TODO [wtf-docs] embed provider can be null
     Possible<Optional<String>> url();

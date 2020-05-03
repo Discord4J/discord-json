@@ -22,16 +22,16 @@ public interface WebhookData {
     int type();
 
     @JsonProperty("guild_id")
-    Possible<? extends String> guildId();
+    Possible<String> guildId();
 
     @JsonProperty("channel_id")
     String channelId();
 
-    Possible<? extends UserData> user();
+    Possible<UserData> user();
 
     Optional<String> name();
 
     Optional<String> avatar();
 
-    Possible<? extends String> token();
+    Possible<String> token();
 }

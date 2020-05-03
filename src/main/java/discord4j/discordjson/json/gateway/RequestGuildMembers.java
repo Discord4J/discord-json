@@ -20,14 +20,14 @@ public interface RequestGuildMembers extends PayloadData {
     @JsonProperty("guild_id")
     String guildId();
 
-    Possible<? extends String> query();
+    Possible<String> query();
 
     int limit();
 
-    Possible<? extends Boolean> presences();
+    Possible<Boolean> presences();
 
     @JsonProperty("user_ids")
     Possible<List<String>> userIds();
 
-    Possible<? extends String> nonce();
+    Possible<String> nonce();
 }

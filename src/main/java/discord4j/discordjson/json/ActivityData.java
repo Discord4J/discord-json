@@ -24,10 +24,10 @@ public interface ActivityData extends Activity {
     @JsonProperty("created_at")
     long createdAt();
 
-    Possible<? extends ActivityTimestampsData> timestamps();
+    Possible<ActivityTimestampsData> timestamps();
 
     @JsonProperty("application_id")
-    Possible<? extends String> applicationId();
+    Possible<String> applicationId();
 
     Possible<Optional<String>> details();
 
@@ -35,13 +35,13 @@ public interface ActivityData extends Activity {
 
     Possible<Optional<ActivityEmojiData>> emoji();
 
-    Possible<? extends ActivityPartyData> party();
+    Possible<ActivityPartyData> party();
 
-    Possible<? extends ActivityAssetsData> assets();
+    Possible<ActivityAssetsData> assets();
 
-    Possible<? extends ActivitySecretsData> secrets();
+    Possible<ActivitySecretsData> secrets();
 
-    Possible<? extends Boolean> instance();
+    Possible<Boolean> instance();
 
-    Possible<? extends Integer> flags();
+    Possible<Integer> flags();
 }

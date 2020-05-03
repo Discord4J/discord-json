@@ -18,10 +18,10 @@ public interface GuildMemberModifyRequest {
         return ImmutableGuildMemberModifyRequest.builder();
     }
 
-    Possible<? extends String> nick();
+    Possible<String> nick();
     Possible<List<String>> roles();
-    Possible<? extends Boolean> mute();
-    Possible<? extends Boolean> deaf();
+    Possible<Boolean> mute();
+    Possible<Boolean> deaf();
     @JsonProperty("channel_id")
     Possible<Optional<String>> channelId();
 }

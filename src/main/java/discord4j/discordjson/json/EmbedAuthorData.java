@@ -15,13 +15,13 @@ public interface EmbedAuthorData {
         return ImmutableEmbedAuthorData.builder();
     }
 
-    Possible<? extends String> name();
+    Possible<String> name();
 
-    Possible<? extends String> url();
+    Possible<String> url();
 
     @JsonProperty("icon_url")
-    Possible<? extends String> iconUrl();
+    Possible<String> iconUrl();
 
     @JsonProperty("proxy_icon_url")
-    Possible<? extends String> proxyIconUrl();
+    Possible<String> proxyIconUrl();
 }

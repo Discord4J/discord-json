@@ -14,9 +14,9 @@ public interface ClientStatusData {
         return ImmutableClientStatusData.builder();
     }
 
-    Possible<? extends String> desktop();
+    Possible<String> desktop();
 
-    Possible<? extends String> mobile();
+    Possible<String> mobile();
 
-    Possible<? extends String> web();
+    Possible<String> web();
 }

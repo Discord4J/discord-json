@@ -14,7 +14,7 @@ public interface ActivityTimestampsData {
         return ImmutableActivityTimestampsData.builder();
     }
 
-    Possible<? extends Long> start();
+    Possible<Long> start();
 
-    Possible<? extends Long> end();
+    Possible<Long> end();
 }

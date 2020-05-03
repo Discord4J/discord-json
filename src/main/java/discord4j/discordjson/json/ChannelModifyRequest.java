@@ -18,15 +18,15 @@ public interface ChannelModifyRequest {
         return ImmutableChannelModifyRequest.builder();
     }
 
-    Possible<? extends String> name();
-    Possible<? extends Integer> position();
-    Possible<? extends String> topic();
-    Possible<? extends Boolean> nsfw();
+    Possible<String> name();
+    Possible<Integer> position();
+    Possible<String> topic();
+    Possible<Boolean> nsfw();
     @JsonProperty("rate_limit_per_user")
-    Possible<? extends Integer> rateLimitPerUser();
-    Possible<? extends Integer> bitrate();
+    Possible<Integer> rateLimitPerUser();
+    Possible<Integer> bitrate();
     @JsonProperty("user_limit")
-    Possible<? extends Integer> userLimit();
+    Possible<Integer> userLimit();
     @JsonProperty("permission_overwrites")
     Possible<List<OverwriteData>> permissionOverwrites();
     @JsonProperty("parent_id")

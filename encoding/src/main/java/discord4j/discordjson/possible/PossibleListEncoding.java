@@ -20,7 +20,7 @@ public class PossibleListEncoding<T> {
 
     @Encoding.Of
     @Nullable
-    static <T> List<T> init(Possible<? extends List<T>> possible) {
+    static <T> List<T> init(Possible<List<T>> possible) {
         return Objects.requireNonNull(possible).toOptional().<List<T>>map(ArrayList::new).orElse(null);
     }
 
@@ -51,7 +51,7 @@ public class PossibleListEncoding<T> {
 
         @Encoding.Naming(standard = Encoding.StandardNaming.ADD_ALL)
         @Encoding.Init
-        void addAll(List<? extends T> elements) {
+        void addAll(List<T> elements) {
             getOrCreate().addAll(elements);
         }
 
@@ -62,14 +62,14 @@ public class PossibleListEncoding<T> {
 
         @Encoding.Init
         @Encoding.Copy
-        void set(Possible<? extends List<? extends T>> elements) {
+        void set(Possible<List<T>> elements) {
             this.list = null;
 
             elements.toOptional().ifPresent(e -> getOrCreate().addAll(e));
         }
 
         @Encoding.Init
-        void setValue(List<? extends T> elements) {
+        void setValue(List<T> elements) {
             this.list = new ArrayList<>(elements);
         }
 

@@ -16,7 +16,7 @@ public interface ActivityEmojiData {
 
     String name();
 
-    Possible<? extends String> id();
+    Possible<String> id();
 
-    Possible<? extends Boolean> animated();
+    Possible<Boolean> animated();
 }

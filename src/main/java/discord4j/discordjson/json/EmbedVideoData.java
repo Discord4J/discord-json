@@ -14,9 +14,9 @@ public interface EmbedVideoData {
         return ImmutableEmbedVideoData.builder();
     }
 
-    Possible<? extends String> url();
+    Possible<String> url();
 
-    Possible<? extends Integer> height();
+    Possible<Integer> height();
 
-    Possible<? extends Integer> width();
+    Possible<Integer> width();
 }
