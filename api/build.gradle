@@ -84,3 +84,11 @@ if (!isJitpack && isRelease) {
         sign publishing.publications.mavenJava
     }
 }
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': archivesBaseName,
+                'Implementation-Version': archiveVersion,
+                'Automatic-Module-Name': 'discord4j.discordjson.api'
+    }
+}

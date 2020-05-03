@@ -175,6 +175,14 @@ publishing {
     }
 }
 
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'discord-json',
+                'Implementation-Version': archiveVersion,
+                'Automatic-Module-Name': 'discord4j.discordjson'
+    }
+}
+
 if (!isJitpack && isRelease) {
     signing {
         def signingKey = findProperty("signingKey")
