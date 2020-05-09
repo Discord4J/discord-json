@@ -15,10 +15,8 @@ ext {
 
     reactor_bom_version = 'Dysprosium-SR7'
     jackson_version = '2.11.0'
-    immutables_group = 'com.github.quanticc.immutables'
-    immutables_version = '2.8.8-D4J.1'
-    //immutables_group = 'org.immutables'
-    //immutables_version = '2.8.7'
+    immutables_group = 'org.immutables'
+    immutables_version = '2.8.8'
 
     junit_version = '4.13'
     logback_version = '1.3.0-alpha4'
