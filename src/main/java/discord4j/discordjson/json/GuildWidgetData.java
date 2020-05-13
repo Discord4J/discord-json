@@ -7,20 +7,18 @@ import org.immutables.value.Value;
 
 import java.util.Optional;
 
-/**
- * @deprecated Use {@link GuildWidgetData} instead.
- */
 @Value.Immutable
-@JsonSerialize(as = ImmutableGuildEmbedData.class)
-@JsonDeserialize(as = ImmutableGuildEmbedData.class)
-@Deprecated
-public interface GuildEmbedData {
+@JsonSerialize(as = ImmutableGuildWidgetData.class)
+@JsonDeserialize(as = ImmutableGuildWidgetData.class)
+public interface GuildWidgetData {
 
-    static ImmutableGuildEmbedData.Builder builder() {
-        return ImmutableGuildEmbedData.builder();
+    static ImmutableGuildWidgetData.Builder builder() {
+        return ImmutableGuildWidgetData.builder();
     }
 
     boolean enabled();
+
     @JsonProperty("channel_id")
     Optional<String> channelId();
+
 }
