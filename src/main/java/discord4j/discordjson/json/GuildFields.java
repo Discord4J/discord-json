@@ -27,9 +27,11 @@ interface GuildFields {
     @JsonProperty("afk_channel_id")
     Optional<String> afkChannelId();
 
+    @Deprecated
     @JsonProperty("embed_enabled")
     Possible<Boolean> embedEnabled();
 
+    @Deprecated
     @JsonProperty("embed_channel_id")
     Possible<Optional<String>> embedChannelId();
 

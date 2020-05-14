@@ -8,20 +8,17 @@ import org.immutables.value.Value;
 
 import java.util.Optional;
 
-/**
- * @deprecated Use {@link GuildWidgetModifyRequest} instead.
- */
 @Value.Immutable
-@JsonSerialize(as = ImmutableGuildEmbedModifyRequest.class)
-@JsonDeserialize(as = ImmutableGuildEmbedModifyRequest.class)
-@Deprecated
-public interface GuildEmbedModifyRequest {
+@JsonSerialize(as = ImmutableGuildWidgetModifyRequest.class)
+@JsonDeserialize(as = ImmutableGuildWidgetModifyRequest.class)
+public interface GuildWidgetModifyRequest {
 
-    static ImmutableGuildEmbedModifyRequest.Builder builder() {
-        return ImmutableGuildEmbedModifyRequest.builder();
+    static ImmutableGuildWidgetModifyRequest.Builder builder() {
+        return ImmutableGuildWidgetModifyRequest.builder();
     }
 
     Possible<Boolean> enabled();
+
     @JsonProperty("channel_id")
     Possible<Optional<String>> channelId();
 }
