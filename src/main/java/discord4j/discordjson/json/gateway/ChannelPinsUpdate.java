@@ -6,6 +6,8 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
+import java.util.Optional;
+
 @Value.Immutable
 @JsonSerialize(as = ImmutableChannelPinsUpdate.class)
 @JsonDeserialize(as = ImmutableChannelPinsUpdate.class)
@@ -17,8 +19,11 @@ public interface ChannelPinsUpdate extends Dispatch {
 
     @JsonProperty("guild_id")
     Possible<String> guildId();
+
     @JsonProperty("channel_id")
     String channelId();
+
+    // TODO: while https://github.com/discord/discord-api-docs/pull/1588 is resolved
     @JsonProperty("last_pin_timestamp")
-    Possible<String> lastPinTimestamp();
+    Possible<Optional<String>> lastPinTimestamp();
 }
