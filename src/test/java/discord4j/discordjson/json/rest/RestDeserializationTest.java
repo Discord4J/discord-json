@@ -143,6 +143,7 @@ public class RestDeserializationTest {
                 .defaultMessageNotifications(1)
                 .explicitContentFilter(1)
                 .mfaLevel(1)
+                .addFeature("ONCE")
                 .premiumTier(1)
                 .joinedAt(DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(ZonedDateTime.now()))
                 .large(false)
@@ -150,10 +151,10 @@ public class RestDeserializationTest {
                 .build();
         PartialGuildData partialGuildData = PartialGuildData.builder()
                 .from((GuildFields) guildData)
-                .from((GuildVerificationLevelField) guildData)
                 .build();
         assertEquals("id", partialGuildData.id());
         assertEquals(Possible.absent(), partialGuildData.owner());
         assertEquals(1, partialGuildData.verificationLevel());
+        assertEquals(1, partialGuildData.features().size());
     }
 }
