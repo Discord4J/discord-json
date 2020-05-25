@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Optional;
 
-interface GuildUpdateFields extends GuildFields, GuildVerificationLevelField {
+public interface GuildUpdateFields extends GuildFields, GuildVerificationLevelField {
 
     @JsonProperty("owner_id")
     String ownerId();

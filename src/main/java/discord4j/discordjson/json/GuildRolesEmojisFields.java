@@ -2,7 +2,7 @@ package discord4j.discordjson.json;
 
 import java.util.List;
 
-interface GuildRolesEmojisFields {
+public interface GuildRolesEmojisFields {
 
     List<RoleData> roles();
 

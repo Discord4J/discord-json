@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.OptionalInt;
 
-interface GuildFields {
+public interface GuildFields {
 
     String id();
 

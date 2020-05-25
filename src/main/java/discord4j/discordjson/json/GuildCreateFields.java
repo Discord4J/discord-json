@@ -3,7 +3,7 @@ package discord4j.discordjson.json;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import discord4j.discordjson.possible.Possible;
 
-interface GuildCreateFields extends GuildUpdateFields {
+public interface GuildCreateFields extends GuildUpdateFields {
 
     @JsonProperty("joined_at")
     String joinedAt();
