@@ -4,12 +4,12 @@ import discord4j.discordjson.json.GuildData;
 import discord4j.discordjson.json.GuildFields;
 import discord4j.discordjson.json.PartialGuildData;
 import discord4j.discordjson.possible.Possible;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DataMappingTest {
 

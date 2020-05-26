@@ -9,21 +9,20 @@ import discord4j.discordjson.json.MyJson;
 import discord4j.discordjson.possible.Possible;
 import discord4j.discordjson.possible.PossibleFilter;
 import discord4j.discordjson.possible.PossibleModule;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.util.Optional;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class PossibleDeserializerTest {
 
     ObjectMapper mapper;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         mapper = new ObjectMapper()
                 .registerModule(new PossibleModule())
@@ -36,7 +35,7 @@ public class PossibleDeserializerTest {
     public void testPresent() throws IOException {
         MyJson json = mapper.readValue(getClass().getResourceAsStream("/singleFieldPresent.json"), MyJson.class);
 
-        Assert.assertEquals(Possible.of(Optional.of("isHere")), json.myField());
+        assertEquals(Possible.of(Optional.of("isHere")), json.myField());
     }
 
     @Test

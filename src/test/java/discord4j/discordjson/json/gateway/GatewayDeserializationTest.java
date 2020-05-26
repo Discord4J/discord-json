@@ -10,8 +10,8 @@ import com.fasterxml.jackson.databind.deser.DeserializationProblemHandler;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 import discord4j.discordjson.possible.PossibleFilter;
 import discord4j.discordjson.possible.PossibleModule;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -23,7 +23,7 @@ public class GatewayDeserializationTest {
 
     ObjectMapper mapper;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         mapper = new ObjectMapper()
                 .registerModule(new PossibleModule())

@@ -8,8 +8,8 @@ import discord4j.discordjson.json.MyJson;
 import discord4j.discordjson.possible.Possible;
 import discord4j.discordjson.possible.PossibleFilter;
 import discord4j.discordjson.possible.PossibleModule;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -19,13 +19,13 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PossibleSerializerTest {
 
     ObjectMapper mapper;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         mapper = new ObjectMapper()
                 .registerModule(new PossibleModule())

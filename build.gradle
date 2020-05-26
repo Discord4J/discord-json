@@ -18,7 +18,7 @@ ext {
     immutables_group = 'org.immutables'
     immutables_version = '2.8.8'
 
-    junit_version = '4.13'
+    junit_version = '5.6.2'
     logback_version = '1.2.3'
 
     isJitpack = "true" == System.getenv("JITPACK")
@@ -89,6 +89,10 @@ allprojects {
         withSourcesJar()
     }
 
+    tasks.withType(Test) {
+        useJUnitPlatform()
+    }
+
 }
 
 dependencies {
@@ -102,11 +106,10 @@ dependencies {
     annotationProcessor "$immutables_group:value:$immutables_version"
 
     testCompileOnly project(':encoding')
-    testImplementation "junit:junit:$junit_version"
-    testImplementation "ch.qos.logback:logback-classic:$logback_version"
     testCompileOnly "$immutables_group:value:$immutables_version"
     testAnnotationProcessor "$immutables_group:value:$immutables_version"
-    testCompile "junit:junit:$junit_version"
+    testImplementation "org.junit.jupiter:junit-jupiter-engine:$junit_version"
+    testImplementation "ch.qos.logback:logback-classic:$logback_version"
 }
 
 publishing {

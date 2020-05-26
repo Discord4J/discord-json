@@ -10,15 +10,15 @@ import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 import discord4j.discordjson.json.*;
 import discord4j.discordjson.possible.PossibleFilter;
 import discord4j.discordjson.possible.PossibleModule;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.Arrays;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class RestDeserializationTest {
 
@@ -26,7 +26,7 @@ public class RestDeserializationTest {
 
     ObjectMapper mapper;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         mapper = new ObjectMapper()
                 .registerModule(new PossibleModule())
@@ -122,8 +122,11 @@ public class RestDeserializationTest {
 
     @Test
     public void testGetGuildPreview() throws IOException {
-        GuildPreviewData guildPreview = mapper.readValue(getClass()
+        GuildPreviewData data = mapper.readValue(getClass()
                 .getResourceAsStream("/rest/GuildPreview.json"), GuildPreviewData.class);
-        log.info("{}", guildPreview);
+        assertEquals("197038439483310086", data.id());
+        assertFalse(data.splash().isPresent());
+        assertTrue(data.emojis().isEmpty());
+        assertEquals(9, data.features().size());
     }
 }

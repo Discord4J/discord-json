@@ -26,8 +26,8 @@ import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 import discord4j.discordjson.possible.Possible;
 import discord4j.discordjson.possible.PossibleFilter;
 import discord4j.discordjson.possible.PossibleModule;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -37,7 +37,7 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.Optional;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class GatewaySerializationTest {
 
@@ -45,7 +45,7 @@ public class GatewaySerializationTest {
 
     private ObjectMapper mapper;
 
-    @Before
+    @BeforeEach
     public void init() {
         mapper = new ObjectMapper()
                 .registerModule(new PossibleModule())
