@@ -8,7 +8,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.deser.DeserializationProblemHandler;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 import discord4j.discordjson.json.*;
-import discord4j.discordjson.possible.Possible;
 import discord4j.discordjson.possible.PossibleFilter;
 import discord4j.discordjson.possible.PossibleModule;
 import org.junit.Before;
@@ -17,11 +16,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
-import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class RestDeserializationTest {
@@ -129,32 +125,5 @@ public class RestDeserializationTest {
         GuildPreviewData guildPreview = mapper.readValue(getClass()
                 .getResourceAsStream("/rest/GuildPreview.json"), GuildPreviewData.class);
         log.info("{}", guildPreview);
-    }
-
-    @Test
-    public void createPartialGuildDataFromGuildData() {
-        GuildData guildData = GuildData.builder()
-                .id("id")
-                .name("name")
-                .verificationLevel(1)
-                .ownerId("1234")
-                .region("region")
-                .afkTimeout(1)
-                .defaultMessageNotifications(1)
-                .explicitContentFilter(1)
-                .mfaLevel(1)
-                .addFeature("ONCE")
-                .premiumTier(1)
-                .joinedAt(DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(ZonedDateTime.now()))
-                .large(false)
-                .memberCount(1)
-                .build();
-        PartialGuildData partialGuildData = PartialGuildData.builder()
-                .from((GuildFields) guildData)
-                .build();
-        assertEquals("id", partialGuildData.id());
-        assertEquals(Possible.absent(), partialGuildData.owner());
-        assertEquals(1, partialGuildData.verificationLevel());
-        assertEquals(1, partialGuildData.features().size());
     }
 }
