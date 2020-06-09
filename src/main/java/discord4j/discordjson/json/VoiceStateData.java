@@ -44,5 +44,8 @@ public interface VoiceStateData {
     @JsonProperty("self_stream")
     Possible<Boolean> selfStream();
 
+    @JsonProperty("self_video")
+    boolean selfVideo();
+
     boolean suppress();
 }
