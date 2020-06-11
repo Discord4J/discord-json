@@ -7,8 +7,26 @@ import java.util.Objects;
 @Encoding
 public class PossibleIntArrayEncoding {
 
-    @Encoding.Impl
-    private Possible<int[]> field = discord4j.discordjson.possible.Possible.absent();
+    @Encoding.Impl(virtual = true)
+    private Possible<int[]> possible;
+
+    private final int[] value = possible.toOptional().orElse(null);
+    private final boolean absent = possible.isAbsent();
+
+    @Encoding.Expose
+    Possible<int[]> get() {
+        return absent ? discord4j.discordjson.possible.Possible.absent() : discord4j.discordjson.possible.Possible.of(value);
+    }
+
+    @Encoding.Naming("is*Present")
+    boolean isPresent() {
+        return !absent;
+    }
+
+    @Encoding.Naming("*OrElse")
+    int[] orElse(int[] defaultValue) {
+        return !absent ? value : defaultValue;
+    }
 
     @Encoding.Copy
     public Possible<int[]> withPossible(final Possible<int[]> value) {

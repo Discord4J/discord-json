@@ -1,6 +1,8 @@
 package discord4j.discordjson;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 import discord4j.discordjson.json.Foo;
@@ -27,6 +29,8 @@ public class PossibleDeserializerTest {
         mapper = new ObjectMapper()
                 .registerModule(new PossibleModule())
                 .registerModule(new Jdk8Module())
+                .setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.NONE)
+                .setVisibility(PropertyAccessor.GETTER, JsonAutoDetect.Visibility.PUBLIC_ONLY)
                 .setDefaultPropertyInclusion(JsonInclude.Value.construct(JsonInclude.Include.CUSTOM,
                         JsonInclude.Include.ALWAYS, PossibleFilter.class, null));
     }

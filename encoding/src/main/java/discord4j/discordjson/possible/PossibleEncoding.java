@@ -7,8 +7,26 @@ import java.util.Objects;
 @Encoding
 public class PossibleEncoding<T> {
 
-    @Encoding.Impl
-    private Possible<T> field = discord4j.discordjson.possible.Possible.absent();
+    @Encoding.Impl(virtual = true)
+    private Possible<T> possible;
+
+    private final T value = possible.toOptional().orElse(null);
+    private final boolean absent = possible.isAbsent();
+
+    @Encoding.Expose
+    Possible<T> get() {
+        return absent ? discord4j.discordjson.possible.Possible.absent() : discord4j.discordjson.possible.Possible.of(value);
+    }
+
+    @Encoding.Naming("is*Present")
+    boolean isPresent() {
+        return !absent;
+    }
+
+    @Encoding.Naming("*OrElse")
+    T orElse(T defaultValue) {
+        return !absent ? value : defaultValue;
+    }
 
     @Encoding.Copy
     public Possible<T> withPossible(final Possible<T> value) {

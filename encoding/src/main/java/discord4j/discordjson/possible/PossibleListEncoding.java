@@ -1,7 +1,6 @@
 package discord4j.discordjson.possible;
 
 import org.immutables.encode.Encoding;
-import reactor.util.annotation.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,32 +9,46 @@ import java.util.Objects;
 @Encoding
 public class PossibleListEncoding<T> {
 
-    @Encoding.Impl
-    private final List<T> list = null;
+    @Encoding.Impl(virtual = true)
+    private Possible<List<T>> possible;
+
+    private final List<T> value = possible.toOptional().orElse(null);
+    private final boolean absent = possible.isAbsent();
 
     @Encoding.Expose
-    public Possible<List<T>> get() {
-        return this.list == null ? discord4j.discordjson.possible.Possible.absent() : discord4j.discordjson.possible.Possible.of(this.list);
+    Possible<List<T>> get() {
+        return absent ? discord4j.discordjson.possible.Possible.absent() :
+                discord4j.discordjson.possible.Possible.of(value);
     }
 
-    @Encoding.Of
-    @Nullable
-    static <T> List<T> init(Possible<List<T>> possible) {
-        return Objects.requireNonNull(possible).toOptional().<List<T>>map(ArrayList::new).orElse(null);
+    @Encoding.Naming("is*Present")
+    boolean isPresent() {
+        return !absent;
     }
+
+    @Encoding.Naming("*OrElse")
+    List<T> orElse(List<T> defaultValue) {
+        return !absent ? value : defaultValue;
+    }
+
+    //    @Encoding.Of
+    //    @Nullable
+    //    static <T> List<T> init(Possible<List<T>> possible) {
+    //        return Objects.requireNonNull(possible).toOptional().<List<T>>map(ArrayList::new).orElse(null);
+    //    }
 
     @Override
     public String toString() {
-        return Objects.toString(list);
+        return Objects.toString(value);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(list);
+        return Objects.hashCode(value);
     }
 
     public boolean equals(PossibleListEncoding<T> obj) {
-        return Objects.equals(list, obj.list);
+        return Objects.equals(value, obj.value);
     }
 
     @Encoding.Builder
@@ -56,8 +69,9 @@ public class PossibleListEncoding<T> {
         }
 
         @Encoding.Build
-        List<T> build() {
-            return this.list;
+        Possible<List<T>> build() {
+            return this.list == null ? discord4j.discordjson.possible.Possible.absent() :
+                    discord4j.discordjson.possible.Possible.of(this.list);
         }
 
         @Encoding.Init

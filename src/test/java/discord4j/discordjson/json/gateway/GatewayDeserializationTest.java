@@ -1,6 +1,8 @@
 package discord4j.discordjson.json.gateway;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationContext;
@@ -31,6 +33,8 @@ public class GatewayDeserializationTest {
         mapper = new ObjectMapper()
                 .registerModule(new PossibleModule())
                 .registerModule(new Jdk8Module())
+                .setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.NONE)
+                .setVisibility(PropertyAccessor.GETTER, JsonAutoDetect.Visibility.PUBLIC_ONLY)
                 .addHandler(new DeserializationProblemHandler() {
                     @Override
                     public boolean handleUnknownProperty(DeserializationContext ctxt, JsonParser p, JsonDeserializer<
