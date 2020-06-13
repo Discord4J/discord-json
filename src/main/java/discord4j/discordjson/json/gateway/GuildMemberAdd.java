@@ -17,7 +17,7 @@ public interface GuildMemberAdd extends Dispatch {
     }
 
     @JsonProperty("guild_id")
-    String guild();
+    String guildId();
     @JsonUnwrapped
     MemberData member();
 }

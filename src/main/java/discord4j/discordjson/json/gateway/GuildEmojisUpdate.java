@@ -18,6 +18,6 @@ public interface GuildEmojisUpdate extends Dispatch {
     }
 
     @JsonProperty("guild_id")
-    String guild();
+    String guildId();
     List<EmojiData> emojis();
 }
