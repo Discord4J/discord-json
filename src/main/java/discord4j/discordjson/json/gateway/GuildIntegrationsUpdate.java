@@ -15,5 +15,5 @@ public interface GuildIntegrationsUpdate extends Dispatch {
     }
 
     @JsonProperty("guild_id")
-    String guild();
+    String guildId();
 }

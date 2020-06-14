@@ -16,6 +16,6 @@ public interface GuildBanRemove extends Dispatch {
     }
 
     @JsonProperty("guild_id")
-    String guild();
+    String guildId();
     UserData user();
 }
