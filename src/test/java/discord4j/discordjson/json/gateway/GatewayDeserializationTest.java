@@ -17,6 +17,9 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
+
 public class GatewayDeserializationTest {
 
     private static final Logger log = LoggerFactory.getLogger(GatewayDeserializationTest.class);
@@ -220,6 +223,16 @@ public class GatewayDeserializationTest {
     public void testVoiceStateUpdate() throws IOException {
         GatewayPayload<?> json = read("/gateway/VoiceStateUpdate.json", new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json.getData());
+    }
+
+    @Test
+    public void testVoiceServerUpdate() throws IOException {
+        GatewayPayload<?> json = read("/gateway/VoiceServerUpdate.json", new TypeReference<GatewayPayload<?>>() {});
+        assertEquals(477069, json.getSequence());
+        VoiceServerUpdate data = (VoiceServerUpdate) json.getData();
+        assertEquals("f8eb804ee40ebf3d", data.token());
+        assertEquals("691022703368601651", data.guildId());
+        assertNull(data.endpoint());
     }
 
     @Test
