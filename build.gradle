@@ -103,6 +103,7 @@ dependencies {
     implementation "com.fasterxml.jackson.datatype:jackson-datatype-jdk8:$jackson_version"
 
     compileOnly "$immutables_group:value:$immutables_version"
+    compileOnly "$immutables_group:builder:$immutables_version"
     annotationProcessor "$immutables_group:value:$immutables_version"
 
     testCompileOnly project(':encoding')

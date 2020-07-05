@@ -35,6 +35,7 @@ public class GatewayDeserializationTest {
                 .registerModule(new Jdk8Module())
                 .setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.NONE)
                 .setVisibility(PropertyAccessor.GETTER, JsonAutoDetect.Visibility.PUBLIC_ONLY)
+                .setVisibility(PropertyAccessor.CREATOR, JsonAutoDetect.Visibility.ANY)
                 .addHandler(new DeserializationProblemHandler() {
                     @Override
                     public boolean handleUnknownProperty(DeserializationContext ctxt, JsonParser p, JsonDeserializer<
@@ -163,6 +164,12 @@ public class GatewayDeserializationTest {
     @Test
     public void testInviteCreate() throws IOException {
         GatewayPayload<?> json = read("/gateway/InviteCreate.json", new TypeReference<GatewayPayload<?>>() {});
+        log.info("{}", json.getData());
+    }
+
+    @Test
+    public void testInvalidSession() throws IOException {
+        GatewayPayload<?> json = read("/gateway/InvalidSession.json", new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json.getData());
     }
 
