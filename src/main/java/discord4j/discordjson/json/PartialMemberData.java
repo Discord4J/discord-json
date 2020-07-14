@@ -26,7 +26,7 @@ public interface PartialMemberData {
     String joinedAt();
 
     @JsonProperty("premium_since")
-    Optional<String> premiumSince();
+    Possible<Optional<String>> premiumSince();
 
     @JsonProperty("hoisted_role")
     Optional<String> hoistedRole();
