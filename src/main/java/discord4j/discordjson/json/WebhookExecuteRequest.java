@@ -20,7 +20,7 @@ public interface WebhookExecuteRequest {
     Possible<String> content();
     Possible<String> username();
     @JsonProperty("avatar_url")
-    Possible<String> avatar_url();
+    Possible<String> avatarUrl();
     Possible<Boolean> tts();
     Possible<List<EmbedData>> embeds();
     @JsonProperty("allowed_mentions")
