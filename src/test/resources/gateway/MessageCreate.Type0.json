@@ -1,44 +1,44 @@
 {
   "t": "MESSAGE_CREATE",
-  "s": 3116,
+  "s": 3,
   "op": 0,
   "d": {
-    "type": 6,
+    "type": 0,
     "tts": false,
-    "timestamp": "2020-02-22T18:15:24.229000+00:00",
+    "timestamp": "2020-07-14T13:02:12.171000+00:00",
     "pinned": false,
-    "nonce": null,
-    "message_reference": {
-      "message_id": "680840044138987656",
-      "guild_id": "123456789012345678",
-      "channel_id": "680839020124700740"
-    },
+    "nonce": "732582723289350144",
     "mentions": [],
     "mention_roles": [],
     "mention_everyone": false,
     "member": {
       "roles": [
-        "186563072540934144",
-        "186605392971694081"
+        "694206416675930112",
+        "701852860995862528",
+        "694490993600233483",
+        "694206277575901204"
       ],
+      "premium_since": null,
+      "nick": null,
       "mute": false,
-      "joined_at": "2016-05-28T02:57:17.190000+00:00",
-      "hoisted_role": null,
+      "joined_at": "2020-03-30T15:24:39.828000+00:00",
+      "hoisted_role": "694206277575901204",
       "deaf": false
     },
-    "id": "680840078993784856",
+    "id": "732582724170285086",
     "flags": 0,
     "embeds": [],
     "edited_timestamp": null,
-    "content": "",
-    "channel_id": "680839020124700740",
+    "content": ".ping",
+    "channel_id": "727947198481956945",
     "author": {
-      "username": "qasfdf",
-      "id": "123456789012345678",
-      "discriminator": "5520",
-      "avatar": "25a09a99ac0487bf846125084d9c7346"
+      "username": "Username",
+      "public_flags": 0,
+      "id": "562268917771413264",
+      "discriminator": "7178",
+      "avatar": "32309dbaaf65eae4c58a351318f44c9d"
     },
     "attachments": [],
-    "guild_id": "123456789012345678"
+    "guild_id": "694205451682978886"
   }
 }
