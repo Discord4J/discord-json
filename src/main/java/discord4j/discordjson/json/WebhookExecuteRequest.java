@@ -11,18 +11,14 @@ import java.util.List;
 @Value.Immutable
 @JsonSerialize(as = ImmutableWebhookExecuteRequest.class)
 @JsonDeserialize(as = ImmutableWebhookExecuteRequest.class)
-public interface WebhookExecuteRequest {
+public interface WebhookExecuteRequest extends MessageSendRequestBase {
 
     static ImmutableWebhookExecuteRequest.Builder builder() {
         return ImmutableWebhookExecuteRequest.builder();
     }
 
-    Possible<String> content();
     Possible<String> username();
     @JsonProperty("avatar_url")
     Possible<String> avatarUrl();
-    Possible<Boolean> tts();
     Possible<List<EmbedData>> embeds();
-    @JsonProperty("allowed_mentions")
-    Possible<AllowedMentionsData> allowedMentions();
 }
