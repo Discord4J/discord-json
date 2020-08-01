@@ -18,7 +18,7 @@ public interface GuildMemberModifyRequest {
         return ImmutableGuildMemberModifyRequest.builder();
     }
 
-    Possible<String> nick();
+    Possible<Optional<String>> nick();
     Possible<List<String>> roles();
     Possible<Boolean> mute();
     Possible<Boolean> deaf();
