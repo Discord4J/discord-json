@@ -20,7 +20,7 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
-import jdk.internal.jline.internal.Nullable;
+import reactor.util.annotation.Nullable;
 
 import java.io.IOException;
 import java.util.HashMap;
