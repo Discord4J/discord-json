@@ -24,6 +24,8 @@ public interface GuildMemberUpdate extends Dispatch {
     List<String> roles();
     UserData user();
     Possible<Optional<String>> nick();
+    @JsonProperty("joined_at")
+    String joinedAt();
     @JsonProperty("premium_since")
     Possible<Optional<String>> premiumSince();
 }
