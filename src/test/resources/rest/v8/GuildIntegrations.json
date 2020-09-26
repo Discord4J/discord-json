@@ -1,0 +1,52 @@
+[
+  {
+    "id": "740674565763497984",
+    "type": "discord",
+    "name": "Reacton",
+    "account": {
+      "id": "344487830824943618",
+      "name": "Reacton"
+    },
+    "application": {
+      "id": "344487830824943618",
+      "name": "Reacton",
+      "icon": "bb1ac764222d6b3242d6a4f78214c9c9",
+      "description": "Bot using reactive D4J",
+      "summary": "Bot using reactive D4J",
+      "bot": {
+        "id": "344487830824943618",
+        "username": "Reacton",
+        "avatar": "1c295705ae50fdbc755f1eda5ed8d268",
+        "discriminator": "6221",
+        "public_flags": 0,
+        "bot": true
+      }
+    },
+    "enabled": true
+  },
+  {
+    "id": "740682296616550473",
+    "type": "discord",
+    "name": "Discord4J 3 Test Bot",
+    "account": {
+      "id": "346720813342392330",
+      "name": "Discord4J 3 Test Bot"
+    },
+    "application": {
+      "id": "346720813342392330",
+      "name": "Discord4J 3 Test Bot",
+      "icon": "487612237e3b934708560156231d5220",
+      "description": "",
+      "summary": "",
+      "bot": {
+        "id": "346720813342392330",
+        "username": "Discord4J 3 Test Bot",
+        "avatar": null,
+        "discriminator": "7519",
+        "public_flags": 0,
+        "bot": true
+      }
+    },
+    "enabled": true
+  }
+]
