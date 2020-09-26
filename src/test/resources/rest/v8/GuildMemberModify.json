@@ -1,0 +1,16 @@
+{
+  "user": {
+    "id": "84745855399129088",
+    "username": "Austin",
+    "avatar": "1209e65cbe4c795bed383fb24febb0b5",
+    "discriminator": "9067",
+    "public_flags": 256
+  },
+  "roles": ["440201724872097807"],
+  "nick": "nickname",
+  "premium_since": null,
+  "joined_at": "2017-08-14T23:14:32.133000+00:00",
+  "is_pending": false,
+  "mute": false,
+  "deaf": false
+}

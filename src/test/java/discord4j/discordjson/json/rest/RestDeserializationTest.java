@@ -143,4 +143,12 @@ public class RestDeserializationTest {
                 new TypeReference<List<IntegrationData>>() {});
         assertEquals(list.get(0).account().name(), "Reacton");
     }
+
+    @Test
+    public void testGuildMemberModify() throws IOException {
+        MemberData data = mapper.readValue(
+                getClass().getResourceAsStream("/rest/v8/GuildMemberModify.json"),
+                MemberData.class);
+        assertEquals(data.user().id(), "84745855399129088");
+    }
 }
