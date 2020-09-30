@@ -33,25 +33,25 @@
         "position": 4,
         "permission_overwrites": [
           {
-            "type": "member",
+            "type": 1,
             "id": "123456789012345678",
             "deny": "2048",
             "allow": "0"
           },
           {
-            "type": "member",
+            "type": 1,
             "id": "123456789012345678",
             "deny": "0",
             "allow": "1024"
           },
           {
-            "type": "role",
+            "type": 0,
             "id": "123456789012345678",
             "deny": "1024",
             "allow": "0"
           },
           {
-            "type": "role",
+            "type": 0,
             "id": "123456789012345678",
             "deny": "0",
             "allow": "1024"
