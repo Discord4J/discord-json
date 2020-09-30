@@ -35,26 +35,26 @@
           {
             "type": "member",
             "id": "123456789012345678",
-            "deny": 2048,
-            "allow": 0
+            "deny": "2048",
+            "allow": "0"
           },
           {
             "type": "member",
             "id": "123456789012345678",
-            "deny": 0,
-            "allow": 1024
+            "deny": "0",
+            "allow": "1024"
           },
           {
             "type": "role",
             "id": "123456789012345678",
-            "deny": 1024,
-            "allow": 0
+            "deny": "1024",
+            "allow": "0"
           },
           {
             "type": "role",
             "id": "123456789012345678",
-            "deny": 0,
-            "allow": 1024
+            "deny": "0",
+            "allow": "1024"
           }
         ],
         "name": "bot-log",
@@ -68,10 +68,10 @@
         "position": 2,
         "permission_overwrites": [
           {
-            "type": "role",
+            "type": 0,
             "id": "123456789012345678",
-            "deny": 1024,
-            "allow": 0
+            "deny": "1024",
+            "allow": "0"
           }
         ],
         "name": "name-1",
@@ -94,10 +94,10 @@
         "position": 3,
         "permission_overwrites": [
           {
-            "type": "role",
+            "type": 0,
             "id": "175786903688314880",
-            "deny": 1024,
-            "allow": 0
+            "deny": "1024",
+            "allow": "0"
           }
         ],
         "name": "name-3",
@@ -120,22 +120,22 @@
         "position": 5,
         "permission_overwrites": [
           {
-            "type": "role",
+            "type": 0,
             "id": "173583899539013632",
-            "deny": 2048,
-            "allow": 1024
+            "deny": "2048",
+            "allow": "1024"
           },
           {
-            "type": "member",
+            "type": 1,
             "id": "123456789012345678",
-            "deny": 0,
-            "allow": 2048
+            "deny": "0",
+            "allow": "2048"
           },
           {
-            "type": "role",
+            "type": 0,
             "id": "175786903688314880",
-            "deny": 0,
-            "allow": 15360
+            "deny": "0",
+            "allow": "15360"
           }
         ],
         "name": "name",
@@ -149,16 +149,16 @@
         "position": 3,
         "permission_overwrites": [
           {
-            "type": "role",
+            "type": 0,
             "id": "173583899539013632",
-            "deny": 3145728,
-            "allow": 0
+            "deny": "3145728",
+            "allow": "0"
           },
           {
-            "type": "role",
+            "type": 0,
             "id": "175786903688314880",
-            "deny": 0,
-            "allow": 1048576
+            "deny": "0",
+            "allow": "1048576"
           }
         ],
         "name": "AFK",
@@ -172,22 +172,22 @@
         "position": 6,
         "permission_overwrites": [
           {
-            "type": "role",
+            "type": 0,
             "id": "173583899539013632",
-            "deny": 1024,
-            "allow": 0
+            "deny": "1024",
+            "allow": "0"
           },
           {
-            "type": "role",
+            "type": 0,
             "id": "175786903688314880",
-            "deny": 0,
-            "allow": 1024
+            "deny": "0",
+            "allow": "1024"
           },
           {
-            "type": "role",
+            "type": 0,
             "id": "577264684990726144",
-            "deny": 0,
-            "allow": 1024
+            "deny": "0",
+            "allow": "1024"
           }
         ],
         "name": "test",
@@ -201,22 +201,22 @@
         "position": 4,
         "permission_overwrites": [
           {
-            "type": "role",
+            "type": 0,
             "id": "173583899539013632",
-            "deny": 1024,
-            "allow": 0
+            "deny": "1024",
+            "allow": "0"
           },
           {
-            "type": "role",
+            "type": 0,
             "id": "175786903688314880",
-            "deny": 0,
-            "allow": 1024
+            "deny": "0",
+            "allow": "1024"
           },
           {
-            "type": "member",
+            "type": 1,
             "id": "123456789012345678",
-            "deny": 1024,
-            "allow": 0
+            "deny": "1024",
+            "allow": "0"
           }
         ],
         "name": "denied",
@@ -578,7 +578,7 @@
     "roles": [
       {
         "position": 0,
-        "permissions": 37215809,
+        "permissions": "37215809",
         "name": "@everyone",
         "mentionable": false,
         "managed": false,
@@ -588,7 +588,7 @@
       },
       {
         "position": 14,
-        "permissions": 402128471,
+        "permissions": "402128471",
         "name": "a",
         "mentionable": false,
         "managed": false,
@@ -598,7 +598,7 @@
       },
       {
         "position": 13,
-        "permissions": 1463287377,
+        "permissions": "1463287377",
         "name": "b",
         "mentionable": false,
         "managed": false,
@@ -608,7 +608,7 @@
       },
       {
         "position": 5,
-        "permissions": 3411520,
+        "permissions": "3411520",
         "name": "c",
         "mentionable": true,
         "managed": false,
@@ -618,7 +618,7 @@
       },
       {
         "position": 12,
-        "permissions": 37215809,
+        "permissions": "37215809",
         "name": "d",
         "mentionable": false,
         "managed": false,
@@ -628,7 +628,7 @@
       },
       {
         "position": 11,
-        "permissions": 37215809,
+        "permissions": "37215809",
         "name": "e",
         "mentionable": false,
         "managed": false,
@@ -638,7 +638,7 @@
       },
       {
         "position": 10,
-        "permissions": 37215809,
+        "permissions": "37215809",
         "name": "f",
         "mentionable": false,
         "managed": false,
@@ -648,7 +648,7 @@
       },
       {
         "position": 9,
-        "permissions": 37215809,
+        "permissions": "37215809",
         "name": "g",
         "mentionable": false,
         "managed": false,
@@ -658,7 +658,7 @@
       },
       {
         "position": 8,
-        "permissions": 37215809,
+        "permissions": "37215809",
         "name": "h",
         "mentionable": false,
         "managed": false,
@@ -668,7 +668,7 @@
       },
       {
         "position": 7,
-        "permissions": 37215809,
+        "permissions": "37215809",
         "name": "i",
         "mentionable": false,
         "managed": false,
@@ -678,7 +678,7 @@
       },
       {
         "position": 6,
-        "permissions": 37215809,
+        "permissions": "37215809",
         "name": "j",
         "mentionable": false,
         "managed": false,
@@ -688,7 +688,7 @@
       },
       {
         "position": 4,
-        "permissions": 37215809,
+        "permissions": "37215809",
         "name": "k",
         "mentionable": false,
         "managed": false,
@@ -698,7 +698,7 @@
       },
       {
         "position": 3,
-        "permissions": 512,
+        "permissions": "512",
         "name": "l",
         "mentionable": false,
         "managed": false,
@@ -708,7 +708,7 @@
       },
       {
         "position": 15,
-        "permissions": 37215809,
+        "permissions": "37215809",
         "name": "m",
         "mentionable": true,
         "managed": false,
@@ -718,7 +718,7 @@
       },
       {
         "position": 2,
-        "permissions": 76800,
+        "permissions": "76800",
         "name": "n",
         "mentionable": false,
         "managed": true,
@@ -728,7 +728,7 @@
       },
       {
         "position": 1,
-        "permissions": 271678550,
+        "permissions": "271678550",
         "name": "o",
         "mentionable": false,
         "managed": true,
