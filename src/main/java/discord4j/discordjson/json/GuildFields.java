@@ -22,7 +22,7 @@ public interface GuildFields {
 
     Possible<Boolean> owner();
 
-    Possible<Long> permissions();
+    Possible<String> permissions();
 
     @JsonProperty("afk_channel_id")
     Optional<String> afkChannelId();

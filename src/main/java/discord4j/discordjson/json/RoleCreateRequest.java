@@ -15,7 +15,7 @@ public interface RoleCreateRequest {
     }
 
     Possible<String> name();
-    Possible<Long> permissions();
+    Possible<String> permissions();
     Possible<Integer> color();
     Possible<Boolean> hoist();
     Possible<Boolean> mentionable();
