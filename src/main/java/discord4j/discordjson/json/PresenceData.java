@@ -22,8 +22,6 @@ public interface PresenceData {
 
     List<String> roles();
 
-    Optional<ActivityData> game();
-
     String status();
 
     List<ActivityData> activities();
