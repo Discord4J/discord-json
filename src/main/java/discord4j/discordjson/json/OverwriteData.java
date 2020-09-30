@@ -15,7 +15,7 @@ public interface OverwriteData {
 
     String id();
 
-    String type();
+    int type();
 
     String allow();
 
