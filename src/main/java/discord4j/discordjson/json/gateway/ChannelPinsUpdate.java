@@ -23,7 +23,6 @@ public interface ChannelPinsUpdate extends Dispatch {
     @JsonProperty("channel_id")
     String channelId();
 
-    // TODO: while https://github.com/discord/discord-api-docs/pull/1588 is resolved
     @JsonProperty("last_pin_timestamp")
     Possible<Optional<String>> lastPinTimestamp();
 }

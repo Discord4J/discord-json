@@ -60,7 +60,6 @@ public interface ChannelData {
     @JsonProperty("parent_id")
     Possible<Optional<String>> parentId();
 
-    // TODO GuildCreate can contain null last_pin_timestamp field!
     @JsonProperty("last_pin_timestamp")
     Possible<Optional<String>> lastPinTimestamp();
 }
