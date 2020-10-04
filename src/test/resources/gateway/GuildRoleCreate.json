@@ -1,1 +1,18 @@
-{"t":"GUILD_ROLE_CREATE","s":27379,"op":0,"d":{"role":{"position":1,"permissions":104324672,"name":"new role","mentionable":false,"managed":false,"id":"680867167196938247","hoist":false,"color":0},"guild_id":"123456789012345678"}}
+{
+    "t": "GUILD_ROLE_CREATE",
+    "s": 27379,
+    "op": 0,
+    "d": {
+        "role": {
+            "position": 1,
+            "permissions": "104324672",
+            "name": "new role",
+            "mentionable": false,
+            "managed": false,
+            "id": "680867167196938247",
+            "hoist": false,
+            "color": 0
+        },
+        "guild_id": "123456789012345678"
+    }
+}

@@ -20,10 +20,6 @@ public interface PresenceData {
 
     PartialUserData user();
 
-    List<String> roles();
-
-    Optional<ActivityData> game();
-
     String status();
 
     List<ActivityData> activities();
@@ -31,8 +27,4 @@ public interface PresenceData {
     @JsonProperty("client_status")
     ClientStatusData clientStatus();
 
-    @JsonProperty("premium_since")
-    Possible<Optional<String>> premiumSince();
-
-    Possible<Optional<String>> nick();
 }

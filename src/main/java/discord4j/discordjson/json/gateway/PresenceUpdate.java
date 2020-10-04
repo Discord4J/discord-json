@@ -23,10 +23,6 @@ public interface PresenceUpdate extends Dispatch {
 
     PartialUserData user();
 
-    List<String> roles();
-
-    Optional<ActivityData> game();
-
     @JsonProperty("guild_id")
     String guildId();
 
@@ -37,8 +33,4 @@ public interface PresenceUpdate extends Dispatch {
     @JsonProperty("client_status")
     ClientStatusData clientStatus();
 
-    @JsonProperty("premium_since")
-    Possible<Optional<String>> premiumSince();
-
-    Possible<Optional<String>> nick();
 }
