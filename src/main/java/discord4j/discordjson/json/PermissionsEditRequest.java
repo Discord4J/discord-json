@@ -14,6 +14,8 @@ public interface PermissionsEditRequest {
     }
 
     long allow();
+
     long deny();
-    String type();
+
+    int type();
 }

@@ -95,7 +95,6 @@ public class GatewaySerializationTest {
         String expected = readResourceAsString("/gateway/outbound/StatusUpdate.json");
         GatewayPayload<StatusUpdate> payload = GatewayPayload.statusUpdate(ImmutableStatusUpdate.builder()
                 .since(1583108253548L)
-                .game(Optional.empty())
                 .status("idle")
                 .afk(true)
                 .build());

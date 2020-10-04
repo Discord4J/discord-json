@@ -19,7 +19,7 @@
     "roles": [
       {
         "position": 0,
-        "permissions": 104324672,
+        "permissions": "104324672",
         "name": "@everyone",
         "mentionable": false,
         "managed": false,
@@ -29,7 +29,7 @@
       },
       {
         "position": 6,
-        "permissions": 536346232,
+        "permissions": "536346232",
         "name": "a",
         "mentionable": false,
         "managed": false,
@@ -39,7 +39,7 @@
       },
       {
         "position": 4,
-        "permissions": 3485248,
+        "permissions": "3485248",
         "name": "b",
         "mentionable": false,
         "managed": false,
@@ -49,7 +49,7 @@
       },
       {
         "position": 5,
-        "permissions": 104324672,
+        "permissions": "104324672",
         "name": "c",
         "mentionable": false,
         "managed": false,
@@ -59,7 +59,7 @@
       },
       {
         "position": 3,
-        "permissions": 104324672,
+        "permissions": "104324672",
         "name": "d",
         "mentionable": false,
         "managed": false,
@@ -69,7 +69,7 @@
       },
       {
         "position": 2,
-        "permissions": 3485248,
+        "permissions": "3485248",
         "name": "q",
         "mentionable": false,
         "managed": false,
@@ -79,7 +79,7 @@
       },
       {
         "position": 1,
-        "permissions": 3214848,
+        "permissions": "3214848",
         "name": "w",
         "mentionable": false,
         "managed": true,

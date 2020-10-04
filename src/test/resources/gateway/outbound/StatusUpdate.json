@@ -1,1 +1,11 @@
-{"op":3,"d":{"since":1583108253548,"game":null,"status":"idle","afk":true},"s":null,"t":null}
+{
+    "op": 3,
+    "d": {
+        "since": 1583108253548,
+        "activities": null,
+        "status": "idle",
+        "afk": true
+    },
+    "s": null,
+    "t": null
+}
