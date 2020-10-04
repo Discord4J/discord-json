@@ -2,6 +2,7 @@ package discord4j.discordjson.json;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import discord4j.discordjson.Id;
 import org.immutables.value.Value;
 
 import java.util.List;
@@ -17,5 +18,5 @@ public interface GuildEmojiCreateRequest {
 
     String name();
     String image();
-    List<String> roles();
+    List<Id> roles();
 }

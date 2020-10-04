@@ -3,6 +3,7 @@ package discord4j.discordjson.json;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import discord4j.discordjson.Id;
 import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
@@ -18,12 +19,12 @@ public interface ChannelData {
         return ImmutableChannelData.builder();
     }
 
-    String id();
+    Id id();
 
     int type();
 
     @JsonProperty("guild_id")
-    Possible<String> guildId();
+    Possible<Id> guildId();
 
     Possible<Integer> position();
 
@@ -37,7 +38,7 @@ public interface ChannelData {
     Possible<Boolean> nsfw();
 
     @JsonProperty("last_message_id")
-    Possible<Optional<String>> lastMessageId();
+    Possible<Optional<Id>> lastMessageId();
 
     Possible<Integer> bitrate();
 
@@ -52,13 +53,13 @@ public interface ChannelData {
     Possible<Optional<String>> icon();
 
     @JsonProperty("owner_id")
-    Possible<String> ownerId();
+    Possible<Id> ownerId();
 
     @JsonProperty("application_id")
-    Possible<String> applicationId();
+    Possible<Id> applicationId();
 
     @JsonProperty("parent_id")
-    Possible<Optional<String>> parentId();
+    Possible<Optional<Id>> parentId();
 
     @JsonProperty("last_pin_timestamp")
     Possible<Optional<String>> lastPinTimestamp();
