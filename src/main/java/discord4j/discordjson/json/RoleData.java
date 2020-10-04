@@ -23,7 +23,7 @@ public interface RoleData {
 
     int position();
 
-    String permissions();
+    long permissions();
 
     boolean managed();
 

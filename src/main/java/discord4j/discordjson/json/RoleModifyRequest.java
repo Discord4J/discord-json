@@ -15,7 +15,7 @@ public interface RoleModifyRequest {
     }
 
     Possible<String> name();
-    Possible<String> permissions();
+    Possible<Long> permissions();
     Possible<Integer> color();
     Possible<Boolean> hoist();
     Possible<Boolean> mentionable();

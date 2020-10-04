@@ -17,7 +17,7 @@ public interface OverwriteData {
 
     int type();
 
-    String allow();
+    long allow();
 
-    String deny();
+    long deny();
 }

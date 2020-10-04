@@ -13,9 +13,9 @@ public interface PermissionsEditRequest {
         return ImmutablePermissionsEditRequest.builder();
     }
 
-    String allow();
+    long allow();
 
-    String deny();
+    long deny();
 
     int type();
 }
