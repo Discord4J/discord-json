@@ -2,7 +2,13 @@
     "op": 3,
     "d": {
         "since": 1583108253548,
-        "activities": null,
+        "activities": [
+          {
+            "name": "Testing",
+            "type": 0,
+            "url": null
+          }
+        ],
         "status": "idle",
         "afk": true
     },

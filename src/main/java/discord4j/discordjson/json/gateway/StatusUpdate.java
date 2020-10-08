@@ -2,7 +2,6 @@ package discord4j.discordjson.json.gateway;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import discord4j.discordjson.json.ActivityData;
 import discord4j.discordjson.json.ActivityUpdateRequest;
 import org.immutables.value.Value;
 
@@ -20,7 +19,7 @@ public interface StatusUpdate extends PayloadData {
 
     Optional<Long> since();
 
-    Optional<List<ActivityData>> activities();
+    Optional<List<ActivityUpdateRequest>> activities();
 
     String status();
 
