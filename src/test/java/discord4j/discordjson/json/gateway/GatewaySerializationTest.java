@@ -25,6 +25,7 @@ import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.deser.DeserializationProblemHandler;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
+import discord4j.discordjson.json.ActivityUpdateRequest;
 import discord4j.discordjson.possible.Possible;
 import discord4j.discordjson.possible.PossibleFilter;
 import discord4j.discordjson.possible.PossibleModule;
@@ -37,6 +38,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
+import java.util.Collections;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -97,6 +99,10 @@ public class GatewaySerializationTest {
                 .since(1583108253548L)
                 .status("idle")
                 .afk(true)
+                .activities(Collections.singletonList(ActivityUpdateRequest.builder()
+                        .name("Testing")
+                        .type(0)
+                        .build()))
                 .build());
         String result = mapper.writeValueAsString(payload);
         assertEquals(mapper.readTree(expected), mapper.readTree(result));
