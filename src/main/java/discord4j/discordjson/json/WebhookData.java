@@ -34,4 +34,7 @@ public interface WebhookData {
     Optional<String> avatar();
 
     Possible<String> token();
+
+    @JsonProperty("application_id")
+    Optional<String> applicationId();
 }
