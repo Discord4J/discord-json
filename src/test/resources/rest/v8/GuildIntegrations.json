@@ -22,7 +22,9 @@
         "bot": true
       }
     },
-    "enabled": true
+    "enabled": true,
+    "subscriber_count": 0,
+    "revoked": false
   },
   {
     "id": "740682296616550473",
@@ -47,6 +49,8 @@
         "bot": true
       }
     },
-    "enabled": true
+    "enabled": true,
+    "subscriber_count": 0,
+    "revoked": false
   }
 ]
