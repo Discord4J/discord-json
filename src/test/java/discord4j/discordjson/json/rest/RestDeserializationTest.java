@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -19,6 +20,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -132,5 +134,13 @@ public class RestDeserializationTest {
         assertFalse(data.splash().isPresent());
         assertTrue(data.emojis().isEmpty());
         assertEquals(9, data.features().size());
+    }
+
+    @Test
+    public void testGetGuildIntegrations() throws IOException {
+        List<IntegrationData> list = mapper.readValue(
+                getClass().getResourceAsStream("/rest/v8/GuildIntegrations.json"),
+                new TypeReference<List<IntegrationData>>() {});
+        assertEquals(list.get(0).account().name(), "Reacton");
     }
 }

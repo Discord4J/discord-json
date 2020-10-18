@@ -23,24 +23,31 @@ public interface IntegrationData {
 
     boolean enabled();
 
-    boolean syncing();
+    Possible<Boolean> syncing();
 
     @JsonProperty("role_id")
-    String roleId();
+    Possible<String> roleId();
 
     @JsonProperty("enable_emoticons")
     Possible<Boolean> enableEmoticons();
 
     @JsonProperty("expire_behavior")
-    int expireBehavior();
+    Possible<Integer> expireBehavior();
 
     @JsonProperty("expire_grace_period")
-    int expireGracePeriod();
+    Possible<Integer> expireGracePeriod();
 
-    UserData user();
+    Possible<UserData> user();
 
     IntegrationAccountData account();
 
     @JsonProperty("synced_at")
-    String syncedAt();
+    Possible<String> syncedAt();
+
+    @JsonProperty("subscriber_count")
+    int subscriberCount();
+
+    boolean revoked();
+
+    Possible<IntegrationApplicationData> application();
 }
