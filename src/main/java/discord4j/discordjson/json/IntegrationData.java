@@ -45,9 +45,9 @@ public interface IntegrationData {
     Possible<String> syncedAt();
 
     @JsonProperty("subscriber_count")
-    int subscriberCount();
+    Possible<Integer> subscriberCount();
 
-    boolean revoked();
+    Possible<Boolean> revoked();
 
     Possible<IntegrationApplicationData> application();
 }
