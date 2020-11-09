@@ -96,6 +96,12 @@ public class GatewayDeserializationTest {
     }
 
     @Test
+    public void testGuildCreateUnavailable() throws IOException {
+        GatewayPayload<?> json = read("/gateway/GuildCreate.Unavailable.json", new TypeReference<GatewayPayload<?>>() {});
+        log.info("{}", json.getData());
+    }
+
+    @Test
     public void testGuildDelete() throws IOException {
         GatewayPayload<?> json = read("/gateway/GuildDelete.json", new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json.getData());
