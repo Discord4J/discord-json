@@ -30,8 +30,10 @@ public interface StickerData {
 
     String asset();
 
+    @JsonProperty("preview_asset")
     Optional<String> previewAsset();
 
+    @JsonProperty("format_type")
     int formatType();
 
 }
