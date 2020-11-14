@@ -74,4 +74,6 @@ public interface MessageData {
 
     Possible<Integer> flags();
 
+    Possible<List<StickerData>> stickers();
+
 }
