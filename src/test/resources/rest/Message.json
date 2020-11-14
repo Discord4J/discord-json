@@ -1,0 +1,34 @@
+{
+    "id": "776971544446369803",
+    "type": 0,
+    "content": "",
+    "channel_id": "278314058422157320",
+    "author": {
+        "id": "129498893795721216",
+        "username": "alpha;helix",
+        "avatar": "2345b80540ff5647fcd31830163226e9",
+        "discriminator": "2819",
+        "public_flags": 64
+    },
+    "attachments": [],
+    "embeds": [],
+    "mentions": [],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2020-11-14T00:47:31.629000+00:00",
+    "edited_timestamp": null,
+    "flags": 0,
+    "stickers": [{
+        "id": "748293342357356564",
+        "name": "Scared",
+        "description": "wumpus, scared, woah, scary, scream, :o, spooked, \ud83d\ude28, \ud83d\ude31, :scared, :scream",
+        "pack_id": "748286863302852648",
+        "asset": "17e05030dcafa6604ee7479789652459",
+        "preview_asset": "c5ca5d803b37604638c32e68cb629b1a",
+        "format_type": 2,
+        "tags": "wumpus, scared, woah, scary, scream, :o, spooked, \ud83d\ude28, \ud83d\ude31, :scared, :scream"
+    }
+    ]
+}

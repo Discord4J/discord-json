@@ -128,8 +128,7 @@ public class RestDeserializationTest {
 
     @Test
     public void testGetGuildPreview() throws IOException {
-        GuildPreviewData data = mapper.readValue(getClass()
-                .getResourceAsStream("/rest/GuildPreview.json"), GuildPreviewData.class);
+        GuildPreviewData data = read("/rest/GuildPreview.json", GuildPreviewData.class);
         assertEquals("197038439483310086", data.id());
         assertFalse(data.splash().isPresent());
         assertTrue(data.emojis().isEmpty());
@@ -142,5 +141,11 @@ public class RestDeserializationTest {
                 getClass().getResourceAsStream("/rest/v8/GuildIntegrations.json"),
                 new TypeReference<List<IntegrationData>>() {});
         assertEquals(list.get(0).account().name(), "Reacton");
+    }
+
+    @Test
+    public void testGetMessage() throws IOException {
+        MessageData res = read("/rest/Message.json", MessageData.class);
+        log.info("{}", res);
     }
 }
