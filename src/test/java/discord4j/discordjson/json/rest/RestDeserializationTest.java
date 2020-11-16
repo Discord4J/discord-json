@@ -54,6 +54,10 @@ public class RestDeserializationTest {
         return mapper.readValue(getClass().getResourceAsStream(from), into);
     }
 
+    private <T> T read(String from, TypeReference<T> into) throws IOException {
+        return mapper.readValue(getClass().getResourceAsStream(from), into);
+    }
+
     @Test
     public void testGetGuild() throws IOException {
         GuildUpdateData guild = read("/rest/Guild.json", GuildUpdateData.class);
@@ -128,8 +132,7 @@ public class RestDeserializationTest {
 
     @Test
     public void testGetGuildPreview() throws IOException {
-        GuildPreviewData data = mapper.readValue(getClass()
-                .getResourceAsStream("/rest/GuildPreview.json"), GuildPreviewData.class);
+        GuildPreviewData data = read("/rest/GuildPreview.json", GuildPreviewData.class);
         assertEquals("197038439483310086", data.id());
         assertFalse(data.splash().isPresent());
         assertTrue(data.emojis().isEmpty());
@@ -138,17 +141,20 @@ public class RestDeserializationTest {
 
     @Test
     public void testGetGuildIntegrations() throws IOException {
-        List<IntegrationData> list = mapper.readValue(
-                getClass().getResourceAsStream("/rest/v8/GuildIntegrations.json"),
+        List<IntegrationData> list = read("/rest/v8/GuildIntegrations.json",
                 new TypeReference<List<IntegrationData>>() {});
         assertEquals(list.get(0).account().name(), "Reacton");
     }
 
     @Test
+    public void testGetMessage() throws IOException {
+        MessageData res = read("/rest/Message.json", MessageData.class);
+        log.info("{}", res);
+    }
+
+    @Test
     public void testGuildMemberModify() throws IOException {
-        MemberData data = mapper.readValue(
-                getClass().getResourceAsStream("/rest/v8/GuildMemberModify.json"),
-                MemberData.class);
+        MemberData data = read("/rest/v8/GuildMemberModify.json", MemberData.class);
         assertEquals(data.user().id(), "84745855399129088");
     }
 }

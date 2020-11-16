@@ -73,4 +73,7 @@ public interface PartialMessageData {
     Possible<MessageReferenceData> messageReference();
 
     Possible<Integer> flags();
+
+    Possible<List<StickerData>> stickers();
+
 }
