@@ -13,6 +13,6 @@ public interface MessageSendRequestBase {
     Possible<AllowedMentionsData> allowedMentions();
 
     @JsonProperty("message_reference")
-    Possible<MessageData> messageReference();
+    Possible<MessageReferenceData> messageReference();
 
 }
