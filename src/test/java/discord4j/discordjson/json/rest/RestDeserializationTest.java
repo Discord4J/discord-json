@@ -148,8 +148,10 @@ public class RestDeserializationTest {
 
     @Test
     public void testGetMessage() throws IOException {
-        MessageData res = read("/rest/Message.json", MessageData.class);
-        log.info("{}", res);
+        MessageData message = read("/rest/Message.json", MessageData.class);
+        log.info("{}", message);
+        MessageData reply = read("/rest/Message.Reply.json", MessageData.class);
+        log.info("{}", reply);
     }
 
     @Test

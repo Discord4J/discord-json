@@ -1,0 +1,139 @@
+{
+  "t": "MESSAGE_CREATE",
+  "s": 1130,
+  "op": 0,
+  "d": {
+    "type": 19,
+    "tts": false,
+    "timestamp": "2020-11-21T01:38:00.406000+00:00",
+    "referenced_message": {
+      "type": 0,
+      "tts": false,
+      "timestamp": "2020-11-09T04:27:22.919000+00:00",
+      "pinned": false,
+      "mentions": [],
+      "mention_roles": [],
+      "mention_everyone": false,
+      "id": "775214933398782002",
+      "flags": 0,
+      "embeds": [
+        {
+          "type": "rich",
+          "fields": [
+            {
+              "value": "136",
+              "name": "Channels",
+              "inline": true
+            },
+            {
+              "value": "75",
+              "name": "Emojis",
+              "inline": true
+            },
+            {
+              "value": "6",
+              "name": "Guilds",
+              "inline": true
+            },
+            {
+              "value": "4",
+              "name": "Members",
+              "inline": true
+            },
+            {
+              "value": "136",
+              "name": "Messages",
+              "inline": true
+            },
+            {
+              "value": "4",
+              "name": "Presences",
+              "inline": true
+            },
+            {
+              "value": "12299",
+              "name": "Roles",
+              "inline": true
+            },
+            {
+              "value": "1",
+              "name": "Users",
+              "inline": true
+            },
+            {
+              "value": "2",
+              "name": "VoiceStates",
+              "inline": true
+            }
+          ]
+        }
+      ],
+      "edited_timestamp": null,
+      "content": "",
+      "channel_id": "563557393640849437",
+      "author": {
+        "username": "Reacton",
+        "public_flags": 0,
+        "id": "344487830824943618",
+        "discriminator": "6221",
+        "bot": true,
+        "avatar": "1c295705ae50fdbc755f1eda5ed8d268"
+      },
+      "attachments": []
+    },
+    "pinned": false,
+    "nonce": "779520968933507072",
+    "message_reference": {
+      "message_id": "775214933398782002",
+      "guild_id": "185949590652977152",
+      "channel_id": "563557393640849437"
+    },
+    "mentions": [
+      {
+        "username": "Reacton",
+        "public_flags": 0,
+        "member": {
+          "roles": [
+            "563420873307193354"
+          ],
+          "mute": false,
+          "joined_at": "2019-04-04T17:53:23.951000+00:00",
+          "hoisted_role": null,
+          "deaf": false
+        },
+        "id": "344487830824943618",
+        "discriminator": "6221",
+        "bot": true,
+        "avatar": "1c295705ae50fdbc755f1eda5ed8d268"
+      }
+    ],
+    "mention_roles": [],
+    "mention_everyone": false,
+    "member": {
+      "roles": [
+        "186563072540934144",
+        "186605392971694081",
+        "714731065335349289"
+      ],
+      "mute": false,
+      "joined_at": "2016-05-28T02:57:17.190000+00:00",
+      "hoisted_role": null,
+      "deaf": false
+    },
+    "id": "779520963116400721",
+    "flags": 0,
+    "embeds": [],
+    "edited_timestamp": null,
+    "content": "cool.",
+    "channel_id": "563557393640849437",
+    "author": {
+      "username": "quantic",
+      "public_flags": 0,
+      "id": "134127815531560960",
+      "discriminator": "5520",
+      "avatar": "25a09a99ac0487bf846125084d9c7346"
+    },
+    "attachments": [],
+    "guild_id": "185949590652977152"
+  }
+}

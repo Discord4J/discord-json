@@ -1,0 +1,112 @@
+{
+  "id": "779520963116400721",
+  "type": 19,
+  "content": "cool.",
+  "channel_id": "563557393640849437",
+  "author": {
+    "id": "134127815531560960",
+    "username": "quantic",
+    "avatar": "25a09a99ac0487bf846125084d9c7346",
+    "discriminator": "5520",
+    "public_flags": 0
+  },
+  "attachments": [],
+  "embeds": [],
+  "mentions": [
+    {
+      "id": "344487830824943618",
+      "username": "Reacton",
+      "avatar": "1c295705ae50fdbc755f1eda5ed8d268",
+      "discriminator": "6221",
+      "public_flags": 0,
+      "bot": true
+    }
+  ],
+  "mention_roles": [],
+  "pinned": false,
+  "mention_everyone": false,
+  "tts": false,
+  "timestamp": "2020-11-21T01:38:00.406000+00:00",
+  "edited_timestamp": null,
+  "flags": 0,
+  "message_reference": {
+    "channel_id": "563557393640849437",
+    "guild_id": "185949590652977152",
+    "message_id": "775214933398782002"
+  },
+  "referenced_message": {
+    "id": "775214933398782002",
+    "type": 0,
+    "content": "",
+    "channel_id": "563557393640849437",
+    "author": {
+      "id": "344487830824943618",
+      "username": "Reacton",
+      "avatar": "1c295705ae50fdbc755f1eda5ed8d268",
+      "discriminator": "6221",
+      "public_flags": 0,
+      "bot": true
+    },
+    "attachments": [],
+    "embeds": [
+      {
+        "type": "rich",
+        "fields": [
+          {
+            "name": "Channels",
+            "value": "136",
+            "inline": true
+          },
+          {
+            "name": "Emojis",
+            "value": "75",
+            "inline": true
+          },
+          {
+            "name": "Guilds",
+            "value": "6",
+            "inline": true
+          },
+          {
+            "name": "Members",
+            "value": "4",
+            "inline": true
+          },
+          {
+            "name": "Messages",
+            "value": "136",
+            "inline": true
+          },
+          {
+            "name": "Presences",
+            "value": "4",
+            "inline": true
+          },
+          {
+            "name": "Roles",
+            "value": "12299",
+            "inline": true
+          },
+          {
+            "name": "Users",
+            "value": "1",
+            "inline": true
+          },
+          {
+            "name": "VoiceStates",
+            "value": "2",
+            "inline": true
+          }
+        ]
+      }
+    ],
+    "mentions": [],
+    "mention_roles": [],
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "timestamp": "2020-11-09T04:27:22.919000+00:00",
+    "edited_timestamp": null,
+    "flags": 0
+  }
+}
