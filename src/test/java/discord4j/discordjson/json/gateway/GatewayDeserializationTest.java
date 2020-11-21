@@ -181,10 +181,17 @@ public class GatewayDeserializationTest {
 
     @Test
     public void testMessageCreate() throws IOException {
-        GatewayPayload<?> json = read("/gateway/MessageCreate.Type0.json", new TypeReference<GatewayPayload<?>>() {});
-        log.info("{}", json.getData());
-        GatewayPayload<?> json2 = read("/gateway/MessageCreate.Type6.json", new TypeReference<GatewayPayload<?>>() {});
-        log.info("{}", json2.getData());
+        MessageCreate type0 = (MessageCreate) read("/gateway/MessageCreate.Type0.json",
+                new TypeReference<GatewayPayload<?>>() {}).getData();
+        assertEquals("32309dbaaf65eae4c58a351318f44c9d", type0.message().author().avatar().orElse(""));
+
+        MessageCreate type6 = (MessageCreate) read("/gateway/MessageCreate.Type6.json",
+                new TypeReference<GatewayPayload<?>>() {}).getData();
+        assertEquals("2020-03-01T21:02:35.282000+00:00", type6.message().timestamp());
+
+        MessageCreate reply = (MessageCreate) read("/gateway/MessageCreate.Type0.Reply.json",
+                new TypeReference<GatewayPayload<?>>() {}).getData();
+        assertEquals("563557393640849437", reply.message().messageReference().get().channelId().get());
     }
 
     @Test
