@@ -25,6 +25,6 @@ public interface RoleTagsData {
 
     // This field does not have any type and, if present, is always null. Its presence can be considered as 'true'
     @JsonProperty("premium_subscriber")
-    Possible<Optional<Object>> premiumSubscriber();
+    Possible<Optional<Void>> premiumSubscriber();
 
 }
