@@ -2,7 +2,7 @@ plugins {
     id 'java-library'
     id 'maven-publish'
     id 'signing'
-    id 'com.github.ben-manes.versions' version '0.33.0'
+    id 'com.github.ben-manes.versions' version '0.36.0'
     id 'net.researchgate.release' version '2.8.1'
 }
 
@@ -57,7 +57,7 @@ allprojects {
     }
 
     configurations.all {
-        resolutionStrategy.cacheChangingModulesFor 600, 'seconds'
+        resolutionStrategy.cacheChangingModulesFor 60, 'seconds'
     }
 
     tasks.withType(Javadoc) {
