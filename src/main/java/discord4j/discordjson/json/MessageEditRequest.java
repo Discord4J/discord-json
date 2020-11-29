@@ -18,8 +18,11 @@ public interface MessageEditRequest {
     }
 
     Possible<Optional<String>> content();
+
     Possible<Optional<EmbedData>> embed();
-    @JsonProperty("allowed_mentions ")
+
+    @JsonProperty("allowed_mentions")
     Possible<Optional<AllowedMentionsData>> allowedMentions();
+
     Possible<Integer> flags();
 }
