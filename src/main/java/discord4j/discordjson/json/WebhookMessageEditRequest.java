@@ -10,12 +10,12 @@ import java.util.List;
 import java.util.Optional;
 
 @Value.Immutable
-@JsonSerialize(as = ImmutableWebhookEditRequest.class)
-@JsonDeserialize(as = ImmutableWebhookEditRequest.class)
-public interface WebhookEditRequest {
+@JsonSerialize(as = ImmutableWebhookMessageEditRequest.class)
+@JsonDeserialize(as = ImmutableWebhookMessageEditRequest.class)
+public interface WebhookMessageEditRequest {
 
-    static ImmutableWebhookEditRequest.Builder builder() {
-        return ImmutableWebhookEditRequest.builder();
+    static ImmutableWebhookMessageEditRequest.Builder builder() {
+        return ImmutableWebhookMessageEditRequest.builder();
     }
 
     Possible<Optional<String>> content();
