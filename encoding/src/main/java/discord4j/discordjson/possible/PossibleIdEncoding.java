@@ -1,5 +1,6 @@
 package discord4j.discordjson.possible;
 
+import discord4j.discordjson.Id;
 import org.immutables.encode.Encoding;
 
 import java.util.Objects;
@@ -11,14 +12,14 @@ public class PossibleIdEncoding {
     private Possible<Id> possible;
 
     private final long value = possible.toOptional()
-            .map(discord4j.discordjson.possible.Id::longValue)
+            .map(Id::longValue)
             .orElse(0L);
     private final boolean absent = possible.isAbsent();
 
     @Encoding.Expose
     Possible<Id> get() {
         return absent ? discord4j.discordjson.possible.Possible.absent() :
-                discord4j.discordjson.possible.Possible.of(discord4j.discordjson.possible.Id.of(value));
+                discord4j.discordjson.possible.Possible.of(discord4j.discordjson.Id.of(value));
     }
 
     @Encoding.Naming("is*Present")
@@ -38,7 +39,7 @@ public class PossibleIdEncoding {
 
     @Encoding.Copy
     public Possible<Id> with(final long value) {
-        return discord4j.discordjson.possible.Possible.of(discord4j.discordjson.possible.Id.of(value));
+        return discord4j.discordjson.possible.Possible.of(discord4j.discordjson.Id.of(value));
     }
 
     @Encoding.Builder
@@ -59,7 +60,7 @@ public class PossibleIdEncoding {
 
         @Encoding.Init
         public void setValue(long value) {
-            this.possible = discord4j.discordjson.possible.Possible.of(discord4j.discordjson.possible.Id.of(value));
+            this.possible = discord4j.discordjson.possible.Possible.of(discord4j.discordjson.Id.of(value));
         }
 
         @Encoding.Build

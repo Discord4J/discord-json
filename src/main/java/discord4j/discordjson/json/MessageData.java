@@ -3,6 +3,7 @@ package discord4j.discordjson.json;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import discord4j.discordjson.Id;
 import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
@@ -18,13 +19,13 @@ public interface MessageData {
         return ImmutableMessageData.builder();
     }
 
-    String id();
+    Id id();
 
     @JsonProperty("channel_id")
-    String channelId();
+    Id channelId();
 
     @JsonProperty("guild_id")
-    Possible<String> guildId();
+    Possible<Id> guildId();
 
     UserData author();
 
@@ -61,7 +62,7 @@ public interface MessageData {
     boolean pinned();
 
     @JsonProperty("webhook_id")
-    Possible<String> webhookId();
+    Possible<Id> webhookId();
 
     int type();
 

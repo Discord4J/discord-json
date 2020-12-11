@@ -1,4 +1,4 @@
-package discord4j.discordjson.possible;
+package discord4j.discordjson;
 
 import org.immutables.encode.Encoding;
 
@@ -14,7 +14,7 @@ public class IdEncoding {
 
     @Encoding.Expose
     Id get() {
-        return discord4j.discordjson.possible.Id.of(value);
+        return discord4j.discordjson.Id.of(value);
     }
 
     @Override
@@ -38,7 +38,7 @@ public class IdEncoding {
 
     @Encoding.Copy
     public Id with(final long value) {
-        return discord4j.discordjson.possible.Id.of(value);
+        return discord4j.discordjson.Id.of(value);
     }
 
     @Encoding.Builder
@@ -54,7 +54,7 @@ public class IdEncoding {
 
         @Encoding.Init
         public void setValue(long value) {
-            this.id = discord4j.discordjson.possible.Id.of(value);
+            this.id = discord4j.discordjson.Id.of(value);
         }
 
         @Encoding.Build

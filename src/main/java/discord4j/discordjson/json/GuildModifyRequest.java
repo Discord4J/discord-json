@@ -3,6 +3,7 @@ package discord4j.discordjson.json;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import discord4j.discordjson.Id;
 import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
@@ -31,7 +32,7 @@ public interface GuildModifyRequest {
     Possible<Integer> explicitContentFilter();
 
     @JsonProperty("afk_channel_id")
-    Possible<Optional<String>> afkChannelId();
+    Possible<Optional<Id>> afkChannelId();
 
     @JsonProperty("afk_timeout")
     Possible<Integer> afkTimeout();
@@ -39,12 +40,21 @@ public interface GuildModifyRequest {
     Possible<Optional<String>> icon();
 
     @JsonProperty("owner_id")
-    Possible<String> ownerId();
+    Possible<Id> ownerId();
 
     Possible<Optional<String>> splash();
 
     Possible<Optional<String>> banner();
 
     @JsonProperty("system_channel_id")
-    Possible<String> systemChannelId();
+    Possible<Id> systemChannelId();
+
+    @JsonProperty("rules_channel_id")
+    Possible<Id> rulesChannelId();
+
+    @JsonProperty("public_updates_channel_id")
+    Possible<Id> publicUpdatesChannelId();
+
+    @JsonProperty("preferred_locale")
+    Possible<String> preferredLocale();
 }

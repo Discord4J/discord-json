@@ -3,6 +3,7 @@ package discord4j.discordjson.json;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import discord4j.discordjson.Id;
 import org.immutables.value.Value;
 
 @Value.Immutable
@@ -15,5 +16,5 @@ public interface DMCreateRequest {
     }
 
     @JsonProperty("recipient_id")
-    String recipientId();
+    Id recipientId();
 }

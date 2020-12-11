@@ -3,6 +3,7 @@ package discord4j.discordjson.json;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import discord4j.discordjson.Id;
 import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
@@ -17,15 +18,15 @@ public interface WebhookData {
         return ImmutableWebhookData.builder();
     }
 
-    String id();
+    Id id();
 
     int type();
 
     @JsonProperty("guild_id")
-    Possible<String> guildId();
+    Possible<Id> guildId();
 
     @JsonProperty("channel_id")
-    String channelId();
+    Id channelId();
 
     Possible<UserData> user();
 
@@ -36,5 +37,5 @@ public interface WebhookData {
     Possible<String> token();
 
     @JsonProperty("application_id")
-    Optional<String> applicationId();
+    Optional<Id> applicationId();
 }

@@ -3,6 +3,7 @@ package discord4j.discordjson.json.gateway;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import discord4j.discordjson.Id;
 import org.immutables.value.Value;
 import reactor.util.annotation.Nullable;
 
@@ -17,7 +18,7 @@ public interface VoiceServerUpdate extends Dispatch {
 
     String token();
     @JsonProperty("guild_id")
-    String guildId();
+    Id guildId();
     @Nullable
     String endpoint();
 }

@@ -3,6 +3,7 @@ package discord4j.discordjson.json;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import discord4j.discordjson.Id;
 import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
@@ -18,7 +19,7 @@ public interface ApplicationInfoData {
         return ImmutableApplicationInfoData.builder();
     }
 
-    String id();
+    Id id();
     String name();
     Optional<String> icon();
     String description();
@@ -34,9 +35,9 @@ public interface ApplicationInfoData {
     String verifyKey();
     Optional<ApplicationTeamData> team();
     @JsonProperty("guild_id")
-    Possible<String> guildId();
+    Possible<Id> guildId();
     @JsonProperty("primary_sku_id")
-    Possible<String> primarySkuId();
+    Possible<Id> primarySkuId();
     Possible<String> slug();
     @JsonProperty("cover_image")
     Possible<String> coverImage();

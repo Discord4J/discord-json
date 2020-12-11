@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.json.PartialUserData;
 import discord4j.discordjson.json.UserData;
+import discord4j.discordjson.Id;
 import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
@@ -18,10 +19,10 @@ public interface InviteCreate extends Dispatch {
     }
 
     @JsonProperty("guild_id")
-    String guildId();
+    Id guildId();
 
     @JsonProperty("channel_id")
-    String channelId();
+    Id channelId();
 
     String code();
 

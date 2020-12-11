@@ -6,11 +6,10 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.json.ActivityData;
 import discord4j.discordjson.json.ClientStatusData;
 import discord4j.discordjson.json.PartialUserData;
-import discord4j.discordjson.possible.Possible;
+import discord4j.discordjson.Id;
 import org.immutables.value.Value;
 
 import java.util.List;
-import java.util.Optional;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutablePresenceUpdate.class)
@@ -24,7 +23,7 @@ public interface PresenceUpdate extends Dispatch {
     PartialUserData user();
 
     @JsonProperty("guild_id")
-    String guildId();
+    Id guildId();
 
     String status();
 

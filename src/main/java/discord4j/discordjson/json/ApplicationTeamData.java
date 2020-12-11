@@ -3,6 +3,7 @@ package discord4j.discordjson.json;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import discord4j.discordjson.Id;
 import org.immutables.value.Value;
 
 import java.util.List;
@@ -18,8 +19,8 @@ public interface ApplicationTeamData {
     }
 
     Optional<String> icon();
-    String id();
+    Id id();
     List<ApplicationTeamMemberData> members();
     @JsonProperty("owner_user_id")
-    String ownerUserId();
+    Id ownerUserId();
 }

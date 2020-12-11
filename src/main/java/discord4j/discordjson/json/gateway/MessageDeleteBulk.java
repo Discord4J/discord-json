@@ -3,6 +3,7 @@ package discord4j.discordjson.json.gateway;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import discord4j.discordjson.Id;
 import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
@@ -17,10 +18,10 @@ public interface MessageDeleteBulk extends Dispatch {
         return ImmutableMessageDeleteBulk.builder();
     }
 
-    List<String> ids();
+    List<Id> ids();
     @JsonProperty("channel_id")
-    String channelId();
+    Id channelId();
 
     @JsonProperty("guild_id")
-    Possible<String> guildId();
+    Possible<Id> guildId();
 }

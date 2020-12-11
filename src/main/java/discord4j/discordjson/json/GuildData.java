@@ -2,6 +2,7 @@ package discord4j.discordjson.json;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import discord4j.discordjson.Id;
 import org.immutables.value.Value;
 
 import java.util.List;
@@ -15,11 +16,11 @@ public interface GuildData extends GuildCreateFields {
         return ImmutableGuildData.builder();
     }
 
-    List<String> roles();
+    List<Id> roles();
 
-    List<String> emojis();
+    List<Id> emojis();
 
-    List<String> members();
+    List<Id> members();
 
-    List<String> channels();
+    List<Id> channels();
 }

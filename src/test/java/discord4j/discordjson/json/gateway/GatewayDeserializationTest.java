@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.deser.DeserializationProblemHandler;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
+import discord4j.discordjson.Id;
 import discord4j.discordjson.possible.PossibleFilter;
 import discord4j.discordjson.possible.PossibleModule;
 import org.junit.jupiter.api.BeforeEach;
@@ -191,7 +192,7 @@ public class GatewayDeserializationTest {
 
         MessageCreate reply = (MessageCreate) read("/gateway/MessageCreate.Type19.json",
                 new TypeReference<GatewayPayload<?>>() {}).getData();
-        assertEquals("563557393640849437", reply.message().messageReference().get().channelId().get());
+        assertEquals(Id.of("563557393640849437"), reply.message().messageReference().get().channelId().get());
     }
 
     @Test
@@ -255,7 +256,7 @@ public class GatewayDeserializationTest {
         assertEquals(477069, json.getSequence());
         VoiceServerUpdate data = (VoiceServerUpdate) json.getData();
         assertEquals("f8eb804ee40ebf3d", data.token());
-        assertEquals("691022703368601651", data.guildId());
+        assertEquals(Id.of("691022703368601651"), data.guildId());
         assertNull(data.endpoint());
     }
 

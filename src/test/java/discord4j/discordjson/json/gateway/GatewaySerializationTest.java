@@ -26,6 +26,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.deser.DeserializationProblemHandler;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 import discord4j.discordjson.json.ActivityUpdateRequest;
+import discord4j.discordjson.Id;
 import discord4j.discordjson.possible.Possible;
 import discord4j.discordjson.possible.PossibleFilter;
 import discord4j.discordjson.possible.PossibleModule;
@@ -112,8 +113,10 @@ public class GatewaySerializationTest {
     public void testVoiceStateUpdate() throws IOException {
         String expected = readResourceAsString("/gateway/outbound/VoiceStateUpdate.json");
 
-        VoiceStateUpdate voiceStateUpdate = ImmutableVoiceStateUpdate.of("41771983423143937", Optional.of(
-                "127121515262115840"), false, false);
+        VoiceStateUpdate voiceStateUpdate = ImmutableVoiceStateUpdate.of(
+                Id.of("41771983423143937"),
+                Optional.of(Id.of("127121515262115840")),
+                false, false);
         GatewayPayload<VoiceStateUpdate> payload = GatewayPayload.voiceStateUpdate(voiceStateUpdate);
         String result = mapper.writeValueAsString(payload);
 
@@ -140,7 +143,7 @@ public class GatewaySerializationTest {
     public void testRequestGuildMembers() throws IOException {
         String expected = readResourceAsString("/gateway/outbound/RequestGuildMembers.json");
 
-        RequestGuildMembers requestGuildMembers = ImmutableRequestGuildMembers.of("41771983444115456",
+        RequestGuildMembers requestGuildMembers = ImmutableRequestGuildMembers.of(Id.of("41771983444115456"),
                 Possible.of(""), 0, Possible.absent(), Possible.absent(), Possible.absent());
         GatewayPayload<RequestGuildMembers> payload = GatewayPayload.requestGuildMembers(requestGuildMembers);
         String result = mapper.writeValueAsString(payload);

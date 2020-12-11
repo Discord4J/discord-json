@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.deser.DeserializationProblemHandler;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
+import discord4j.discordjson.Id;
 import discord4j.discordjson.json.*;
 import discord4j.discordjson.possible.PossibleFilter;
 import discord4j.discordjson.possible.PossibleModule;
@@ -89,7 +90,7 @@ public class RestDeserializationTest {
                 .addReaction(ReactionData.builder()
                         .count(1)
                         .me(false)
-                        .emoji(EmojiData.builder().id("1").build())
+                        .emoji(EmojiData.builder().id(Id.of("1")).build())
                         .build())
                 .build();
         MessageData withThreeReactions = MessageData.builder().from(withReaction)
@@ -97,12 +98,12 @@ public class RestDeserializationTest {
                         ReactionData.builder()
                                 .count(1)
                                 .me(false)
-                                .emoji(EmojiData.builder().id("2").build())
+                                .emoji(EmojiData.builder().id(Id.of("2")).build())
                                 .build(),
                         ReactionData.builder()
                                 .count(1)
                                 .me(false)
-                                .emoji(EmojiData.builder().id("3").build())
+                                .emoji(EmojiData.builder().id(Id.of("3")).build())
                                 .build()
                 ))
                 .build();
@@ -115,12 +116,12 @@ public class RestDeserializationTest {
                         ReactionData.builder()
                                 .count(1)
                                 .me(false)
-                                .emoji(EmojiData.builder().id("2").build())
+                                .emoji(EmojiData.builder().id(Id.of("2")).build())
                                 .build(),
                         ReactionData.builder()
                                 .count(1)
                                 .me(false)
-                                .emoji(EmojiData.builder().id("3").build())
+                                .emoji(EmojiData.builder().id(Id.of("3")).build())
                                 .build()
                 ))
                 .build();
@@ -133,7 +134,7 @@ public class RestDeserializationTest {
     @Test
     public void testGetGuildPreview() throws IOException {
         GuildPreviewData data = read("/rest/GuildPreview.json", GuildPreviewData.class);
-        assertEquals("197038439483310086", data.id());
+        assertEquals(Id.of("197038439483310086"), data.id());
         assertFalse(data.splash().isPresent());
         assertTrue(data.emojis().isEmpty());
         assertEquals(9, data.features().size());
@@ -157,6 +158,6 @@ public class RestDeserializationTest {
     @Test
     public void testGuildMemberModify() throws IOException {
         MemberData data = read("/rest/v8/GuildMemberModify.json", MemberData.class);
-        assertEquals(data.user().id(), "84745855399129088");
+        assertEquals(Id.of("84745855399129088"), data.user().id());
     }
 }
