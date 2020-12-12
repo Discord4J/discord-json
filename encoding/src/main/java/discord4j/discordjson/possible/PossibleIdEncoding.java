@@ -12,7 +12,7 @@ public class PossibleIdEncoding {
     private Possible<Id> possible;
 
     private final long value = possible.toOptional()
-            .map(Id::longValue)
+            .map(discord4j.discordjson.Id::longValue)
             .orElse(0L);
     private final boolean absent = possible.isAbsent();
 
@@ -62,6 +62,11 @@ public class PossibleIdEncoding {
         @Encoding.Init
         public void setLongValue(long value) {
             this.possible = discord4j.discordjson.possible.Possible.of(discord4j.discordjson.Id.of(value));
+        }
+
+        @Encoding.Init
+        public void setIdValue(Id value) {
+            this.possible = discord4j.discordjson.possible.Possible.of(value);
         }
 
         @Encoding.Init

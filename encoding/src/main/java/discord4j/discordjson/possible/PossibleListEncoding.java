@@ -5,6 +5,8 @@ import org.immutables.encode.Encoding;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 @Encoding
 public class PossibleListEncoding<T> {
@@ -85,6 +87,11 @@ public class PossibleListEncoding<T> {
         @Encoding.Init
         void setValue(List<T> elements) {
             this.list = new ArrayList<>(elements);
+        }
+
+        @Encoding.Init
+        void setValueIterable(Iterable<T> elements) {
+            this.list = StreamSupport.stream(elements.spliterator(), false).collect(Collectors.toList());
         }
 
         private List<T> getOrCreate() {

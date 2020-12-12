@@ -90,7 +90,7 @@ public class RestDeserializationTest {
                 .addReaction(ReactionData.builder()
                         .count(1)
                         .me(false)
-                        .emoji(EmojiData.builder().id(Id.of("1")).build())
+                        .emoji(EmojiData.builder().id("1").build())
                         .build())
                 .build();
         MessageData withThreeReactions = MessageData.builder().from(withReaction)
@@ -98,12 +98,12 @@ public class RestDeserializationTest {
                         ReactionData.builder()
                                 .count(1)
                                 .me(false)
-                                .emoji(EmojiData.builder().id(Id.of("2")).build())
+                                .emoji(EmojiData.builder().id("2").build())
                                 .build(),
                         ReactionData.builder()
                                 .count(1)
                                 .me(false)
-                                .emoji(EmojiData.builder().id(Id.of("3")).build())
+                                .emoji(EmojiData.builder().id("3").build())
                                 .build()
                 ))
                 .build();
@@ -116,12 +116,12 @@ public class RestDeserializationTest {
                         ReactionData.builder()
                                 .count(1)
                                 .me(false)
-                                .emoji(EmojiData.builder().id(Id.of("2")).build())
+                                .emoji(EmojiData.builder().id("2").build())
                                 .build(),
                         ReactionData.builder()
                                 .count(1)
                                 .me(false)
-                                .emoji(EmojiData.builder().id(Id.of("3")).build())
+                                .emoji(EmojiData.builder().id("3").build())
                                 .build()
                 ))
                 .build();
