@@ -143,7 +143,7 @@ public class GatewaySerializationTest {
     public void testRequestGuildMembers() throws IOException {
         String expected = readResourceAsString("/gateway/outbound/RequestGuildMembers.json");
 
-        RequestGuildMembers requestGuildMembers = ImmutableRequestGuildMembers.of(Id.of("41771983444115456"),
+        RequestGuildMembers requestGuildMembers = ImmutableRequestGuildMembers.of("41771983444115456",
                 Possible.of(""), 0, Possible.absent(), Possible.absent(), Possible.absent());
         GatewayPayload<RequestGuildMembers> payload = GatewayPayload.requestGuildMembers(requestGuildMembers);
         String result = mapper.writeValueAsString(payload);
