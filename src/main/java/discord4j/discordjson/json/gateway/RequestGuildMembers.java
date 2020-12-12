@@ -3,7 +3,6 @@ package discord4j.discordjson.json.gateway;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import discord4j.discordjson.Id;
 import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
@@ -19,7 +18,7 @@ public interface RequestGuildMembers extends PayloadData {
     }
 
     @JsonProperty("guild_id")
-    Id guildId();
+    String guildId();
 
     Possible<String> query();
 
@@ -28,7 +27,7 @@ public interface RequestGuildMembers extends PayloadData {
     Possible<Boolean> presences();
 
     @JsonProperty("user_ids")
-    Possible<List<Id>> userIds();
+    Possible<List<String>> userIds();
 
     Possible<String> nonce();
 }
