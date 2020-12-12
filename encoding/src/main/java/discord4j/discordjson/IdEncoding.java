@@ -32,12 +32,12 @@ public class IdEncoding {
     }
 
     @Encoding.Copy
-    public Id withId(final Id id) {
-        return Objects.requireNonNull(id);
+    public Id withLong(final long value) {
+        return discord4j.discordjson.Id.of(value);
     }
 
     @Encoding.Copy
-    public Id with(final long value) {
+    public Id withString(final String value) {
         return discord4j.discordjson.Id.of(value);
     }
 
@@ -47,14 +47,18 @@ public class IdEncoding {
         private Id id = null;
 
         @Encoding.Init
-        @Encoding.Copy
-        public void set(Id id) {
-            this.id = id;
+        public void setStringValue(String value) {
+            this.id = discord4j.discordjson.Id.of(value);
         }
 
         @Encoding.Init
-        public void setValue(long value) {
+        public void setLongValue(long value) {
             this.id = discord4j.discordjson.Id.of(value);
+        }
+
+        @Encoding.Copy
+        public void copyId(Id value) {
+            this.id = value;
         }
 
         @Encoding.Build

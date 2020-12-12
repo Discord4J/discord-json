@@ -5,11 +5,9 @@
         defaultAsDefault = true
 )
 @NonNullApi
-@MetaPossibleEncodingEnabled
-@IdEncodingEnabled
+@MetaEncodingEnabled
 package discord4j.discordjson.json.id;
 
-import discord4j.discordjson.IdEncodingEnabled;
-import discord4j.discordjson.possible.MetaPossibleEncodingEnabled;
+import discord4j.discordjson.MetaEncodingEnabled;
 import org.immutables.value.Value;
 import reactor.util.annotation.NonNullApi;

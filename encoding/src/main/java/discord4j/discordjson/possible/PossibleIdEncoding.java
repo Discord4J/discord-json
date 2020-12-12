@@ -47,20 +47,27 @@ public class PossibleIdEncoding {
 
         private Possible<Id> possible = discord4j.discordjson.possible.Possible.absent();
 
+        // Not possible because Possible<Long> and Possible<Id> have the same erasure and the latter is required
+//        @Encoding.Init
+//        public void setPossibleValue(Possible<Long> value) {
+//            this.possible = value.isAbsent() ? discord4j.discordjson.possible.Possible.absent() :
+//                    discord4j.discordjson.possible.Possible.of(discord4j.discordjson.Id.of(value.get()));
+//        }
+
+        @Encoding.Init
+        public void setStringValue(String value) {
+            this.possible = discord4j.discordjson.possible.Possible.of(discord4j.discordjson.Id.of(value));
+        }
+
+        @Encoding.Init
+        public void setLongValue(long value) {
+            this.possible = discord4j.discordjson.possible.Possible.of(discord4j.discordjson.Id.of(value));
+        }
+
         @Encoding.Init
         @Encoding.Copy
-        public void set(Possible<Id> value) {
+        public void copyPossibleId(Possible<Id> value) {
             this.possible = value;
-        }
-
-        @Encoding.Init
-        public void setIdValue(Id value) {
-            this.possible = discord4j.discordjson.possible.Possible.of(value);
-        }
-
-        @Encoding.Init
-        public void setValue(long value) {
-            this.possible = discord4j.discordjson.possible.Possible.of(discord4j.discordjson.Id.of(value));
         }
 
         @Encoding.Build

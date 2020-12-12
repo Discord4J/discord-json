@@ -49,6 +49,15 @@ public final class Possible<T> {
         return Optional.of(value);
     }
 
+    public <U> Possible<U> map(Function<? super T, ? extends U> mapper) {
+        Objects.requireNonNull(mapper);
+        if (isAbsent()) {
+            return Possible.absent();
+        } else {
+            return Possible.of(mapper.apply(value));
+        }
+    }
+
     @Override
     public boolean equals(@Nullable Object o) {
         if (this == o) {
