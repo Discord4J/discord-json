@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
+import java.util.stream.LongStream;
 import java.util.stream.StreamSupport;
 
 @Encoding
@@ -14,13 +15,15 @@ public class ListIdEncoding {
     @Encoding.Impl(virtual = true)
     private List<Id> field;
 
-    private final List<Long> value = field.stream()
-            .map(discord4j.discordjson.Id::longValue)
-            .collect(Collectors.toList());
+    private final long[] value = field.stream()
+            .mapToLong(discord4j.discordjson.Id::longValue)
+            .toArray();
 
     @Encoding.Expose
     List<Id> get() {
-        return value.stream().map(discord4j.discordjson.Id::of).collect(Collectors.toList());
+        return LongStream.of(value)
+                .mapToObj(discord4j.discordjson.Id::of)
+                .collect(Collectors.toList());
     }
 
     @Override
