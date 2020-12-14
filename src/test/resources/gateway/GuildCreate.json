@@ -365,6 +365,7 @@
         ],
         "nick": "asdf",
         "mute": false,
+        "pending": false,
         "joined_at": "2016-05-01T23:02:19.427000+00:00",
         "hoisted_role": "190951777061961729",
         "deaf": false
@@ -382,6 +383,7 @@
           "190951777061961729"
         ],
         "mute": false,
+        "pending": false,
         "joined_at": "2016-04-24T00:00:26.685000+00:00",
         "hoisted_role": "190951777061961729",
         "deaf": false
@@ -399,6 +401,7 @@
         ],
         "nick": "aaaa",
         "mute": false,
+        "pending": false,
         "joined_at": "2016-04-30T01:14:29.607000+00:00",
         "hoisted_role": "175786903688314880",
         "deaf": false
@@ -416,6 +419,7 @@
           "190951777061961729"
         ],
         "mute": false,
+        "pending": false,
         "joined_at": "2016-05-01T22:03:50.897000+00:00",
         "hoisted_role": "190951777061961729",
         "deaf": false
@@ -433,6 +437,7 @@
           "190951777061961729"
         ],
         "mute": false,
+        "pending": false,
         "joined_at": "2016-04-30T00:19:14.398000+00:00",
         "hoisted_role": "190951777061961729",
         "deaf": false
@@ -450,6 +455,7 @@
           "190951777061961729"
         ],
         "mute": false,
+        "pending": false,
         "joined_at": "2016-05-01T22:03:57.661000+00:00",
         "hoisted_role": "190951777061961729",
         "deaf": false
@@ -467,6 +473,7 @@
           "190951777061961729"
         ],
         "mute": false,
+        "pending": false,
         "joined_at": "2016-05-02T01:13:44.269000+00:00",
         "hoisted_role": "190951777061961729",
         "deaf": false
@@ -482,6 +489,7 @@
           "187751495167508480"
         ],
         "mute": false,
+        "pending": false,
         "joined_at": "2016-05-07T19:29:53.269000+00:00",
         "hoisted_role": null,
         "deaf": false
@@ -499,6 +507,7 @@
           "190951777061961729"
         ],
         "mute": false,
+        "pending": false,
         "joined_at": "2016-05-12T00:09:57.680000+00:00",
         "hoisted_role": "190951777061961729",
         "deaf": false
@@ -516,6 +525,7 @@
         ],
         "nick": "gggg",
         "mute": false,
+        "pending": false,
         "joined_at": "2016-05-20T21:00:16.185000+00:00",
         "hoisted_role": "175786903688314880",
         "deaf": false
@@ -532,6 +542,7 @@
           "190951777061961729"
         ],
         "mute": false,
+        "pending": false,
         "joined_at": "2016-07-08T19:36:11.279000+00:00",
         "hoisted_role": "190951777061961729",
         "deaf": false
@@ -548,6 +559,7 @@
           "577267449813008395"
         ],
         "mute": false,
+        "pending": false,
         "joined_at": "2019-05-12T22:54:45.141000+00:00",
         "hoisted_role": null,
         "deaf": false
@@ -564,6 +576,7 @@
           "577264684990726144"
         ],
         "mute": false,
+        "pending": false,
         "joined_at": "2019-05-12T22:43:45.950000+00:00",
         "hoisted_role": null,
         "deaf": false
