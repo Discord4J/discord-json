@@ -6,6 +6,8 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
+import java.util.List;
+
 @Value.Immutable
 @JsonSerialize(as = ImmutableApplicationCommandData.class)
 @JsonDeserialize(as = ImmutableApplicationCommandData.class)
@@ -36,6 +38,8 @@ public interface ApplicationCommandData {
      */
     String description();
 
-    /** the parameters for the command */
-//    Possible<>
+    /**
+     * the parameters for the command
+     */
+    Possible<List<ApplicationCommandOptionData>> options();
 }
