@@ -39,7 +39,7 @@ public interface ApplicationCommandOptionData {
     Possible<Boolean> isDefault();
 
     /**
-     * if the fparameter is required or optional -- default false
+     * if the parameter is required or optional -- default false
      */
     Possible<Boolean> required();
 
