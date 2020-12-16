@@ -1,5 +1,6 @@
 package discord4j.discordjson.json;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.possible.Possible;
@@ -24,10 +25,12 @@ public interface InteractionData {
     Possible<ApplicationCommandInteractionData> data();
 
     /** the guild it was sent from */
-    String guild_id();
+    @JsonProperty("guild_id")
+    String guildId();
 
     /** the channel it was sent from */
-    String channel_id();
+    @JsonProperty("channel_id")
+    String channelId();
 
     /** guild member data for the invoking user */
     MemberData member();
