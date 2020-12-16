@@ -150,4 +150,10 @@ public class RestDeserializationTest {
         MessageData reply = read("/rest/Message.Reply.json", MessageData.class);
         log.info("{}", reply);
     }
+
+    @Test
+    public void testCreateApplicationCommand() throws IOException {
+        ApplicationCommandRequest request = read("/rest/CreateApplicationCommand.json", ApplicationCommandRequest.class);
+        log.info("{}", request);
+    }
 }

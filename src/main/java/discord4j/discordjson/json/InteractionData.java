@@ -3,13 +3,14 @@ package discord4j.discordjson.json;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import discord4j.discordjson.json.gateway.Dispatch;
 import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableInteractionData.class)
 @JsonDeserialize(as = ImmutableInteractionData.class)
-public interface InteractionData {
+public interface InteractionData extends Dispatch {
 
     static ImmutableInteractionData.Builder builder() {
         return ImmutableInteractionData.builder();

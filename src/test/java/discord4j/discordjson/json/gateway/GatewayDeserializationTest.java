@@ -264,4 +264,10 @@ public class GatewayDeserializationTest {
         GatewayPayload<?> json = read("/gateway/WebhooksUpdate.json", new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json.getData());
     }
+
+    @Test
+    public void testInteractionCreate() throws IOException {
+        GatewayPayload<?> json = read("/gateway/InteractionCreate.json", new TypeReference<GatewayPayload<?>>() {});
+        log.info("{}", json.getData());
+    }
 }
