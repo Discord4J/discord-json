@@ -25,7 +25,7 @@ public interface InteractionApplicationCommandCallbackData {
     /**
      * message content
      */
-    String content();
+    Possible<String> content();
 
     /**
      * supports up to 10 embeds
