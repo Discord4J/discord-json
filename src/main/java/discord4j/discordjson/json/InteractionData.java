@@ -10,7 +10,7 @@ import org.immutables.value.Value;
 @Value.Immutable
 @JsonSerialize(as = ImmutableInteractionData.class)
 @JsonDeserialize(as = ImmutableInteractionData.class)
-public interface InteractionData extends Dispatch {
+public interface InteractionData {
 
     static ImmutableInteractionData.Builder builder() {
         return ImmutableInteractionData.builder();

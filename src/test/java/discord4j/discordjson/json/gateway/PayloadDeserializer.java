@@ -72,7 +72,7 @@ public class PayloadDeserializer extends StdDeserializer<GatewayPayload<?>> {
         dispatchTypes.put("WEBHOOKS_UPDATE", WebhooksUpdate.class);
         dispatchTypes.put("INVITE_CREATE", InviteCreate.class);
         dispatchTypes.put("INVITE_DELETE", InviteDelete.class);
-        dispatchTypes.put("INTERACTION_CREATE", InteractionData.class);
+        dispatchTypes.put("INTERACTION_CREATE", InteractionCreate.class);
 
         // Ignored
         dispatchTypes.put("PRESENCES_REPLACE", null);
