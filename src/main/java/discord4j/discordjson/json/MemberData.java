@@ -36,4 +36,7 @@ public interface MemberData {
     boolean deaf();
 
     boolean mute();
+
+    Possible<Boolean> pending();
+
 }
