@@ -235,6 +235,8 @@ public class GatewayDeserializationTest {
     public void testReady() throws IOException {
         GatewayPayload<?> json = read("/gateway/Ready.json", new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json.getData());
+        Ready data = (Ready) json.getData();
+        assertEquals("344487830824943618", data.application().id());
     }
 
     @Test
