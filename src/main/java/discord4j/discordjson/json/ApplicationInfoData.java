@@ -40,5 +40,5 @@ public interface ApplicationInfoData {
     Possible<String> slug();
     @JsonProperty("cover_image")
     Possible<String> coverImage();
-    int flags();
+    Possible<Integer> flags();
 }
