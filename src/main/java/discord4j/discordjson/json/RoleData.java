@@ -5,6 +5,8 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
+import java.util.Optional;
+
 @Value.Immutable
 @JsonSerialize(as = ImmutableRoleData.class)
 @JsonDeserialize(as = ImmutableRoleData.class)
@@ -18,17 +20,17 @@ public interface RoleData {
 
     String name();
 
-    int color();
+    Integer color();
 
-    boolean hoist();
+    Boolean hoist();
 
-    int position();
+    Possible<Optional<Integer>> position();
 
-    long permissions();
+    Long permissions();
 
-    boolean managed();
+    Possible<Optional<Boolean>> managed();
 
-    boolean mentionable();
+    Boolean mentionable();
 
     Possible<RoleTagsData> tags();
 }
