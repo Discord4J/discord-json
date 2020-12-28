@@ -111,8 +111,6 @@ dependencies {
     testAnnotationProcessor "$immutables_group:value:$immutables_version"
     testImplementation "org.junit.jupiter:junit-jupiter-engine:$junit_version"
     testImplementation "ch.qos.logback:logback-classic:$logback_version"
-
-    implementation 'com.google.code.findbugs:jsr305:3.0.2'
 }
 
 publishing {
