@@ -31,7 +31,7 @@ public interface TemplateData {
     @JsonProperty("source_guild_id")
     String sourceGuildId();
     @JsonProperty("serialized_source_guild")
-    GuildData serializedSourceGuild();
+    PartialGuildData serializedSourceGuild();
     @JsonProperty("is_dirty")
     Optional<Boolean> isDirty();
 }
