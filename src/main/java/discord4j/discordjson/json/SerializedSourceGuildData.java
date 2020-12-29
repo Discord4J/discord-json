@@ -21,23 +21,23 @@ public interface SerializedSourceGuildData {
     Optional<String> description();
     String region();
     @JsonProperty("verification_level")
-    Integer verificationLevel();
+    int verificationLevel();
     @JsonProperty("default_message_notifications")
-    Integer defaultMessageNotifications();
+    int defaultMessageNotifications();
     @JsonProperty("explicit_content_filter")
-    Integer explicitContentFilter();
+    int explicitContentFilter();
     @JsonProperty("preferred_locale")
     String preferredLocale();
     @JsonProperty("afk_timeout")
-    Integer afkTimeout();
+    int afkTimeout();
     List<RoleData> roles();
     List<ChannelData> channels();
     @JsonProperty("afk_channel_id")
     Optional<Integer> afkChannelId();
     @JsonProperty("system_channel_id")
-    Integer systemChannelId();
+    int systemChannelId();
     @JsonProperty("system_channel_flags")
-    Integer systemChannelFlags();
+    int systemChannelFlags();
     @JsonProperty("icon_hash")
     Optional<String> iconHash();
 }

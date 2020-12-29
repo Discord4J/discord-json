@@ -20,7 +20,7 @@ public interface TemplateData {
     String name();
     Optional<String> description();
     @JsonProperty("usage_count")
-    Integer usageCount();
+    int usageCount();
     @JsonProperty("creator_id")
     String creatorId();
     UserData creator();
