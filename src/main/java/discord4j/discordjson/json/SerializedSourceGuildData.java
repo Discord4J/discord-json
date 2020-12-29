@@ -33,9 +33,9 @@ public interface SerializedSourceGuildData {
     List<RoleData> roles();
     List<ChannelData> channels();
     @JsonProperty("afk_channel_id")
-    Optional<Integer> afkChannelId();
+    Optional<String> afkChannelId();
     @JsonProperty("system_channel_id")
-    int systemChannelId();
+    String systemChannelId();
     @JsonProperty("system_channel_flags")
     int systemChannelFlags();
     @JsonProperty("icon_hash")
