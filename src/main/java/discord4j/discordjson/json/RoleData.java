@@ -20,17 +20,17 @@ public interface RoleData {
 
     String name();
 
-    Integer color();
+    int color();
 
-    Boolean hoist();
+    boolean hoist();
 
     Possible<Optional<Integer>> position();
 
-    Long permissions();
+    long permissions();
 
     Possible<Optional<Boolean>> managed();
 
-    Boolean mentionable();
+    boolean mentionable();
 
     Possible<RoleTagsData> tags();
 }
