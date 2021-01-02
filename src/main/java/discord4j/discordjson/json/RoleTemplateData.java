@@ -8,15 +8,11 @@ import org.immutables.value.Value;
 import java.util.Optional;
 
 @Value.Immutable
-@JsonSerialize(as = ImmutableRoleData.class)
-@JsonDeserialize(as = ImmutableRoleData.class)
-public interface RoleData extends RoleDataFields {
+@JsonSerialize(as = ImmutableRoleTemplateData.class)
+@JsonDeserialize(as = ImmutableRoleTemplateData.class)
+public interface RoleTemplateData extends RoleDataFields {
 
-    static ImmutableRoleData.Builder builder() {
-        return ImmutableRoleData.builder();
+    static ImmutableRoleTemplateData.Builder builder() {
+        return ImmutableRoleTemplateData.builder();
     }
-
-    int position();
-
-    boolean managed();
 }
