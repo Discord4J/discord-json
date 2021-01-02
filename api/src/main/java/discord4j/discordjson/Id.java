@@ -37,6 +37,7 @@ public class Id {
         this.value = Long.parseUnsignedLong(value);
     }
 
+    @JsonCreator
     private Id(long value) {
         this.value = value;
     }
