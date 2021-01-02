@@ -30,7 +30,7 @@ public interface SerializedSourceGuildData {
     String preferredLocale();
     @JsonProperty("afk_timeout")
     int afkTimeout();
-    List<RoleData> roles();
+    List<RoleTemplateData> roles();
     List<ChannelData> channels();
     @JsonProperty("afk_channel_id")
     Optional<String> afkChannelId();
