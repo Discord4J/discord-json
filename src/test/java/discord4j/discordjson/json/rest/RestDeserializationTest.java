@@ -159,4 +159,10 @@ public class RestDeserializationTest {
         MemberData data = read("/rest/v8/GuildMemberModify.json", MemberData.class);
         assertEquals(data.user().id(), "84745855399129088");
     }
+
+    @Test
+    public void testCreateApplicationCommand() throws IOException {
+        ApplicationCommandRequest request = read("/rest/CreateApplicationCommand.json", ApplicationCommandRequest.class);
+        log.info("{}", request);
+    }
 }

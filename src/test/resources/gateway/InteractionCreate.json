@@ -1,0 +1,49 @@
+{
+    "t": "INTERACTION_CREATE",
+    "s": 8,
+    "op": 0,
+    "d": {
+        "version": 1,
+        "type": 2,
+        "token": "aW50ZXJhY3Rpb246Nzg4NTQ2NjkxMjg4NjYyMDQ2Omw3dGxEWE5jbjdPTUFlQ1BlOVowck5hWVNmNVk3TDZQZ0R0aE1ENTZkc2JzNlpuYlhVRzkwYVI4MXZZZUhpdmhoMnFnNFFxTVY0RklPRk11c1J1c2g1R25Udlpjdk9Zb3pMeE5FeFJ5N3FBSkw1R2JNQkxnWWlDcThTZzlPM1ZU",
+        "member": {
+            "user": {
+                "username": "quantic",
+                "public_flags": 0,
+                "id": "134127815531560960",
+                "discriminator": "5520",
+                "avatar": "25a09a99ac0487bf846125084d9c7346"
+            },
+            "roles": [
+                "208024476963700736",
+                "208024600892801026",
+                "717464998678364241"
+            ],
+            "premium_since": null,
+            "permissions": "2147483639",
+            "pending": false,
+            "nick": null,
+            "mute": false,
+            "joined_at": "2017-01-21T04:22:35.549000+00:00",
+            "is_pending": false,
+            "deaf": false
+        },
+        "id": "788546691288662046",
+        "guild_id": "208023865127862272",
+        "data": {
+            "options": [
+                {
+                    "value": "animal_pudu",
+                    "name": "animal"
+                },
+                {
+                    "value": false,
+                    "name": "only_smol"
+                }
+            ],
+            "name": "blep",
+            "id": "786374387074203660"
+        },
+        "channel_id": "278314058422157320"
+    }
+}

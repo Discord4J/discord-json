@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.json.ChannelData;
+import discord4j.discordjson.json.PartialApplicationInfoData;
 import discord4j.discordjson.json.UnavailableGuildData;
 import discord4j.discordjson.json.UserData;
 import discord4j.discordjson.possible.Possible;
@@ -30,4 +31,5 @@ public interface Ready extends Dispatch {
     Possible<int[]> shard();
     @JsonProperty("_trace")
     List<String> trace();
+    PartialApplicationInfoData application();
 }

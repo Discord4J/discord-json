@@ -1,1 +1,69 @@
-{"t":"READY","s":1,"op":0,"d":{"v":6,"user_settings":{},"user":{"verified":true,"username":"vvvav","mfa_enabled":true,"id":"123456789012345678","email":null,"discriminator":"0087","bot":true,"avatar":"ca29c1cb8e954da4f9fba04216362807"},"shard":[0,1],"session_id":"15d2a2cc48e2dff6038f0c10be747a0a","relationships":[],"private_channels":[],"presences":[],"guilds":[{"unavailable":true,"id":"123456789012345678"},{"unavailable":true,"id":"123456789012345678"},{"unavailable":true,"id":"123456789012345678"},{"unavailable":true,"id":"123456789012345678"},{"unavailable":true,"id":"123456789012345678"},{"unavailable":true,"id":"123456789012345678"},{"unavailable":true,"id":"123456789012345678"}],"application":{"id":"123456789012345678","flags":0},"_trace":["[\"gateway-prd-main-4r9m\",{\"micros\":54592,\"calls\":[\"discord-sessions-prd-1-22\",{\"micros\":52304,\"calls\":[\"start_session\",{\"micros\":45705,\"calls\":[\"api-prd-main-wxld\",{\"micros\":42441,\"calls\":[\"get_user\",{\"micros\":6606},\"add_authorized_ip\",{\"micros\":1803},\"get_guilds\",{\"micros\":2037},\"coros_wait\",{\"micros\":1}]}]},\"guilds_connect\",{\"micros\":13,\"calls\":[]},\"presence_connect\",{\"micros\":1,\"calls\":[]}]}]}]"]}}
+{
+  "t": "READY",
+  "s": 1,
+  "op": 0,
+  "d": {
+    "v": 6,
+    "user_settings": {},
+    "user": {
+      "verified": true,
+      "username": "Reacton",
+      "mfa_enabled": true,
+      "id": "344487830824943618",
+      "flags": 0,
+      "email": null,
+      "discriminator": "6221",
+      "bot": true,
+      "avatar": "1c295705ae50fdbc755f1eda5ed8d268"
+    },
+    "shard": [
+      0,
+      1
+    ],
+    "session_id": "c5adc7ce7f411cde10440df5f888dc22",
+    "relationships": [],
+    "private_channels": [],
+    "presences": [],
+    "guilds": [
+      {
+        "unavailable": true,
+        "id": "135197118292819968"
+      },
+      {
+        "unavailable": true,
+        "id": "173583899539013632"
+      },
+      {
+        "unavailable": true,
+        "id": "185949590652977152"
+      },
+      {
+        "unavailable": true,
+        "id": "208023865127862272"
+      },
+      {
+        "unavailable": true,
+        "id": "346719828784185375"
+      },
+      {
+        "unavailable": true,
+        "id": "697833083201650689"
+      }
+    ],
+    "guild_join_requests": [],
+    "geo_ordered_rtc_regions": [
+      "brazil",
+      "us-south",
+      "us-east",
+      "us-central",
+      "southafrica"
+    ],
+    "application": {
+      "id": "344487830824943618",
+      "flags": 40960
+    },
+    "_trace": [
+      "[\"gateway-prd-main-kdrz\",{\"micros\":54043,\"calls\":[\"discord-sessions-prd-2-115\",{\"micros\":53180,\"calls\":[\"start_session\",{\"micros\":34509,\"calls\":[\"api-prd-main-hgg1\",{\"micros\":31481,\"calls\":[\"get_user\",{\"micros\":2264},\"add_authorized_ip\",{\"micros\":1496},\"get_guilds\",{\"micros\":6258},\"coros_wait\",{\"micros\":2}]}]},\"guilds_connect\",{\"micros\":6,\"calls\":[]},\"presence_connect\",{\"micros\":9302,\"calls\":[]}]}]}]"
+    ]
+  }
+}
