@@ -156,4 +156,10 @@ public class RestDeserializationTest {
         ApplicationCommandRequest request = read("/rest/CreateApplicationCommand.json", ApplicationCommandRequest.class);
         log.info("{}", request);
     }
+
+    @Test
+    public void testGetTemplate() throws IOException {
+        TemplateData data = read("/rest/TemplateData.json", TemplateData.class);
+        log.info("{}", data);
+    }
 }
