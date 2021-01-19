@@ -1,0 +1,65 @@
+{
+  "t": "GUILD_MEMBERS_CHUNK",
+  "s": 536,
+  "op": 0,
+  "d": {
+    "presences": [
+      {
+        "user": {
+          "id": "712800400000000000"
+        },
+        "status": "online",
+        "game": {
+          "type": 5,
+          "name": "gnomebot.dev",
+          "id": "ec0b28a570000000",
+          "created_at": 1611064029135
+        },
+        "client_status": {
+          "web": "online"
+        },
+        "activities": [
+          {
+            "type": 5,
+            "name": "gnomebot.dev",
+            "id": "ec0b28a570000000",
+            "created_at": 1611064029135
+          }
+        ]
+      }
+    ],
+    "not_found": [],
+    "nonce": "3628016705201799",
+    "members": [
+      {
+        "user": {
+          "username": "Gnome",
+          "id": "712800400000000000",
+          "discriminator": "8531",
+          "bot": true,
+          "avatar": "937bb0153de3e0000000000000000000"
+        },
+        "roles": [
+          "214486800000000000",
+          "220243300000000000",
+          "765995000000000000",
+          "797618000000000000",
+          "763489000000000000",
+          "748075000000000000",
+          "721862000000000000"
+        ],
+        "premium_since": null,
+        "pending": false,
+        "nick": null,
+        "mute": false,
+        "joined_at": "2021-01-10T00:12:53.046928+00:00",
+        "is_pending": false,
+        "hoisted_role": "214486800000000000",
+        "deaf": false
+      }
+    ],
+    "guild_id": "166630000000000000",
+    "chunk_index": 0,
+    "chunk_count": 1
+  }
+}
