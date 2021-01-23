@@ -33,12 +33,6 @@ public interface ApplicationCommandOptionData {
     String description();
 
     /**
-     * the first required option for the user to complete -- only one option can be default
-     */
-    @JsonProperty("default")
-    Possible<Boolean> isDefault();
-
-    /**
      * if the parameter is required or optional -- default false
      */
     Possible<Boolean> required();
