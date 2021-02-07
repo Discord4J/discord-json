@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.json.MemberData;
+import discord4j.discordjson.json.PresenceData;
 import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
@@ -32,7 +33,7 @@ public interface GuildMembersChunk extends Dispatch {
     @JsonProperty("not_found")
     Possible<List<String>> notFound();
 
-    Possible<PresenceUpdate> presences();
+    Possible<List<PresenceData>> presences();
 
     Possible<String> nonce();
 

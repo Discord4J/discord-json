@@ -132,6 +132,12 @@ public class GatewayDeserializationTest {
     }
 
     @Test
+    public void testGuildMembersChunkWithPresences() throws IOException {
+        GatewayPayload<?> json = read("/gateway/GuildMembersChunk.Presences.json", new TypeReference<GatewayPayload<?>>() {});
+        log.info("{}", json.getData());
+    }
+
+    @Test
     public void testGuildMemberUpdate() throws IOException {
         GatewayPayload<?> json = read("/gateway/GuildMemberUpdate.json", new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json.getData());
