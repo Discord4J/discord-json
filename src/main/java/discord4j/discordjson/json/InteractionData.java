@@ -27,16 +27,19 @@ public interface InteractionData {
 
     /** the guild it was sent from */
     @JsonProperty("guild_id")
-    String guildId();
+    Possible<String> guildId();
 
     /** the channel it was sent from */
     @JsonProperty("channel_id")
-    String channelId();
+    Possible<String> channelId();
 
     /** guild member data for the invoking user */
-    MemberData member();
+    Possible<MemberData> member();
 
-    /** a continuation token for respoding to the interaction */
+    /** user object for the invoking user, if invoked in a DM */
+    Possible<UserData> user();
+
+    /** a continuation token for responding to the interaction */
     String token();
 
     /** read-only property, always 1 */
