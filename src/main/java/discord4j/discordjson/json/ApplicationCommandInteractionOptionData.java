@@ -27,6 +27,11 @@ public interface ApplicationCommandInteractionOptionData {
     Possible<String> value();
 
     /**
+     * the type of the parameter
+     */
+    int type();
+
+    /**
      * present if this option is a group or subcommand
      */
     Possible<List<ApplicationCommandInteractionOptionData>> options();

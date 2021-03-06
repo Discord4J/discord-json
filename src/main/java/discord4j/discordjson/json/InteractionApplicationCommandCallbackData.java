@@ -37,4 +37,10 @@ public interface InteractionApplicationCommandCallbackData {
      */
     @JsonProperty("allowed_mentions")
     Possible<AllowedMentionsData> allowedMentions();
+
+    /**
+     * set to 64 to make your response ephemeral
+     */
+    Possible<Integer> flags();
+
 }
