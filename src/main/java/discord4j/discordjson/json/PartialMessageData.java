@@ -79,4 +79,6 @@ public interface PartialMessageData {
     @JsonProperty("referenced_message")
     Possible<Optional<MessageData>> referencedMessage();
 
+    Possible<MessageInteractionData> interaction();
+
 }
