@@ -17,7 +17,7 @@ public interface ApplicationCommandRequest {
     }
 
     /**
-     * 3-32 character command name
+     * 1-32 character name matching ^[\w-]{1,32}$
      */
     String name();
 

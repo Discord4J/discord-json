@@ -1,6 +1,5 @@
 package discord4j.discordjson.json;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.possible.Possible;
@@ -31,12 +30,6 @@ public interface ApplicationCommandOptionData {
      * 1-100 character description
      */
     String description();
-
-    /**
-     * the first required option for the user to complete -- only one option can be default
-     */
-    @JsonProperty("default")
-    Possible<Boolean> isDefault();
 
     /**
      * if the parameter is required or optional -- default false

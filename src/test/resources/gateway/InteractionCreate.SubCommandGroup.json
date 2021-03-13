@@ -1,0 +1,56 @@
+{
+    "t": "INTERACTION_CREATE",
+    "s": 4,
+    "op": 0,
+    "d": {
+        "version": 1,
+        "type": 2,
+        "token": "hunter2",
+        "member": {
+            "user": {
+                "username": "Shadorc",
+                "public_flags": 131072,
+                "id": "275616469906358273",
+                "discriminator": "8423",
+                "avatar": "98a5d76eb4384bb5918ceeab009e4c11"
+            },
+            "roles": [
+                "609370233916096514"
+            ],
+            "premium_since": null,
+            "permissions": "8589934591",
+            "pending": false,
+            "nick": null,
+            "mute": false,
+            "joined_at": "2017-07-25T08:09:41.111000+00:00",
+            "is_pending": false,
+            "deaf": false
+        },
+        "id": "817823320820547654",
+        "guild_id": "339318275320184833",
+        "data": {
+            "options": [
+                {
+                    "type": 2,
+                    "options": [
+                        {
+                            "type": 1,
+                            "options": [
+                                {
+                                    "value": "hello",
+                                    "type": 3,
+                                    "name": "string"
+                                }
+                            ],
+                            "name": "cmd"
+                        }
+                    ],
+                    "name": "group"
+                }
+            ],
+            "name": "payload",
+            "id": "817771924460929035"
+        },
+        "channel_id": "342074301840752640"
+    }
+}
