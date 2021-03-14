@@ -28,4 +28,5 @@ public interface GuildMemberUpdate extends Dispatch {
     String joinedAt();
     @JsonProperty("premium_since")
     Possible<Optional<String>> premiumSince();
+    Possible<Boolean> pending();
 }
