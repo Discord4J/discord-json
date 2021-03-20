@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.json.EmojiData;
+import discord4j.discordjson.Id;
 import org.immutables.value.Value;
 
 import java.util.List;
@@ -18,6 +19,6 @@ public interface GuildEmojisUpdate extends Dispatch {
     }
 
     @JsonProperty("guild_id")
-    String guildId();
+    Id guildId();
     List<EmojiData> emojis();
 }

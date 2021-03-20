@@ -3,6 +3,7 @@ package discord4j.discordjson.json.gateway;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import discord4j.discordjson.Id;
 import org.immutables.value.Value;
 
 import java.util.Optional;
@@ -17,9 +18,9 @@ public interface VoiceStateUpdate extends PayloadData {
     }
 
     @JsonProperty("guild_id")
-    String guildId();
+    Id guildId();
     @JsonProperty("channel_id")
-    Optional<String> channelId();
+    Optional<Id> channelId();
     @JsonProperty("self_mute")
     boolean selfMute();
     @JsonProperty("self_deaf")

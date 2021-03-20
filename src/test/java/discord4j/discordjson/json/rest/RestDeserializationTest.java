@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.deser.DeserializationProblemHandler;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
+import discord4j.discordjson.Id;
 import discord4j.discordjson.json.*;
 import discord4j.discordjson.possible.PossibleFilter;
 import discord4j.discordjson.possible.PossibleModule;
@@ -129,7 +130,7 @@ public class RestDeserializationTest {
     @Test
     public void testGetGuildPreview() throws IOException {
         GuildPreviewData data = read("/rest/GuildPreview.json", GuildPreviewData.class);
-        assertEquals("197038439483310086", data.id());
+        assertEquals(Id.of("197038439483310086"), data.id());
         assertFalse(data.splash().isPresent());
         assertTrue(data.emojis().isEmpty());
         assertEquals(9, data.features().size());

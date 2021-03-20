@@ -1,3 +1,6 @@
+/**
+ * Data objects for JSON representation across Discord.
+ */
 @Value.Style(
         depluralize = true,
         jdkOnly = true,
@@ -6,7 +9,7 @@
 )
 @NonNullApi
 @MetaEncodingEnabled
-package discord4j.discordjson.json;
+package discord4j.discordjson.json.gateway;
 
 import discord4j.discordjson.MetaEncodingEnabled;
 import org.immutables.value.Value;

@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonUnwrapped;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.json.MemberData;
+import discord4j.discordjson.Id;
 import org.immutables.value.Value;
 
 @Value.Immutable
@@ -17,7 +18,7 @@ public interface GuildMemberAdd extends Dispatch {
     }
 
     @JsonProperty("guild_id")
-    String guildId();
+    Id guildId();
     @JsonUnwrapped
     MemberData member();
 }

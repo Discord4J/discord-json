@@ -25,6 +25,7 @@ import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.deser.DeserializationProblemHandler;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
+import discord4j.discordjson.Id;
 import discord4j.discordjson.possible.Possible;
 import discord4j.discordjson.possible.PossibleFilter;
 import discord4j.discordjson.possible.PossibleModule;
@@ -107,8 +108,10 @@ public class GatewaySerializationTest {
     public void testVoiceStateUpdate() throws IOException {
         String expected = readResourceAsString("/gateway/outbound/VoiceStateUpdate.json");
 
-        VoiceStateUpdate voiceStateUpdate = ImmutableVoiceStateUpdate.of("41771983423143937", Optional.of(
-                "127121515262115840"), false, false);
+        VoiceStateUpdate voiceStateUpdate = ImmutableVoiceStateUpdate.of(
+                Id.of("41771983423143937"),
+                Optional.of(Id.of("127121515262115840")),
+                false, false);
         GatewayPayload<VoiceStateUpdate> payload = GatewayPayload.voiceStateUpdate(voiceStateUpdate);
         String result = mapper.writeValueAsString(payload);
 

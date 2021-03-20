@@ -3,6 +3,7 @@ package discord4j.discordjson.json.gateway;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import discord4j.discordjson.Id;
 import discord4j.discordjson.json.ActivityData;
 import discord4j.discordjson.json.ClientStatusData;
 import discord4j.discordjson.json.PartialUserData;
@@ -28,7 +29,7 @@ public interface PresenceUpdate extends Dispatch {
     Optional<ActivityData> game();
 
     @JsonProperty("guild_id")
-    String guildId();
+    Id guildId();
 
     String status();
 
