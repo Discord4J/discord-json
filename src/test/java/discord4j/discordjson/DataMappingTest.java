@@ -16,10 +16,10 @@ public class DataMappingTest {
     @Test
     public void createPartialGuildDataFromGuildData() {
         GuildData guildData = GuildData.builder()
-                .id("id")
+                .id(Id.of("123456"))
                 .name("name")
                 .verificationLevel(1)
-                .ownerId("1234")
+                .ownerId(Id.of("1234"))
                 .region("region")
                 .afkTimeout(1)
                 .defaultMessageNotifications(1)
@@ -34,7 +34,7 @@ public class DataMappingTest {
         PartialGuildData partialGuildData = PartialGuildData.builder()
                 .from((GuildFields) guildData)
                 .build();
-        assertEquals("id", partialGuildData.id());
+        assertEquals(Id.of("123456"), partialGuildData.id());
         assertEquals(Possible.absent(), partialGuildData.owner());
         assertEquals(1, partialGuildData.verificationLevel());
         assertEquals(1, partialGuildData.features().size());

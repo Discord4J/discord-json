@@ -6,7 +6,7 @@
 )
 @NonNullApi
 @MetaEncodingEnabled
-package discord4j.discordjson.json;
+package discord4j.discordjson.json.id;
 
 import discord4j.discordjson.MetaEncodingEnabled;
 import org.immutables.value.Value;

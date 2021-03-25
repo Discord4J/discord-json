@@ -1,6 +1,7 @@
 package discord4j.discordjson.json;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import discord4j.discordjson.Id;
 import discord4j.discordjson.possible.Possible;
 
 import java.util.List;
@@ -9,7 +10,7 @@ import java.util.OptionalInt;
 
 public interface GuildFields {
 
-    String id();
+    Id id();
 
     String name();
 
@@ -25,7 +26,7 @@ public interface GuildFields {
     Possible<Long> permissions();
 
     @JsonProperty("afk_channel_id")
-    Optional<String> afkChannelId();
+    Optional<Id> afkChannelId();
 
     @Deprecated
     @JsonProperty("embed_enabled")
@@ -33,27 +34,27 @@ public interface GuildFields {
 
     @Deprecated
     @JsonProperty("embed_channel_id")
-    Possible<Optional<String>> embedChannelId();
+    Possible<Optional<Id>> embedChannelId();
 
     List<String> features();
 
     @JsonProperty("application_id")
-    Optional<String> applicationId();
+    Optional<Id> applicationId();
 
     @JsonProperty("widget_enabled")
     Possible<Boolean> widgetEnabled();
 
     @JsonProperty("widget_channel_id")
-    Possible<Optional<String>> widgetChannelId();
+    Possible<Optional<Id>> widgetChannelId();
 
     @JsonProperty("system_channel_id")
-    Optional<String> systemChannelId();
+    Optional<Id> systemChannelId();
 
     @JsonProperty("system_channel_flags")
     OptionalInt systemChannelFlags();
 
     @JsonProperty("rules_channel_id")
-    Optional<String> rulesChannelId();
+    Optional<Id> rulesChannelId();
 
     @JsonProperty("max_presences")
     Possible<Optional<Integer>> maxPresences();
@@ -73,7 +74,7 @@ public interface GuildFields {
     Possible<Optional<Integer>> premiumSubscriptionCount();
 
     @JsonProperty("public_updates_channel_id")
-    Optional<String> publicUpdatesChannelId();
+    Optional<Id> publicUpdatesChannelId();
 
     @JsonProperty("max_video_channel_users")
     Possible<Integer> maxVideoChannelUsers();

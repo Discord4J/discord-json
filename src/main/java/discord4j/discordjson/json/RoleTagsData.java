@@ -3,6 +3,7 @@ package discord4j.discordjson.json;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import discord4j.discordjson.Id;
 import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
@@ -18,10 +19,10 @@ public interface RoleTagsData {
     }
 
     @JsonProperty("bot_id")
-    Possible<String> botId();
+    Possible<Id> botId();
 
     @JsonProperty("integration_id")
-    Possible<String> integrationId();
+    Possible<Id> integrationId();
 
     // This field does not have any type and, if present, is always null. Its presence can be considered as 'true'
     @JsonProperty("premium_subscriber")

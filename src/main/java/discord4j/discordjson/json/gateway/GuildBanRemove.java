@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.json.UserData;
+import discord4j.discordjson.Id;
 import org.immutables.value.Value;
 
 @Value.Immutable
@@ -16,6 +17,6 @@ public interface GuildBanRemove extends Dispatch {
     }
 
     @JsonProperty("guild_id")
-    String guildId();
+    Id guildId();
     UserData user();
 }

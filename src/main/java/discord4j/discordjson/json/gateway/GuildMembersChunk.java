@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.json.MemberData;
+import discord4j.discordjson.Id;
 import discord4j.discordjson.json.PresenceData;
 import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
@@ -20,7 +21,7 @@ public interface GuildMembersChunk extends Dispatch {
     }
 
     @JsonProperty("guild_id")
-    String guildId();
+    Id guildId();
 
     List<MemberData> members();
 
