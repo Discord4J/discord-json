@@ -3,6 +3,7 @@ package discord4j.discordjson.json;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import discord4j.discordjson.Id;
 import org.immutables.value.Value;
 
 import java.util.List;
@@ -33,9 +34,9 @@ public interface SerializedSourceGuildData {
     List<RoleTemplateData> roles();
     List<ChannelData> channels();
     @JsonProperty("afk_channel_id")
-    Optional<String> afkChannelId();
+    Optional<Id> afkChannelId();
     @JsonProperty("system_channel_id")
-    String systemChannelId();
+    Optional<Id> systemChannelId();
     @JsonProperty("system_channel_flags")
     int systemChannelFlags();
     @JsonProperty("icon_hash")

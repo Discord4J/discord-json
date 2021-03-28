@@ -3,6 +3,7 @@ package discord4j.discordjson.json;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import discord4j.discordjson.Id;
 import org.immutables.value.Value;
 
 import java.util.Optional;
@@ -22,14 +23,14 @@ public interface TemplateData {
     @JsonProperty("usage_count")
     int usageCount();
     @JsonProperty("creator_id")
-    String creatorId();
+    Id creatorId();
     UserData creator();
     @JsonProperty("created_at")
     String createdAt();
     @JsonProperty("updated_at")
     String updatedAt();
     @JsonProperty("source_guild_id")
-    String sourceGuildId();
+    Id sourceGuildId();
     @JsonProperty("serialized_source_guild")
     SerializedSourceGuildData serializedSourceGuild();
     @JsonProperty("is_dirty")
