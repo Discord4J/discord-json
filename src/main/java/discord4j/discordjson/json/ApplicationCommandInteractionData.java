@@ -16,15 +16,14 @@ public interface ApplicationCommandInteractionData {
         return ImmutableApplicationCommandInteractionData.builder();
     }
 
-    /**
-     * the ID of the invoked command
-     */
+    /** the ID of the invoked command */
     String id();
 
-    /**
-     * the name of the invoked command
-     */
+    /** the name of the invoked command */
     String name();
+
+    /** converted users + members + roles + channels */
+    Possible<ApplicationCommandInteractionResolvedData> resolved();
 
     /** the params + values from the user */
     Possible<List<ApplicationCommandInteractionOptionData>> options();
