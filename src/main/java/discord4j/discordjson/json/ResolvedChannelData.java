@@ -19,6 +19,6 @@ public interface ResolvedChannelData {
 
     int type();
 
-    int permissions();
+    String permissions();
 
 }
