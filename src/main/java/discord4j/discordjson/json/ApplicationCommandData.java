@@ -42,10 +42,4 @@ public interface ApplicationCommandData {
      * the parameters for the command
      */
     Possible<List<ApplicationCommandOptionData>> options();
-
-    /**
-     * whether the command is enabled by default when the app is added to a guild (default to true)
-     */
-    @JsonProperty("default_permission")
-    Possible<Boolean> defaultPermission();
 }
