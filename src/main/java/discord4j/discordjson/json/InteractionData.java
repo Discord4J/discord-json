@@ -19,6 +19,10 @@ public interface InteractionData {
     /** id of the interaction */
     String id();
 
+    /** id of the application this interaction is for */
+    @JsonProperty("application_id")
+    String applicationId();
+
     /** the type of the interaction */
     int type();
 
