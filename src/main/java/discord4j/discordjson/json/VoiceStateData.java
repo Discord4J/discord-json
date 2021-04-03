@@ -49,4 +49,8 @@ public interface VoiceStateData {
     boolean selfVideo();
 
     boolean suppress();
+
+    @JsonProperty("request_to_speak_timestamp")
+    Optional<String> requestToSpeakTimestamp();
+
 }
