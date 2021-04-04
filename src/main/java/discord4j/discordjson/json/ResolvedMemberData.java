@@ -21,7 +21,7 @@ public interface ResolvedMemberData {
 
     Possible<Optional<String>> nick();
 
-    List<Id> roles();
+    List<String> roles();
 
     @JsonProperty("joined_at")
     String joinedAt();
