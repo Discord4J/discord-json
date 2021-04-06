@@ -23,6 +23,13 @@
       "avatar": "131465a8db769b66e2b9837072be47a1",
       "discriminator": "7924"
     },
+    "target_user": {
+      "id": "165176875973476352",
+      "username": "bob",
+      "avatar": "deadbeef",
+      "discriminator": "1234"
+    },
+    "target_user_type": 1,
     "uses": 6,
     "max_uses": 0,
     "max_age": 0,

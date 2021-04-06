@@ -17,8 +17,21 @@ public interface InviteCreateRequest {
 
     @JsonProperty("max_age")
     Possible<Integer> maxAge();
+
     @JsonProperty("max_uses")
     Possible<Integer> maxUses();
+
     Possible<Boolean> temporary();
+
     Possible<Boolean> unique();
+
+    @JsonProperty("target_type")
+    Possible<Integer> targetType();
+
+    @JsonProperty("target_user_id")
+    Possible<String> targetUserId();
+
+    @JsonProperty("target_application_id")
+    Possible<String> targetApplicationId();
+
 }
