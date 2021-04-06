@@ -25,7 +25,7 @@ public interface AuditLogEntryData {
     Possible<List<AuditLogChangeData>> changes();
 
     @JsonProperty("user_id")
-    Id userId();
+    Optional<Id> userId();
 
     Id id();
 
