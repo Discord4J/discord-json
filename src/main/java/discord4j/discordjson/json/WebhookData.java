@@ -38,4 +38,10 @@ public interface WebhookData {
 
     @JsonProperty("application_id")
     Optional<Id> applicationId();
+
+    @JsonProperty("source_guild")
+    Possible<WebhookPartialGuildData> sourceGuild();
+
+    @JsonProperty("source_channel")
+    Possible<WebhookPartialChannelData> sourceChannel();
 }
