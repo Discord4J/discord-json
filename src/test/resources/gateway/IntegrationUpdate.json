@@ -1,0 +1,31 @@
+{
+  "t": "INTEGRATION_UPDATE",
+  "s": 16435,
+  "op": 0,
+  "d": {
+    "user": {
+      "username": "Foo Bar",
+      "public_flags": 0,
+      "id": "1234",
+      "discriminator": "1337",
+      "avatar": "somehash"
+    },
+    "type": "youtube",
+    "syncing": false,
+    "synced_at": "2020-10-02T22:08:19.042000+00:00",
+    "subscriber_count": 3,
+    "role_id": "2341",
+    "revoked": false,
+    "name": "Foo Bar",
+    "id": "4321",
+    "expire_grace_period": 1,
+    "expire_behavior": 0,
+    "enabled": true,
+    "enable_emoticons": false,
+    "account": {
+      "name": "Foo Bar",
+      "id": "ABCD1337asdf"
+    },
+    "guild_id": "123456789"
+  }
+}
