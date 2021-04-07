@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.Id;
 import org.immutables.value.Value;
 
+import java.util.Optional;
 import java.util.OptionalInt;
 
 @Value.Immutable
@@ -20,6 +21,9 @@ public interface AttachmentData {
     Id id();
 
     String filename();
+
+    @JsonProperty("content_type")
+    Optional<String> contentType();
 
     int size();
 
