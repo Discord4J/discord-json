@@ -66,4 +66,7 @@ public interface ChannelData {
 
     @JsonProperty("rtc_region")
     Possible<Optional<String>> rtcRegion();
+
+    @JsonProperty("video_quality_mode")
+    Possible<Integer> videoQualityMode();
 }

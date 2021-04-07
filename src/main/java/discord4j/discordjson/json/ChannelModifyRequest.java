@@ -42,4 +42,7 @@ public interface ChannelModifyRequest {
 
     @JsonProperty("rtc_region")
     Possible<Optional<String>> rtcRegion();
+
+    @JsonProperty("video_quality_mode")
+    Possible<Optional<Integer>> videoQualityMode();
 }
