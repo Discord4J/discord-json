@@ -9,12 +9,12 @@ import org.immutables.value.Value;
 import java.util.Optional;
 
 @Value.Immutable
-@JsonSerialize(as = ImmutableUpdateSelfVoiceStateRequest.class)
-@JsonDeserialize(as = ImmutableUpdateSelfVoiceStateRequest.class)
-public interface UpdateSelfVoiceStateRequest {
+@JsonSerialize(as = ImmutableUpdateCurrentUserVoiceStateRequest.class)
+@JsonDeserialize(as = ImmutableUpdateCurrentUserVoiceStateRequest.class)
+public interface UpdateCurrentUserVoiceStateRequest {
 
-    static ImmutableUpdateSelfVoiceStateRequest.Builder builder() {
-        return ImmutableUpdateSelfVoiceStateRequest.builder();
+    static ImmutableUpdateCurrentUserVoiceStateRequest.Builder builder() {
+        return ImmutableUpdateCurrentUserVoiceStateRequest.builder();
     }
 
     @JsonProperty("channel_id")
