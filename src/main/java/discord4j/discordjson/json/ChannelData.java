@@ -63,4 +63,10 @@ public interface ChannelData {
 
     @JsonProperty("last_pin_timestamp")
     Possible<Optional<String>> lastPinTimestamp();
+
+    @JsonProperty("rtc_region")
+    Possible<Optional<String>> rtcRegion();
+
+    @JsonProperty("video_quality_mode")
+    Possible<Integer> videoQualityMode();
 }

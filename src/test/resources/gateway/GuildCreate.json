@@ -24,7 +24,8 @@
         "permission_overwrites": [],
         "name": "Bunker",
         "id": "123456789012345678",
-        "bitrate": 64000
+        "bitrate": 64000,
+        "rtc_region": null
       },
       {
         "type": 0,
@@ -85,7 +86,8 @@
         "permission_overwrites": [],
         "name": "name-2",
         "id": "123456789012345678",
-        "bitrate": 64000
+        "bitrate": 64000,
+        "rtc_region": null
       },
       {
         "type": 0,
@@ -111,7 +113,8 @@
         "permission_overwrites": [],
         "name": "name-4",
         "id": "183854076755312640",
-        "bitrate": 64000
+        "bitrate": 64000,
+        "rtc_region": null
       },
       {
         "type": 0,
@@ -163,7 +166,8 @@
         ],
         "name": "AFK",
         "id": "185931543632543744",
-        "bitrate": 64000
+        "bitrate": 64000,
+        "rtc_region": null
       },
       {
         "type": 0,
