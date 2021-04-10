@@ -20,26 +20,47 @@ public interface ApplicationInfoData {
     }
 
     Id id();
+
     String name();
+
     Optional<String> icon();
+
     String description();
+
     @JsonProperty("rpc_origins")
     Possible<List<String>> rpcOrigins();
+
     @JsonProperty("bot_public")
     boolean botPublic();
+
     @JsonProperty("bot_require_code_grant")
     boolean botRequireCodeGrant();
+
+    @JsonProperty("terms_of_service_url")
+    Possible<String> termsOfServiceUrl();
+
+    @JsonProperty("privacy_policy_url")
+    Possible<String> privacyPolicyUrl();
+
     UserData owner();
+
     String summary();
+
     @JsonProperty("verify_key")
     String verifyKey();
+
     Optional<ApplicationTeamData> team();
+
     @JsonProperty("guild_id")
     Possible<Id> guildId();
+
     @JsonProperty("primary_sku_id")
     Possible<Id> primarySkuId();
+
     Possible<String> slug();
+
     @JsonProperty("cover_image")
     Possible<String> coverImage();
+
     Possible<Integer> flags();
 }
