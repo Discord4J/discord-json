@@ -84,4 +84,7 @@ public interface GuildFields {
 
     @JsonProperty("approximate_presence_count")
     Possible<Integer> approximatePresenceCount();
+
+    @JsonProperty("welcome_screen")
+    Possible<WelcomeScreenData> welcomeScreen();
 }
