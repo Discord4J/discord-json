@@ -23,6 +23,9 @@ public interface AttachmentData {
 
     String filename();
 
+    @JsonProperty("content_type")
+    Possible<String> contentType();
+
     int size();
 
     String url();
