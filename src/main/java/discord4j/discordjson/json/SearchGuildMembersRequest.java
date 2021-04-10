@@ -18,6 +18,6 @@ public interface SearchGuildMembersRequest {
 
     String query();
 
-    Possible<Optional<Integer>> limit();
+    Possible<Integer> limit();
 
 }
