@@ -27,7 +27,6 @@ public interface GuildUpdateFields extends GuildFields, GuildVerificationLevelFi
     @JsonProperty("premium_tier")
     int premiumTier();
 
-    // TODO: FIX discord docs, as this can be null from GUILD_CREATE
     @JsonProperty("preferred_locale")
-    Optional<String> preferredLocale();
+    String preferredLocale();
 }

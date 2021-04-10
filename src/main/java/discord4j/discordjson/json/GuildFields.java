@@ -69,9 +69,8 @@ public interface GuildFields {
 
     Optional<String> banner();
 
-    // TODO: while https://github.com/discordapp/discord-api-docs/pull/1443 is resolved
     @JsonProperty("premium_subscription_count")
-    Possible<Optional<Integer>> premiumSubscriptionCount();
+    Possible<Integer> premiumSubscriptionCount();
 
     @JsonProperty("public_updates_channel_id")
     Optional<Id> publicUpdatesChannelId();

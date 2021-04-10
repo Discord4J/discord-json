@@ -18,6 +18,5 @@ public interface EmbedProviderData {
 
     Possible<String> name();
 
-    // TODO [wtf-docs] embed provider can be null
-    Possible<Optional<String>> url();
+    Possible<String> url();
 }
