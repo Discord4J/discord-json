@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
+import java.util.List;
 import java.util.Optional;
 
 @Value.Immutable
@@ -19,16 +20,16 @@ public interface GuildModifyRequest {
 
     Possible<String> name();
 
-    Possible<String> region();
+    Possible<Optional<String>> region();
 
     @JsonProperty("verification_level")
-    Possible<Integer> verificationLevel();
+    Possible<Optional<Integer>> verificationLevel();
 
     @JsonProperty("default_message_notifications")
-    Possible<Integer> defaultMessageNotifications();
+    Possible<Optional<Integer>> defaultMessageNotifications();
 
     @JsonProperty("explicit_content_filter")
-    Possible<Integer> explicitContentFilter();
+    Possible<Optional<Integer>> explicitContentFilter();
 
     @JsonProperty("afk_channel_id")
     Possible<Optional<String>> afkChannelId();
@@ -43,8 +44,27 @@ public interface GuildModifyRequest {
 
     Possible<Optional<String>> splash();
 
+    @JsonProperty("discovery_splash")
+    Possible<Optional<String>> discoverySplash();
+
     Possible<Optional<String>> banner();
 
     @JsonProperty("system_channel_id")
-    Possible<String> systemChannelId();
+    Possible<Optional<String>> systemChannelId();
+
+    @JsonProperty("system_channel_flags")
+    Possible<Integer> systemChannelFlags();
+
+    @JsonProperty("rules_channel_id")
+    Possible<Optional<String>> rulesChannelId();
+
+    @JsonProperty("public_updates_channel_id")
+    Possible<Optional<String>> publicUpdatesChannelId();
+
+    @JsonProperty("preferred_locale")
+    Possible<Optional<String>> preferredLocale();
+
+    Possible<List<String>> features();
+
+    Possible<Optional<String>> description();
 }
