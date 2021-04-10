@@ -86,7 +86,7 @@ public class GatewaySerializationTest {
 
         Identify identify = ImmutableIdentify.of("my_token",
                 ImmutableIdentifyProperties.of("linux", "disco", "disco"),
-                Possible.of(true), 250, Possible.absent(), Possible.absent(), Possible.of(true), Possible.absent());
+                Possible.of(true), 250, Possible.absent(), Possible.absent(), Possible.absent());
         GatewayPayload<Identify> payload = GatewayPayload.identify(identify);
         String result = mapper.writeValueAsString(payload);
 
