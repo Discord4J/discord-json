@@ -19,16 +19,30 @@ public interface ChannelModifyRequest {
     }
 
     Possible<String> name();
+
     Possible<Integer> position();
+
     Possible<String> topic();
+
     Possible<Boolean> nsfw();
+
     @JsonProperty("rate_limit_per_user")
     Possible<Integer> rateLimitPerUser();
+
     Possible<Integer> bitrate();
+
     @JsonProperty("user_limit")
     Possible<Integer> userLimit();
+
     @JsonProperty("permission_overwrites")
     Possible<List<OverwriteData>> permissionOverwrites();
+
     @JsonProperty("parent_id")
     Possible<Optional<String>> parentId();
+
+    @JsonProperty("rtc_region")
+    Possible<Optional<String>> rtcRegion();
+
+    @JsonProperty("video_quality_mode")
+    Possible<Optional<Integer>> videoQualityMode();
 }
