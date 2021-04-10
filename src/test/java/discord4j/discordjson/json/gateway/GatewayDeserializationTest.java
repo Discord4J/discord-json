@@ -281,4 +281,23 @@ public class GatewayDeserializationTest {
         GatewayPayload<?> json2 = read("/gateway/InteractionCreate.SubCommandGroup.json", new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json2.getData());
     }
+
+    @Test
+    public void testIntegrationCreate() throws IOException {
+        GatewayPayload<?> json = read("/gateway/IntegrationCreate.json", new TypeReference<GatewayPayload<?>>() {});
+        log.info("{}", json.getData());
+    }
+
+    @Test
+    public void testIntegrationUpdate() throws IOException {
+        GatewayPayload<?> json = read("/gateway/IntegrationUpdate.json", new TypeReference<GatewayPayload<?>>() {});
+        log.info("{}", json.getData());
+    }
+
+    @Test
+    public void testIntegrationDelete() throws IOException {
+        GatewayPayload<?> json = read("/gateway/IntegrationDelete.json", new TypeReference<GatewayPayload<?>>() {});
+        log.info("{}", json.getData());
+    }
+
 }
