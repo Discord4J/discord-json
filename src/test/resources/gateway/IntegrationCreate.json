@@ -1,0 +1,37 @@
+{
+    "t":"INTEGRATION_CREATE",
+    "s":25,
+    "op":0,
+    "d":{
+        "user":{
+            "username":"Erk",
+            "public_flags":131584,
+            "id":"77469400222932992",
+            "discriminator":"2048",
+            "avatar":"ca38426aca0884f0b636a6d588131b96"},
+        "type":"discord",
+        "name":"Dumblebot",
+        "id":"763674548452851712",
+        "enabled":true,
+        "application":{
+            "summary":"Stupid bot",
+            "name":"Dumblebot",
+            "id":"407532991313739776",
+            "icon":"00fa646dc73c173d31404a095985eb57",
+            "description":"Stupid bot",
+            "bot":{
+                "username":"Dumblebot",
+                "public_flags":0,
+                "id":"407532991313739776",
+                "discriminator":"0288",
+                "bot":true,
+                "avatar":"00fa646dc73c173d31404a095985eb57"
+            }
+        },
+        "account":{
+            "name":"Dumblebot",
+            "id":"407532991313739776"
+        },
+        "guild_id":"285899321705103361"
+    }
+}

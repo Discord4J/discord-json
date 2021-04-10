@@ -20,7 +20,6 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
-import discord4j.discordjson.json.InteractionData;
 import reactor.util.annotation.Nullable;
 
 import java.io.IOException;
@@ -73,6 +72,9 @@ public class PayloadDeserializer extends StdDeserializer<GatewayPayload<?>> {
         dispatchTypes.put("INVITE_CREATE", InviteCreate.class);
         dispatchTypes.put("INVITE_DELETE", InviteDelete.class);
         dispatchTypes.put("INTERACTION_CREATE", InteractionCreate.class);
+        dispatchTypes.put("INTEGRATION_CREATE", IntegrationCreate.class);
+        dispatchTypes.put("INTEGRATION_UPDATE", IntegrationUpdate.class);
+        dispatchTypes.put("INTEGRATION_DELETE", IntegrationDelete.class);
 
         // Ignored
         dispatchTypes.put("PRESENCES_REPLACE", null);
