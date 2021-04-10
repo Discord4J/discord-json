@@ -7,12 +7,12 @@ import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
 @Value.Immutable
-@JsonSerialize(as = ImmutableUpdateOthersVoiceStateRequest.class)
-@JsonDeserialize(as = ImmutableUpdateOthersVoiceStateRequest.class)
-public interface UpdateOthersVoiceStateRequest {
+@JsonSerialize(as = ImmutableUpdateUserVoiceStateRequest.class)
+@JsonDeserialize(as = ImmutableUpdateUserVoiceStateRequest.class)
+public interface UpdateUserVoiceStateRequest {
 
-    static ImmutableUpdateOthersVoiceStateRequest.Builder builder() {
-        return ImmutableUpdateOthersVoiceStateRequest.builder();
+    static ImmutableUpdateUserVoiceStateRequest.Builder builder() {
+        return ImmutableUpdateUserVoiceStateRequest.builder();
     }
 
     @JsonProperty("channel_id")
