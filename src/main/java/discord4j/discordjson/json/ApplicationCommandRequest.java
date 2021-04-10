@@ -1,5 +1,6 @@
 package discord4j.discordjson.json;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.possible.Possible;
@@ -30,4 +31,7 @@ public interface ApplicationCommandRequest {
      * the parameters for the command
      */
     Possible<List<ApplicationCommandOptionData>> options();
+
+    @JsonProperty("default_permission")
+    Possible<Boolean> defaultPermission();
 }
