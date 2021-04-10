@@ -18,9 +18,6 @@ public interface InviteCreate extends Dispatch {
         return ImmutableInviteCreate.builder();
     }
 
-    @JsonProperty("guild_id")
-    Id guildId();
-
     @JsonProperty("channel_id")
     Id channelId();
 
@@ -29,21 +26,30 @@ public interface InviteCreate extends Dispatch {
     @JsonProperty("created_at")
     String createdAt();
 
-    int uses();
+    @JsonProperty("guild_id")
+    Id guildId();
 
-    @JsonProperty("max_uses")
-    int maxUses();
+    Possible<UserData> inviter();
 
     @JsonProperty("max_age")
     int maxAge();
 
-    boolean temporary();
+    @JsonProperty("max_uses")
+    int maxUses();
 
-    Possible<UserData> inviter();
+    @JsonProperty("target_type")
+    Possible<Integer> targetType();
 
     @JsonProperty("target_user")
-    Possible<PartialUserData> targetUser();
+    Possible<UserData> targetUser();
 
-    @JsonProperty("target_user_type")
-    Possible<Integer> targetUserType();
+    /* TODO
+     * @JsonProperty("target_application")
+     * Possible<?> targetApplication();
+     */
+
+    boolean temporary();
+
+    int uses();
+
 }
