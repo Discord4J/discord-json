@@ -24,4 +24,7 @@ public interface MessageReferenceData {
 
     @JsonProperty("guild_id")
     Possible<Id> guildId();
+
+    @JsonProperty("fail_if_not_exists")
+    Possible<Boolean> failIfNotExists();
 }
