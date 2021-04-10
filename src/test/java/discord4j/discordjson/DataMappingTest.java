@@ -30,6 +30,7 @@ public class DataMappingTest {
                 .joinedAt(DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(ZonedDateTime.now()))
                 .large(false)
                 .memberCount(1)
+                .preferredLocale("en-US")
                 .build();
         PartialGuildData partialGuildData = PartialGuildData.builder()
                 .from((GuildFields) guildData)
