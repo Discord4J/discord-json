@@ -172,4 +172,10 @@ public class RestDeserializationTest {
         TemplateData data = read("/rest/TemplateData.json", TemplateData.class);
         log.info("{}", data);
     }
+
+    @Test
+    public void testGetWelcomeScreen() throws IOException {
+        WelcomeScreenData data = read("/rest/WelcomeScreen.json", WelcomeScreenData.class);
+        log.info("{}", data);
+    }
 }
