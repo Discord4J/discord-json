@@ -18,7 +18,7 @@ public interface GuildModifyRequest {
         return ImmutableGuildModifyRequest.builder();
     }
 
-    Possible<Optional<String>> name();
+    Possible<String> name();
 
     Possible<Optional<String>> region();
 
@@ -35,12 +35,12 @@ public interface GuildModifyRequest {
     Possible<Optional<String>> afkChannelId();
 
     @JsonProperty("afk_timeout")
-    Possible<Optional<Integer>> afkTimeout();
+    Possible<Integer> afkTimeout();
 
     Possible<Optional<String>> icon();
 
     @JsonProperty("owner_id")
-    Possible<Optional<String>> ownerId();
+    Possible<String> ownerId();
 
     Possible<Optional<String>> splash();
 
@@ -53,7 +53,7 @@ public interface GuildModifyRequest {
     Possible<Optional<String>> systemChannelId();
 
     @JsonProperty("system_channel_flags")
-    Possible<Optional<Integer>> systemChannelFlags();
+    Possible<Integer> systemChannelFlags();
 
     @JsonProperty("rules_channel_id")
     Possible<Optional<String>> rulesChannelId();
@@ -64,7 +64,7 @@ public interface GuildModifyRequest {
     @JsonProperty("preferred_locale")
     Possible<Optional<String>> preferredLocale();
 
-    Possible<Optional<List<String>>> features();
+    Possible<List<String>> features();
 
     Possible<Optional<String>> description();
 }
