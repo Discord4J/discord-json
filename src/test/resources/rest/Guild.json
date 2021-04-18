@@ -86,5 +86,6 @@
   "system_channel_flags": 1,
   "preferred_locale": "en-US",
   "rules_channel_id": null,
-  "public_updates_channel_id": null
+  "public_updates_channel_id": null,
+  "nsfw": false
 }

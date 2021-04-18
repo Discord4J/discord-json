@@ -86,4 +86,6 @@ public interface GuildFields {
 
     @JsonProperty("welcome_screen")
     Possible<WelcomeScreenData> welcomeScreen();
+
+    Possible<Boolean> nsfw();
 }
