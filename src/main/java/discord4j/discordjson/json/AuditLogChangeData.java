@@ -1,6 +1,7 @@
 package discord4j.discordjson.json;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.possible.Possible;
@@ -16,10 +17,10 @@ public interface AuditLogChangeData {
     }
 
     @JsonProperty("new_value")
-    Possible<Object> newValue();
+    Possible<JsonNode> newValue();
 
     @JsonProperty("old_value")
-    Possible<Object> oldValue();
+    Possible<JsonNode> oldValue();
 
     String key();
 }
