@@ -3,6 +3,7 @@
   "s": 27647,
   "op": 0,
   "d": {
+    "nsfw": false,
     "widget_channel_id": null,
     "system_channel_id": "185949590652977152",
     "premium_tier": 0,

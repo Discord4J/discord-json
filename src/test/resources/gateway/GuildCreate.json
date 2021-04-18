@@ -3,6 +3,7 @@
   "s": 2,
   "op": 0,
   "d": {
+    "nsfw": false,
     "unavailable": false,
     "premium_tier": 0,
     "channels": [
