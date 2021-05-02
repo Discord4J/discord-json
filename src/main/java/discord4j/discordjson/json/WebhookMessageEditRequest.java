@@ -22,9 +22,6 @@ public interface WebhookMessageEditRequest {
 
     Possible<Optional<List<EmbedData>>> embeds();
 
-    @JsonProperty("payload_json")
-    Possible<Optional<String>> payloadJson();
-
     @JsonProperty("allowed_mentions")
     Possible<Optional<AllowedMentionsData>> allowedMentions();
 
