@@ -25,4 +25,6 @@ public interface WebhookMessageEditRequest {
     @JsonProperty("allowed_mentions")
     Possible<Optional<AllowedMentionsData>> allowedMentions();
 
+    Possible<Optional<List<AttachmentData>>> attachments();
+
 }
