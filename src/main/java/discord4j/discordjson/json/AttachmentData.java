@@ -8,7 +8,6 @@ import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
 import java.util.Optional;
-import java.util.OptionalInt;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableAttachmentData.class)

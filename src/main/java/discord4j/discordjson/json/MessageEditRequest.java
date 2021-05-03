@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
+import java.util.List;
 import java.util.Optional;
 
 @Value.Immutable
@@ -21,8 +22,11 @@ public interface MessageEditRequest {
 
     Possible<Optional<EmbedData>> embed();
 
+    Possible<Optional<Integer>> flags();
+
     @JsonProperty("allowed_mentions")
     Possible<Optional<AllowedMentionsData>> allowedMentions();
 
-    Possible<Integer> flags();
+    Possible<Optional<List<AttachmentData>>> attachments();
+    
 }
