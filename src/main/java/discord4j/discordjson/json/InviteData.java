@@ -6,6 +6,8 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
+import java.util.Optional;
+
 @Value.Immutable
 @JsonSerialize(as = ImmutableInviteData.class)
 @JsonDeserialize(as = ImmutableInviteData.class)
@@ -39,6 +41,9 @@ public interface InviteData {
 
     @JsonProperty("approximate_member_count")
     Possible<Integer> approximateMemberCount();
+
+    @JsonProperty("expires_at")
+    Possible<Optional<String>> expiresAt();
 
     Possible<Integer> uses();
 
