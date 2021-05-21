@@ -23,5 +23,9 @@ public interface GuildCreateData extends GuildCreateFields, GuildRolesEmojisFiel
 
     List<ChannelData> channels();
 
+    List<ChannelData> threads();
+
     List<PresenceData> presences();
+
+
 }
