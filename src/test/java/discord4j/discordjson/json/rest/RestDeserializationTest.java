@@ -169,4 +169,16 @@ public class RestDeserializationTest {
         WelcomeScreenData data = read("/rest/WelcomeScreen.json", WelcomeScreenData.class);
         log.info("{}", data);
     }
+
+    @Test
+    public void testApplicationWebhook() throws IOException {
+        WebhookData data = read("/rest/ApplicationWebhook.json", WebhookData.class);
+        log.info("{}", data);
+    }
+
+    @Test
+    public void testChannelFollowedWebhook() throws IOException {
+        WebhookData data = read("/rest/ChannelFollowedWebhook.json", WebhookData.class);
+        log.info("{}", data);
+    }
 }
