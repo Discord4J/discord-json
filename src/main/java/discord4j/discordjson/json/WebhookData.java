@@ -23,10 +23,10 @@ public interface WebhookData {
     int type();
 
     @JsonProperty("guild_id")
-    Possible<Id> guildId();
+    Possible<Optional<Id>> guildId();
 
     @JsonProperty("channel_id")
-    Id channelId();
+    Optional<Id> channelId();
 
     Possible<UserData> user();
 
