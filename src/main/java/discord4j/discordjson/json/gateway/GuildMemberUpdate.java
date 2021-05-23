@@ -22,12 +22,19 @@ public interface GuildMemberUpdate extends Dispatch {
 
     @JsonProperty("guild_id")
     Id guildId();
+
     List<String> roles();
+
     UserData user();
+
     Possible<Optional<String>> nick();
+
     @JsonProperty("joined_at")
-    String joinedAt();
+    Optional<String> joinedAt();
+
     @JsonProperty("premium_since")
     Possible<Optional<String>> premiumSince();
+
     Possible<Boolean> pending();
+
 }
