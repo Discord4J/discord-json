@@ -808,6 +808,7 @@
     "joined_at": "2016-04-30T01:14:29.607000+00:00",
     "id": "123456789012345678",
     "explicit_content_filter": 0,
-    "system_channel_flags": 0
+    "system_channel_flags": 0,
+    "nsfw_level": 0
   }
 }

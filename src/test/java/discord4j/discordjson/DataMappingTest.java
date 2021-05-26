@@ -31,6 +31,7 @@ public class DataMappingTest {
                 .large(false)
                 .memberCount(1)
                 .preferredLocale("en-US")
+                .nsfwLevel(0)
                 .build();
         PartialGuildData partialGuildData = PartialGuildData.builder()
                 .from((GuildFields) guildData)

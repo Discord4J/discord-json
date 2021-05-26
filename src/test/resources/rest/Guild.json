@@ -87,5 +87,6 @@
   "preferred_locale": "en-US",
   "rules_channel_id": null,
   "public_updates_channel_id": null,
-  "nsfw": false
+  "nsfw": false,
+  "nsfw_level": 0
 }
