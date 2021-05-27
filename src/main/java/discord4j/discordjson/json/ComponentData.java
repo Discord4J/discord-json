@@ -13,6 +13,10 @@ import java.util.List;
 @JsonDeserialize(as = ImmutableComponentData.class)
 public interface ComponentData {
 
+    static ImmutableComponentData.Builder builder() {
+        return ImmutableComponentData.builder();
+    }
+
     int type();
 
     // TODO docs don't have this but it's obviously there
