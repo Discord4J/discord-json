@@ -9,7 +9,7 @@ import java.util.Optional;
 public class OptionalIdEncoding {
 
     @Encoding.Impl(virtual = true)
-    private Optional<Id> optional;
+    private Optional<Id> optional = Optional.empty();
 
     private final long value = optional
             .map(discord4j.discordjson.Id::asLong)

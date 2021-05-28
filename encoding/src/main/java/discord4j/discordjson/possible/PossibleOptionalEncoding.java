@@ -10,7 +10,7 @@ import java.util.Optional;
 public class PossibleOptionalEncoding<T> {
 
     @Encoding.Impl(virtual = true)
-    private Possible<Optional<T>> possible;
+    private Possible<Optional<T>> possible = discord4j.discordjson.possible.Possible.absent();
 
     private final T value = discord4j.discordjson.possible.Possible.flatOpt(possible).orElse(null);
     private final boolean absent = possible.isAbsent();

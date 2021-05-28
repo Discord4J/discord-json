@@ -12,7 +12,7 @@ import java.util.stream.StreamSupport;
 public class PossibleListEncoding<T> {
 
     @Encoding.Impl(virtual = true)
-    private Possible<List<T>> possible;
+    private Possible<List<T>> possible = discord4j.discordjson.possible.Possible.absent();
 
     private final List<T> value = possible.toOptional().orElse(null);
     private final boolean absent = possible.isAbsent();
