@@ -23,7 +23,7 @@ public class PossibleListEncoding<T> {
         return absent ? discord4j.discordjson.possible.Possible.absent() :
                 discord4j.discordjson.possible.Possible.of(value);
     }
-    
+
     @Encoding.Naming("is*Present")
     boolean isPresent() {
         return !absent;
