@@ -10,7 +10,8 @@
       "icon": "0d844849b842eaa9ff9730a6cc70dc0a",
       "features": [],
       "verification_level": 0,
-      "vanity_url_code": null
+      "vanity_url_code": null,
+      "nsfw_level": 0
     },
     "channel": {
       "id": "346719828784185377",
