@@ -9,7 +9,7 @@ import java.util.Objects;
 public class PossibleIdEncoding {
 
     @Encoding.Impl(virtual = true)
-    private Possible<Id> possible;
+    private Possible<Id> possible = discord4j.discordjson.possible.Possible.absent();
 
     private final long value = possible.toOptional()
             .map(discord4j.discordjson.Id::asLong)

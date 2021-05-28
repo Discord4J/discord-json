@@ -8,7 +8,7 @@ import java.util.Objects;
 public class PossibleEncoding<T> {
 
     @Encoding.Impl(virtual = true)
-    private Possible<T> possible;
+    private Possible<T> possible = discord4j.discordjson.possible.Possible.absent();
 
     private final T value = possible.toOptional().orElse(null);
     private final boolean absent = possible.isAbsent();
