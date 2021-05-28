@@ -3,6 +3,7 @@ package discord4j.discordjson.possible;
 import org.immutables.encode.Encoding;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -22,7 +23,7 @@ public class PossibleListEncoding<T> {
         return absent ? discord4j.discordjson.possible.Possible.absent() :
                 discord4j.discordjson.possible.Possible.of(value);
     }
-
+    
     @Encoding.Naming("is*Present")
     boolean isPresent() {
         return !absent;
@@ -31,6 +32,23 @@ public class PossibleListEncoding<T> {
     @Encoding.Naming("*OrElse")
     List<T> orElse(List<T> defaultValue) {
         return !absent ? value : defaultValue;
+    }
+
+    @Encoding.Copy
+    public Possible<List<T>> withPossible(Possible<List<T>> possible) {
+        return Objects.requireNonNull(possible);
+    }
+
+    @Encoding.Copy
+    public Possible<List<T>> withIterable(Iterable<T> elements) {
+        return discord4j.discordjson.possible.Possible.of(
+                StreamSupport.stream(Objects.requireNonNull(elements).spliterator(), false).collect(Collectors.toList()));
+    }
+
+    @Encoding.Copy
+    @SafeVarargs
+    public final Possible<List<T>> withVarargs(T... elements) {
+        return discord4j.discordjson.possible.Possible.of(Arrays.asList(elements));
     }
 
     //    @Encoding.Of
