@@ -3,6 +3,8 @@ package discord4j.discordjson.json;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import discord4j.discordjson.Id;
+import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 import reactor.util.annotation.Nullable;
 
@@ -18,15 +20,34 @@ public interface GuildCreateRequest {
     }
 
     String name();
-    String region();
-    @Nullable
-    String icon();
+
+    Possible<String> region();
+
+    Possible<String> icon();
+
     @JsonProperty("verification_level")
-    int verificationLevel();
+    Possible<Integer> verificationLevel();
+
     @JsonProperty("default_message_notifications")
-    int defaultMessageNotifications();
+    Possible<Integer> defaultMessageNotifications();
+
     @JsonProperty("explicit_content_filter")
-    int explicitContentFilter();
-    List<RoleCreateRequest> roles();
-    List<PartialChannelCreateRequest> channels();
+    Possible<Integer> explicitContentFilter();
+
+    Possible<List<RoleCreateRequest>> roles();
+
+    Possible<List<PartialChannelCreateRequest>> channels();
+
+    @JsonProperty("afk_channel_id")
+    Possible<Id> afkChannelId();
+
+    @JsonProperty("afk_timeout")
+    Possible<Integer> afkTimeout();
+
+    @JsonProperty("system_channel_id")
+    Possible<Id> systemChannelId();
+
+    @JsonProperty("system_channel_flags")
+    Possible<Integer> systemChannelFlags();
+
 }
