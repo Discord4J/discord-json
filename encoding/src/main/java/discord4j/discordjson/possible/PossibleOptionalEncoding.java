@@ -53,6 +53,7 @@ public class PossibleOptionalEncoding<T> {
             this.possible = value;
         }
 
+        @Encoding.Naming("*OrNull")
         @Encoding.Init
         public void setValue(@Nullable T value) {
             this.possible = discord4j.discordjson.possible.Possible.of(Optional.ofNullable(value));
