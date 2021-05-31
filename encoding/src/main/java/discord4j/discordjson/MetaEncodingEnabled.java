@@ -6,6 +6,7 @@ import discord4j.discordjson.possible.*;
 @ListIdEncodingEnabled
 @OptionalIdEncodingEnabled
 @PossibleListEncodingEnabled
+@PossibleOptionalListEncodingEnabled
 @PossibleOptionalIdEncodingEnabled
 @PossibleOptionalEncodingEnabled
 @PossibleIdEncodingEnabled

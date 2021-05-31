@@ -37,7 +37,14 @@ public class PossibleOptionalEncoding<T> {
     }
 
     @Encoding.Copy
+    @Deprecated
     public Possible<Optional<T>> with(final @Nullable T value) {
+        return discord4j.discordjson.possible.Possible.of(Optional.ofNullable(value));
+    }
+
+    @Encoding.Naming("with*OrNull")
+    @Encoding.Copy
+    public Possible<Optional<T>> withOrNull(final @Nullable T value) {
         return discord4j.discordjson.possible.Possible.of(Optional.ofNullable(value));
     }
 
@@ -53,7 +60,14 @@ public class PossibleOptionalEncoding<T> {
         }
 
         @Encoding.Init
+        @Deprecated
         public void setValue(@Nullable T value) {
+            this.possible = discord4j.discordjson.possible.Possible.of(Optional.ofNullable(value));
+        }
+
+        @Encoding.Naming("*OrNull")
+        @Encoding.Init
+        public void setValueOrNull(@Nullable T value) {
             this.possible = discord4j.discordjson.possible.Possible.of(Optional.ofNullable(value));
         }
 
