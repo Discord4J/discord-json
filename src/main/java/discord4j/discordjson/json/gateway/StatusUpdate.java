@@ -19,7 +19,7 @@ public interface StatusUpdate extends PayloadData {
 
     Optional<Long> since();
 
-    Optional<List<ActivityUpdateRequest>> activities();
+    List<ActivityUpdateRequest> activities();
 
     String status();
 
