@@ -20,10 +20,6 @@ public interface ThreadMetadata {
 
     boolean archived();
 
-    // TODO: Docs say this isn't nullable, but it is
-    @JsonProperty("archiver_id")
-    Optional<Id> archiverId();
-
     @JsonProperty("auto_archive_duration")
     int autoArchiveDuration();
 
