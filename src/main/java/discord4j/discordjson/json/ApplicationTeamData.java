@@ -19,8 +19,14 @@ public interface ApplicationTeamData {
     }
 
     Optional<String> icon();
+
     Id id();
+
     List<ApplicationTeamMemberData> members();
+
+    String name();
+
     @JsonProperty("owner_user_id")
     Id ownerUserId();
+
 }

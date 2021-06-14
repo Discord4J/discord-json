@@ -8,7 +8,7 @@ import java.util.Objects;
 public class PossibleIntArrayEncoding {
 
     @Encoding.Impl(virtual = true)
-    private Possible<int[]> possible;
+    private Possible<int[]> possible = discord4j.discordjson.possible.Possible.absent();
 
     private final int[] value = possible.toOptional().orElse(null);
     private final boolean absent = possible.isAbsent();

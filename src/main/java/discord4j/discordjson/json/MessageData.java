@@ -70,6 +70,9 @@ public interface MessageData {
 
     Possible<MessageApplicationData> application();
 
+    @JsonProperty("application_id")
+    Possible<Id> applicationId();
+
     @JsonProperty("message_reference")
     Possible<MessageReferenceData> messageReference();
 

@@ -4,3 +4,93 @@ dependencies {
     annotationProcessor "$immutables_group:value:$immutables_version"
     api "$immutables_group:encode:$immutables_version"
 }
+
+archivesBaseName = "discord-json-$project.name"
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+            artifactId archivesBaseName
+
+            versionMapping {
+                usage('java-api') {
+                    fromResolutionOf('runtimeClasspath')
+                }
+                usage('java-runtime') {
+                    fromResolutionResult()
+                }
+            }
+
+            pom {
+                name = "$project.name"
+                description = 'Discord entity domain as immutable Jackson objects'
+                url = 'https://github.com/Discord4J/discord-json'
+                organization {
+                    name = 'Discord4J'
+                    url = 'https://discord4j.com'
+                }
+                issueManagement {
+                    system = 'GitHub'
+                    url = 'https://github.com/Discord4J/discord-json/issues'
+                }
+                licenses {
+                    license {
+                        name = 'LGPL-3.0'
+                        url = 'https://github.com/Discord4J/discord-json/LICENSE.txt'
+                        distribution = 'repo'
+                    }
+                }
+                scm {
+                    url = 'https://github.com/Discord4J/discord-json'
+                    connection = 'scm:git:git://github.com/Discord4J/discord-json.git'
+                    developerConnection = 'scm:git:ssh://git@github.com:Discord4J/discord-json.git'
+                }
+                developers {
+                    developer {
+                        name = 'The Discord4J Team'
+                    }
+                }
+            }
+        }
+    }
+
+    if (!isJitpack) {
+        repositories {
+            maven {
+                if (isRelease) {
+                    url 'https://oss.sonatype.org/service/local/staging/deploy/maven2'
+                } else {
+                    url 'https://oss.sonatype.org/content/repositories/snapshots'
+                }
+                def sonatypeUsername = findProperty('sonatypeUsername')
+                def sonatypePassword = findProperty('sonatypePassword')
+                if (sonatypeUsername != null && sonatypePassword != null) {
+                    credentials {
+                        username sonatypeUsername
+                        password sonatypePassword
+                    }
+                }
+            }
+        }
+    }
+}
+
+if (!isJitpack && isRelease) {
+    signing {
+        def signingKey = findProperty("signingKey")
+        def signingPassword = findProperty("signingPassword")
+        if (signingKey != null && signingPassword != null) {
+            useInMemoryPgpKeys(new String(signingKey.decodeBase64()), signingPassword as String)
+        }
+        sign publishing.publications.mavenJava
+    }
+}
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': archivesBaseName,
+                'Implementation-Version': archiveVersion,
+                'Automatic-Module-Name': 'discord4j.discordjson.encoding'
+    }
+}

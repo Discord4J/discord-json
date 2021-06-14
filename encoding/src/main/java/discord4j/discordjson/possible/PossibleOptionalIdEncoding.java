@@ -11,7 +11,7 @@ import java.util.Optional;
 public class PossibleOptionalIdEncoding {
 
     @Encoding.Impl(virtual = true)
-    private Possible<Optional<Id>> possible;
+    private Possible<Optional<Id>> possible = discord4j.discordjson.possible.Possible.absent();
 
     private final long value = discord4j.discordjson.possible.Possible.flatOpt(possible)
             .map(discord4j.discordjson.Id::asLong)
