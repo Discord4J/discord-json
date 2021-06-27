@@ -43,4 +43,6 @@ public interface InteractionApplicationCommandCallbackData {
      */
     Possible<Integer> flags();
 
+    Possible<List<ComponentData>> components();
+
 }
