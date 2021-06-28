@@ -60,7 +60,7 @@ public class PossibleDeserializerTest {
     public void testPossibleOptionalEncoding() {
         Foo foo = ImmutableFoo.builder()
                 .addList("element")
-                .optional("present")
+                .optionalOrNull("present")
                 .possible("possible")
                 .build();
         assertFalse(foo.list().isAbsent());
