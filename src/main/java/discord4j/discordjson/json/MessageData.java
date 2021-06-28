@@ -85,4 +85,5 @@ public interface MessageData {
 
     Possible<MessageInteractionData> interaction();
 
+    Possible<List<ComponentData>> components();
 }
