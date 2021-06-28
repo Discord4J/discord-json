@@ -19,7 +19,9 @@ public interface ApplicationCommandOptionChoiceData {
     String name();
 
     /**
-     * value of the choice
+     * value of the choice, should be either a String or an Integer.
+     *
+     * @see <a href="https://discord.com/developers/docs/interactions/slash-commands#applicationcommandoptionchoice">ApplicationCommandOptionChoice</a>
      */
-    String value();
+    Object value();
 }
