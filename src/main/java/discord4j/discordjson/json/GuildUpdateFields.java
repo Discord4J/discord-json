@@ -3,9 +3,7 @@ package discord4j.discordjson.json;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import discord4j.discordjson.Id;
 
-import java.util.Optional;
-
-public interface GuildUpdateFields extends GuildFields, GuildVerificationLevelField {
+public interface GuildUpdateFields extends GuildFields, GuildVerificationLevelField, GuildNsfwLevelField {
 
     @JsonProperty("owner_id")
     Id ownerId();
