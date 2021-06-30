@@ -89,7 +89,4 @@ public interface GuildFields {
 
     @Deprecated
     Possible<Boolean> nsfw();
-
-    @JsonProperty("nsfw_level")
-    int nsfwLevel();
 }
