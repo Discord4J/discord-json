@@ -22,8 +22,7 @@ public interface SelectOptionData {
     Possible<String> description();
 
     Possible<EmojiData> emoji();
-
-    // TODO: docs are wrong, this is optional
+    
     @JsonProperty("default")
     Possible<Boolean> isDefault();
 }
