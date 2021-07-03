@@ -35,4 +35,6 @@ public interface ApplicationCommandInteractionData {
 
     @JsonProperty("component_type")
     Possible<Integer> componentType();
+
+    Possible<List<String>> values();
 }
