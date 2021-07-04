@@ -28,5 +28,6 @@ public interface MessageEditRequest {
     Possible<Optional<AllowedMentionsData>> allowedMentions();
 
     Possible<Optional<List<AttachmentData>>> attachments();
-    
+
+    Possible<Optional<List<ComponentData>>> components();
 }
