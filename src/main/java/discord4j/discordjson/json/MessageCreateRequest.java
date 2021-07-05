@@ -14,5 +14,6 @@ public interface MessageCreateRequest extends MessageSendRequestBase {
     }
 
     Possible<Object> nonce();
+    @Deprecated
     Possible<EmbedData> embed();
 }
