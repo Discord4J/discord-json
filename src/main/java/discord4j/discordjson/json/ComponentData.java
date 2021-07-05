@@ -34,4 +34,14 @@ public interface ComponentData {
     Possible<String> url();
 
     Possible<Boolean> disabled();
+
+    Possible<String> placeholder();
+
+    @JsonProperty("min_values")
+    Possible<Integer> minValues();
+
+    @JsonProperty("max_values")
+    Possible<Integer> maxValues();
+
+    Possible<List<SelectOptionData>> options();
 }
