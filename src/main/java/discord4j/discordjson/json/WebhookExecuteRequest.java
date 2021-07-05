@@ -20,5 +20,4 @@ public interface WebhookExecuteRequest extends MessageSendRequestBase {
     Possible<String> username();
     @JsonProperty("avatar_url")
     Possible<String> avatarUrl();
-    Possible<List<EmbedData>> embeds();
 }

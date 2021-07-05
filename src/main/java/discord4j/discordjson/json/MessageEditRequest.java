@@ -20,7 +20,10 @@ public interface MessageEditRequest {
 
     Possible<Optional<String>> content();
 
+    @Deprecated
     Possible<Optional<EmbedData>> embed();
+
+    Possible<Optional<List<EmbedData>>> embeds();
 
     Possible<Optional<Integer>> flags();
 

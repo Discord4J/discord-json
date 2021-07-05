@@ -18,4 +18,6 @@ public interface MessageSendRequestBase {
     Possible<MessageReferenceData> messageReference();
 
     Possible<List<ComponentData>> components();
+
+    Possible<List<EmbedData>> embeds();
 }
