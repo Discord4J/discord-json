@@ -69,4 +69,16 @@ public interface ChannelData {
 
     @JsonProperty("video_quality_mode")
     Possible<Integer> videoQualityMode();
+
+    @JsonProperty("message_count")
+    Possible<Integer> messageCount();
+
+    @JsonProperty("member_count")
+    Possible<Integer> memberCount();
+
+    @JsonProperty("thread_metadata")
+    Possible<ThreadMetadata> threadMetadata();
+
+    @JsonProperty("member")
+    Possible<ThreadMemberData> member();
 }
