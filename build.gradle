@@ -14,7 +14,7 @@ ext {
     }
 
     reactor_bom_version = '2020.0.5'
-    jackson_version = '2.12.3'
+    jackson_version = '2.12.4'
     immutables_group = 'org.immutables'
     immutables_version = '2.8.8'
 
@@ -105,6 +105,11 @@ dependencies {
     compileOnly "$immutables_group:value:$immutables_version"
     compileOnly "$immutables_group:builder:$immutables_version"
     annotationProcessor "$immutables_group:value:$immutables_version"
+
+    if (JavaVersion.current().isJava8()) {
+        compileOnly "com.google.code.findbugs:annotations:3.0.1"
+        testCompileOnly "com.google.code.findbugs:annotations:3.0.1"
+    }
 
     testCompileOnly project(':encoding')
     testCompileOnly "$immutables_group:value:$immutables_version"

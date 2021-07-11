@@ -40,7 +40,15 @@ public class PossibleOptionalIdEncoding {
     }
 
     @Encoding.Copy
+    @Deprecated
     public Possible<Optional<Id>> with(final @Nullable Long value) {
+        return value == null ? discord4j.discordjson.possible.Possible.of(Optional.empty()) :
+                discord4j.discordjson.possible.Possible.of(Optional.of(discord4j.discordjson.Id.of(value)));
+    }
+
+    @Encoding.Naming("with*OrNull")
+    @Encoding.Copy
+    public Possible<Optional<Id>> withOrNull(final @Nullable Long value) {
         return value == null ? discord4j.discordjson.possible.Possible.of(Optional.empty()) :
                 discord4j.discordjson.possible.Possible.of(Optional.of(discord4j.discordjson.Id.of(value)));
     }
