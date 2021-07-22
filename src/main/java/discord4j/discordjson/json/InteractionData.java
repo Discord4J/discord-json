@@ -1,6 +1,7 @@
 package discord4j.discordjson.json;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.json.gateway.Dispatch;
@@ -49,5 +50,6 @@ public interface InteractionData {
     /** read-only property, always 1 */
     int version();
 
-    Possible<MessageData> message();
+    /** message associated with the interaction. This isn't a proper MessageData for ephemeral messages */
+    Possible<JsonNode> message();
 }
