@@ -19,7 +19,9 @@ public interface ApplicationCommandOptionChoiceData {
     String name();
 
     /**
-     * value of the choice, should be either a String or an Integer.
+     * value of the choice, should be either an up to 100 character {@link String} for ApplicationCommandOptionType.STRING,
+     * a {@link Byte}/{@link Short}/{@link Integer}/{@link Long} for ApplicationCommandOptionType.INTEGER
+     * or a {@link Float}/{@link Double} for ApplicationCommandOptionType.NUMBER.
      *
      * @see <a href="https://discord.com/developers/docs/interactions/slash-commands#applicationcommandoptionchoice">ApplicationCommandOptionChoice</a>
      */
