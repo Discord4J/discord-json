@@ -29,7 +29,7 @@ public interface ApplicationCommandData {
     String applicationId();
 
     /**
-     * 3-32 character name
+     * 1-32 character name
      */
     String name();
 
