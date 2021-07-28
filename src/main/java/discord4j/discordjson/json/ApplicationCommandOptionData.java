@@ -36,7 +36,7 @@ public interface ApplicationCommandOptionData {
      */
     Possible<Boolean> required();
 
-    /** choices for string and int types for the user to pick from */
+    /** choices for STRING, INTEGER, and NUMBER Application Command Option Types for the user to pick from */
     Possible<List<ApplicationCommandOptionChoiceData>> choices();
 
     /**
