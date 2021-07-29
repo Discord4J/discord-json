@@ -26,6 +26,10 @@ public interface PartialUserData {
 
     Possible<Optional<String>> avatar();
 
+    Possible<Optional<String>> banner();
+
+    Possible<Optional<Integer>> bannerAccentColor();
+
     Possible<Boolean> bot();
 
     Possible<Boolean> system();

@@ -26,6 +26,11 @@ public interface UserData {
 
     Optional<String> avatar();
 
+    Possible<Optional<String>> banner();
+
+    @JsonProperty("accent_color")
+    Possible<Optional<Integer>> bannerAccentColor();
+
     Possible<Boolean> bot();
 
     Possible<Boolean> system();
