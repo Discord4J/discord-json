@@ -29,7 +29,7 @@ public interface UserData {
     Possible<Optional<String>> banner();
 
     @JsonProperty("accent_color")
-    Possible<Optional<Integer>> bannerAccentColor();
+    Possible<Optional<Integer>> accentColor();
 
     Possible<Boolean> bot();
 

@@ -28,7 +28,8 @@ public interface PartialUserData {
 
     Possible<Optional<String>> banner();
 
-    Possible<Optional<Integer>> bannerAccentColor();
+    @JsonProperty("accent_color")
+    Possible<Optional<Integer>> accentColor();
 
     Possible<Boolean> bot();
 
