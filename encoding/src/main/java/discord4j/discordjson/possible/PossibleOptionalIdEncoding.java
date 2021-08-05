@@ -17,11 +17,17 @@ public class PossibleOptionalIdEncoding {
             .map(discord4j.discordjson.Id::asLong)
             .orElse(0L);
     private final boolean absent = possible.isAbsent();
+    private final boolean isNull = !possible.isAbsent() && !possible.get().isPresent();
 
     @Encoding.Expose
     Possible<Optional<Id>> get() {
-        return absent ? discord4j.discordjson.possible.Possible.absent() :
-                discord4j.discordjson.possible.Possible.of(Optional.of(discord4j.discordjson.Id.of(value)));
+        if (absent) {
+            return discord4j.discordjson.possible.Possible.absent();
+        } else if (isNull) {
+            return discord4j.discordjson.possible.Possible.of(Optional.empty());
+        } else {
+            return discord4j.discordjson.possible.Possible.of(Optional.of(discord4j.discordjson.Id.of(value)));
+        }
     }
 
     @Encoding.Naming("is*Present")
