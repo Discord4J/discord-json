@@ -6,18 +6,17 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
-import java.util.List;
-
 @Value.Immutable
 @JsonSerialize(as = ImmutableWebhookExecuteRequest.class)
 @JsonDeserialize(as = ImmutableWebhookExecuteRequest.class)
-public interface WebhookExecuteRequest extends MessageSendRequestBase {
+public interface WebhookExecuteRequest extends MessageRequestBase {
 
     static ImmutableWebhookExecuteRequest.Builder builder() {
         return ImmutableWebhookExecuteRequest.builder();
     }
 
     Possible<String> username();
+
     @JsonProperty("avatar_url")
     Possible<String> avatarUrl();
 }
