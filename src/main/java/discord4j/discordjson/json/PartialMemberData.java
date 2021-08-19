@@ -23,8 +23,9 @@ public interface PartialMemberData {
 
     List<Id> roles();
 
+    // Nullable for member update event concerning lurker in stage channel
     @JsonProperty("joined_at")
-    String joinedAt();
+    Optional<String> joinedAt();
 
     @JsonProperty("premium_since")
     Possible<Optional<String>> premiumSince();
