@@ -49,5 +49,6 @@ public interface InteractionData {
     /** read-only property, always 1 */
     int version();
 
+    /** message associated with the interaction. */
     Possible<MessageData> message();
 }

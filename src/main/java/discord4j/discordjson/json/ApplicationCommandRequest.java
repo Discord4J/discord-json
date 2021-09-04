@@ -18,14 +18,15 @@ public interface ApplicationCommandRequest {
     }
 
     /**
-     * 1-32 character name matching ^[\w-]{1,32}$
+     * 1-32 character name matching ^[\w-]{1,32}$ for CHAT_INPUT.
+     * USER and MESSAGE commands may be mixed case with spaces
      */
     String name();
 
     /**
-     * 1-100 character description
+     * 1-100 character description. Not allowed for USER and MESSAGE command types
      */
-    String description();
+    Possible<String> description();
 
     /**
      * the parameters for the command
@@ -34,4 +35,9 @@ public interface ApplicationCommandRequest {
 
     @JsonProperty("default_permission")
     Possible<Boolean> defaultPermission();
+
+    /**
+     * value of ApplicationCommandType (defaults to 1, CHAT_INPUT)
+     */
+    Possible<Integer> type();
 }
