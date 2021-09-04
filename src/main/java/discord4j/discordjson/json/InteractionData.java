@@ -3,7 +3,6 @@ package discord4j.discordjson.json;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import discord4j.discordjson.json.gateway.Dispatch;
 import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
@@ -43,11 +42,12 @@ public interface InteractionData {
     /** user object for the invoking user, if invoked in a DM */
     Possible<UserData> user();
 
-    /** a continuation token for respoding to the interaction */
+    /** a continuation token for responding to the interaction */
     String token();
 
     /** read-only property, always 1 */
     int version();
 
+    /** for components, the message they were attached to */
     Possible<MessageData> message();
 }
