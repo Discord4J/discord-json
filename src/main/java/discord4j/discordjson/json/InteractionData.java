@@ -48,6 +48,6 @@ public interface InteractionData {
     /** read-only property, always 1 */
     int version();
 
-    /** for components, the message they were attached to */
+    /** message associated with the interaction. */
     Possible<MessageData> message();
 }

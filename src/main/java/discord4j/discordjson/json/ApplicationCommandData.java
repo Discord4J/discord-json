@@ -23,6 +23,11 @@ public interface ApplicationCommandData {
     String id();
 
     /**
+     *  value of ApplicationCommandType (defaults to 1, CHAT_INPUT)
+     */
+    Possible<Integer> type();
+
+    /**
      * unique id of the parent application
      */
     @JsonProperty("application_id")
@@ -34,7 +39,7 @@ public interface ApplicationCommandData {
     String name();
 
     /**
-     * 1-100 character description
+     * 0-100 character description
      */
     String description();
 
