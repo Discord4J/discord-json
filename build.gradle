@@ -15,8 +15,8 @@ ext {
 
     reactor_bom_version = '2020.0.10'
     jackson_version = '2.12.4'
-    immutables_group = 'org.immutables'
-    immutables_version = '2.8.8'
+    immutables_group = 'com.discord4j.immutables'
+    immutables_version = '2.9.0-GH-1320.0'
 
     junit_version = '5.7.1'
     logback_version = '1.2.3'
@@ -46,7 +46,6 @@ allprojects {
         }
         maven { url 'https://jitpack.io' }
         maven { url 'https://repo.spring.io/milestone' }
-        jcenter()
     }
 
     dependencies {
