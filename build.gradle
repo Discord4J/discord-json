@@ -15,8 +15,8 @@ ext {
 
     reactor_bom_version = '2020.0.11'
     jackson_version = '2.12.4'
-    immutables_group = 'com.discord4j.immutables'
-    immutables_version = '2.9.0-GH-1320.0'
+    immutables_group = 'org.immutables'
+    immutables_version = '2.9.0-rc1'
 
     junit_version = '5.7.1'
     logback_version = '1.2.3'
