@@ -24,6 +24,9 @@ public interface ApplicationCommandInteractionData {
     /** the name of the invoked command */
     Possible<String> name();
 
+    /** the type of the invoked command */
+    Possible<Integer> type();
+
     /** converted users + members + roles + channels */
     Possible<ApplicationCommandInteractionResolvedData> resolved();
 
@@ -37,4 +40,8 @@ public interface ApplicationCommandInteractionData {
     Possible<Integer> componentType();
 
     Possible<List<String>> values();
+
+    /** the ID of the user or message targeted by a user or message command */
+    @JsonProperty("target_id")
+    Possible<String> targetId();
 }
