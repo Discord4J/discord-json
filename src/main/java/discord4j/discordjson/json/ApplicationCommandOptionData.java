@@ -1,5 +1,6 @@
 package discord4j.discordjson.json;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.possible.Possible;
@@ -43,4 +44,12 @@ public interface ApplicationCommandOptionData {
      * if the option is a subcommand or subcommand group type, this nested options will be the parameters
      */
     Possible<List<ApplicationCommandOptionData>> options();
+
+    /**
+     * List of values of value of Channel.Type of which users can pick for the CHANNEL type option.
+     * <p/>
+     * If not provided, no restriction is placed on channel types.
+     */
+    @JsonProperty("channel_types")
+    Possible<List<Integer>> channelTypes();
 }
