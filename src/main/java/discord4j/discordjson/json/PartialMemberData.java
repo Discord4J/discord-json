@@ -21,6 +21,8 @@ public interface PartialMemberData {
 
     Possible<Optional<String>> nick();
 
+    Optional<String> avatar();
+
     List<Id> roles();
 
     // Nullable for member update event concerning lurker in stage channel

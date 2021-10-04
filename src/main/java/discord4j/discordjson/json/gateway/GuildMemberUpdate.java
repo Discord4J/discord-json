@@ -29,6 +29,8 @@ public interface GuildMemberUpdate extends Dispatch {
 
     Possible<Optional<String>> nick();
 
+    Optional<String> avatar();
+
     @JsonProperty("joined_at")
     Optional<String> joinedAt();
 
