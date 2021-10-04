@@ -24,4 +24,6 @@ public interface ApplicationCommandInteractionResolvedData {
 
     Possible<Map<String, RoleData>> roles();
 
+    Possible<Map<String, MessageData>> messages();
+
 }
