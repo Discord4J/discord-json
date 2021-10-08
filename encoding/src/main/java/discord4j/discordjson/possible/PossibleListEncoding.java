@@ -2,10 +2,7 @@ package discord4j.discordjson.possible;
 
 import org.immutables.encode.Encoding;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
@@ -103,13 +100,14 @@ public class PossibleListEncoding<T> {
         }
 
         @Encoding.Init
-        void setValue(List<T> elements) {
-            this.list = new ArrayList<>(elements);
-        }
-
-        @Encoding.Init
         void setValueIterable(Iterable<T> elements) {
             this.list = StreamSupport.stream(elements.spliterator(), false).collect(Collectors.toList());
+        }
+
+        @SafeVarargs
+        @Encoding.Init
+        final void setValueVarargs(T... elements) {
+            this.list = Arrays.asList(elements);
         }
 
         private List<T> getOrCreate() {

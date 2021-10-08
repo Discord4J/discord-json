@@ -113,12 +113,6 @@ public class PossibleOptionalListEncoding<T> {
         }
 
         @Encoding.Init
-        void setValue(List<T> elements) {
-            this.list = new ArrayList<>(elements);
-            this.explicitNull = false;
-        }
-
-        @Encoding.Init
         @Deprecated
         void setValueIterable(@Nullable Iterable<T> elements) {
             if (elements == null) {
@@ -138,6 +132,19 @@ public class PossibleOptionalListEncoding<T> {
                 this.explicitNull = true;
             } else {
                 this.list = StreamSupport.stream(elements.spliterator(), false).collect(Collectors.toList());
+                this.explicitNull = false;
+            }
+        }
+
+        @SafeVarargs
+        @Encoding.Naming("*OrNull")
+        @Encoding.Init
+        final void setValueVarargsOrNull(@Nullable T... elements) {
+            if (elements == null) {
+                this.list = null;
+                this.explicitNull = true;
+            } else {
+                this.list = Arrays.asList(elements);
                 this.explicitNull = false;
             }
         }
