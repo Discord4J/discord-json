@@ -20,4 +20,7 @@ public interface UpdateUserVoiceStateRequest {
 
     Possible<Boolean> suppress();
 
+     @JsonProperty("request_to_speak_timestamp")
+    Possible<String> requestToSpeakTimestamp();
+
 }
