@@ -27,7 +27,6 @@ import com.fasterxml.jackson.databind.deser.DeserializationProblemHandler;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 import discord4j.discordjson.json.ActivityUpdateRequest;
 import discord4j.discordjson.Id;
-import discord4j.discordjson.json.VoiceStateData;
 import discord4j.discordjson.possible.Possible;
 import discord4j.discordjson.possible.PossibleFilter;
 import discord4j.discordjson.possible.PossibleModule;
@@ -114,20 +113,10 @@ public class GatewaySerializationTest {
     public void testVoiceStateUpdate() throws IOException {
         String expected = readResourceAsString("/gateway/outbound/VoiceStateUpdate.json");
 
-        VoiceStateUpdate voiceStateUpdate = ImmutableVoiceStateUpdate.of(VoiceStateData.builder()
-                .guildId("41771983423143937")
-                .channelId("127121515262115840")
-                .userId("177000261233934336")
-                .selfMute(false)
-                .selfDeaf(false)
-                .sessionId("0")
-                .deaf(false)
-                .mute(false)
-                .selfStream(false)
-                .selfVideo(false)
-                .suppress(false)
-                .requestToSpeakTimestamp(Optional.empty())
-            .build());
+        VoiceStateUpdate voiceStateUpdate = ImmutableVoiceStateUpdate.of(
+                Id.of("41771983423143937"),
+                Optional.of(Id.of("127121515262115840")),
+                false, false);
         GatewayPayload<VoiceStateUpdate> payload = GatewayPayload.voiceStateUpdate(voiceStateUpdate);
         String result = mapper.writeValueAsString(payload);
 
