@@ -46,6 +46,13 @@ public interface ApplicationCommandOptionData {
     Possible<List<ApplicationCommandOptionData>> options();
 
     /**
+     * Whether this option supports auto complete or not -- default false.
+     * </p>
+     * May not be set if choices are present
+     */
+    Possible<Boolean> autocomplete();
+
+    /**
      * List of values of value of Channel.Type of which users can pick for the CHANNEL type option.
      * <p/>
      * If not provided, no restriction is placed on channel types.
