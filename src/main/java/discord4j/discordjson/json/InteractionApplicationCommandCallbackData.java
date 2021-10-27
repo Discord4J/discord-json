@@ -45,4 +45,12 @@ public interface InteractionApplicationCommandCallbackData {
 
     Possible<List<ComponentData>> components();
 
+    /**
+     * A list of choices the user may pick in an auto-complete response
+     * <p>
+     * Note: this discord docs are incorrect about the optionality of this field. It is only valid and required for
+     * the autocomplete result response type.
+     */
+    Possible<List<ApplicationCommandOptionChoiceData>> choices();
+
 }
