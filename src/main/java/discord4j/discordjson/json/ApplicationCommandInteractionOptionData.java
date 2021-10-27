@@ -35,4 +35,9 @@ public interface ApplicationCommandInteractionOptionData {
      * present if this option is a group or subcommand
      */
     Possible<List<ApplicationCommandInteractionOptionData>> options();
+
+    /**
+     * Whether this option is the currently focused option for autocomplete
+     */
+    Possible<Boolean> focused();
 }
