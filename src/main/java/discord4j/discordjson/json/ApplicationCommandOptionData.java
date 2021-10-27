@@ -47,14 +47,14 @@ public interface ApplicationCommandOptionData {
 
     /**
      * Whether this option supports auto complete or not -- default false.
-     * </p>
+     * <p>
      * May not be set if choices are present
      */
     Possible<Boolean> autocomplete();
 
     /**
      * List of values of value of Channel.Type of which users can pick for the CHANNEL type option.
-     * <p/>
+     * <p>
      * If not provided, no restriction is placed on channel types.
      */
     @JsonProperty("channel_types")
