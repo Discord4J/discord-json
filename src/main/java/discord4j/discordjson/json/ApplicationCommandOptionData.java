@@ -59,4 +59,20 @@ public interface ApplicationCommandOptionData {
      */
     @JsonProperty("channel_types")
     Possible<List<Integer>> channelTypes();
+
+    /**
+     * The minimum value allowed to be entered. Only valid for INTEGER and NUMBER type options.
+     * </p>
+     * If not provided, no restriction is placed on the minimum value permitted.
+     */
+    @JsonProperty("min_value")
+    Possible<Number> minValue();
+
+    /**
+     * The maximum value allowed to be entered. Only valid for INTEGER and NUMBER type options.
+     * </p>
+     * If not provided, no restriction is placed on the maximum value permitted.
+     */
+    @JsonProperty("max_value")
+    Possible<Number> maxValue();
 }
