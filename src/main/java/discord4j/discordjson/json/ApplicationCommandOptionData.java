@@ -66,7 +66,7 @@ public interface ApplicationCommandOptionData {
      * If not provided, no restriction is placed on the minimum value permitted.
      */
     @JsonProperty("min_value")
-    Possible<Number> minValue();
+    Possible<Double> minValue();
 
     /**
      * The maximum value allowed to be entered. Only valid for INTEGER and NUMBER type options.
@@ -74,5 +74,5 @@ public interface ApplicationCommandOptionData {
      * If not provided, no restriction is placed on the maximum value permitted.
      */
     @JsonProperty("max_value")
-    Possible<Number> maxValue();
+    Possible<Double> maxValue();
 }
