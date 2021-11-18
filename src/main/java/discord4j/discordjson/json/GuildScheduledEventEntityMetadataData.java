@@ -14,5 +14,6 @@ public interface GuildScheduledEventEntityMetadataData {
         return ImmutableGuildScheduledEventEntityMetadataData.builder();
     }
 
+    /* Required for events with entity type external */
     Possible<String> location();
 }

@@ -8,6 +8,7 @@ import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
 import java.time.Instant;
+import java.util.Optional;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableGuildScheduledEventModifyRequest.class)
@@ -20,7 +21,7 @@ public interface GuildScheduledEventModifyRequest {
 
     /* Required if entity type is STAGE or VOICE channel */
     @JsonProperty("channel_id")
-    Possible<Id> channelId();
+    Possible<Optional<Id>> channelId();
 
     @JsonProperty("entity_metadata")
     Possible<GuildScheduledEventEntityMetadataData> entityMetadata();
