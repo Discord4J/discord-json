@@ -2,13 +2,16 @@ package discord4j.discordjson.json;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import discord4j.discordjson.Id;
+import discord4j.discordjson.possible.Possible;
+
+import java.util.Optional;
 
 public interface GuildUpdateFields extends GuildFields, GuildVerificationLevelField, GuildNsfwLevelField {
 
     @JsonProperty("owner_id")
     Id ownerId();
 
-    String region();
+    Possible<Optional<String>> region();
 
     @JsonProperty("afk_timeout")
     int afkTimeout();
