@@ -25,6 +25,7 @@ public interface GuildScheduledEventData {
     @JsonProperty("guild_id")
     Id guildId();
 
+    /* Special rules apply to when this is present see https://discord.com/developers/docs/resources/guild-scheduled-event#guild-scheduled-event-object-field-requirements-by-entity-type */
     @JsonProperty("channel_id")
     Optional<Id> channelId();
 
@@ -39,6 +40,7 @@ public interface GuildScheduledEventData {
     @JsonProperty("scheduled_start_time")
     Instant scheduledStartTime();
 
+    /* Required if entity type is external */
     @JsonProperty("scheduled_end_time")
     Optional<Instant> scheduledEndTime();
 

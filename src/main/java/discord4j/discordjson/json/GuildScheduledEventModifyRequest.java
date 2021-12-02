@@ -19,10 +19,11 @@ public interface GuildScheduledEventModifyRequest {
         return ImmutableGuildScheduledEventModifyRequest.builder();
     }
 
-    /* Required if entity type is STAGE or VOICE channel */
+    /* must be set to null if entity type is changed to external */
     @JsonProperty("channel_id")
     Possible<Optional<Id>> channelId();
 
+    /* Required (with location) if changing entity type to external */
     @JsonProperty("entity_metadata")
     Possible<GuildScheduledEventEntityMetadataData> entityMetadata();
 
@@ -34,6 +35,7 @@ public interface GuildScheduledEventModifyRequest {
     @JsonProperty("scheduled_start_time")
     Possible<Instant> scheduledStartTime();
 
+    /* Required if changing entity type to external */
     @JsonProperty("scheduled_end_time")
     Possible<Instant> scheduledEndTime();
 

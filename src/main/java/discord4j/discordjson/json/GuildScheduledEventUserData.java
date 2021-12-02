@@ -21,7 +21,6 @@ public interface GuildScheduledEventUserData {
 
     UserData user();
 
-    @JsonProperty("guild_member")
-    Possible<PartialMemberData> guildMember();
+    Possible<PartialMemberData> member();
 }
 

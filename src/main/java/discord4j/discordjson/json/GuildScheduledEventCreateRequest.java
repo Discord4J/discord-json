@@ -9,7 +9,6 @@ import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
 import java.time.Instant;
-import java.util.Optional;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableGuildScheduledEventCreateRequest.class)
@@ -20,9 +19,9 @@ public interface GuildScheduledEventCreateRequest {
         return ImmutableGuildScheduledEventCreateRequest.builder();
     }
 
-    /* should be null for events with `entity_type: EXTERNAL` */
+    /* Possible for events with entity type external */
     @JsonProperty("channel_id")
-    Optional<Id> channelId();
+    Possible<Id> channelId();
 
     @JsonProperty("entity_metadata")
     Possible<GuildScheduledEventEntityMetadataData> entityMetadata();
