@@ -34,4 +34,7 @@ public interface ResolvedMemberData {
     /** total permissions of the member in the channel, including overrides, returned when in the interaction object. */
     Possible<String> permissions();
 
+    @JsonProperty("communication_disabled_until")
+    Possible<Optional<String>> communicationDisableUntil();
+
 }
