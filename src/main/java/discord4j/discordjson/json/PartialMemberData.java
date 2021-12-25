@@ -40,5 +40,5 @@ public interface PartialMemberData {
     boolean mute();
 
     @JsonProperty("communication_disabled_until")
-    Possible<Optional<String>> communicationDisableUntil();
+    Possible<Optional<String>> communicationDisabledUntil();
 }

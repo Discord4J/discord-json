@@ -40,6 +40,6 @@ public interface GuildMemberUpdate extends Dispatch {
     Possible<Boolean> pending();
 
     @JsonProperty("communication_disabled_until")
-    Possible<Optional<String>> communicationDisableUntil();
+    Possible<Optional<String>> communicationDisabledUntil();
 
 }

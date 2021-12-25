@@ -25,5 +25,5 @@ public interface GuildMemberModifyRequest {
     @JsonProperty("channel_id")
     Possible<Optional<String>> channelId();
     @JsonProperty("communication_disabled_until")
-    Possible<Optional<String>> communicationDisableUntil();
+    Possible<Optional<String>> communicationDisabledUntil();
 }
