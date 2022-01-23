@@ -45,6 +45,9 @@ public interface InviteData {
     @JsonProperty("expires_at")
     Possible<Optional<String>> expiresAt();
 
+    @JsonProperty("guild_scheduled_event")
+    Possible<GuildScheduledEventData> guildScheduledEvent();
+
     Possible<Integer> uses();
 
     @JsonProperty("max_uses")
