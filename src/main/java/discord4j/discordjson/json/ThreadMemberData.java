@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.Id;
+import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
 @Value.Immutable
@@ -15,10 +16,10 @@ public interface ThreadMemberData {
         return ImmutableThreadMemberData.builder();
     }
 
-    Id id();
+    Possible<Id> id();
 
     @JsonProperty("user_id")
-    Id userId();
+    Possible<Id> userId();
 
     @JsonProperty("join_timestamp")
     String joinTimestamp();
