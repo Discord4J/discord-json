@@ -29,6 +29,7 @@ public interface StickerData {
 
     Possible<String> tags();
 
+    @Deprecated
     String asset();
 
     Possible<Boolean> available();
