@@ -12,18 +12,14 @@ import java.util.Optional;
 @Value.Immutable
 @JsonSerialize(as = ImmutableStickerData.class)
 @JsonDeserialize(as = ImmutableStickerData.class)
-public interface StickerData {
+public interface StickerData extends PartialStickerData {
 
     static ImmutableStickerData.Builder builder() {
         return ImmutableStickerData.builder();
     }
 
-    Id id();
-
     @JsonProperty("pack_id")
     Id packId();
-
-    String name();
 
     String description();
 
@@ -35,9 +31,6 @@ public interface StickerData {
     Possible<Boolean> available();
 
     int type();
-
-    @JsonProperty("format_type")
-    int formatType();
 
     @JsonProperty("guild_id")
     Possible<Id> guildId();

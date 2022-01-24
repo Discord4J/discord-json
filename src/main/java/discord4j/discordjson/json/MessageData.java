@@ -78,8 +78,6 @@ public interface MessageData {
 
     Possible<Integer> flags();
 
-    Possible<List<StickerData>> stickers();
-
     @JsonProperty("referenced_message")
     Possible<Optional<MessageData>> referencedMessage();
 
