@@ -31,7 +31,17 @@ public interface StickerData {
 
     String asset();
 
+    Possible<Boolean> available();
+
+    int type();
+
     @JsonProperty("format_type")
     int formatType();
+
+    @JsonProperty("guild_id")
+    Possible<Id> guildId();
+
+    @JsonProperty("sort_value")
+    Possible<Integer> sortValue();
 
 }

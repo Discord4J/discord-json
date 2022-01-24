@@ -21,14 +21,15 @@
     "edited_timestamp": null,
     "flags": 0,
     "stickers": [{
-        "id": "748293342357356564",
+        "id": "749053441527251087",
         "name": "Scared",
-        "description": "wumpus, scared, woah, scary, scream, :o, spooked, \ud83d\ude28, \ud83d\ude31, :scared, :scream",
-        "pack_id": "748286863302852648",
-        "asset": "17e05030dcafa6604ee7479789652459",
-        "preview_asset": "c5ca5d803b37604638c32e68cb629b1a",
-        "format_type": 2,
-        "tags": "wumpus, scared, woah, scary, scream, :o, spooked, \ud83d\ude28, \ud83d\ude31, :scared, :scream"
+        "tags": "wumpus, scared, scary, fear, afraid, fright, frightened, spooky, spook, spooked, eek, :o, 😨, 😱, 🙀, :scared, gasp, scream, screaming, :scream, ahh",
+        "type": 1,
+        "format_type": 3,
+        "description": "Wumpus looks up and screams in horror",
+        "asset": "",
+        "pack_id": "847199849233514549",
+        "sort_value": 28
     }
     ]
 }
