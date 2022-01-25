@@ -7,4 +7,6 @@ public interface GuildRolesEmojisFields {
     List<RoleData> roles();
 
     List<EmojiData> emojis();
+
+    List<StickerData> stickers();
 }
