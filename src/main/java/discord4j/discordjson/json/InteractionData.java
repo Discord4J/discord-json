@@ -50,4 +50,11 @@ public interface InteractionData {
 
     /** message associated with the interaction. */
     Possible<MessageData> message();
+
+    /** The issuing user's client locale. Present on all interactions except ping */
+    Possible<String> locale();
+
+    /** The guild's locale, if invoked in a guild. Defaults to English for non-community servers */
+    @JsonProperty("guild_locale")
+    Possible<String> guildLocale();
 }
