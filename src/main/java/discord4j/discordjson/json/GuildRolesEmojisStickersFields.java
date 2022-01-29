@@ -1,5 +1,6 @@
 package discord4j.discordjson.json;
 
+import discord4j.discordjson.possible.Possible;
 import java.util.List;
 
 public interface GuildRolesEmojisStickersFields {
@@ -8,5 +9,5 @@ public interface GuildRolesEmojisStickersFields {
 
     List<EmojiData> emojis();
 
-    List<StickerData> stickers();
+    Possible<List<StickerData>> stickers();
 }
