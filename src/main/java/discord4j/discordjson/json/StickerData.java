@@ -21,7 +21,7 @@ public interface StickerData extends PartialStickerData {
     @JsonProperty("pack_id")
     Id packId();
 
-    String description();
+    Optional<String> description();
 
     Possible<String> tags();
 
