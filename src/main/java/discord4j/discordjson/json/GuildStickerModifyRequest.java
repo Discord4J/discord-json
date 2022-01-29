@@ -14,7 +14,7 @@ public interface GuildStickerModifyRequest {
         return ImmutableGuildStickerModifyRequest.builder();
     }
 
-    String name();
+    Possible<String> name();
     Possible<String> description();
-    String tags();
+    Possible<String> tags();
 }
