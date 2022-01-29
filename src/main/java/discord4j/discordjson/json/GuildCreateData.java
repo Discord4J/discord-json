@@ -10,7 +10,7 @@ import java.util.List;
 @Value.Immutable
 @JsonSerialize(as = ImmutableGuildCreateData.class)
 @JsonDeserialize(as = ImmutableGuildCreateData.class)
-public interface GuildCreateData extends GuildCreateFields, GuildRolesEmojisFields {
+public interface GuildCreateData extends GuildCreateFields, GuildRolesEmojisStickersFields {
 
     static ImmutableGuildCreateData.Builder builder() {
         return ImmutableGuildCreateData.builder();
