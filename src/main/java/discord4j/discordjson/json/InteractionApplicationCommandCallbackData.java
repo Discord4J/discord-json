@@ -53,4 +53,9 @@ public interface InteractionApplicationCommandCallbackData {
      */
     Possible<List<ApplicationCommandOptionChoiceData>> choices();
 
+    /* Modal only */
+    @JsonProperty("custom_id")
+    Possible<String> customId();
+
+    Possible<String> title();
 }

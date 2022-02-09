@@ -44,4 +44,8 @@ public interface ApplicationCommandInteractionData {
     /** the ID of the user or message targeted by a user or message command */
     @JsonProperty("target_id")
     Possible<String> targetId();
+
+    /** array of message components for modal submit */
+    Possible<List<ComponentData>> modal();
+
 }

@@ -19,7 +19,6 @@ public interface ComponentData {
 
     int type();
 
-    // TODO docs don't have this but it's obviously there
     Possible<List<ComponentData>> components();
 
     Possible<Integer> style();
@@ -42,6 +41,17 @@ public interface ComponentData {
 
     @JsonProperty("max_values")
     Possible<Integer> maxValues();
+
+    /* Text input only */
+    @JsonProperty("min_length")
+    Possible<Integer> minLength();
+
+    @JsonProperty("max_length")
+    Possible<Integer> maxLength();
+
+    Possible<Boolean> required();
+
+    Possible<String> value();
 
     Possible<List<SelectOptionData>> options();
 }
