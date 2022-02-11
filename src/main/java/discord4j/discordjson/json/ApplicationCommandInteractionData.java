@@ -46,6 +46,6 @@ public interface ApplicationCommandInteractionData {
     Possible<String> targetId();
 
     /** array of message components for modal submit */
-    Possible<List<ComponentData>> modal();
+    Possible<List<ComponentData>> components();
 
 }
