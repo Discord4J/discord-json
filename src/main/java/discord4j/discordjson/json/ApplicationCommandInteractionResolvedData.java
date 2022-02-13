@@ -26,4 +26,6 @@ public interface ApplicationCommandInteractionResolvedData {
 
     Possible<Map<String, MessageData>> messages();
 
+    Possible<Map<String, AttachmentData>> attachments();
+
 }

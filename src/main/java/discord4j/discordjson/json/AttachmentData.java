@@ -22,6 +22,8 @@ public interface AttachmentData {
 
     String filename();
 
+    Possible<String> description();
+
     @JsonProperty("content_type")
     Possible<String> contentType();
 
@@ -35,4 +37,6 @@ public interface AttachmentData {
     Possible<Optional<Integer>> height();
 
     Possible<Optional<Integer>> width();
+
+    Possible<Boolean> ephemeral();
 }
