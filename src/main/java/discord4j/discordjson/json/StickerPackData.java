@@ -6,36 +6,32 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.Id;
 import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
-
-import java.util.Optional;
+import java.util.List;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableStickerData.class)
 @JsonDeserialize(as = ImmutableStickerData.class)
-public interface StickerData extends PartialStickerData {
+public interface StickerPackData {
 
     static ImmutableStickerData.Builder builder() {
         return ImmutableStickerData.builder();
     }
 
-    @JsonProperty("pack_id")
-    Possible<Id> packId();
+    Id id();
 
-    Optional<String> description();
+    Possible<List<StickerData>> stickers();
 
-    Possible<String> tags();
+    String name();
 
-    @Deprecated
-    String asset();
+    String description();
 
-    Possible<Boolean> available();
+    @JsonProperty("sku_id")
+    Id skuId();
 
-    int type();
+    @JsonProperty("cover_sticker_id")
+    Possible<Id> coverStickerId();
 
-    @JsonProperty("guild_id")
-    Possible<Id> guildId();
-
-    @JsonProperty("sort_value")
-    Possible<Integer> sortValue();
+    @JsonProperty("banner_asset_id")
+    Possible<Id> bannerAssetId();
 
 }
