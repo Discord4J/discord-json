@@ -1,9 +1,11 @@
 package discord4j.discordjson.json;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
+import java.util.Optional;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableRoleCreateRequest.class)
@@ -19,6 +21,7 @@ public interface RoleCreateRequest {
     Possible<Integer> color();
     Possible<Boolean> hoist();
     Possible<Boolean> mentionable();
-    Possible<String> icon();
-    Possible<String> unicodeEmoji();
+    Possible<Optional<String>> icon();
+    @JsonProperty("unicode_emoji")
+    Possible<Optional<String>> unicodeEmoji();
 }

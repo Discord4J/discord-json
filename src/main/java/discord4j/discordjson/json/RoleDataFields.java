@@ -1,7 +1,9 @@
 package discord4j.discordjson.json;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import discord4j.discordjson.Id;
 import discord4j.discordjson.possible.Possible;
+import java.util.Optional;
 
 public interface RoleDataFields {
 
@@ -17,9 +19,10 @@ public interface RoleDataFields {
 
     boolean mentionable();
 
-    Possible<String> icon();
+    Possible<Optional<String>> icon();
 
-    Possible<String> unicodeEmoji();
+    @JsonProperty("unicode_emoji")
+    Possible<Optional<String>> unicodeEmoji();
 
     Possible<RoleTagsData> tags();
 }
