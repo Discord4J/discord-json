@@ -19,4 +19,6 @@ public interface RoleCreateRequest {
     Possible<Integer> color();
     Possible<Boolean> hoist();
     Possible<Boolean> mentionable();
+    Possible<String> icon();
+    Possible<String> unicodeEmoji();
 }

@@ -17,5 +17,9 @@ public interface RoleDataFields {
 
     boolean mentionable();
 
+    Possible<String> icon();
+
+    Possible<String> unicodeEmoji();
+
     Possible<RoleTagsData> tags();
 }
