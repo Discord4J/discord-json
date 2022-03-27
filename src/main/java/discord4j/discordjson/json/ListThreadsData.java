@@ -12,6 +12,10 @@ import java.util.List;
 @JsonDeserialize(as = ImmutableListThreadsData.class)
 public interface ListThreadsData {
 
+    static ImmutableListThreadsData.Builder builder() {
+        return ImmutableListThreadsData.builder();
+    }
+
     List<ChannelData> threads();
 
     List<ThreadMemberData> members();

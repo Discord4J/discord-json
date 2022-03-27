@@ -10,6 +10,10 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableStartThreadRequest.class)
 public interface StartThreadRequest {
 
+    static ImmutableStartThreadRequest.Builder builder() {
+        return ImmutableStartThreadRequest.builder();
+    }
+
     String name();
 
     @JsonProperty("auto_archive_duration")
