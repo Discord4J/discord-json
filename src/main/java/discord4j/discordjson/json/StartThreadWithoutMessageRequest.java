@@ -7,12 +7,12 @@ import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
 @Value.Immutable
-@JsonSerialize(as = ImmutableStartThreadRequest.class)
-@JsonDeserialize(as = ImmutableStartThreadRequest.class)
-public interface StartThreadRequest {
+@JsonSerialize(as = ImmutableStartThreadWithoutMessageRequest.class)
+@JsonDeserialize(as = ImmutableStartThreadWithoutMessageRequest.class)
+public interface StartThreadWithoutMessageRequest {
 
-    static ImmutableStartThreadRequest.Builder builder() {
-        return ImmutableStartThreadRequest.builder();
+    static ImmutableStartThreadWithoutMessageRequest.Builder builder() {
+        return ImmutableStartThreadWithoutMessageRequest.builder();
     }
 
     /**
@@ -25,6 +25,16 @@ public interface StartThreadRequest {
      */
     @JsonProperty("auto_archive_duration")
     Possible<Integer> autoArchiveDuration();
+
+    /**
+     * the type of thread to create
+     */
+    Possible<Integer> type();
+
+    /**
+     * whether non-moderators can add other non-moderators to a thread; only available when creating a private thread
+     */
+    Possible<Boolean> invitable();
 
     /**
      * amount of seconds a user has to wait before sending another message (0-21600)
