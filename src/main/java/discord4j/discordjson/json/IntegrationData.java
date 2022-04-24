@@ -22,7 +22,7 @@ public interface IntegrationData {
 
     String type();
 
-    boolean enabled();
+    Possible<Boolean> enabled();
 
     Possible<Boolean> syncing();
 
