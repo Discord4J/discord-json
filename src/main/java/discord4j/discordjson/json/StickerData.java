@@ -26,7 +26,7 @@ public interface StickerData extends PartialStickerData {
     Possible<String> tags();
 
     @Deprecated
-    String asset();
+    Possible<String> asset();
 
     Possible<Boolean> available();
 
