@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.Id;
+import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 import java.util.List;
 
@@ -16,7 +17,13 @@ public interface AutoModRuleData {
         return ImmutableAutoModRuleData.builder();
     }
 
+    Id id();
     String name();
+
+    @JsonProperty("creator_id")
+    Id creatorId();
+    @JsonProperty("guild_id")
+    Id guildId();
 
     @JsonProperty("event_type")
     int eventType();
