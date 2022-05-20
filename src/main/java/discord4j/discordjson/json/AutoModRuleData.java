@@ -18,6 +18,7 @@ public interface AutoModRuleData {
     }
 
     Id id();
+
     String name();
 
     @JsonProperty("creator_id")
