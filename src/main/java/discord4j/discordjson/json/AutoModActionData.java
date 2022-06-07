@@ -15,6 +15,6 @@ public interface AutoModActionData {
 
     int type();
 
-    Object metadata();
+    AutoModActionMetaData metadata();
 
 }

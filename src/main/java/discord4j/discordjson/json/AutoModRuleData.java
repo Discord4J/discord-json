@@ -33,7 +33,7 @@ public interface AutoModRuleData {
     int triggerType();
 
     @JsonProperty("trigger_metadata")
-    Object triggerMetadata();
+    AutoModTriggerMetaData triggerMetadata();
 
     List<AutoModActionData> actions();
 
