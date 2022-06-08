@@ -19,7 +19,7 @@ public interface AutoModTriggerMetaData {
     @JsonProperty("keyword_filter")
     Possible<List<String>> keywordFilter();
 
-    @JsonProperty("keyword_lists")
-    Possible<List<String>> keywordLists();
+    @JsonProperty("presets")
+    Possible<List<Integer>> presets();
 
 }
