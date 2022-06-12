@@ -53,5 +53,7 @@ public interface ComponentData {
 
     Possible<String> value();
 
+    Possible<List<String>> values();
+
     Possible<List<SelectOptionData>> options();
 }
