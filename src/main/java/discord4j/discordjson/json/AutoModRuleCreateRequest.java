@@ -26,7 +26,7 @@ public interface AutoModRuleCreateRequest {
     int triggerType();
 
     @JsonProperty("trigger_metadata")
-    Object triggerMetadata();
+    Possible<AutoModTriggerMetaData> triggerMetadata();
 
     List<AutoModActionData> actions();
 
