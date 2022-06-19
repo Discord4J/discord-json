@@ -24,4 +24,7 @@ public interface AuditLogData {
     List<AuditLogEntryData> auditLogEntries();
 
     List<IntegrationData> integrations();
+
+    @JsonProperty("auto_moderation_rules")
+    List<AutoModRuleData> autoModerationRules();
 }
