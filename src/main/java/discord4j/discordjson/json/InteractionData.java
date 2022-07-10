@@ -57,4 +57,7 @@ public interface InteractionData {
     /** The guild's locale, if invoked in a guild. Defaults to English for non-community servers */
     @JsonProperty("guild_locale")
     Possible<String> guildLocale();
+
+    @JsonProperty("app_permissions")
+    String appPermissions();
 }
