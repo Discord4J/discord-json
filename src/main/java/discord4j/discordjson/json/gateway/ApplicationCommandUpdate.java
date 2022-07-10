@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import discord4j.discordjson.Id;
 import discord4j.discordjson.json.ApplicationCommandData;
 import org.immutables.value.Value;
 
@@ -17,7 +18,7 @@ public interface ApplicationCommandUpdate extends Dispatch {
     }
 
     @JsonProperty("guild_id")
-    String guildId();
+    Id guildId();
 
     @JsonUnwrapped
     ApplicationCommandData command();
