@@ -9,11 +9,13 @@ import org.immutables.value.Value;
 @Value.Immutable
 @JsonSerialize(as = ImmutableThreadModifyRequest.class)
 @JsonDeserialize(as = ImmutableThreadModifyRequest.class)
-public interface ThreadModifyRequest extends ChannelModifyRequest {
+public interface ThreadModifyRequest {
 
     static ImmutableThreadModifyRequest.Builder builder() {
         return ImmutableThreadModifyRequest.builder();
     }
+
+    Possible<String> name();
 
     Possible<Boolean> archived();
 
@@ -23,4 +25,7 @@ public interface ThreadModifyRequest extends ChannelModifyRequest {
     Possible<Boolean> locked();
 
     Possible<Boolean> invitable();
+
+    @JsonProperty("rate_limit_per_user")
+    Possible<Integer> rateLimitPerUser();
 }
