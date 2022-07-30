@@ -1,0 +1,41 @@
+[
+  {
+    "id": "990814489182076978",
+    "application_id": "344487830824000000",
+    "version": "1003009005372846202",
+    "default_permission": true,
+    "default_member_permissions": null,
+    "type": 1,
+    "name": "join",
+    "name_localizations": null,
+    "description": "Join my current voice channel",
+    "description_localizations": null,
+    "guild_id": "185949590652000000"
+  },
+  {
+    "id": "990814489182076979",
+    "application_id": "344487830824000000",
+    "version": "1003009005372846203",
+    "default_permission": true,
+    "default_member_permissions": null,
+    "type": 1,
+    "name": "leave",
+    "name_localizations": null,
+    "description": "Leave my current voice channel",
+    "description_localizations": null,
+    "guild_id": "185949590652000000"
+  },
+  {
+    "id": "1003009005372846201",
+    "application_id": "344487830824000000",
+    "version": "1003009005372846204",
+    "default_permission": true,
+    "default_member_permissions": null,
+    "type": 1,
+    "name": "sounds",
+    "name_localizations": null,
+    "description": "Display the soundboard",
+    "description_localizations": null,
+    "guild_id": "185949590652000000"
+  }
+]

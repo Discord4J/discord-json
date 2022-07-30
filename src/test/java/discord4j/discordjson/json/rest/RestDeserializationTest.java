@@ -190,4 +190,10 @@ public class RestDeserializationTest {
         WebhookData data = read("/rest/ChannelFollowedWebhook.json", WebhookData.class);
         log.info("{}", data);
     }
+
+    @Test
+    public void readApplicationCommandData() throws IOException {
+        ApplicationCommandData[] data = read("/rest/ApplicationCommandData.json", ApplicationCommandData[].class);
+        log.info("{}", Arrays.asList(data));
+    }
 }

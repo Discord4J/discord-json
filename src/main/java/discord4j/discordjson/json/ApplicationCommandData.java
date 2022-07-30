@@ -53,7 +53,7 @@ public interface ApplicationCommandData {
     String name();
 
     @JsonProperty("name_localizations")
-    Possible<Map<String, String>> nameLocalizations();
+    Possible<Optional<Map<String, String>>> nameLocalizations();
 
     /**
      * 0-100 character description
@@ -61,7 +61,7 @@ public interface ApplicationCommandData {
     String description();
 
     @JsonProperty("description_localizations")
-    Possible<Map<String, String>> descriptionLocalizations();
+    Possible<Optional<Map<String, String>>> descriptionLocalizations();
 
     /**
      * the parameters for the command
