@@ -1,8 +1,13 @@
 package discord4j.discordjson.json;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
+
+import java.util.Map;
+import java.util.Optional;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableApplicationCommandOptionChoiceData.class)
@@ -17,6 +22,9 @@ public interface ApplicationCommandOptionChoiceData {
      * 1-100 character choice name
      */
     String name();
+
+    @JsonProperty("name_localizations")
+    Possible<Optional<Map<String, String>>> nameLocalizations();
 
     /**
      * value of the choice, should be either an up to 100 character {@link String} for ApplicationCommandOptionType.STRING,
