@@ -3,6 +3,7 @@ package discord4j.discordjson.json;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import discord4j.discordjson.Id;
 import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
@@ -16,11 +17,11 @@ public interface InteractionData {
     }
 
     /** id of the interaction */
-    String id();
+    Id id();
 
     /** id of the application this interaction is for */
     @JsonProperty("application_id")
-    String applicationId();
+    Id applicationId();
 
     /** the type of the interaction */
     int type();
@@ -30,11 +31,11 @@ public interface InteractionData {
 
     /** the guild it was sent from */
     @JsonProperty("guild_id")
-    Possible<String> guildId();
+    Possible<Id> guildId();
 
     /** the channel it was sent from */
     @JsonProperty("channel_id")
-    Possible<String> channelId();
+    Possible<Id> channelId();
 
     /** guild member data for the invoking user */
     Possible<MemberData> member();
@@ -57,4 +58,7 @@ public interface InteractionData {
     /** The guild's locale, if invoked in a guild. Defaults to English for non-community servers */
     @JsonProperty("guild_locale")
     Possible<String> guildLocale();
+
+    @JsonProperty("app_permissions")
+    Possible<String> appPermissions();
 }

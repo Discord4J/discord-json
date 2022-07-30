@@ -7,6 +7,7 @@ import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
 import java.util.List;
+import java.util.Map;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableApplicationCommandOptionData.class)
@@ -27,10 +28,16 @@ public interface ApplicationCommandOptionData {
      */
     String name();
 
+    @JsonProperty("name_localizations")
+    Possible<Map<String, String>> nameLocalizations();
+
     /**
      * 1-100 character description
      */
     String description();
+
+    @JsonProperty("description_localizations")
+    Possible<Map<String, String>> descriptionLocalizations();
 
     /**
      * if the parameter is required or optional -- default false
@@ -75,4 +82,20 @@ public interface ApplicationCommandOptionData {
      */
     @JsonProperty("max_value")
     Possible<Double> maxValue();
+
+    /**
+     * The minimum value allowed to be entered (minimum of 0). Only valid for STRING type option.
+     * </p>
+     * If not provided, no restriction is placed on the minimum value permitted.
+     */
+    @JsonProperty("min_length")
+    Possible<Integer> minLength();
+
+    /**
+     * The maximum value allowed to be entered (minimum of 1). Only valid for STRING type option.
+     * </p>
+     * If not provided, no restriction is placed on the maximum value permitted.
+     */
+    @JsonProperty("max_length")
+    Possible<Integer> maxLength();
 }
