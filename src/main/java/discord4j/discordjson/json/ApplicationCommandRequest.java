@@ -25,7 +25,7 @@ public interface ApplicationCommandRequest {
     String name();
 
     @JsonProperty("name_localizations")
-    Possible<Map<String, String>> nameLocalizations();
+    Possible<Optional<Map<String, String>>> nameLocalizations();
 
     /**
      * 1-100 character description. Not allowed for USER and MESSAGE command types
@@ -33,7 +33,7 @@ public interface ApplicationCommandRequest {
     Possible<String> description();
 
     @JsonProperty("description_localizations")
-    Possible<Map<String, String>> descriptionLocalizations();
+    Possible<Optional<Map<String, String>>> descriptionLocalizations();
 
     /**
      * the parameters for the command

@@ -8,6 +8,7 @@ import org.immutables.value.Value;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableApplicationCommandOptionData.class)
@@ -29,7 +30,7 @@ public interface ApplicationCommandOptionData {
     String name();
 
     @JsonProperty("name_localizations")
-    Possible<Map<String, String>> nameLocalizations();
+    Possible<Optional<Map<String, String>>> nameLocalizations();
 
     /**
      * 1-100 character description
@@ -37,7 +38,7 @@ public interface ApplicationCommandOptionData {
     String description();
 
     @JsonProperty("description_localizations")
-    Possible<Map<String, String>> descriptionLocalizations();
+    Possible<Optional<Map<String, String>>> descriptionLocalizations();
 
     /**
      * if the parameter is required or optional -- default false
