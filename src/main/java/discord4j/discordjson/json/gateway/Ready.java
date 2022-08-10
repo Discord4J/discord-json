@@ -28,6 +28,8 @@ public interface Ready extends Dispatch {
     List<UnavailableGuildData> guilds();
     @JsonProperty("session_id")
     String sessionId();
+    @JsonProperty("resume_gateway_url")
+    String resumeGatewayUrl();
     Possible<int[]> shard();
     @JsonProperty("_trace")
     List<String> trace();
