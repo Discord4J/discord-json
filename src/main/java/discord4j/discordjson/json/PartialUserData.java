@@ -44,11 +44,11 @@ public interface PartialUserData {
 
     Possible<String> email();
 
-    Possible<Integer> flags();
+    Possible<Long> flags();
 
     @JsonProperty("premium_type")
     Possible<Integer> premiumType();
 
     @JsonProperty("public_flags")
-    Possible<Integer> publicFlags();
+    Possible<Long> publicFlags();
 }
