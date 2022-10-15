@@ -33,8 +33,8 @@ public class PossibleOptionalListEncoding<T> {
     }
 
     @Encoding.Copy
-    public Possible<Optional<List<T>>> withPossible(Possible<Optional<List<T>>> possible) {
-        return Objects.requireNonNull(possible);
+    public Possible<Optional<List<T>>> withPossible(Possible<? extends Optional<? extends List<? extends T>>> possible) {
+        return (discord4j.discordjson.possible.Possible<Optional<List<T>>>) Objects.requireNonNull(possible);
     }
 
     @Encoding.Copy
@@ -46,7 +46,7 @@ public class PossibleOptionalListEncoding<T> {
 
     @Encoding.Naming("with*OrNull")
     @Encoding.Copy
-    public Possible<Optional<List<T>>> withIterableOrNull(@Nullable Iterable<T> elements) {
+    public Possible<Optional<List<T>>> withIterableOrNull(@Nullable Iterable<? extends T> elements) {
         return discord4j.discordjson.possible.Possible.of(Optional.ofNullable(elements)
                 .map(els -> StreamSupport.stream(els.spliterator(), false).collect(Collectors.toList())));
     }
@@ -86,7 +86,7 @@ public class PossibleOptionalListEncoding<T> {
 
         @Encoding.Naming(standard = Encoding.StandardNaming.ADD_ALL)
         @Encoding.Init
-        void addAll(List<T> elements) {
+        void addAll(Collection<? extends T> elements) {
             getOrCreate().addAll(elements);
             this.explicitNull = false;
         }
@@ -99,7 +99,7 @@ public class PossibleOptionalListEncoding<T> {
 
         @Encoding.Init
         @Encoding.Copy
-        void set(Possible<Optional<List<T>>> elements) {
+        void set(Possible<? extends Optional<? extends Collection<? extends T>>> elements) {
             this.list = null;
             this.explicitNull = false;
 
@@ -126,7 +126,7 @@ public class PossibleOptionalListEncoding<T> {
 
         @Encoding.Naming("*OrNull")
         @Encoding.Init
-        void setValueIterableOrNull(@Nullable Iterable<T> elements) {
+        void setValueIterableOrNull(@Nullable Iterable<? extends T> elements) {
             if (elements == null) {
                 this.list = null;
                 this.explicitNull = true;
