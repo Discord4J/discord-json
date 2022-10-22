@@ -56,4 +56,7 @@ public interface ComponentData {
     Possible<List<String>> values();
 
     Possible<List<SelectOptionData>> options();
+
+    @JsonProperty("channel_types")
+    Possible<List<Integer>> channelTypes();
 }
