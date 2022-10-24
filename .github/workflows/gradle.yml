@@ -15,22 +15,23 @@ jobs:
   build:
     name: Build for JDK ${{ matrix.java }}
     runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'push' || github.event.pull_request.head.repo.full_name != 'Discord4J/discord-json' }}
+    if: ${{ github.event_name == 'push' || github.event.pull_request.head.repo.full_name != github.repository }}
     strategy:
       matrix:
         java: [ 11 ]
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/cache@v1
+      - uses: actions/checkout@v3
+      - uses: actions/cache@v3
         with:
           path: ~/.gradle/caches
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
           restore-keys: |
             ${{ runner.os }}-gradle-
       - name: Set up JDK ${{ matrix.java }}
-        uses: actions/setup-java@v1
+        uses: actions/setup-java@v3.6.0
         with:
           java-version: ${{ matrix.java }}
+          distribution: 'corretto'
       - name: Build with Gradle
         run: ./gradlew build
   release:
@@ -38,19 +39,31 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name != 'pull_request'
     needs: build
+    env:
+      HAVE_SONAR_DATA: ${{ secrets.signingKey != '' && secrets.signingPassword != '' && secrets.sonatypeUsername != '' && secrets.sonatypePassword != '' }}
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/cache@v1
+      - name: Validate publish secrets
+        if: ${{ env.HAVE_SONAR_TOKEN != 'true' }}
+        run: |
+            echo "The secrets for publish are not set."
+            exit 0
+      - uses: actions/checkout@v3
+        if: ${{ env.HAVE_SONAR_DATA == 'true' }}
+      - uses: actions/cache@v3
+        if: ${{ env.HAVE_SONAR_DATA == 'true' }}
         with:
           path: ~/.gradle/caches
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
           restore-keys: |
             ${{ runner.os }}-gradle-
       - name: Set up JDK
-        uses: actions/setup-java@v1
+        uses: actions/setup-java@v3.6.0
+        if: ${{ env.HAVE_SONAR_DATA == 'true' }}
         with:
           java-version: 11
+          distribution: 'corretto'
       - name: Publish with Gradle
+        if: ${{ env.HAVE_SONAR_DATA == 'true' }}
         run: ./gradlew -x test publish
         env:
           ORG_GRADLE_PROJECT_signingKey: ${{ secrets.signingKey }}
