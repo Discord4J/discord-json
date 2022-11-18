@@ -19,6 +19,15 @@ public interface AutoModTriggerMetaData {
     @JsonProperty("keyword_filter")
     Possible<List<String>> keywordFilter();
 
+    @JsonProperty("regex_patterns")
+    Possible<List<String>> regexPatterns();
+
     Possible<List<Integer>> presets();
+
+    @JsonProperty("allow_list")
+    Possible<List<String>> allowList();
+
+    @JsonProperty("mention_total_limit")
+    Possible<Integer> mentionTotalLimit();
 
 }
