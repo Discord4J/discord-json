@@ -18,6 +18,6 @@ public interface AuditLogEntryCreate extends Dispatch, AuditLogEntryData {
     }
 
     @JsonProperty("guild_id")
-    Possible<Id> guildId();
+    Id guildId();
 
 }
