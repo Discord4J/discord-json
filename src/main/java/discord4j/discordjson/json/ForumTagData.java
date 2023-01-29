@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.Id;
-import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
 import java.util.Optional;
@@ -18,11 +17,11 @@ public interface ForumTagData {
         return ImmutableForumTagData.builder();
     }
 
-    Possible<Id> id();
+    Id id();
 
-    Possible<String> name();
+    String name();
 
-    Possible<Boolean> moderated();
+    Boolean moderated();
 
     @JsonProperty("emoji_id")
     Optional<Id> emojiId();

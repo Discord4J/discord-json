@@ -30,8 +30,6 @@ public interface ForumThreadMessageParamsData {
     @JsonProperty("sticker_ids")
     Possible<List<Id>> stickerIds();
 
-    Possible<List<PartialAttachmentData>> attachments();
-
     Possible<Integer> flags();
 
 }
