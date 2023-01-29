@@ -13,8 +13,9 @@ ext {
         jdk_javadoc = "https://docs.oracle.com/en/java/javase/$jdk/docs/api/".toString()
     }
 
-    reactor_bom_version = '2020.0.22'
-    jackson_version = '2.12.7'
+    reactor_bom_version = '2020.0.27'
+    jackson_databind_version = '2.12.7.1'
+    jackson_datatype_jdk8_version = '2.12.7'
     immutables_group = 'org.immutables'
     immutables_version = '2.9.0'
 
@@ -70,7 +71,7 @@ allprojects {
             // adding links to javadocs for filling specific classes when not existing inside current javadoc
             links = [
                     jdk_javadoc,
-                    "https://fasterxml.github.io/jackson-databind/javadoc/2.10/"
+                    "https://javadoc.io/doc/com.fasterxml.jackson.core/jackson-databind/2.12.7/"
             ]
         }
         if (JavaVersion.current().isJava9Compatible()) {
@@ -98,8 +99,8 @@ dependencies {
     api project(':api')
     compileOnly project(':encoding')
 
-    api "com.fasterxml.jackson.core:jackson-databind:$jackson_version"
-    implementation "com.fasterxml.jackson.datatype:jackson-datatype-jdk8:$jackson_version"
+    api "com.fasterxml.jackson.core:jackson-databind:$jackson_databind_version"
+    implementation "com.fasterxml.jackson.datatype:jackson-datatype-jdk8:$jackson_datatype_jdk8_version"
 
     compileOnly "$immutables_group:value:$immutables_version"
     compileOnly "$immutables_group:builder:$immutables_version"

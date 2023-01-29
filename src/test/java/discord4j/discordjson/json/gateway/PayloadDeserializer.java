@@ -75,6 +75,7 @@ public class PayloadDeserializer extends StdDeserializer<GatewayPayload<?>> {
         dispatchTypes.put("INTEGRATION_CREATE", IntegrationCreate.class);
         dispatchTypes.put("INTEGRATION_UPDATE", IntegrationUpdate.class);
         dispatchTypes.put("INTEGRATION_DELETE", IntegrationDelete.class);
+        dispatchTypes.put("GUILD_AUDIT_LOG_ENTRY_CREATE", AuditLogEntryCreate.class);
 
         // Ignored
         dispatchTypes.put("PRESENCES_REPLACE", null);
