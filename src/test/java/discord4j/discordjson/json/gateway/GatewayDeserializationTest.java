@@ -79,6 +79,12 @@ public class GatewayDeserializationTest {
     }
 
     @Test
+    public void testAuditLogEntryCreate() throws IOException {
+        GatewayPayload<?> json = read("/gateway/AuditLogEntryCreate.json", new TypeReference<GatewayPayload<?>>() {});
+        log.info("{}", json.getData());
+    }
+
+    @Test
     public void testGuildBanAdd() throws IOException {
         GatewayPayload<?> json = read("/gateway/GuildBanAdd.json", new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json.getData());
