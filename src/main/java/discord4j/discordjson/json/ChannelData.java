@@ -81,4 +81,30 @@ public interface ChannelData {
 
     @JsonProperty("member")
     Possible<ThreadMemberData> member();
+
+    @JsonProperty("default_auto_archive_duration")
+    Possible<Integer> defaultAutoArchiveDuration();
+
+    Possible<Integer> flags();
+
+    @JsonProperty("total_message_sent")
+    Possible<Integer> totalMessageSent();
+
+    @JsonProperty("available_tags")
+    Possible<List<ForumTagData>> availableTags();
+
+    @JsonProperty("applied_tags")
+    Possible<List<Id>> appliedTags();
+
+    @JsonProperty("default_reaction_emoji")
+    Possible<Optional<DefaultReactionData>> defaultReactionEmoji();
+
+    @JsonProperty("default_thread_rate_limit_per_user")
+    Possible<Integer> defaultThreadRateLimitPerUser();
+
+    @JsonProperty("default_sort_order")
+    Possible<Optional<Integer>> defaultSortOrder();
+
+    @JsonProperty("default_forum_layout")
+    Possible<Integer> defaultForumLayout();
 }
