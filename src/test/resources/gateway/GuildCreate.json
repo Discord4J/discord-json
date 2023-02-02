@@ -115,6 +115,7 @@
         "roles": [
           "136965347994632192"
         ],
+        "flags": 0,
         "mute": false,
         "joined_at": "2016-01-09T01:45:04.852000+00:00",
         "hoisted_role": "136965347994632192",
@@ -132,6 +133,7 @@
         "roles": [
           "136965497303334912"
         ],
+        "flags": 0,
         "mute": false,
         "joined_at": "2016-01-25T20:18:24.208000+00:00",
         "hoisted_role": "136965497303334912",
@@ -149,6 +151,7 @@
         "roles": [
           "266885684395114496"
         ],
+        "flags": 4,
         "mute": false,
         "joined_at": "2017-01-06T11:08:25.646000+00:00",
         "hoisted_role": null,
@@ -163,6 +166,7 @@
           "avatar": "1c295705ae50fdbc755f1eda5ed8d268"
         },
         "roles": [],
+        "flags": 0,
         "mute": false,
         "joined_at": "2017-08-15T00:33:44.666000+00:00",
         "hoisted_role": null,
