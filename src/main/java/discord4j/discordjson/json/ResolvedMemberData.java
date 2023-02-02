@@ -36,7 +36,7 @@ public interface ResolvedMemberData {
     @JsonProperty("communication_disabled_until")
     Possible<Optional<String>> communicationDisabledUntil();
 
-    default Long flags() {
+    default long flags() {
         return 0L;
     }
 
