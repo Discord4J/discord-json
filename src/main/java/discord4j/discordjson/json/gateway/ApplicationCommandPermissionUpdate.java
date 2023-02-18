@@ -3,7 +3,7 @@ package discord4j.discordjson.json.gateway;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import discord4j.discordjson.json.ApplicationCommandGuildPermissionsData;
+import discord4j.discordjson.json.GuildApplicationCommandPermissionsData;
 import org.immutables.value.Value;
 
 @Value.Immutable
@@ -16,5 +16,5 @@ public interface ApplicationCommandPermissionUpdate extends Dispatch {
     }
 
     @JsonUnwrapped
-    ApplicationCommandGuildPermissionsData data();
+    GuildApplicationCommandPermissionsData data();
 }
