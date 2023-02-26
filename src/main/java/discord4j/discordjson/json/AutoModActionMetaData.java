@@ -22,4 +22,7 @@ public interface AutoModActionMetaData {
     @JsonProperty("duration_seconds")
     Possible<Integer> duration();
 
+    @JsonProperty("custom_message")
+    Possible<String> customMessage();
+
 }
