@@ -28,6 +28,9 @@ public interface AuditEntryInfoData {
     @JsonProperty("message_id")
     Possible<Id> messageId();
 
+    @JsonProperty("application_id")
+    Possible<Id> applicationId();
+
     Possible<String> count();
 
     Possible<Id> id();
@@ -36,4 +39,10 @@ public interface AuditEntryInfoData {
 
     @JsonProperty("role_name")
     Possible<String> roleName();
+
+    @JsonProperty("auto_moderation_rule_name")
+    Possible<String> autoModerationRuleName();
+
+    @JsonProperty("auto_moderation_rule_trigger_type")
+    Possible<String> autoModerationRuleTriggerType();
 }
