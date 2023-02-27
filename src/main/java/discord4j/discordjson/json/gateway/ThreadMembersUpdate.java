@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.Id;
 import discord4j.discordjson.json.ThreadMemberData;
+import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
 import java.util.List;
@@ -27,8 +28,8 @@ public interface ThreadMembersUpdate extends Dispatch {
     int memberCount();
 
     @JsonProperty("added_members")
-    List<ThreadMemberData> addedMembers();
+    Possible<List<ThreadMemberData>> addedMembers();
 
     @JsonProperty("removed_member_ids")
-    List<Id> removedMemberIds();
+    Possible<List<Id>> removedMemberIds();
 }
