@@ -32,12 +32,12 @@ public class PossibleListEncoding<T> {
     }
 
     @Encoding.Copy
-    public Possible<List<T>> withPossible(Possible<List<T>> possible) {
-        return Objects.requireNonNull(possible);
+    public Possible<List<T>> withPossible(Possible<? extends List<? extends T>> possible) {
+        return (discord4j.discordjson.possible.Possible<List<T>>) Objects.requireNonNull(possible);
     }
 
     @Encoding.Copy
-    public Possible<List<T>> withIterable(Iterable<T> elements) {
+    public Possible<List<T>> withIterable(Iterable<? extends T> elements) {
         return discord4j.discordjson.possible.Possible.of(
                 StreamSupport.stream(Objects.requireNonNull(elements).spliterator(), false).collect(Collectors.toList()));
     }
@@ -81,7 +81,7 @@ public class PossibleListEncoding<T> {
 
         @Encoding.Naming(standard = Encoding.StandardNaming.ADD_ALL)
         @Encoding.Init
-        void addAll(List<T> elements) {
+        void addAll(Collection<? extends T> elements) {
             getOrCreate().addAll(elements);
         }
 
@@ -93,14 +93,14 @@ public class PossibleListEncoding<T> {
 
         @Encoding.Init
         @Encoding.Copy
-        void set(Possible<List<T>> elements) {
+        void set(Possible<? extends Collection<? extends T>> elements) {
             this.list = null;
 
             elements.toOptional().ifPresent(e -> getOrCreate().addAll(e));
         }
 
         @Encoding.Init
-        void setValueIterable(Iterable<T> elements) {
+        void setValueIterable(Iterable<? extends T> elements) {
             this.list = StreamSupport.stream(elements.spliterator(), false).collect(Collectors.toList());
         }
 
