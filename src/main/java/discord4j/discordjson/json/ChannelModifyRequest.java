@@ -45,4 +45,25 @@ public interface ChannelModifyRequest {
 
     @JsonProperty("video_quality_mode")
     Possible<Optional<Integer>> videoQualityMode();
+
+    @JsonProperty("default_auto_archive_duration")
+    Possible<Integer> defaultAutoArchiveDuration();
+
+    Possible<Integer> flags();
+
+
+    @JsonProperty("default_thread_rate_limit_per_user")
+    Possible<Integer> defaultThreadRateLimitPerUser();
+
+    @JsonProperty("default_reaction_emoji")
+    Possible<DefaultReactionData> defaultReactionEmoji();
+
+    @JsonProperty("available_tags")
+    Possible<List<ForumTagData>> availableTags();
+
+    @JsonProperty("default_sort_order")
+    Possible<Integer> defaultSortOrder();
+
+    @JsonProperty("default_forum_layout")
+    Possible<Integer> defaultForumLayout();
 }
