@@ -7,6 +7,7 @@ import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
 import java.util.List;
+import java.util.Optional;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableChannelCreateRequest.class)
@@ -47,18 +48,18 @@ public interface ChannelCreateRequest {
     Possible<Integer> flags();
 
     @JsonProperty("default_auto_archive_duration")
-    Possible<Integer> defaultAutoArchiveDuration();
+    Possible<Optional<Integer>> defaultAutoArchiveDuration();
 
     @JsonProperty("default_reaction_emoji")
-    Possible<DefaultReactionData> defaultReactionEmoji();
+    Possible<Optional<DefaultReactionData>> defaultReactionEmoji();
 
     @JsonProperty("available_tags")
     Possible<List<ForumTagData>> availableTags();
 
     @JsonProperty("default_sort_order")
-    Possible<Integer> defaultSortOrder();
+    Possible<Optional<Integer>> defaultSortOrder();
 
     @JsonProperty("default_forum_layout")
-    Possible<Integer> defaultForumLayout();
+    Possible<Optional<Integer>> defaultForumLayout();
 
 }
