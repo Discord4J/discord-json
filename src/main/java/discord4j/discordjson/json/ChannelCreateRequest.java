@@ -54,7 +54,7 @@ public interface ChannelCreateRequest {
     Possible<Optional<DefaultReactionData>> defaultReactionEmoji();
 
     @JsonProperty("available_tags")
-    Possible<List<ForumTagData>> availableTags();
+    Possible<List<ForumTagParamsData>> availableTags();
 
     @JsonProperty("default_sort_order")
     Possible<Optional<Integer>> defaultSortOrder();
