@@ -22,7 +22,7 @@ public interface OnboardingData {
     List<OnboardingPromptData> prompts();
 
     @JsonProperty("default_channel_ids")
-    List<Id> defaultChannelsIds();
+    List<Id> defaultChannelIds();
 
     boolean enabled();
 
