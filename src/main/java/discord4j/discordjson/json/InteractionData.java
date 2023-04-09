@@ -33,6 +33,9 @@ public interface InteractionData {
     @JsonProperty("guild_id")
     Possible<Id> guildId();
 
+    /** Partial Channel that the interaction was sent from */
+    Possible<ChannelData> channel();
+
     /** the channel it was sent from */
     @JsonProperty("channel_id")
     Possible<Id> channelId();
