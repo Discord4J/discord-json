@@ -196,4 +196,10 @@ public class RestDeserializationTest {
         ApplicationCommandData[] data = read("/rest/ApplicationCommandData.json", ApplicationCommandData[].class);
         log.info("{}", Arrays.asList(data));
     }
+
+    @Test
+    public void readGuildOnboardingData() throws IOException {
+        OnboardingData data = read("/rest/GuildOnboardingDataResponse.json", OnboardingData.class);
+        log.info("{}", data);
+    }
 }
