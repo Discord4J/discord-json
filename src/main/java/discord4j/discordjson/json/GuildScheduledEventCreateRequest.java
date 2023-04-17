@@ -39,5 +39,6 @@ public interface GuildScheduledEventCreateRequest {
 
     Possible<String> description();
 
+    @JsonProperty("entity_type")
     int entityType();
 }
