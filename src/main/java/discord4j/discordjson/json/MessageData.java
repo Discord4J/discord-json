@@ -90,4 +90,9 @@ public interface MessageData {
     Possible<MessageInteractionData> interaction();
 
     Possible<List<ComponentData>> components();
+
+    Possible<Integer> position();
+
+    @JsonProperty("role_subscription_data")
+    Possible<RoleSubscriptionData> roleSubscription();
 }

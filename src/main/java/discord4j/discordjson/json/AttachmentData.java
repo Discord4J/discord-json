@@ -39,4 +39,9 @@ public interface AttachmentData {
     Possible<Optional<Integer>> width();
 
     Possible<Boolean> ephemeral();
+
+    @JsonProperty("duration_secs")
+    Possible<Float> durationSeconds();
+
+    Possible<String> waveform();
 }
