@@ -20,8 +20,24 @@ public interface PartialUserData {
 
     Id id();
 
+    @JsonProperty("global_name")
+    Possible<String> globalName();
+
+    /**
+     * /!\ Even if this field is present in API payloads, it is not currently documented by Discord.
+     *
+     * @return The user's display name, if present
+     */
+    @JsonProperty("display_name")
+    Possible<String> displayName();
+
     Possible<String> username();
 
+    /**
+     * @deprecated For removal
+     * @return "0" if the user is using the new username system, otherwise the discriminator
+     */
+    @Deprecated
     Possible<String> discriminator();
 
     Possible<Optional<String>> avatar();
