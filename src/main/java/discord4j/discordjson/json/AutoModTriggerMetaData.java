@@ -30,4 +30,7 @@ public interface AutoModTriggerMetaData {
     @JsonProperty("mention_total_limit")
     Possible<Integer> mentionTotalLimit();
 
+    @JsonProperty("mention_raid_protection_enabled")
+    Possible<Boolean> mentionRaidProtectionEnabled();
+
 }
