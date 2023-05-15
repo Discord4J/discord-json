@@ -67,4 +67,7 @@ public interface GuildModifyRequest {
     Possible<List<String>> features();
 
     Possible<Optional<String>> description();
+
+    @JsonProperty("safety_alerts_channel_id")
+    Possible<Optional<String>> safetyAlertsChannelId();
 }

@@ -89,4 +89,7 @@ public interface GuildFields {
 
     @Deprecated
     Possible<Boolean> nsfw();
+
+    @JsonProperty("safety_alerts_channel_id")
+    Optional<Id> safetyAlertsChannelId();
 }
