@@ -6,9 +6,13 @@ import org.immutables.value.Value;
 
 import java.util.Optional;
 
+/**
+ * @deprecated Use {@link CurrentMemberModifyData} instead.
+ */
 @Value.Immutable
 @JsonSerialize(as = ImmutableNicknameModifyData.class)
 @JsonDeserialize(as = ImmutableNicknameModifyData.class)
+@Deprecated
 public interface NicknameModifyData {
 
     static ImmutableNicknameModifyData.Builder builder() {
