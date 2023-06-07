@@ -23,14 +23,6 @@ public interface UserData {
     @JsonProperty("global_name")
     Possible<String> globalName();
 
-    /**
-     * /!\ Even if this field is present in API payloads, it is not currently documented by Discord.
-     *
-     * @return The user's display name, if present
-     */
-    @JsonProperty("display_name")
-    Possible<String> displayName();
-
     String username();
 
     /**
