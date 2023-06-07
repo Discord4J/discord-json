@@ -20,8 +20,16 @@ public interface UserData {
 
     Id id();
 
+    @JsonProperty("global_name")
+    Possible<String> globalName();
+
     String username();
 
+    /**
+     * @deprecated For removal
+     * @return "0" if the user is using the new username system, otherwise the discriminator
+     */
+    @Deprecated
     String discriminator();
 
     Optional<String> avatar();
