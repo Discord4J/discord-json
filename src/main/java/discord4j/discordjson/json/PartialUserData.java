@@ -20,16 +20,8 @@ public interface PartialUserData {
 
     Id id();
 
-    @JsonProperty("global_name")
-    Possible<String> globalName();
-
     Possible<String> username();
 
-    /**
-     * @deprecated For removal
-     * @return "0" if the user is using the new username system, otherwise the discriminator
-     */
-    @Deprecated
     Possible<String> discriminator();
 
     Possible<Optional<String>> avatar();
