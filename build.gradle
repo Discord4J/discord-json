@@ -13,7 +13,7 @@ ext {
         jdk_javadoc = "https://docs.oracle.com/en/java/javase/$jdk/docs/api/".toString()
     }
 
-    reactor_bom_version = '2020.0.30'
+    reactor_bom_version = '2020.0.33'
     jackson_databind_version = '2.12.7.1'
     jackson_datatype_jdk8_version = '2.12.7'
     immutables_group = 'org.immutables'
