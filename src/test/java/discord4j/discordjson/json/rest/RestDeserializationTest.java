@@ -202,4 +202,14 @@ public class RestDeserializationTest {
         OnboardingData data = read("/rest/GuildOnboardingDataResponse.json", OnboardingData.class);
         log.info("{}", data);
     }
+
+    @Test
+    public void readAccessTokenData() throws IOException {
+        AccessTokenData basic = read("/rest/AccessTokenData.Basic.json", AccessTokenData.class);
+        log.info("{}", basic);
+        AccessTokenData bot = read("/rest/AccessTokenData.Bot.json", AccessTokenData.class);
+        log.info("{}", bot);
+        AccessTokenData webhook = read("/rest/AccessTokenData.Webhook.json", AccessTokenData.class);
+        log.info("{}", webhook);
+    }
 }
