@@ -24,7 +24,7 @@ public interface AccessTokenData {
     @JsonProperty("expires_in")
     long expiresIn();
 
-    Possible<GuildData> guild();
+    Possible<GuildUpdateData> guild();
 
     @JsonProperty("refresh_token")
     Possible<String> refreshToken();
