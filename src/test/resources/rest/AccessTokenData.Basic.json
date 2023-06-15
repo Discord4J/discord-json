@@ -1,0 +1,7 @@
+{
+  "access_token": "secret",
+  "expires_in": 604800,
+  "refresh_token": "secret",
+  "scope": "connections identify",
+  "token_type": "Bearer"
+}
