@@ -1,0 +1,24 @@
+{
+  "t": "GUILD_SCHEDULED_EVENT_CREATE",
+  "s": 14,
+  "op": 0,
+  "d": {
+    "status": 1,
+    "sku_ids": [],
+    "scheduled_start_time": "2023-06-18T21:00:00+00:00",
+    "scheduled_end_time": "2023-06-18T22:00:00+00:00",
+    "privacy_level": 2,
+    "name": "___: _______",
+    "image": null,
+    "id": "1120073806816489582",
+    "guild_id": "935234113919660033",
+    "entity_type": 3,
+    "entity_metadata": {
+      "location": "TBA"
+    },
+    "entity_id": null,
+    "description": null,
+    "creator_id": "1026096354201714799",
+    "channel_id": null
+  }
+}
