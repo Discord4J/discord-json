@@ -41,4 +41,6 @@ public interface GuildScheduledEventCreateRequest {
 
     @JsonProperty("entity_type")
     int entityType();
+
+    Possible<String> image();
 }
