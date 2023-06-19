@@ -8,7 +8,7 @@ import org.immutables.value.Value;
 
 /**
  * Note: This event is considered experimental by Discord.
- * https://discord.com/developers/docs/topics/gateway#guild-scheduled-event-user-add
+ * <a href="https://discord.com/developers/docs/topics/gateway#guild-scheduled-event-user-add">Discord</a>
  */
 @Value.Immutable
 @JsonSerialize(as = ImmutableGuildScheduledEventUserAdd.class)

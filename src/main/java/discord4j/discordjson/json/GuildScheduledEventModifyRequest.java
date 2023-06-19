@@ -45,4 +45,6 @@ public interface GuildScheduledEventModifyRequest {
     Possible<Integer> entityType();
 
     Possible<Integer> status();
+
+    Possible<String> image();
 }

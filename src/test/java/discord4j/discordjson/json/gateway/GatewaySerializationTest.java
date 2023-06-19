@@ -16,20 +16,10 @@
  */
 package discord4j.discordjson.json.gateway;
 
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.PropertyAccessor;
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.databind.DeserializationContext;
-import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.deser.DeserializationProblemHandler;
-import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
-import discord4j.discordjson.json.ActivityUpdateRequest;
 import discord4j.discordjson.Id;
+import discord4j.discordjson.json.ActivityUpdateRequest;
 import discord4j.discordjson.possible.Possible;
-import discord4j.discordjson.possible.PossibleFilter;
-import discord4j.discordjson.possible.PossibleModule;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
@@ -52,22 +42,7 @@ public class GatewaySerializationTest {
 
     @BeforeEach
     public void init() {
-        mapper = new ObjectMapper()
-                .registerModule(new PossibleModule())
-                .registerModule(new Jdk8Module())
-                .setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.NONE)
-                .setVisibility(PropertyAccessor.GETTER, JsonAutoDetect.Visibility.PUBLIC_ONLY)
-                .addHandler(new DeserializationProblemHandler() {
-                    @Override
-                    public boolean handleUnknownProperty(DeserializationContext ctxt, JsonParser p, JsonDeserializer<
-                            ?> deserializer, Object beanOrClass, String propertyName) throws IOException {
-                        log.warn("Unknown property in {}: {}", beanOrClass, propertyName);
-                        p.skipChildren();
-                        return true;
-                    }
-                })
-                .setDefaultPropertyInclusion(JsonInclude.Value.construct(JsonInclude.Include.CUSTOM,
-                        JsonInclude.Include.ALWAYS, PossibleFilter.class, null));
+        mapper = Jackson.defaultMapper();
     }
 
     @Test

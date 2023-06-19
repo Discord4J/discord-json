@@ -56,6 +56,11 @@ public class PayloadDeserializer extends StdDeserializer<GatewayPayload<?>> {
         dispatchTypes.put("GUILD_ROLE_CREATE", GuildRoleCreate.class);
         dispatchTypes.put("GUILD_ROLE_UPDATE", GuildRoleUpdate.class);
         dispatchTypes.put("GUILD_ROLE_DELETE", GuildRoleDelete.class);
+        dispatchTypes.put("GUILD_SCHEDULED_EVENT_CREATE", GuildScheduledEventCreate.class);
+        dispatchTypes.put("GUILD_SCHEDULED_EVENT_UPDATE", GuildScheduledEventUpdate.class); // TODO add test
+        dispatchTypes.put("GUILD_SCHEDULED_EVENT_DELETE", GuildScheduledEventDelete.class); // TODO add test
+        dispatchTypes.put("GUILD_SCHEDULED_EVENT_USER_ADD", GuildScheduledEventUserAdd.class); // TODO add test
+        dispatchTypes.put("GUILD_SCHEDULED_EVENT_USER_REMOVE", GuildScheduledEventUserRemove.class); // TODO add test
         dispatchTypes.put("MESSAGE_CREATE", MessageCreate.class);
         dispatchTypes.put("MESSAGE_UPDATE", MessageUpdate.class);
         dispatchTypes.put("MESSAGE_DELETE", MessageDelete.class);
@@ -63,6 +68,7 @@ public class PayloadDeserializer extends StdDeserializer<GatewayPayload<?>> {
         dispatchTypes.put("MESSAGE_REACTION_ADD", MessageReactionAdd.class);
         dispatchTypes.put("MESSAGE_REACTION_REMOVE", MessageReactionRemove.class);
         dispatchTypes.put("MESSAGE_REACTION_REMOVE_ALL", MessageReactionRemoveAll.class);
+        dispatchTypes.put("MESSAGE_REACTION_REMOVE_EMOJI", MessageReactionRemoveEmoji.class); // TODO add test
         dispatchTypes.put("PRESENCE_UPDATE", PresenceUpdate.class);
         dispatchTypes.put("TYPING_START", TypingStart.class);
         dispatchTypes.put("USER_UPDATE", UserUpdate.class);
@@ -71,15 +77,25 @@ public class PayloadDeserializer extends StdDeserializer<GatewayPayload<?>> {
         dispatchTypes.put("WEBHOOKS_UPDATE", WebhooksUpdate.class);
         dispatchTypes.put("INVITE_CREATE", InviteCreate.class);
         dispatchTypes.put("INVITE_DELETE", InviteDelete.class);
+        dispatchTypes.put("APPLICATION_COMMAND_CREATE", ApplicationCommandCreate.class); // TODO add test
+        dispatchTypes.put("APPLICATION_COMMAND_UPDATE", ApplicationCommandUpdate.class); // TODO add test
+        dispatchTypes.put("APPLICATION_COMMAND_DELETE", ApplicationCommandDelete.class); // TODO add test
+        dispatchTypes.put("APPLICATION_COMMAND_PERMISSIONS_UPDATE", ApplicationCommandPermissionUpdate.class); // TODO add test
         dispatchTypes.put("INTERACTION_CREATE", InteractionCreate.class);
-        dispatchTypes.put("INTEGRATION_CREATE", IntegrationCreate.class);
-        dispatchTypes.put("INTEGRATION_UPDATE", IntegrationUpdate.class);
-        dispatchTypes.put("INTEGRATION_DELETE", IntegrationDelete.class);
         dispatchTypes.put("GUILD_AUDIT_LOG_ENTRY_CREATE", AuditLogEntryCreate.class);
+        dispatchTypes.put("AUTO_MODERATION_RULE_CREATE", AutoModRuleCreate.class); // TODO add test
+        dispatchTypes.put("AUTO_MODERATION_RULE_UPDATE", AutoModRuleUpdate.class); // TODO add test
+        dispatchTypes.put("AUTO_MODERATION_RULE_DELETE", AutoModRuleDelete.class); // TODO add test
+        dispatchTypes.put("AUTO_MODERATION_ACTION_EXECUTION", AutoModActionExecution.class); // TODO add test
 
         // Ignored
         dispatchTypes.put("PRESENCES_REPLACE", null);
         dispatchTypes.put("GIFT_CODE_UPDATE", null);
+        dispatchTypes.put("INTEGRATION_CREATE", IntegrationCreate.class);
+        dispatchTypes.put("INTEGRATION_UPDATE", IntegrationUpdate.class);
+        dispatchTypes.put("INTEGRATION_DELETE", IntegrationDelete.class);
+        dispatchTypes.put("GUILD_JOIN_REQUEST_DELETE", null);
+        dispatchTypes.put("GUILD_JOIN_REQUEST_UPDATE", null);
     }
 
     public PayloadDeserializer() {

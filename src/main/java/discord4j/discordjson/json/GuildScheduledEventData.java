@@ -7,7 +7,6 @@ import discord4j.discordjson.Id;
 import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
-import javax.swing.text.html.Option;
 import java.time.Instant;
 import java.util.Optional;
 
@@ -31,11 +30,11 @@ public interface GuildScheduledEventData {
 
     /* creator ID will be null and creator will not be included for events created before oct 25th 2021 */
     @JsonProperty("creator_id")
-    Optional<Id> creatorId();
+    Possible<Optional<Id>> creatorId();
 
     String name();
 
-    Possible<String> description();
+    Possible<Optional<String>> description();
 
     @JsonProperty("scheduled_start_time")
     Instant scheduledStartTime();
@@ -62,4 +61,6 @@ public interface GuildScheduledEventData {
 
     @JsonProperty("user_count")
     Possible<Integer> userCount();
+
+    Possible<Optional<String>> image();
 }
