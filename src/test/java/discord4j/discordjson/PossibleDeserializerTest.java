@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
+import discord4j.discordjson.json.EmbedData;
 import discord4j.discordjson.json.Foo;
 import discord4j.discordjson.json.ImmutableFoo;
 import discord4j.discordjson.json.MyJson;
@@ -17,8 +18,7 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class PossibleDeserializerTest {
 
@@ -67,5 +67,22 @@ public class PossibleDeserializerTest {
         assertEquals(1, foo.list().get().size());
         assertFalse(foo.optional().isAbsent());
         assertFalse(foo.possible().isAbsent());
+    }
+
+    @Test
+    public void testReadNullAsPossibleAbsent() throws IOException {
+        // Set up an alternate ObjectMapper that can deserialize
+        // `"field": null` to a Possible<T> type by mapping it to a Possible.absent()
+        // can work around Discord temporary issues or wrong library field types
+        ObjectMapper mapper = new ObjectMapper()
+                .registerModule(new PossibleModule()
+                        .configureReadNullAsAbsent(true))
+                .registerModule(new Jdk8Module())
+                .setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.NONE)
+                .setVisibility(PropertyAccessor.GETTER, JsonAutoDetect.Visibility.PUBLIC_ONLY)
+                .setDefaultPropertyInclusion(JsonInclude.Value.construct(JsonInclude.Include.CUSTOM,
+                        JsonInclude.Include.ALWAYS, PossibleFilter.class, null));
+        EmbedData data = mapper.readValue(getClass().getResourceAsStream("/rest/EmbedData.NullAuthorUrl.json"), EmbedData.class);
+        assertTrue(data.author().get().url().isAbsent());
     }
 }
