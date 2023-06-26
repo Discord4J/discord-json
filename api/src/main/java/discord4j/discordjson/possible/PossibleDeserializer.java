@@ -12,17 +12,24 @@ import java.util.Optional;
 
 public class PossibleDeserializer extends ReferenceTypeDeserializer<Possible<?>> {
 
-    public PossibleDeserializer(JavaType fullType, @Nullable ValueInstantiator vi, TypeDeserializer typeDeser, JsonDeserializer<?> deser) {
+    private final boolean readNullAsAbsent;
+
+    public PossibleDeserializer(JavaType fullType, @Nullable ValueInstantiator vi, TypeDeserializer typeDeser, JsonDeserializer<?> deser,
+                                boolean readNullAsAbsent) {
         super(fullType, vi, typeDeser, deser);
+        this.readNullAsAbsent = readNullAsAbsent;
     }
 
     @Override
     protected PossibleDeserializer withResolved(TypeDeserializer typeDeser, JsonDeserializer<?> valueDeser) {
-        return new PossibleDeserializer(_fullType, _valueInstantiator, typeDeser, valueDeser);
+        return new PossibleDeserializer(_fullType, _valueInstantiator, typeDeser, valueDeser, readNullAsAbsent);
     }
 
     @Override
     public Possible<?> getNullValue(DeserializationContext ctxt) {
+        if (readNullAsAbsent) {
+            return Possible.absent();
+        }
         return Possible.of(Optional.empty());
     }
 

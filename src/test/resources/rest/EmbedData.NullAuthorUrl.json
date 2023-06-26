@@ -1,0 +1,21 @@
+{
+  "fields": [
+    {
+      "name": "Name",
+      "value": "quantictf",
+      "inline": false
+    },
+    {
+      "name": "Avatar URL",
+      "value": "https://cdn.discordapp.com/avatars/134127815531560960/25a09a99ac0487bf846125084d9c7346.png",
+      "inline": false
+    }
+  ],
+  "image": {
+    "url": "https://cdn.discordapp.com/avatars/134127815531560960/25a09a99ac0487bf846125084d9c7346.png"
+  },
+  "author": {
+    "name": "Reacton",
+    "url": null
+  }
+}

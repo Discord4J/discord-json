@@ -11,11 +11,22 @@ import reactor.util.annotation.Nullable;
 
 public class PossibleDeserializers extends Deserializers.Base {
 
+    private final boolean readNullAsAbsent;
+
+    public PossibleDeserializers() {
+        this(false);
+    }
+
+    public PossibleDeserializers(boolean readNullAsAbsent) {
+        this.readNullAsAbsent = readNullAsAbsent;
+    }
+
     @Nullable
     @Override
     public JsonDeserializer<?> findReferenceDeserializer(ReferenceType refType, DeserializationConfig config, BeanDescription beanDesc, TypeDeserializer contentTypeDeserializer, JsonDeserializer<?> contentDeserializer) throws JsonMappingException {
         if (refType.isTypeOrSubTypeOf(Possible.class)) {
-            return new PossibleDeserializer(refType, null, contentTypeDeserializer, contentDeserializer);
+            return new PossibleDeserializer(refType, null, contentTypeDeserializer, contentDeserializer,
+                    readNullAsAbsent);
         }
         return null;
     }

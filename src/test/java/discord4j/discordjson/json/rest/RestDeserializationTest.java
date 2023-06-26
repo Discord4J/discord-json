@@ -212,4 +212,10 @@ public class RestDeserializationTest {
         AccessTokenData webhook = read("/rest/AccessTokenData.Webhook.json", AccessTokenData.class);
         log.info("{}", webhook);
     }
+
+    @Test
+    public void readEmbedData() throws IOException {
+        EmbedData data = mapper.readValue(getClass().getResourceAsStream("/rest/EmbedData.NullAuthorUrl.json"), EmbedData.class);
+        log.info("{}", data);
+    }
 }
