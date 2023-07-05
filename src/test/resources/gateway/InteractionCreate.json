@@ -51,7 +51,8 @@
                         "managed": false,
                         "id": "609370233916096514",
                         "hoist": true,
-                        "color": 3066993
+                        "color": 3066993,
+                        "flags": 0
                     }
                 },
                 "members": {

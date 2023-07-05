@@ -1,92 +1,95 @@
 {
-  "id": "123456789012345678",
-  "name": "Guild",
-  "icon": "56faa1ea4bb6ec0e065b7b190886ef25",
-  "description": null,
-  "splash": null,
-  "discovery_splash": null,
-  "features": [
-    "COMMERCE",
-    "NEWS"
-  ],
-  "emojis": [
-    {
-      "name": "a",
-      "roles": [],
-      "id": "123456789012345678",
-      "require_colons": true,
-      "managed": false,
-      "animated": false,
-      "available": true
-    },
-    {
-      "name": "e",
-      "roles": [],
-      "id": "123456789012345678",
-      "require_colons": true,
-      "managed": false,
-      "animated": false,
-      "available": true
-    }
-  ],
-  "banner": null,
-  "owner_id": "84745855399129088",
-  "application_id": null,
-  "region": "us-east",
-  "afk_channel_id": "396670280661073921",
-  "afk_timeout": 900,
-  "system_channel_id": "208023865127862272",
-  "widget_enabled": true,
-  "widget_channel_id": null,
-  "verification_level": 2,
-  "roles": [
-    {
-      "id": "123456789012345678",
-      "name": "@everyone",
-      "permissions": "104189504",
-      "position": 0,
-      "color": 0,
-      "hoist": false,
-      "managed": false,
-      "mentionable": false
-    },
-    {
-      "id": "123456789012345678",
-      "name": "Administrators",
-      "permissions": "2146959351",
-      "position": 29,
-      "color": 15277667,
-      "hoist": true,
-      "managed": false,
-      "mentionable": true
-    },
-    {
-      "id": "123456789012345678",
-      "name": "Nitro Booster",
-      "permissions": 67108864,
-      "position": 4,
-      "color": 7658737,
-      "hoist": false,
-      "managed": true,
-      "mentionable": false,
-      "tags": {
-          "premium_subscriber": null
-      },
-      "permissions_new": "67108864"
-    }
-  ],
-  "default_message_notifications": 1,
-  "mfa_level": 1,
-  "explicit_content_filter": 1,
-  "max_presences": null,
-  "max_members": 250000,
-  "vanity_url_code": null,
-  "premium_tier": 0,
-  "premium_subscription_count": 0,
-  "system_channel_flags": 1,
-  "preferred_locale": "en-US",
-  "rules_channel_id": null,
-  "public_updates_channel_id": null,
-  "nsfw": false,
-  "nsfw_level": 0
+    "id": "123456789012345678",
+    "name": "Guild",
+    "icon": "56faa1ea4bb6ec0e065b7b190886ef25",
+    "description": null,
+    "splash": null,
+    "discovery_splash": null,
+    "features": [
+        "COMMERCE",
+        "NEWS"
+    ],
+    "emojis": [
+        {
+            "name": "a",
+            "roles": [],
+            "id": "123456789012345678",
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        },
+        {
+            "name": "e",
+            "roles": [],
+            "id": "123456789012345678",
+            "require_colons": true,
+            "managed": false,
+            "animated": false,
+            "available": true
+        }
+    ],
+    "banner": null,
+    "owner_id": "84745855399129088",
+    "application_id": null,
+    "region": "us-east",
+    "afk_channel_id": "396670280661073921",
+    "afk_timeout": 900,
+    "system_channel_id": "208023865127862272",
+    "widget_enabled": true,
+    "widget_channel_id": null,
+    "verification_level": 2,
+    "roles": [
+        {
+            "id": "123456789012345678",
+            "name": "@everyone",
+            "permissions": "104189504",
+            "position": 0,
+            "color": 0,
+            "hoist": false,
+            "managed": false,
+            "mentionable": false,
+            "flags": 0
+        },
+        {
+            "id": "123456789012345678",
+            "name": "Administrators",
+            "permissions": "2146959351",
+            "position": 29,
+            "color": 15277667,
+            "hoist": true,
+            "managed": false,
+            "mentionable": true,
+            "flags": 0
+        },
+        {
+            "id": "123456789012345678",
+            "name": "Nitro Booster",
+            "permissions": 67108864,
+            "position": 4,
+            "color": 7658737,
+            "hoist": false,
+            "managed": true,
+            "mentionable": false,
+            "tags": {
+                "premium_subscriber": null
+            },
+            "permissions_new": "67108864",
+            "flags": 0
+        }
+    ],
+    "default_message_notifications": 1,
+    "mfa_level": 1,
+    "explicit_content_filter": 1,
+    "max_presences": null,
+    "max_members": 250000,
+    "vanity_url_code": null,
+    "premium_tier": 0,
+    "premium_subscription_count": 0,
+    "system_channel_flags": 1,
+    "preferred_locale": "en-US",
+    "rules_channel_id": null,
+    "public_updates_channel_id": null,
+    "nsfw": false,
+    "nsfw_level": 0
 }
