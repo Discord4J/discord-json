@@ -20,12 +20,20 @@ public interface MessageReactionAdd extends Dispatch {
 
     @JsonProperty("user_id")
     Id userId();
+
     @JsonProperty("channel_id")
     Id channelId();
+
     @JsonProperty("message_id")
     Id messageId();
+
     @JsonProperty("guild_id")
     Possible<Id> guildId();
+
     Possible<MemberData> member();
+
     EmojiData emoji();
+
+    @JsonProperty("message_author_id")
+    Id messageAuthorId();
 }
