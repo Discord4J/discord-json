@@ -25,4 +25,6 @@ public interface RoleDataFields {
     Possible<Optional<String>> unicodeEmoji();
 
     Possible<RoleTagsData> tags();
+
+    int flags();
 }
