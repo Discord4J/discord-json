@@ -78,6 +78,7 @@ public class GatewaySerializationTest {
                 .activities(Collections.singletonList(ActivityUpdateRequest.builder()
                         .name("Testing")
                         .type(0)
+                        .state("Details")
                         .build()))
                 .build());
         String result = mapper.writeValueAsString(payload);
