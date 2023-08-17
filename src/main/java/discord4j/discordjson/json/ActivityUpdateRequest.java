@@ -16,4 +16,6 @@ public interface ActivityUpdateRequest extends Activity {
     }
 
     Optional<String> url();
+
+    Optional<String> state();
 }

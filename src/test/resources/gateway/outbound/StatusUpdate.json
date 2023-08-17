@@ -6,7 +6,8 @@
           {
             "name": "Testing",
             "type": 0,
-            "url": null
+            "url": null,
+            "state": "Details"
           }
         ],
         "status": "idle",
