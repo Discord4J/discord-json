@@ -19,8 +19,13 @@ public interface ApplicationTeamMemberData {
 
     @JsonProperty("membership_state")
     int membershipState();
+
     List<String> permissions();
+
     @JsonProperty("team_id")
     Id teamId();
+
     UserData user();
+
+    String role();
 }
