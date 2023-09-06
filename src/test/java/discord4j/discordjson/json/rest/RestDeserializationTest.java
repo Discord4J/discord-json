@@ -135,7 +135,7 @@ public class RestDeserializationTest {
                     .count(1)
                     .me(false)
                     .meBurst(false)
-                    .countDetails(ReactionCountDetailsData.builder().normal(1).burst(0).build())
+                    .countDetails(ReactionCountDetailsData.builder().normal(0).burst(1).build())
                     .burstColors(Collections.singletonList("#9be07d"))
                     .emoji(EmojiData.builder().id("3").build())
                     .build()
