@@ -59,4 +59,8 @@ public interface ComponentData {
 
     @JsonProperty("channel_types")
     Possible<List<Integer>> channelTypes();
+
+    /* Only for user, role, mentionable and channel select menu components */
+    @JsonProperty("default_values")
+    Possible<List<SelectDefaultValueData>> defaultValues();
 }
