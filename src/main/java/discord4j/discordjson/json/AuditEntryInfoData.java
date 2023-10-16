@@ -37,6 +37,9 @@ public interface AuditEntryInfoData {
 
     Possible<String> type();
 
+    @JsonProperty("integration_type")
+    Possible<String> integrationType();
+
     @JsonProperty("role_name")
     Possible<String> roleName();
 
