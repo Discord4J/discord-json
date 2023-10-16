@@ -7,6 +7,7 @@ import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
 import java.util.List;
+import java.util.Optional;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableApplicationInfoRequest.class)
@@ -31,10 +32,10 @@ public interface ApplicationInfoRequest {
 
     Possible<Integer> flags();
 
-    Possible<byte[]> icon();
+    Possible<Optional<String>> icon();
 
     @JsonProperty("cover_image")
-    Possible<byte[]> coverImage();
+    Possible<Optional<String>> coverImage();
 
     @JsonProperty("interactions_endpoint_url")
     Possible<String> interactionsEndpointUrl();
