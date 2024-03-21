@@ -20,4 +20,6 @@ public interface MessageSendRequestBase {
     Possible<List<ComponentData>> components();
 
     Possible<List<EmbedData>> embeds();
+
+    Possible<PollData> poll();
 }
