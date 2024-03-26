@@ -40,17 +40,17 @@ jobs:
     if: github.event_name != 'pull_request'
     needs: build
     env:
-      HAVE_SONAR_DATA: ${{ secrets.signingKey != '' && secrets.signingPassword != '' && secrets.sonatypeUsername != '' && secrets.sonatypePassword != '' }}
+      HAVE_NEEDED_DATA: ${{ secrets.signingKey != '' && secrets.signingPassword != '' && secrets.sonatypeUsername != '' && secrets.sonatypePassword != '' }}
     steps:
       - name: Validate publish secrets
-        if: ${{ env.HAVE_SONAR_TOKEN != 'true' }}
+        if: ${{ env.HAVE_NEEDED_DATA != 'true' }}
         run: |
             echo "The secrets for publish are not set."
             exit 0
       - uses: actions/checkout@v3
-        if: ${{ env.HAVE_SONAR_DATA == 'true' }}
+        if: ${{ env.HAVE_NEEDED_DATA == 'true' }}
       - uses: actions/cache@v3
-        if: ${{ env.HAVE_SONAR_DATA == 'true' }}
+        if: ${{ env.HAVE_NEEDED_DATA == 'true' }}
         with:
           path: ~/.gradle/caches
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
@@ -58,12 +58,12 @@ jobs:
             ${{ runner.os }}-gradle-
       - name: Set up JDK
         uses: actions/setup-java@v3.6.0
-        if: ${{ env.HAVE_SONAR_DATA == 'true' }}
+        if: ${{ env.HAVE_NEEDED_DATA == 'true' }}
         with:
           java-version: 11
           distribution: 'corretto'
       - name: Publish with Gradle
-        if: ${{ env.HAVE_SONAR_DATA == 'true' }}
+        if: ${{ env.HAVE_NEEDED_DATA == 'true' }}
         run: ./gradlew -x test publish
         env:
           ORG_GRADLE_PROJECT_signingKey: ${{ secrets.signingKey }}
