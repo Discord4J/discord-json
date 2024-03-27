@@ -14,6 +14,7 @@ import discord4j.discordjson.Id;
 import discord4j.discordjson.json.*;
 import discord4j.discordjson.possible.PossibleFilter;
 import discord4j.discordjson.possible.PossibleModule;
+import java.util.Collections;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
@@ -34,21 +35,21 @@ public class RestDeserializationTest {
     @BeforeEach
     public void setUp() {
         mapper = new ObjectMapper()
-                .registerModule(new PossibleModule())
-                .registerModule(new Jdk8Module())
-                .setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.NONE)
-                .setVisibility(PropertyAccessor.GETTER, JsonAutoDetect.Visibility.PUBLIC_ONLY)
-                .addHandler(new DeserializationProblemHandler() {
-                    @Override
-                    public boolean handleUnknownProperty(DeserializationContext ctxt, JsonParser p, JsonDeserializer<
-                            ?> deserializer, Object beanOrClass, String propertyName) throws IOException {
-                        log.warn("Unknown property in {}: {}", beanOrClass, propertyName);
-                        p.skipChildren();
-                        return true;
-                    }
-                })
-                .setDefaultPropertyInclusion(JsonInclude.Value.construct(JsonInclude.Include.CUSTOM,
-                        JsonInclude.Include.ALWAYS, PossibleFilter.class, null));
+            .registerModule(new PossibleModule())
+            .registerModule(new Jdk8Module())
+            .setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.NONE)
+            .setVisibility(PropertyAccessor.GETTER, JsonAutoDetect.Visibility.PUBLIC_ONLY)
+            .addHandler(new DeserializationProblemHandler() {
+                @Override
+                public boolean handleUnknownProperty(DeserializationContext ctxt, JsonParser p, JsonDeserializer<
+                    ?> deserializer, Object beanOrClass, String propertyName) throws IOException {
+                    log.warn("Unknown property in {}: {}", beanOrClass, propertyName);
+                    p.skipChildren();
+                    return true;
+                }
+            })
+            .setDefaultPropertyInclusion(JsonInclude.Value.construct(JsonInclude.Include.CUSTOM,
+                JsonInclude.Include.ALWAYS, PossibleFilter.class, null));
     }
 
     private <T> T read(String from, Class<T> into) throws IOException {
@@ -87,48 +88,63 @@ public class RestDeserializationTest {
     public void testMessageCopyingCollectionMethods() throws IOException {
         MessageData res = read("/rest/CreateMessageResponse.json", MessageData.class);
         MessageData withReaction = MessageData.builder().from(res)
-                .addReaction(ReactionData.builder()
-                        .count(1)
-                        .me(false)
-                        .emoji(EmojiData.builder().id("1").build())
-                        .build())
-                .build();
+            .addReaction(ReactionData.builder()
+                .count(1)
+                .me(false)
+                .meBurst(false)
+                .countDetails(ReactionCountDetailsData.builder().normal(1).burst(0).build())
+                .burstColors(Collections.emptyList())
+                .emoji(EmojiData.builder().id("1").build())
+                .build())
+            .build();
         MessageData withThreeReactions = MessageData.builder().from(withReaction)
-                .addAllReactions(Arrays.asList(
-                        ReactionData.builder()
-                                .count(1)
-                                .me(false)
-                                .emoji(EmojiData.builder().id("2").build())
-                                .build(),
-                        ReactionData.builder()
-                                .count(1)
-                                .me(false)
-                                .emoji(EmojiData.builder().id("3").build())
-                                .build()
-                ))
-                .build();
+            .addAllReactions(Arrays.asList(
+                ReactionData.builder()
+                    .count(1)
+                    .me(false)
+                    .meBurst(false)
+                    .countDetails(ReactionCountDetailsData.builder().normal(1).burst(0).build())
+                    .burstColors(Collections.emptyList())
+                    .emoji(EmojiData.builder().id("2").build())
+                    .build(),
+                ReactionData.builder()
+                    .count(1)
+                    .countDetails(ReactionCountDetailsData.builder().normal(1).burst(0).build())
+                    .me(false)
+                    .meBurst(false)
+                    .burstColors(Collections.emptyList())
+                    .emoji(EmojiData.builder().id("3").build())
+                    .build()
+            ))
+            .build();
         assertTrue(withThreeReactions.reactions()
-                .toOptional()
-                .map(list -> list.size() == 3)
-                .orElse(false));
+            .toOptional()
+            .map(list -> list.size() == 3)
+            .orElse(false));
         MessageData withTwoReactions = MessageData.builder().from(withReaction)
-                .reactions(Arrays.asList(
-                        ReactionData.builder()
-                                .count(1)
-                                .me(false)
-                                .emoji(EmojiData.builder().id("2").build())
-                                .build(),
-                        ReactionData.builder()
-                                .count(1)
-                                .me(false)
-                                .emoji(EmojiData.builder().id("3").build())
-                                .build()
-                ))
-                .build();
+            .reactions(Arrays.asList(
+                ReactionData.builder()
+                    .count(1)
+                    .me(false)
+                    .meBurst(false)
+                    .countDetails(ReactionCountDetailsData.builder().normal(0).burst(1).build())
+                    .burstColors(Arrays.asList("#9be07d", "#45a065"))
+                    .emoji(EmojiData.builder().id("2").build())
+                    .build(),
+                ReactionData.builder()
+                    .count(1)
+                    .me(false)
+                    .meBurst(false)
+                    .countDetails(ReactionCountDetailsData.builder().normal(0).burst(1).build())
+                    .burstColors(Collections.singletonList("#9be07d"))
+                    .emoji(EmojiData.builder().id("3").build())
+                    .build()
+            ))
+            .build();
         assertTrue(withTwoReactions.reactions()
-                .toOptional()
-                .map(list -> list.size() == 2)
-                .orElse(false));
+            .toOptional()
+            .map(list -> list.size() == 2)
+            .orElse(false));
     }
 
     @Test
@@ -143,7 +159,8 @@ public class RestDeserializationTest {
     @Test
     public void testGetGuildIntegrations() throws IOException {
         List<IntegrationData> list = read("/rest/v8/GuildIntegrations.json",
-                new TypeReference<List<IntegrationData>>() {});
+            new TypeReference<List<IntegrationData>>() {
+            });
         assertEquals(list.get(0).account().name(), "Reacton");
     }
 
