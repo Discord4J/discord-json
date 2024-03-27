@@ -95,4 +95,6 @@ public interface ApplicationCommandData {
 
     @JsonProperty("contexts")
     List<Integer> contexts();
+
+    Possible<Boolean> nsfw();
 }
