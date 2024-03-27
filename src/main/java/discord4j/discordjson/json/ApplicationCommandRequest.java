@@ -65,4 +65,6 @@ public interface ApplicationCommandRequest {
 
     @JsonProperty("contexts")
     Possible<List<Integer>> contexts();
+
+    Possible<Boolean> nsfw();
 }
