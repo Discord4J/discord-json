@@ -70,8 +70,11 @@ public interface ApplicationCommandData {
 
     /**
      * whether the command is enabled in DM by default when the app is added globally (default to true)
+     *
+     * @deprecated use {@link #contexts()} instead
      */
     @JsonProperty("dm_permission")
+    @Deprecated
     Possible<Boolean> dmPermission();
 
     /**
@@ -86,4 +89,10 @@ public interface ApplicationCommandData {
      */
     @JsonProperty("default_member_permissions")
     Optional<String> defaultMemberPermissions();
+
+    @JsonProperty("integration_types")
+    List<Integer> integrationTypes();
+
+    @JsonProperty("contexts")
+    List<Integer> contexts();
 }
