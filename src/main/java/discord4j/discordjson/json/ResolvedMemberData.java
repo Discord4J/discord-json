@@ -20,6 +20,8 @@ public interface ResolvedMemberData {
 
     Possible<Optional<String>> nick();
 
+    Possible<Optional<String>> avatar();
+
     List<String> roles();
 
     @JsonProperty("joined_at")
