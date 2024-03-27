@@ -70,6 +70,8 @@ public interface ApplicationCommandData {
 
     /**
      * whether the command is enabled in DM by default when the app is added globally (default to true)
+     *
+     * @deprecated use {@link #contexts()} instead
      */
     @JsonProperty("dm_permission")
     @Deprecated
