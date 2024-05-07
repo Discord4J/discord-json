@@ -1,6 +1,7 @@
 package discord4j.discordjson;
 
 import discord4j.discordjson.json.GuildData;
+import discord4j.discordjson.json.PermissionSet;
 import discord4j.discordjson.json.GuildFields;
 import discord4j.discordjson.json.PartialGuildData;
 import discord4j.discordjson.possible.Possible;
@@ -8,6 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.EnumSet;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -25,7 +27,7 @@ public class DataMappingTest {
                 .defaultMessageNotifications(1)
                 .explicitContentFilter(1)
                 .mfaLevel(1)
-                .addFeature("ONCE")
+                .features(EnumSet.of(PermissionSet.FEATURABLE))
                 .premiumTier(1)
                 .joinedAt(DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(ZonedDateTime.now()))
                 .large(false)
@@ -33,9 +35,11 @@ public class DataMappingTest {
                 .preferredLocale("en-US")
                 .nsfwLevel(0)
                 .build();
+
         PartialGuildData partialGuildData = PartialGuildData.builder()
                 .from((GuildFields) guildData)
                 .build();
+
         assertEquals(Id.of("123456"), partialGuildData.id());
         assertEquals(Possible.absent(), partialGuildData.owner());
         assertEquals(1, partialGuildData.verificationLevel());

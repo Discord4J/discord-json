@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import discord4j.discordjson.Id;
 import discord4j.discordjson.possible.Possible;
 
-import java.util.List;
+import java.util.EnumSet;
 import java.util.Optional;
 import java.util.OptionalInt;
 
@@ -36,7 +36,7 @@ public interface GuildFields {
     @JsonProperty("embed_channel_id")
     Possible<Optional<Id>> embedChannelId();
 
-    List<String> features();
+    EnumSet<PermissionSet> features();
 
     @JsonProperty("application_id")
     Optional<Id> applicationId();
