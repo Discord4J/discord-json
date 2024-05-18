@@ -34,6 +34,8 @@ public interface EntitlementData {
     @JsonProperty("guild_id")
     Possible<Id> guildId();
 
+    Possible<Boolean> consumed();
+
     // The following fields will not be present in test entitlements
 
     @JsonProperty("starts_at")
