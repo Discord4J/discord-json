@@ -10,26 +10,24 @@ import java.util.List;
 import java.util.Optional;
 
 @Value.Immutable
-@JsonSerialize(as = ImmutablePollData.class)
-@JsonDeserialize(as = ImmutablePollData.class)
-public interface PollData {
+@JsonSerialize(as = ImmutablePollCreateData.class)
+@JsonDeserialize(as = ImmutablePollCreateData.class)
+public interface PollCreateData {
 
-    static ImmutablePollData.Builder builder() {
-        return ImmutablePollData.builder();
+    static ImmutablePollCreateData.Builder builder() {
+        return ImmutablePollCreateData.builder();
     }
 
     PollMediaObject question();
 
     List<PollAnswerObject> answers();
 
-    Optional<String> expiry();
+    int duration();
 
     @JsonProperty("allow_multiselect")
     boolean allowMultiselect();
 
     @JsonProperty("layout_type")
-    int layoutType();
-
-    Possible<PollResultObject> results();
+    Possible<Integer> layoutType();
 
 }

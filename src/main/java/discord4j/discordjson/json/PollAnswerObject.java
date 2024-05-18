@@ -16,7 +16,7 @@ public interface PollAnswerObject {
     }
 
     @JsonProperty("answer_id")
-    int answerId();
+    Possible<Integer> answerId(); // Possible because not needed for creating a poll
 
     @JsonProperty("poll_media")
     PollMediaObject data();
