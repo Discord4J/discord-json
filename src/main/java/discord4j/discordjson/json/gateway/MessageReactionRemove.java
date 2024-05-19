@@ -30,4 +30,8 @@ public interface MessageReactionRemove extends Dispatch {
     Possible<Id> guildId();
 
     EmojiData emoji();
+
+    boolean burst();
+
+    int type();
 }
