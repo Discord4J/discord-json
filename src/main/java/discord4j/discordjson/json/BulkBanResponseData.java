@@ -8,12 +8,12 @@ import java.util.List;
 import org.immutables.value.Value;
 
 @Value.Immutable
-@JsonSerialize(as = ImmutableBulkBanResponse.class)
-@JsonDeserialize(as = ImmutableBulkBanResponse.class)
-public interface BulkBanResponse {
+@JsonSerialize(as = ImmutableBulkBanResponseData.class)
+@JsonDeserialize(as = ImmutableBulkBanResponseData.class)
+public interface BulkBanResponseData {
 
-    static ImmutableBulkBanResponse.Builder builder() {
-        return ImmutableBulkBanResponse.builder();
+    static ImmutableBulkBanResponseData.Builder builder() {
+        return ImmutableBulkBanResponseData.builder();
     }
 
     @JsonProperty("banned_users")
