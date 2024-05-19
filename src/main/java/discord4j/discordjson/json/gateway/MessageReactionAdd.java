@@ -7,6 +7,7 @@ import discord4j.discordjson.json.EmojiData;
 import discord4j.discordjson.json.MemberData;
 import discord4j.discordjson.Id;
 import discord4j.discordjson.possible.Possible;
+import java.util.List;
 import org.immutables.value.Value;
 
 @Value.Immutable
@@ -36,4 +37,11 @@ public interface MessageReactionAdd extends Dispatch {
 
     @JsonProperty("message_author_id")
     Id messageAuthorId();
+
+    boolean burst();
+
+    @JsonProperty("burst_colors")
+    Possible<List<String>> burstColors();
+
+    int type();
 }
