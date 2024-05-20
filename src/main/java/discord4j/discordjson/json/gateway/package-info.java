@@ -5,12 +5,14 @@
         depluralize = true,
         jdkOnly = true,
         allParameters = true,
-        defaultAsDefault = true
+        defaultAsDefault = true,
+        allowedClasspathAnnotations = Nullable.class
 )
-@NonNullApi
+@Nonnull
 @MetaEncodingEnabled
 package discord4j.discordjson.json.gateway;
 
-import discord4j.discordjson.MetaEncodingEnabled;
+import discord4j.discordjson.encoding.MetaEncodingEnabled;
 import org.immutables.value.Value;
-import reactor.util.annotation.NonNullApi;
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;

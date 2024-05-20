@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.SerializationConfig;
 import com.fasterxml.jackson.databind.jsontype.TypeSerializer;
 import com.fasterxml.jackson.databind.ser.Serializers;
 import com.fasterxml.jackson.databind.type.ReferenceType;
-import reactor.util.annotation.Nullable;
+import javax.annotation.Nullable;
 
 public class PossibleSerializers extends Serializers.Base {
 

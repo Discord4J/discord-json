@@ -4,10 +4,10 @@
         allParameters = true,
         defaultAsDefault = true
 )
-@NonNullApi
+@Nonnull
 @MetaEncodingEnabled
 package discord4j.discordjson.json;
 
-import discord4j.discordjson.MetaEncodingEnabled;
+import discord4j.discordjson.encoding.MetaEncodingEnabled;
 import org.immutables.value.Value;
-import reactor.util.annotation.NonNullApi;
+import javax.annotation.Nonnull;

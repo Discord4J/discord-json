@@ -1,6 +1,6 @@
-package discord4j.discordjson;
+package discord4j.discordjson.encoding;
 
-import discord4j.discordjson.possible.*;
+import discord4j.discordjson.encoding.possible.*;
 
 @IdEncodingEnabled
 @ListIdEncodingEnabled

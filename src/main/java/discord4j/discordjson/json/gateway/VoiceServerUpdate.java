@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.Id;
 import org.immutables.value.Value;
-import reactor.util.annotation.Nullable;
+import javax.annotation.Nullable;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableVoiceServerUpdate.class)

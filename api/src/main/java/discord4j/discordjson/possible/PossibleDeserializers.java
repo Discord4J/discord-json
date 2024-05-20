@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.deser.Deserializers;
 import com.fasterxml.jackson.databind.jsontype.TypeDeserializer;
 import com.fasterxml.jackson.databind.type.ReferenceType;
-import reactor.util.annotation.Nullable;
+import javax.annotation.Nullable;
 
 public class PossibleDeserializers extends Deserializers.Base {
 
