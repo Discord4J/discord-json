@@ -21,5 +21,5 @@ public interface MessageSendRequestBase {
 
     Possible<List<EmbedData>> embeds();
 
-    Possible<PollData> poll();
+    Possible<PollCreateData> poll();
 }
