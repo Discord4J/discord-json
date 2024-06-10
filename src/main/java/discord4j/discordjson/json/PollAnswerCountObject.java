@@ -14,7 +14,4 @@ public interface PollAnswerCountObject {
 
     int count();
 
-    @JsonProperty("me_voted")
-    boolean meVoted();
-
 }
