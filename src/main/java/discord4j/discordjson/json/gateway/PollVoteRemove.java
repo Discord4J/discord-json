@@ -16,17 +16,32 @@
  */
 package discord4j.discordjson.json.gateway;
 
-import com.fasterxml.jackson.annotation.JsonUnwrapped;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import discord4j.discordjson.Id;
 import org.immutables.value.Value;
+
+import java.util.Optional;
 
 @Value.Immutable(builder = false)
 @JsonSerialize(as = ImmutablePollVoteRemove.class)
 @JsonDeserialize(as = ImmutablePollVoteRemove.class)
 public interface PollVoteRemove extends Dispatch {
 
-    @JsonUnwrapped
-    PollVoteData data();
+    @JsonProperty("user_id")
+    Id userId();
+
+    @JsonProperty("channel_id")
+    Id channelId();
+
+    @JsonProperty("message_id")
+    Id messageId();
+
+    @JsonProperty("guild_id")
+    Optional<Id> guildId();
+
+    @JsonProperty("answer_id")
+    int answerId();
 
 }
