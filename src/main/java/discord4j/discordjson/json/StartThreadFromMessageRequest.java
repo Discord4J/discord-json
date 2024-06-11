@@ -7,12 +7,12 @@ import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
 @Value.Immutable
-@JsonSerialize(as = ImmutableStartThreadRequest.class)
-@JsonDeserialize(as = ImmutableStartThreadRequest.class)
-public interface StartThreadRequest {
+@JsonSerialize(as = ImmutableStartThreadFromMessageRequest.class)
+@JsonDeserialize(as = ImmutableStartThreadFromMessageRequest.class)
+public interface StartThreadFromMessageRequest {
 
-    static ImmutableStartThreadRequest.Builder builder() {
-        return ImmutableStartThreadRequest.builder();
+    static ImmutableStartThreadFromMessageRequest.Builder builder() {
+        return ImmutableStartThreadFromMessageRequest.builder();
     }
 
     /**
