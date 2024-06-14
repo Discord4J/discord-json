@@ -26,4 +26,6 @@ public interface OnboardingData {
 
     boolean enabled();
 
+    int mode();
+
 }

@@ -6,6 +6,8 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.Id;
 import java.util.List;
 import java.util.Optional;
+
+import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
 @Value.Immutable
@@ -25,7 +27,16 @@ public interface OnboardingPromptOptionData {
     @JsonProperty("role_ids")
     List<Id> rolesIds();
 
-    EmojiData emoji();
+    Possible<EmojiData> emoji();
+
+    @JsonProperty("emoji_id")
+    Possible<Id> emojiId();
+
+    @JsonProperty("emoji_name")
+    Possible<String> emojiName();
+
+    @JsonProperty("emoji_animated")
+    Possible<Boolean> emojiAnimated();
 
     String title();
 
