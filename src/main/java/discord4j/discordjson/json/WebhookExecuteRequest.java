@@ -3,6 +3,7 @@ package discord4j.discordjson.json;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import discord4j.discordjson.Id;
 import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
@@ -18,6 +19,10 @@ public interface WebhookExecuteRequest extends MessageSendRequestBase {
     }
 
     Possible<String> username();
+
     @JsonProperty("avatar_url")
     Possible<String> avatarUrl();
+
+    @JsonProperty("applied_tags")
+    Possible<List<Id>> appliedTags();
 }
