@@ -5,6 +5,8 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.Id;
 import java.util.List;
+
+import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
 @Value.Immutable
@@ -17,7 +19,7 @@ public interface OnboardingData {
     }
 
     @JsonProperty("guild_id")
-    Id guildId();
+    Possible<Id> guildId();
 
     List<OnboardingPromptData> prompts();
 

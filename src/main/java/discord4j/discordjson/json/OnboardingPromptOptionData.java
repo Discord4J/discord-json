@@ -19,7 +19,7 @@ public interface OnboardingPromptOptionData {
         return ImmutableOnboardingPromptOptionData.builder();
     }
 
-    Id id();
+    Possible<Id> id();
 
     @JsonProperty("channel_ids")
     List<Id> channelsIds();
