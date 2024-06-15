@@ -4,25 +4,23 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.Id;
-import java.util.List;
-
 import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
+import java.util.List;
+
 @Value.Immutable
-@JsonSerialize(as = ImmutableOnboardingPromptData.class)
-@JsonDeserialize(as = ImmutableOnboardingPromptData.class)
-public interface OnboardingPromptData {
+@JsonSerialize(as = ImmutableOnboardingEditPromptData.class)
+@JsonDeserialize(as = ImmutableOnboardingEditPromptData.class)
+public interface OnboardingEditPromptData {
 
-    static ImmutableOnboardingPromptData.Builder builder() {
-        return ImmutableOnboardingPromptData.builder();
+    static ImmutableOnboardingEditPromptData.Builder builder() {
+        return ImmutableOnboardingEditPromptData.builder();
     }
-
-    Id id();
 
     int type();
 
-    List<OnboardingPromptOptionData> options();
+    List<OnboardingEditPromptOptionData> options();
 
     String title();
 

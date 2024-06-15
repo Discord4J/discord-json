@@ -19,7 +19,7 @@ public interface OnboardingPromptOptionData {
         return ImmutableOnboardingPromptOptionData.builder();
     }
 
-    Possible<Id> id();
+    Id id();
 
     @JsonProperty("channel_ids")
     List<Id> channelsIds();
@@ -28,15 +28,6 @@ public interface OnboardingPromptOptionData {
     List<Id> rolesIds();
 
     Possible<EmojiData> emoji();
-
-    @JsonProperty("emoji_id")
-    Possible<Id> emojiId();
-
-    @JsonProperty("emoji_name")
-    Possible<String> emojiName();
-
-    @JsonProperty("emoji_animated")
-    Possible<Boolean> emojiAnimated();
 
     String title();
 
