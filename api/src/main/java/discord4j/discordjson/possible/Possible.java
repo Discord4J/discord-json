@@ -154,4 +154,15 @@ public final class Possible<T> {
         }
         return "Possible{" + value + '}';
     }
+
+    /**
+     * Map the current data to a new type.
+     *
+     * @param mapper the function to map the current data to a new type
+     * @return a new Possible with the mapped data
+     * @param <R> the new type
+     */
+    public <R> Possible<R> map(Function<T, R> mapper) {
+        return isAbsent() ? Possible.absent() : Possible.of(mapper.apply(value));
+    }
 }
