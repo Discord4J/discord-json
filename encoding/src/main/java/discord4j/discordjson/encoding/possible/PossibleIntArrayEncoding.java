@@ -1,5 +1,6 @@
-package discord4j.discordjson.possible;
+package discord4j.discordjson.encoding.possible;
 
+import discord4j.discordjson.possible.Possible;
 import org.immutables.encode.Encoding;
 
 import java.util.Objects;

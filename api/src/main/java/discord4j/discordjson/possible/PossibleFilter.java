@@ -1,6 +1,6 @@
 package discord4j.discordjson.possible;
 
-import reactor.util.annotation.Nullable;
+import javax.annotation.Nullable;
 
 public class PossibleFilter {
 

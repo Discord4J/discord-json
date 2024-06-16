@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.Id;
 import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
-import reactor.util.annotation.Nullable;
+import javax.annotation.Nullable;
 
 import java.util.List;
 

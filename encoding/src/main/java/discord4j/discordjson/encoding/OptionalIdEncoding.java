@@ -1,5 +1,6 @@
-package discord4j.discordjson;
+package discord4j.discordjson.encoding;
 
+import discord4j.discordjson.Id;
 import org.immutables.encode.Encoding;
 
 import java.util.Objects;

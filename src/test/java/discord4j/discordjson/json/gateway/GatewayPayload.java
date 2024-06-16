@@ -19,7 +19,7 @@ package discord4j.discordjson.json.gateway;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import reactor.util.annotation.Nullable;
+import javax.annotation.Nullable;
 
 import java.util.Objects;
 
