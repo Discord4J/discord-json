@@ -59,4 +59,7 @@ public interface UserData {
 
     @JsonProperty("public_flags")
     Possible<Long> publicFlags();
+
+    @JsonProperty("avatar_decoration_data")
+    Possible<Optional<AvatarDecorationData>> avatarDecoration();
 }

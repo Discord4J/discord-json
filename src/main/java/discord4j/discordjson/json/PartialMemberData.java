@@ -42,6 +42,9 @@ public interface PartialMemberData {
     @JsonProperty("communication_disabled_until")
     Possible<Optional<String>> communicationDisabledUntil();
 
+    @JsonProperty("avatar_decoration_data")
+    Possible<Optional<AvatarDecorationData>> avatarDecoration();
+
     default long flags() {
         return 0L;
     }
