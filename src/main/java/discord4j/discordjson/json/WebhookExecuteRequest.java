@@ -18,6 +18,9 @@ public interface WebhookExecuteRequest extends MessageSendRequestBase {
         return ImmutableWebhookExecuteRequest.builder();
     }
 
+    @JsonProperty("thread_name")
+    Possible<String> threadName();
+
     Possible<String> username();
 
     @JsonProperty("avatar_url")
