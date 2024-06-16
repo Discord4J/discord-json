@@ -16,7 +16,7 @@
  */
 package discord4j.discordjson.json.gateway;
 
-import reactor.util.annotation.Nullable;
+import javax.annotation.Nullable;
 
 public final class Opcode<T extends PayloadData> {
 

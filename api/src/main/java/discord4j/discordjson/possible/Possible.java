@@ -1,6 +1,6 @@
 package discord4j.discordjson.possible;
 
-import reactor.util.annotation.Nullable;
+import javax.annotation.Nullable;
 
 import java.util.NoSuchElementException;
 import java.util.Objects;

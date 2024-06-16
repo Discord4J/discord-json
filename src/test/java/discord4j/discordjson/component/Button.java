@@ -18,7 +18,7 @@ package discord4j.discordjson.component;
 
 import discord4j.discordjson.json.ComponentData;
 import discord4j.discordjson.json.ImmutableComponentData;
-import reactor.util.annotation.Nullable;
+import javax.annotation.Nullable;
 
 import java.util.Optional;
 

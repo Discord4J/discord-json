@@ -1,7 +1,7 @@
 /**
  * Possible is a custom type that can handle absent/present values.
  */
-@NonNullApi
+@Nonnull
 package discord4j.discordjson.possible;
 
-import reactor.util.annotation.NonNullApi;
+import javax.annotation.Nonnull;

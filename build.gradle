@@ -13,12 +13,11 @@ ext {
         jdk_javadoc = "https://docs.oracle.com/en/java/javase/$jdk/docs/api/".toString()
     }
 
-    reactor_bom_version = '2020.0.35'
     jackson_databind_version = '2.12.7.1'
     jackson_datatype_jsr310_version = '2.14.2'
     jackson_datatype_jdk8_version = '2.12.7'
     immutables_group = 'org.immutables'
-    immutables_version = '2.9.0'
+    immutables_version = '2.10.1'
 
     junit_version = '5.7.1'
     logback_version = '1.2.3'
@@ -51,10 +50,8 @@ allprojects {
     }
 
     dependencies {
-        compileOnly platform("io.projectreactor:reactor-bom:$reactor_bom_version")
-        compileOnly 'io.projectreactor:reactor-core'
-        testCompileOnly platform("io.projectreactor:reactor-bom:$reactor_bom_version")
-        testCompileOnly 'io.projectreactor:reactor-core'
+        compileOnly "com.google.code.findbugs:jsr305:3.0.1"
+        testCompileOnly "com.google.code.findbugs:jsr305:3.0.1"
     }
 
     configurations.all {
@@ -107,11 +104,6 @@ dependencies {
     compileOnly "$immutables_group:value:$immutables_version"
     compileOnly "$immutables_group:builder:$immutables_version"
     annotationProcessor "$immutables_group:value:$immutables_version"
-
-    if (JavaVersion.current().isJava8()) {
-        compileOnly "com.google.code.findbugs:annotations:3.0.1"
-        testCompileOnly "com.google.code.findbugs:annotations:3.0.1"
-    }
 
     testCompileOnly project(':encoding')
     testCompileOnly "$immutables_group:value:$immutables_version"
