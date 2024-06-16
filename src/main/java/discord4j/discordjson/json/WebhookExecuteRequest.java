@@ -18,9 +18,6 @@ public interface WebhookExecuteRequest extends MessageSendRequestBase {
         return ImmutableWebhookExecuteRequest.builder();
     }
 
-    @JsonProperty("thread_id")
-    Possible<Id> threadId();
-
     @JsonProperty("thread_name")
     Possible<String> threadName();
 
