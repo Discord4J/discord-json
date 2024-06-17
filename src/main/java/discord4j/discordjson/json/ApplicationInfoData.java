@@ -8,6 +8,7 @@ import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @Value.Immutable
@@ -36,14 +37,17 @@ public interface ApplicationInfoData {
     @JsonProperty("bot_require_code_grant")
     boolean botRequireCodeGrant();
 
+    Possible<PartialUserData> bot();
+
     @JsonProperty("terms_of_service_url")
     Possible<String> termsOfServiceUrl();
 
     @JsonProperty("privacy_policy_url")
     Possible<String> privacyPolicyUrl();
 
-    UserData owner();
+    Possible<PartialUserData> owner();
 
+    @Deprecated
     String summary();
 
     @JsonProperty("verify_key")
@@ -54,6 +58,8 @@ public interface ApplicationInfoData {
     @JsonProperty("guild_id")
     Possible<Id> guildId();
 
+    Possible<PartialGuildData> guild();
+
     @JsonProperty("primary_sku_id")
     Possible<Id> primarySkuId();
 
@@ -63,4 +69,27 @@ public interface ApplicationInfoData {
     Possible<String> coverImage();
 
     Possible<Integer> flags();
+
+    @JsonProperty("approximate_guild_count")
+    Possible<Integer> approximateGuildCount();
+
+    @JsonProperty("redirect_uris")
+    Possible<List<String>> redirectUris();
+
+    @JsonProperty("interactions_endpoint_url")
+    Possible<String> interactionsEndpointUrl();
+
+    @JsonProperty("role_connections_verification_url")
+    Possible<String> roleConnectionsVerificationUrl();
+
+    Possible<List<String>> tags();
+
+    @JsonProperty("install_params")
+    Possible<InstallParamsData> installParams();
+
+    @JsonProperty("integration_types_config")
+    Possible<Map<Integer, ApplicationIntegrationTypeConfigurationData>> integrationTypesConfig();
+
+    @JsonProperty("custom_install_url")
+    Possible<String> customInstallUrl();
 }
