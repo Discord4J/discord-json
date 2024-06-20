@@ -7,9 +7,6 @@ import discord4j.discordjson.Id;
 import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
-import java.util.List;
-import java.util.Optional;
-
 @Value.Immutable
 @JsonSerialize(as = ImmutableOnboardingEditPromptOptionData.class)
 @JsonDeserialize(as = ImmutableOnboardingEditPromptOptionData.class)
@@ -19,12 +16,6 @@ public interface OnboardingEditPromptOptionData extends BaseOnboardingPromptOpti
         return ImmutableOnboardingEditPromptOptionData.builder();
     }
 
-    @JsonProperty("channel_ids")
-    List<Id> channelsIds();
-
-    @JsonProperty("role_ids")
-    List<Id> rolesIds();
-
     @JsonProperty("emoji_id")
     Possible<Id> emojiId();
 
@@ -33,9 +24,5 @@ public interface OnboardingEditPromptOptionData extends BaseOnboardingPromptOpti
 
     @JsonProperty("emoji_animated")
     Possible<Boolean> emojiAnimated();
-
-    String title();
-
-    Optional<String> description();
 
 }
