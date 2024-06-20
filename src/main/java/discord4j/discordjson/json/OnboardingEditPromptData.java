@@ -9,7 +9,7 @@ import java.util.List;
 @Value.Immutable
 @JsonSerialize(as = ImmutableOnboardingEditPromptData.class)
 @JsonDeserialize(as = ImmutableOnboardingEditPromptData.class)
-public interface OnboardingEditPromptData {
+public interface OnboardingEditPromptData extends BaseOnboardingPromptData {
 
     static ImmutableOnboardingEditPromptData.Builder builder() {
         return ImmutableOnboardingEditPromptData.builder();
