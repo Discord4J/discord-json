@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.Id;
+import discord4j.discordjson.annotation.Experimental;
 import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
@@ -47,6 +48,12 @@ public interface ApplicationInfoData {
 
     Possible<PartialUserData> owner();
 
+    /**
+     * @deprecated This field is deprecated and will be removed in Discord API v11. This field always returns an empty
+     * string, you should use {@link #description() description} instead.
+     *
+     * @return An empty string.
+     */
     @Deprecated
     String summary();
 
@@ -87,6 +94,12 @@ public interface ApplicationInfoData {
     @JsonProperty("install_params")
     Possible<InstallParamsData> installParams();
 
+    /**
+     * This is considered an experimental feature by Discord and may be changed in the future.
+     *
+     * @return A map of integration type IDs to their configuration data.
+     */
+    @Experimental
     @JsonProperty("integration_types_config")
     Possible<Map<Integer, ApplicationIntegrationTypeConfigurationData>> integrationTypesConfig();
 
