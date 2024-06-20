@@ -11,12 +11,12 @@ import java.util.List;
 import java.util.Optional;
 
 @Value.Immutable
-@JsonSerialize(as = ImmutableOnboardingEditPromptOptionData.class)
-@JsonDeserialize(as = ImmutableOnboardingEditPromptOptionData.class)
-public interface OnboardingEditPromptOptionData extends BaseOnboardingPromptOptionData {
+@JsonSerialize(as = ImmutableBaseOnboardingPromptOptionData.class)
+@JsonDeserialize(as = ImmutableBaseOnboardingPromptOptionData.class)
+public interface BaseOnboardingPromptOptionData {
 
-    static ImmutableOnboardingEditPromptOptionData.Builder builder() {
-        return ImmutableOnboardingEditPromptOptionData.builder();
+    static ImmutableBaseOnboardingPromptOptionData.Builder builder() {
+        return ImmutableBaseOnboardingPromptOptionData.builder();
     }
 
     @JsonProperty("channel_ids")
@@ -24,15 +24,6 @@ public interface OnboardingEditPromptOptionData extends BaseOnboardingPromptOpti
 
     @JsonProperty("role_ids")
     List<Id> rolesIds();
-
-    @JsonProperty("emoji_id")
-    Possible<Id> emojiId();
-
-    @JsonProperty("emoji_name")
-    Possible<String> emojiName();
-
-    @JsonProperty("emoji_animated")
-    Possible<Boolean> emojiAnimated();
 
     String title();
 
