@@ -4,15 +4,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.Id;
-import java.util.List;
-
-import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
+
+import java.util.List;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableOnboardingData.class)
 @JsonDeserialize(as = ImmutableOnboardingData.class)
-public interface OnboardingData {
+public interface OnboardingData extends BaseOnboardingData {
 
     static ImmutableOnboardingData.Builder builder() {
         return ImmutableOnboardingData.builder();
@@ -22,12 +21,5 @@ public interface OnboardingData {
     Id guildId();
 
     List<OnboardingPromptData> prompts();
-
-    @JsonProperty("default_channel_ids")
-    List<Id> defaultChannelIds();
-
-    boolean enabled();
-
-    int mode();
 
 }
