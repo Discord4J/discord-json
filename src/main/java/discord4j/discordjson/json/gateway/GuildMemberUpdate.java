@@ -3,6 +3,7 @@ package discord4j.discordjson.json.gateway;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import discord4j.discordjson.json.AvatarDecorationData;
 import discord4j.discordjson.json.UserData;
 import discord4j.discordjson.Id;
 import discord4j.discordjson.possible.Possible;
@@ -41,5 +42,8 @@ public interface GuildMemberUpdate extends Dispatch {
 
     @JsonProperty("communication_disabled_until")
     Possible<Optional<String>> communicationDisabledUntil();
+
+    @JsonProperty("avatar_decoration_data")
+    Possible<Optional<AvatarDecorationData>> avatarDecoration();
 
 }
