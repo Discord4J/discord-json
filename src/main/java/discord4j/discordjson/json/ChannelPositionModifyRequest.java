@@ -9,17 +9,17 @@ import org.immutables.value.Value;
 import java.util.Optional;
 
 @Value.Immutable
-@JsonSerialize(as = ImmutablePositionModifyRequest.class)
-@JsonDeserialize(as = ImmutablePositionModifyRequest.class)
-public interface PositionModifyRequest {
+@JsonSerialize(as = ImmutableChannelPositionModifyRequest.class)
+@JsonDeserialize(as = ImmutableChannelPositionModifyRequest.class)
+public interface ChannelPositionModifyRequest {
 
-    static ImmutablePositionModifyRequest.Builder builder() {
-        return ImmutablePositionModifyRequest.builder();
+    static ImmutableChannelPositionModifyRequest.Builder builder() {
+        return ImmutableChannelPositionModifyRequest.builder();
     }
 
     String id();
 
-    int position();
+    Possible<Optional<Integer>> position();
 
     @JsonProperty("lock_permissions")
     Possible<Optional<Boolean>> lockPermissions();
