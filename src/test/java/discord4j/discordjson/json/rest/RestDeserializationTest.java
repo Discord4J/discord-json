@@ -235,4 +235,10 @@ public class RestDeserializationTest {
         EmbedData data = mapper.readValue(getClass().getResourceAsStream("/rest/EmbedData.NullAuthorUrl.json"), EmbedData.class);
         log.info("{}", data);
     }
+
+    @Test
+    public void readApplicationInfoData() throws IOException {
+        ApplicationInfoData data = read("/rest/ApplicationInfoData.json", ApplicationInfoData.class);
+        log.info("{}", data);
+    }
 }
