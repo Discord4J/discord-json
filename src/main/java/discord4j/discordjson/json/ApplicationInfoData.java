@@ -84,10 +84,10 @@ public interface ApplicationInfoData {
     Possible<List<String>> redirectUris();
 
     @JsonProperty("interactions_endpoint_url")
-    Possible<String> interactionsEndpointUrl();
+    Possible<Optional<String>> interactionsEndpointUrl(); // Use of both Possible and Optional due to https://github.com/Discord4J/Discord4J/issues/1243
 
     @JsonProperty("role_connections_verification_url")
-    Possible<String> roleConnectionsVerificationUrl();
+    Possible<Optional<String>> roleConnectionsVerificationUrl(); // Use of both Possible and Optional due to https://github.com/Discord4J/Discord4J/issues/1243
 
     Possible<List<String>> tags();
 
