@@ -55,5 +55,7 @@
         ],
         "owner_user_id": "511972282709709995"
     },
+    "interactions_endpoint_url": null,
+    "role_connections_verification_url": null,
     "verify_key": "1e0a356058d627ca38a5c8c9648818061d49e49bd9da9e3ab17d98ad4d6bg2u8"
 }
