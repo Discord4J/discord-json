@@ -9,13 +9,11 @@ import java.util.List;
 @Value.Immutable
 @JsonSerialize(as = ImmutableGuildEmojiCreateRequest.class)
 @JsonDeserialize(as = ImmutableGuildEmojiCreateRequest.class)
-public interface GuildEmojiCreateRequest {
+public interface GuildEmojiCreateRequest extends EmojiCreateRequest {
 
     static ImmutableGuildEmojiCreateRequest.Builder builder() {
         return ImmutableGuildEmojiCreateRequest.builder();
     }
 
-    String name();
-    String image();
     List<String> roles();
 }
