@@ -17,22 +17,22 @@ public interface AutoModRuleModifyRequest {
         return ImmutableAutoModRuleModifyRequest.builder();
     }
 
-    String name();
+    Possible<String> name();
 
     @JsonProperty("event_type")
-    int eventType();
+    Possible<Integer> eventType();
 
     @JsonProperty("trigger_metadata")
     Possible<AutoModTriggerMetaData> triggerMetadata();
 
-    List<AutoModActionData> actions();
+    Possible<List<AutoModActionData>> actions();
 
-    boolean enabled();
+    Possible<Boolean> enabled();
 
     @JsonProperty("exempt_roles")
-    List<Id> exemptRoles();
+    Possible<List<Id>> exemptRoles();
 
     @JsonProperty("exempt_channels")
-    List<Id> exemptChannels();
+    Possible<List<Id>> exemptChannels();
 
 }
