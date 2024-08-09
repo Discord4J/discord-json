@@ -21,7 +21,4 @@ public interface MessageCreateRequest extends MessageSendRequestBase {
 
     @Deprecated
     Possible<EmbedData> embed();
-
-    @JsonProperty("message_reference")
-    Possible<MessageReferenceData> messageReference();
 }
