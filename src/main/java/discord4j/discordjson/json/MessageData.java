@@ -76,6 +76,9 @@ public interface MessageData {
     @JsonProperty("message_reference")
     Possible<MessageReferenceData> messageReference();
 
+    @JsonProperty("message_snapshots")
+    Possible<List<MessageSnapshotsData>> messageSnapshots();
+
     Possible<Integer> flags();
 
     @Deprecated
