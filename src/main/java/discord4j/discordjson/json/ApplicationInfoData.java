@@ -80,6 +80,9 @@ public interface ApplicationInfoData {
     @JsonProperty("approximate_guild_count")
     Possible<Integer> approximateGuildCount();
 
+    @JsonProperty("approximate_user_install_count")
+    Possible<Integer> approximateUserInstallCount();
+
     @JsonProperty("redirect_uris")
     Possible<List<String>> redirectUris();
 
