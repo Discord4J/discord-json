@@ -47,4 +47,7 @@ public interface GuildScheduledEventModifyRequest {
     Possible<Integer> status();
 
     Possible<String> image();
+
+    @JsonProperty("recurrence_rule")
+    Possible<Optional<RecurrenceRuleData>> recurrenceRule();
 }
