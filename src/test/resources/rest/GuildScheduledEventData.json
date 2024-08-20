@@ -1,0 +1,55 @@
+[
+    {
+        "id": "1271851224307732633",
+        "guild_id": "545819046294192128",
+        "name": "A good event",
+        "description": "The best party for social media",
+        "channel_id": "545819046294192132",
+        "creator_id": "216316781483130880",
+        "creator": {
+            "id": "216316781483130880",
+            "username": "doc",
+            "avatar": "b7a8560e5ece2d003b38f87a96e9b354",
+            "discriminator": "0",
+            "public_flags": 4194562,
+            "flags": 4194562,
+            "banner": "350f1d70ddc02a0082084879bb15e7ba",
+            "accent_color": null,
+            "global_name": "Doc",
+            "avatar_decoration_data": {
+                "asset": "a_65db91cee351e36150a2b506b26eba71",
+                "sku_id": "1252353273256480818",
+                "expires_at": null
+            },
+            "banner_color": null,
+            "clan": null
+        },
+        "image": "20521a3e71d0a45b1c025ecbdf86a3a2",
+        "scheduled_start_time": "2024-08-16T16:00:00+00:00",
+        "scheduled_end_time": null,
+        "status": 1,
+        "entity_type": 2,
+        "entity_id": null,
+        "recurrence_rule": {
+            "start": "2024-08-16T16:00:00+00:00",
+            "end": null,
+            "frequency": 1,
+            "interval": 1,
+            "by_weekday": null,
+            "by_n_weekday": [
+                {
+                    "n": 3,
+                    "day": 4
+                }
+            ],
+            "by_month": null,
+            "by_month_day": null,
+            "by_year_day": null,
+            "count": null
+        },
+        "privacy_level": 2,
+        "sku_ids": [],
+        "guild_scheduled_event_exceptions": [],
+        "entity_metadata": {}
+    }
+]

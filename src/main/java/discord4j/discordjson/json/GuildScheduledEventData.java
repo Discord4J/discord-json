@@ -63,4 +63,7 @@ public interface GuildScheduledEventData {
     Possible<Integer> userCount();
 
     Possible<Optional<String>> image();
+
+    @JsonProperty("recurrence_rule")
+    Optional<RecurrenceRuleData> recurrenceRule();
 }

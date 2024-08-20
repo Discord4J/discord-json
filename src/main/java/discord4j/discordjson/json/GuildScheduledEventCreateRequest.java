@@ -43,4 +43,7 @@ public interface GuildScheduledEventCreateRequest {
     int entityType();
 
     Possible<String> image();
+
+    @JsonProperty("recurrence_rule")
+    Possible<RecurrenceRuleData> recurrenceRule();
 }
