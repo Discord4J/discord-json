@@ -10,6 +10,7 @@ import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.deser.DeserializationProblemHandler;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import discord4j.discordjson.Id;
 import discord4j.discordjson.json.*;
 import discord4j.discordjson.possible.PossibleFilter;
@@ -36,6 +37,7 @@ public class RestDeserializationTest {
     public void setUp() {
         mapper = new ObjectMapper()
             .registerModule(new PossibleModule())
+            .registerModule(new JavaTimeModule())
             .registerModule(new Jdk8Module())
             .setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.NONE)
             .setVisibility(PropertyAccessor.GETTER, JsonAutoDetect.Visibility.PUBLIC_ONLY)
@@ -240,5 +242,11 @@ public class RestDeserializationTest {
     public void readApplicationInfoData() throws IOException {
         ApplicationInfoData data = read("/rest/ApplicationInfoData.json", ApplicationInfoData.class);
         log.info("{}", data);
+    }
+
+    @Test
+    public void readGuildScheduledEvents() throws IOException {
+        GuildScheduledEventData[] data = read("/rest/GuildScheduledEventData.json", GuildScheduledEventData[].class);
+        log.info("{}", Arrays.asList(data));
     }
 }
