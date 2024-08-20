@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface MessageSendRequestBase {
 
+    Possible<Integer> flags();
+
     Possible<String> content();
 
     Possible<Boolean> tts();

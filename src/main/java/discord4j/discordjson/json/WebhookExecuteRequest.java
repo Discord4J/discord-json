@@ -22,6 +22,7 @@ public interface WebhookExecuteRequest extends MessageSendRequestBase {
     Possible<String> threadName();
 
     Possible<String> username();
+
     @JsonProperty("avatar_url")
     Possible<String> avatarUrl();
 }
