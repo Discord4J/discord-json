@@ -36,7 +36,7 @@ public interface MessageReactionAdd extends Dispatch {
     EmojiData emoji();
 
     @JsonProperty("message_author_id")
-    Id messageAuthorId();
+    Possible<Id> messageAuthorId();
 
     boolean burst();
 
