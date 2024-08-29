@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.Id;
 import discord4j.discordjson.possible.Possible;
+import java.util.Optional;
 import org.immutables.value.Value;
 
 @Value.Immutable
@@ -41,8 +42,9 @@ public interface EntitlementData {
     @JsonProperty("starts_at")
     Possible<String> startsAt();
 
+    // This field return data for canceled renews or null
     @JsonProperty("ends_at")
-    Possible<String> endsAt();
+    Possible<Optional<String>> endsAt();
 
     @JsonProperty("subscription_id")
     Possible<Id> subscriptionId();
