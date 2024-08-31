@@ -1,0 +1,55 @@
+{
+    "type": 0,
+    "content": "",
+    "mentions": [],
+    "mention_roles": [],
+    "attachments": [],
+    "embeds": [],
+    "timestamp": "2024-08-31T02:38:50.292000+00:00",
+    "edited_timestamp": null,
+    "flags": 16384,
+    "components": [],
+    "id": "1279269138510118913",
+    "channel_id": "1088465252804481025",
+    "author": {
+        "id": "719574575557509202",
+        "username": "DoggoFN",
+        "avatar": "ca9e2a158768a8e7e38861c16c575ffb",
+        "discriminator": "9425",
+        "public_flags": 0,
+        "flags": 0,
+        "bot": true,
+        "banner": null,
+        "accent_color": null,
+        "global_name": null,
+        "avatar_decoration_data": null,
+        "banner_color": null,
+        "clan": null
+    },
+    "pinned": false,
+    "mention_everyone": false,
+    "tts": false,
+    "message_reference": {
+        "type": 1,
+        "channel_id": "1088465252804481025",
+        "message_id": "1265424582311936060",
+        "guild_id": "405699020564987914"
+    },
+    "position": 0,
+    "message_snapshots": [
+        {
+            "message": {
+                "type": 0,
+                "content": "What is Lorem Ipsum?\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+                "mentions": [],
+                "mention_roles": [],
+                "attachments": [],
+                "embeds": [],
+                "timestamp": "2024-07-23T21:45:30.875000+00:00",
+                "edited_timestamp": null,
+                "flags": 0,
+                "components": []
+            }
+        }
+    ]
+}

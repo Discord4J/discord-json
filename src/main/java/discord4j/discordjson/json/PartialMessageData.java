@@ -19,11 +19,6 @@ public interface PartialMessageData {
         return ImmutablePartialMessageData.builder();
     }
 
-    Id id();
-
-    @JsonProperty("channel_id")
-    Id channelId();
-
     @JsonProperty("guild_id")
     Possible<Id> guildId();
 
@@ -85,5 +80,7 @@ public interface PartialMessageData {
     Possible<Optional<MessageData>> referencedMessage();
 
     Possible<MessageInteractionData> interaction();
+
+    Possible<List<ComponentData>> components();
 
 }
