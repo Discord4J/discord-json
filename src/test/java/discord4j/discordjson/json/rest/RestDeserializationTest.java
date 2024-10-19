@@ -87,6 +87,12 @@ public class RestDeserializationTest {
     }
 
     @Test
+    public void testCreateMessageWithForwardResponse() throws IOException {
+        MessageData res = read("/rest/CreateMessageWithForwardResponse.json", MessageData.class);
+        log.info("{}", res);
+    }
+
+    @Test
     public void testMessageCopyingCollectionMethods() throws IOException {
         MessageData res = read("/rest/CreateMessageResponse.json", MessageData.class);
         MessageData withReaction = MessageData.builder().from(res)
