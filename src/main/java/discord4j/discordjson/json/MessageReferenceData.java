@@ -16,6 +16,10 @@ public interface MessageReferenceData {
         return ImmutableMessageReferenceData.builder();
     }
 
+    default int type() {
+        return 0;
+    }
+
     @JsonProperty("message_id")
     Possible<Id> messageId();
 
