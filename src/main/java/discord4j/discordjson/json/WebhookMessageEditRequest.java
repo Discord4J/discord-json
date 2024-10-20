@@ -28,4 +28,6 @@ public interface WebhookMessageEditRequest {
     Possible<Optional<List<AttachmentData>>> attachments();
 
     Possible<List<ComponentData>> components();
+
+    Possible<PollCreateData> poll();
 }
