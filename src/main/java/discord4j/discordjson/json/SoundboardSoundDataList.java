@@ -6,7 +6,7 @@ import java.util.List;
 import org.immutables.value.Value;
 
 @Value.Immutable
-@JsonSerialize(as = ImmutableSoundboardSoundDataLista.class)
+@JsonSerialize(as = ImmutableSoundboardSoundDataList.class)
 @JsonDeserialize(as = ImmutableSoundboardSoundDataList.class)
 public interface SoundboardSoundDataList {
 
