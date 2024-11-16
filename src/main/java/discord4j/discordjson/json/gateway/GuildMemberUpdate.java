@@ -32,6 +32,8 @@ public interface GuildMemberUpdate extends Dispatch {
 
     Optional<String> avatar();
 
+    Optional<String> banner();
+
     @JsonProperty("joined_at")
     Optional<String> joinedAt();
 
