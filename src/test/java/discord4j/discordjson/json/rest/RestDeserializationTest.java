@@ -255,4 +255,10 @@ public class RestDeserializationTest {
         GuildScheduledEventData[] data = read("/rest/GuildScheduledEventData.json", GuildScheduledEventData[].class);
         log.info("{}", Arrays.asList(data));
     }
+
+    @Test
+    public void readSoundboardSoundData() throws IOException {
+        SoundboardSoundData[] data = read("/rest/SoundboardSoundData.json", SoundboardSoundData[].class);
+        log.info("{}", Arrays.asList(data));
+    }
 }

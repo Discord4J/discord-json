@@ -20,6 +20,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import discord4j.discordjson.Id;
 import discord4j.discordjson.json.ActivityUpdateRequest;
 import discord4j.discordjson.possible.Possible;
+import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
@@ -122,6 +123,17 @@ public class GatewaySerializationTest {
         RequestGuildMembers requestGuildMembers = ImmutableRequestGuildMembers.of("41771983444115456",
                 Possible.of(""), 0, Possible.absent(), Possible.absent(), Possible.absent());
         GatewayPayload<RequestGuildMembers> payload = GatewayPayload.requestGuildMembers(requestGuildMembers);
+        String result = mapper.writeValueAsString(payload);
+
+        assertEquals(mapper.readTree(expected), mapper.readTree(result));
+    }
+
+    @Test
+    public void testRequestSoundboardSound() throws IOException {
+        String expected = readResourceAsString("/gateway/outbound/RequestSoundboardSounds.json");
+
+        RequestSoundboardSounds requestSoundboardSounds = ImmutableRequestSoundboardSounds.of(List.of("613425648685547541", "81384788765712384"));
+        GatewayPayload<RequestSoundboardSounds> payload = GatewayPayload.requestSoundboardSound(requestSoundboardSounds);
         String result = mapper.writeValueAsString(payload);
 
         assertEquals(mapper.readTree(expected), mapper.readTree(result));
