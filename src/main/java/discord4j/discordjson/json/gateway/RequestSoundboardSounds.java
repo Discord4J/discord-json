@@ -17,6 +17,6 @@ public interface RequestSoundboardSounds extends PayloadData {
     }
 
     @JsonProperty("guild_ids")
-    List<Id> guildIds();
+    List<String> guildIds();
 
 }

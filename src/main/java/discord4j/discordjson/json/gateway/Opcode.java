@@ -29,6 +29,7 @@ public final class Opcode<T extends PayloadData> {
     public static final Opcode<Resume> RESUME = newOp(6, Resume.class);
     public static final Opcode<?> RECONNECT = newOp(7, null);
     public static final Opcode<RequestGuildMembers> REQUEST_GUILD_MEMBERS = newOp(8, RequestGuildMembers.class);
+    public static final Opcode<RequestSoundboardSounds> REQUEST_SOUNDBOARD_SOUNDS = newOp(31, RequestSoundboardSounds.class);
     public static final Opcode<InvalidSession> INVALID_SESSION = newOp(9, InvalidSession.class);
     public static final Opcode<Hello> HELLO = newOp(10, Hello.class);
     public static final Opcode<?> HEARTBEAT_ACK = newOp(11, null);
@@ -56,6 +57,7 @@ public final class Opcode<T extends PayloadData> {
             case 9: return INVALID_SESSION;
             case 10: return HELLO;
             case 11: return HEARTBEAT_ACK;
+            case 31: return REQUEST_SOUNDBOARD_SOUNDS;
             default: return null;
         }
     }
