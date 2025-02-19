@@ -22,6 +22,8 @@ public interface ComponentData {
 
     Possible<List<ComponentData>> components();
 
+    Possible<List<ComponentData>> accessory();
+
     Possible<Integer> style();
 
     Possible<String> label();
@@ -67,4 +69,19 @@ public interface ComponentData {
 
     @JsonProperty("sku_id")
     Possible<Id> skuId();
+
+    Possible<Integer> spacing();
+
+    Possible<Boolean> divider();
+
+    Possible<Boolean> spoiler();
+
+    @JsonProperty("accent_color")
+    Possible<Integer> accentColor();
+
+    Possible<String> description();
+
+    Possible<String> content();
+
+    Possible<UnfurledMediaItemData> file();
 }
