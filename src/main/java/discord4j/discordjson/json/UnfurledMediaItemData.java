@@ -27,7 +27,7 @@ public interface UnfurledMediaItemData {
 
     Possible<Optional<String>> placeholder();
 
-    @JsonProperty("proxy_url")
+    @JsonProperty("placeholder_version")
     Possible<Optional<Integer>> placeholderVersion();
 
     @JsonProperty("content_type")
