@@ -84,4 +84,6 @@ public interface ComponentData {
     Possible<String> content();
 
     Possible<UnfurledMediaItemData> file();
+
+    Possible<UnfurledMediaItemData> media();
 }
