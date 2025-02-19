@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.Id;
 import discord4j.discordjson.possible.Possible;
+import java.util.Optional;
 import org.immutables.value.Value;
 
 import java.util.List;
@@ -79,7 +80,7 @@ public interface ComponentData {
     @JsonProperty("accent_color")
     Possible<Integer> accentColor();
 
-    Possible<String> description();
+    Possible<Optional<String>> description();
 
     Possible<String> content();
 
