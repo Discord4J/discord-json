@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.Id;
 import discord4j.discordjson.possible.Possible;
+import java.util.Optional;
 import org.immutables.value.Value;
 
 import java.util.List;
@@ -21,6 +22,8 @@ public interface ComponentData {
     int type();
 
     Possible<List<ComponentData>> components();
+
+    Possible<ComponentData> accessory();
 
     Possible<Integer> style();
 
@@ -67,4 +70,23 @@ public interface ComponentData {
 
     @JsonProperty("sku_id")
     Possible<Id> skuId();
+
+    Possible<Integer> spacing();
+
+    Possible<Boolean> divider();
+
+    Possible<Boolean> spoiler();
+
+    @JsonProperty("accent_color")
+    Possible<Integer> accentColor();
+
+    Possible<Optional<String>> description();
+
+    Possible<String> content();
+
+    Possible<UnfurledMediaItemData> file();
+
+    Possible<UnfurledMediaItemData> media();
+
+    Possible<List<MediaGalleryItemData>> items();
 }
