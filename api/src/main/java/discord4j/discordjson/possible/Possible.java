@@ -68,6 +68,21 @@ public final class Possible<T> {
     }
 
     /**
+     * Returns a {@code Possible} with the given value or absent if the value is null.
+     *
+     * @param value The value the returned Possible will store.
+     * @param <T> The type the value.
+     * @return A {@code Possible} with the given value or absent if the value is null.
+     */
+    public static <T> Possible<T> ofNullable(@Nullable T value) {
+        if (value == null) {
+            return Possible.absent();
+        } else {
+            return Possible.of(value);
+        }
+    }
+
+    /**
      * Returns a {@code Possible} with no value.
      *
      * @param <T> The type of the non-existent value.
