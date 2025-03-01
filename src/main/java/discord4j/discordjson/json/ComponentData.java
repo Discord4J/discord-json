@@ -19,6 +19,8 @@ public interface ComponentData {
         return ImmutableComponentData.builder();
     }
 
+    Possible<Integer> id();
+
     int type();
 
     Possible<List<ComponentData>> components();
