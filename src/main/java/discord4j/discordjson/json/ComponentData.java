@@ -80,7 +80,7 @@ public interface ComponentData {
     Possible<Boolean> spoiler();
 
     @JsonProperty("accent_color")
-    Possible<Integer> accentColor();
+    Possible<Optional<Integer>> accentColor();
 
     Possible<Optional<String>> description();
 
