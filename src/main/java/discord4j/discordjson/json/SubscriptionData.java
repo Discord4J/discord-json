@@ -29,6 +29,9 @@ public interface SubscriptionData {
     @JsonProperty("entitlement_ids")
     List<Id> entitlementIds();
 
+    @JsonProperty("renewal_sku_ids")
+    Optional<List<Id>> renewalSkuIds();
+
     @JsonProperty("current_period_start")
     String currentPeriodStart();
 
