@@ -261,4 +261,10 @@ public class RestDeserializationTest {
         SubscriptionData data = read("/rest/SubscriptionData.json", SubscriptionData.class);
         log.info("{}", data);
     }
+
+    @Test
+    public void readSoundboardSoundData() throws IOException {
+        SoundboardSoundData[] data = read("/rest/SoundboardSoundData.json", SoundboardSoundData[].class);
+        log.info("{}", Arrays.asList(data));
+    }
 }
