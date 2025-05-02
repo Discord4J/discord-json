@@ -30,4 +30,6 @@ public interface WebhookMessageEditRequest {
     Possible<List<ComponentData>> components();
 
     Possible<PollCreateData> poll();
+
+    Possible<Optional<Integer>> flags();
 }
