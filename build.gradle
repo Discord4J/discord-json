@@ -189,8 +189,8 @@ nexusPublishing {
             def sonatypeUsername = findProperty('sonatypeUsername')
             def sonatypePassword = findProperty('sonatypePassword')
             if (sonatypeUsername != null && sonatypePassword != null) {
-                username sonatypeUsername
-                password sonatypePassword
+                username = sonatypeUsername
+                password = sonatypePassword
             }
         }
     }
