@@ -1,6 +1,7 @@
 name: Java CI
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - 'master'
@@ -21,6 +22,10 @@ jobs:
         java: [ 11 ]
     steps:
       - uses: actions/checkout@v4
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          validate-wrappers: true
       - uses: actions/cache@v4
         with:
           path: ~/.gradle/caches
@@ -49,6 +54,10 @@ jobs:
             exit 0
       - uses: actions/checkout@v4
         if: ${{ env.HAVE_NEEDED_DATA == 'true' }}
+      - uses: gradle/actions/setup-gradle@v4
+        if: ${{ env.HAVE_NEEDED_DATA == 'true' }}
+        with:
+            validate-wrappers: true
       - uses: actions/cache@v4
         if: ${{ env.HAVE_NEEDED_DATA == 'true' }}
         with:
@@ -64,7 +73,7 @@ jobs:
           distribution: 'corretto'
       - name: Publish with Gradle
         if: ${{ env.HAVE_NEEDED_DATA == 'true' }}
-        run: ./gradlew -x test publish
+        run: ./gradlew -x test publishToSonatype closeAndReleaseSonatypeStagingRepository
         env:
           ORG_GRADLE_PROJECT_signingKey: ${{ secrets.signingKey }}
           ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.signingPassword }}
