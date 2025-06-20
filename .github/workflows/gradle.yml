@@ -73,7 +73,7 @@ jobs:
           distribution: 'corretto'
       - name: Publish with Gradle
         if: ${{ env.HAVE_NEEDED_DATA == 'true' }}
-        run: ./gradlew -x test publishToSonatype closeSonatypeStagingRepository
+        run: ./gradlew -x test publishToSonatype closeAndReleaseSonatypeStagingRepository
         env:
           ORG_GRADLE_PROJECT_signingKey: ${{ secrets.signingKey }}
           ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.signingPassword }}
