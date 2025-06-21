@@ -2,8 +2,9 @@ plugins {
     id 'java-library'
     id 'maven-publish'
     id 'signing'
-    id 'com.github.ben-manes.versions' version '0.38.0'
-    id 'net.researchgate.release' version '2.8.1'
+    id 'io.github.gradle-nexus.publish-plugin' version '2.0.0'
+    id 'com.github.ben-manes.versions' version '0.52.0'
+    id 'net.researchgate.release' version '3.1.0'
 }
 
 ext {
@@ -42,8 +43,7 @@ allprojects {
     repositories {
         mavenCentral()
         if (!isRelease || isJitpack) {
-            maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
-            maven { url 'https://oss.sonatype.org/content/repositories/staging' }
+            maven { url 'https://central.sonatype.com/repository/maven-snapshots' }
         }
         maven { url 'https://jitpack.io' }
         maven { url 'https://repo.spring.io/milestone' }
@@ -164,9 +164,9 @@ publishing {
         repositories {
             maven {
                 if (isRelease) {
-                    url 'https://oss.sonatype.org/service/local/staging/deploy/maven2'
+                    url 'https://ossrh-staging-api.central.sonatype.com/service/local/staging/deploy/maven2'
                 } else {
-                    url 'https://oss.sonatype.org/content/repositories/snapshots'
+                    url 'https://central.sonatype.com/repository/maven-snapshots'
                 }
                 def sonatypeUsername = findProperty('sonatypeUsername')
                 def sonatypePassword = findProperty('sonatypePassword')
@@ -176,6 +176,21 @@ publishing {
                         password sonatypePassword
                     }
                 }
+            }
+        }
+    }
+}
+
+nexusPublishing {
+    repositories {
+        sonatype {
+            nexusUrl.set(uri("https://ossrh-staging-api.central.sonatype.com/service/local/"))
+            snapshotRepositoryUrl.set(uri("https://central.sonatype.com/repository/maven-snapshots/"))
+            def sonatypeUsername = findProperty('sonatypeUsername')
+            def sonatypePassword = findProperty('sonatypePassword')
+            if (sonatypeUsername != null && sonatypePassword != null) {
+                username = sonatypeUsername
+                password = sonatypePassword
             }
         }
     }
@@ -205,7 +220,7 @@ release {
     tagCommitMessage = 'Release version'
     newVersionCommitMessage = 'Next development version'
     git {
-        requireBranch = ''
+        requireBranch.set('')
     }
 }
 
