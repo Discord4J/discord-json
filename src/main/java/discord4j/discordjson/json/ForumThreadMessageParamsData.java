@@ -23,7 +23,7 @@ public interface ForumThreadMessageParamsData {
     Possible<List<EmbedData>> embeds();
 
     @JsonProperty("allowed_mentions")
-    Possible<List<AllowedMentionsData>> allowedMentions();
+    Possible<AllowedMentionsData> allowedMentions();
 
     Possible<List<ComponentData>> components();
 
