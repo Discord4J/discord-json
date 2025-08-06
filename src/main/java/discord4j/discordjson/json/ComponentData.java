@@ -29,7 +29,7 @@ public interface ComponentData {
 
     Possible<Integer> style();
 
-    Possible<String> label();
+    Possible<Optional<String>> label();
 
     Possible<EmojiData> emoji();
 
