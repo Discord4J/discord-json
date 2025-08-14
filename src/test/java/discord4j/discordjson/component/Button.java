@@ -18,6 +18,7 @@ package discord4j.discordjson.component;
 
 import discord4j.discordjson.json.ComponentData;
 import discord4j.discordjson.json.ImmutableComponentData;
+import discord4j.discordjson.possible.Possible;
 import javax.annotation.Nullable;
 
 import java.util.Optional;
@@ -122,7 +123,7 @@ public class Button extends ActionComponent {
      * @return The button's label.
      */
     public Optional<String> getLabel() {
-        return getData().label().toOptional();
+        return Possible.flatOpt(getData().label());
     }
 
     /**
