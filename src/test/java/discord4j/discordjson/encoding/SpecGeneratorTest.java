@@ -35,7 +35,7 @@ public class SpecGeneratorTest {
         assertEquals(1, rowComponents.size());
 
         ComponentData button = rowComponents.get(0);
-        assertEquals("A", Possible.flatOpt(button.label()).get());
+        assertEquals("A", Possible.flatOpt(button.label()).orElse(""));
         assertEquals("id1", button.customId().get());
     }
 }
