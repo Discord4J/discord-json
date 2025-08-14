@@ -25,6 +25,8 @@ public interface ComponentData {
 
     Possible<List<ComponentData>> components();
 
+    Possible<ComponentData> component();
+
     Possible<ComponentData> accessory();
 
     Possible<Integer> style();
