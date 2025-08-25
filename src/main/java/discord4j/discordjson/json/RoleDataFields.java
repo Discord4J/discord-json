@@ -14,8 +14,6 @@ public interface RoleDataFields {
     @Deprecated
     int color();
 
-    RoleColorData colors();
-
     boolean hoist();
 
     long permissions();
