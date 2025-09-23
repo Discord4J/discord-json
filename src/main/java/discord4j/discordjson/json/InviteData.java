@@ -42,9 +42,6 @@ public interface InviteData {
     @JsonProperty("approximate_member_count")
     Possible<Integer> approximateMemberCount();
 
-    @JsonProperty("expires_at")
-    Possible<Optional<String>> expiresAt();
-
     @JsonProperty("guild_scheduled_event")
     Possible<GuildScheduledEventData> guildScheduledEvent();
 
@@ -60,5 +57,8 @@ public interface InviteData {
 
     @JsonProperty("created_at")
     Possible<String> createdAt();
+
+    @JsonProperty("expires_at")
+    Optional<String> expiresAt();
 
 }

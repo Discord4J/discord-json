@@ -1,40 +1,41 @@
 [
-  {
-    "code": "ABCDEF1",
-    "guild": {
-      "id": "123456789012345678",
-      "name": "Discord4J 3 Test Server",
-      "splash": null,
-      "banner": null,
-      "description": null,
-      "icon": "0d844849b842eaa9ff9730a6cc70dc0a",
-      "features": [],
-      "verification_level": 0,
-      "vanity_url_code": null,
-      "nsfw_level": 0
-    },
-    "channel": {
-      "id": "346719828784185377",
-      "name": "permanent-text",
-      "type": 0
-    },
-    "inviter": {
-      "id": "123456789012345678",
-      "username": "OK",
-      "avatar": "131465a8db769b66e2b9837072be47a1",
-      "discriminator": "7924"
-    },
-    "target_user": {
-      "id": "165176875973476352",
-      "username": "bob",
-      "avatar": "deadbeef",
-      "discriminator": "1234"
-    },
-    "target_user_type": 1,
-    "uses": 6,
-    "max_uses": 0,
-    "max_age": 0,
-    "temporary": false,
-    "created_at": "2017-08-14T18:56:09.181000+00:00"
-  }
+    {
+        "code": "ABCDEF1",
+        "guild": {
+            "id": "123456789012345678",
+            "name": "Discord4J 3 Test Server",
+            "splash": null,
+            "banner": null,
+            "description": null,
+            "icon": "0d844849b842eaa9ff9730a6cc70dc0a",
+            "features": [],
+            "verification_level": 0,
+            "vanity_url_code": null,
+            "nsfw_level": 0
+        },
+        "channel": {
+            "id": "346719828784185377",
+            "name": "permanent-text",
+            "type": 0
+        },
+        "inviter": {
+            "id": "123456789012345678",
+            "username": "OK",
+            "avatar": "131465a8db769b66e2b9837072be47a1",
+            "discriminator": "7924"
+        },
+        "target_user": {
+            "id": "165176875973476352",
+            "username": "bob",
+            "avatar": "deadbeef",
+            "discriminator": "1234"
+        },
+        "target_user_type": 1,
+        "uses": 6,
+        "max_uses": 0,
+        "max_age": 0,
+        "temporary": false,
+        "created_at": "2017-08-14T18:56:09.181000+00:00",
+        "expire_at": null
+    }
 ]
