@@ -244,6 +244,11 @@
                 "icon": null,
                 "hoist": false,
                 "color": 0,
+                "colors": {
+                    "primary_color": 0,
+                    "secondary_color": null,
+                    "tertiary_color": null
+                },
                 "flags": 0
             },
             {
@@ -257,6 +262,11 @@
                 "icon": null,
                 "hoist": true,
                 "color": 15844367,
+                "colors": {
+                    "primary_color": 15844367,
+                    "secondary_color": null,
+                    "tertiary_color": null
+                },
                 "flags": 0
             },
             {
@@ -270,6 +280,11 @@
                 "icon": null,
                 "hoist": true,
                 "color": 3447003,
+                "colors": {
+                    "primary_color": 3447003,
+                    "secondary_color": null,
+                    "tertiary_color": null
+                },
                 "flags": 0
             },
             {
@@ -286,6 +301,11 @@
                 "icon": null,
                 "hoist": false,
                 "color": 0,
+                "colors": {
+                    "primary_color": 0,
+                    "secondary_color": null,
+                    "tertiary_color": null
+                },
                 "flags": 0
             }
         ],

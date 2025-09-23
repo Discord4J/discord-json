@@ -29,6 +29,11 @@
                 "name": "@everyone",
                 "permissions": 104324689,
                 "color": 0,
+                "colors": {
+                    "primary_color": 0,
+                    "secondary_color": null,
+                    "tertiary_color": null
+                },
                 "hoist": false,
                 "mentionable": false,
                 "flags": 0

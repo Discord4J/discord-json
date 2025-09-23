@@ -27,6 +27,11 @@
                 "id": "185949590652977152",
                 "hoist": false,
                 "color": 0,
+                "colors": {
+                    "primary_color": 0,
+                    "secondary_color": null,
+                    "tertiary_color": null
+                },
                 "flags": 0
             },
             {
@@ -38,6 +43,11 @@
                 "id": "186563072540934144",
                 "hoist": false,
                 "color": 0,
+                "colors": {
+                    "primary_color": 0,
+                    "secondary_color": null,
+                    "tertiary_color": null
+                },
                 "flags": 0
             },
             {
@@ -49,6 +59,11 @@
                 "id": "186591212076138496",
                 "hoist": false,
                 "color": 6323595,
+                "colors": {
+                    "primary_color": 6323595,
+                    "secondary_color": null,
+                    "tertiary_color": null
+                },
                 "flags": 0
             },
             {
@@ -60,6 +75,11 @@
                 "id": "186604389035802624",
                 "hoist": false,
                 "color": 10181046,
+                "colors": {
+                    "primary_color": 10181046,
+                    "secondary_color": null,
+                    "tertiary_color": null
+                },
                 "flags": 0
             },
             {
@@ -71,6 +91,11 @@
                 "id": "186605392971694081",
                 "hoist": false,
                 "color": 16103172,
+                "colors": {
+                    "primary_color": 16103172,
+                    "secondary_color": null,
+                    "tertiary_color": null
+                },
                 "flags": 0
             },
             {
@@ -82,6 +107,11 @@
                 "id": "187305132801785857",
                 "hoist": false,
                 "color": 0,
+                "colors": {
+                    "primary_color": 0,
+                    "secondary_color": null,
+                    "tertiary_color": null
+                },
                 "flags": 0
             },
             {
@@ -93,6 +123,11 @@
                 "id": "563420873307193354",
                 "hoist": false,
                 "color": 0,
+                "colors": {
+                    "primary_color": 0,
+                    "secondary_color": null,
+                    "tertiary_color": null
+                },
                 "flags": 0
             }
         ],

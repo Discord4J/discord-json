@@ -11,7 +11,10 @@ public interface RoleDataFields {
 
     String name();
 
+    @Deprecated
     int color();
+
+    RoleColorData colors();
 
     boolean hoist();
 

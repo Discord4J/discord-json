@@ -52,6 +52,11 @@
                         "id": "609370233916096514",
                         "hoist": true,
                         "color": 3066993,
+                        "colors": {
+                            "primary_color": 3066993,
+                            "secondary_color": null,
+                            "tertiary_color": null
+                        },
                         "flags": 0
                     }
                 },

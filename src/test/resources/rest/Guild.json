@@ -46,6 +46,11 @@
             "permissions": "104189504",
             "position": 0,
             "color": 0,
+            "colors": {
+                "primary_color": 0,
+                "secondary_color": null,
+                "tertiary_color": null
+            },
             "hoist": false,
             "managed": false,
             "mentionable": false,
@@ -57,6 +62,11 @@
             "permissions": "2146959351",
             "position": 29,
             "color": 15277667,
+            "colors": {
+                "primary_color": 15277667,
+                "secondary_color": null,
+                "tertiary_color": null
+            },
             "hoist": true,
             "managed": false,
             "mentionable": true,
@@ -68,6 +78,11 @@
             "permissions": 67108864,
             "position": 4,
             "color": 7658737,
+            "colors": {
+                "primary_color": 7658737,
+                "secondary_color": null,
+                "tertiary_color": null
+            },
             "hoist": false,
             "managed": true,
             "mentionable": false,

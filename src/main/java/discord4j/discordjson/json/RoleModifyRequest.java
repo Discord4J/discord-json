@@ -18,7 +18,9 @@ public interface RoleModifyRequest {
 
     Possible<String> name();
     Possible<Long> permissions();
+    @Deprecated
     Possible<Integer> color();
+    Possible<RoleColorData> colors();
     Possible<Boolean> hoist();
     Possible<Boolean> mentionable();
     Possible<Optional<String>> icon();
