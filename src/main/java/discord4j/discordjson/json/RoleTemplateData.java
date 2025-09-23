@@ -12,6 +12,4 @@ public interface RoleTemplateData extends RoleDataFields {
     static ImmutableRoleTemplateData.Builder builder() {
         return ImmutableRoleTemplateData.builder();
     }
-
-    int color();
 }

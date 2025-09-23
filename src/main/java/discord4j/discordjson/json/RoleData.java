@@ -16,6 +16,4 @@ public interface RoleData extends RoleDataFields {
     int position();
 
     boolean managed();
-
-    RoleColorData colors();
 }
