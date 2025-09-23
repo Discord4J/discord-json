@@ -39,6 +39,7 @@ public interface GuildModifyRequest {
 
     Possible<Optional<String>> icon();
 
+    @Deprecated
     @JsonProperty("owner_id")
     Possible<String> ownerId();
 
