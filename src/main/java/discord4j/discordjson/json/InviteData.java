@@ -61,4 +61,6 @@ public interface InviteData {
     @JsonProperty("expires_at")
     Optional<String> expiresAt();
 
+    Possible<Integer> flags();
+
 }
