@@ -54,6 +54,6 @@ public interface InviteCreate extends Dispatch {
     int uses();
 
     @JsonProperty("expires_at")
-    Possible<Optional<String>> expiredAt();
+    Optional<String> expiresAt();
 
 }
