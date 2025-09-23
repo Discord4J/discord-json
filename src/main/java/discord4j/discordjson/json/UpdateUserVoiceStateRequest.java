@@ -16,11 +16,11 @@ public interface UpdateUserVoiceStateRequest {
     }
 
     @JsonProperty("channel_id")
-    String channelId();
+    Possible<String> channelId();
 
     Possible<Boolean> suppress();
 
-     @JsonProperty("request_to_speak_timestamp")
+    @JsonProperty("request_to_speak_timestamp")
     Possible<String> requestToSpeakTimestamp();
 
 }

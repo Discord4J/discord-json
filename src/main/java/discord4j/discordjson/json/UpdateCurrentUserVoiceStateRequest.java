@@ -18,7 +18,7 @@ public interface UpdateCurrentUserVoiceStateRequest {
     }
 
     @JsonProperty("channel_id")
-    String channelId();
+    Possible<String> channelId();
 
     Possible<Boolean> suppress();
 
