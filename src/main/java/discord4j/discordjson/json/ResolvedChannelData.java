@@ -20,13 +20,33 @@ public interface ResolvedChannelData {
 
     String id();
 
+    @JsonProperty("guild_id")
+    Possible<Id> guildId();
+
     // This field can be given in a resolved channel data object, but it has the same properties as the channel object
     Possible<Optional<String>> name();
 
     int type();
 
     // This field can be given in a resolved channel data object, but it has the same properties as the channel object
+    Possible<Integer> position();
+
+    // This field can be given in a resolved channel data object, but it has the same properties as the channel object
+    Possible<Integer> flags();
+
+    // This field can be given in a resolved channel data object, but it has the same properties as the channel object
     Possible<Optional<String>> permissions();
+
+    // This field can be given in a resolved channel data object, but it has the same properties as the channel object
+    @JsonProperty("last_message_id")
+    Possible<Optional<Id>> lastMessageId();
+
+    // This field can be given in a resolved channel data object, but it has the same properties as the channel object
+    @JsonProperty("last_pin_timestamp")
+    Possible<Optional<String>> lastPinTimestamp();
+
+    // This field can be given in a resolved channel data object, but it has the same properties as the channel object
+    Possible<Boolean> nsfw();
 
     // Only provided if channel is a thread
     @JsonProperty("thread_metadata")
@@ -35,5 +55,12 @@ public interface ResolvedChannelData {
     // Only provided if channel is a thread
     @JsonProperty("parent_id")
     Possible<Optional<Id>> parentId();
+
+    // This field can be given in a resolved channel data object, but it has the same properties as the channel object
+    @JsonProperty("rate_limit_per_user")
+    Possible<Integer> rateLimitPerUser();
+
+    // This field can be given in a resolved channel data object, but it has the same properties as the channel object
+    Possible<Optional<String>> topic();
 
 }
