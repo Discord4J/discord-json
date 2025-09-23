@@ -2,6 +2,7 @@ package discord4j.discordjson.json;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
 import java.util.Optional;
@@ -15,5 +16,11 @@ public interface CurrentMemberModifyData {
         return ImmutableCurrentMemberModifyData.builder();
     }
 
-    Optional<String> nick();
+    Possible<Optional<String>> nick();
+
+    Possible<Optional<String>> banner();
+
+    Possible<Optional<String>> avatar();
+
+    Possible<Optional<String>> bio();
 }
