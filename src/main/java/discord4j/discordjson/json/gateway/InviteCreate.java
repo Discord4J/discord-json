@@ -7,6 +7,7 @@ import discord4j.discordjson.json.PartialUserData;
 import discord4j.discordjson.json.UserData;
 import discord4j.discordjson.Id;
 import discord4j.discordjson.possible.Possible;
+import java.util.Optional;
 import org.immutables.value.Value;
 
 @Value.Immutable
@@ -51,5 +52,8 @@ public interface InviteCreate extends Dispatch {
     boolean temporary();
 
     int uses();
+
+    @JsonProperty("expires_at")
+    Possible<Optional<String>> expiredAt();
 
 }

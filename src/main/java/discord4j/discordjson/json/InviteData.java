@@ -61,4 +61,7 @@ public interface InviteData {
     @JsonProperty("created_at")
     Possible<String> createdAt();
 
+    @JsonProperty("expires_at")
+    Possible<Optional<String>> expiredAt();
+
 }
