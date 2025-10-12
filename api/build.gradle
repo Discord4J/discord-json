@@ -1,6 +1,7 @@
 dependencies {
-    api "com.fasterxml.jackson.core:jackson-databind:$jackson_databind_version"
-    implementation "com.fasterxml.jackson.datatype:jackson-datatype-jdk8:$jackson_datatype_jdk8_version"
+    api platform("com.fasterxml.jackson:jackson-bom:$jackson_bom_version")
+    api "com.fasterxml.jackson.core:jackson-databind"
+    implementation "com.fasterxml.jackson.datatype:jackson-datatype-jdk8"
 }
 
 archivesBaseName = "discord-json-$project.name"
