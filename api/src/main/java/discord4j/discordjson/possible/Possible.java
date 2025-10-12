@@ -43,7 +43,7 @@ import java.util.function.Function;
  *         <td>optional_and_nullable_field?</td>
  *         <td>?T</td>
  *         <td>{@code Possible<Optional<T>>}</td>
- *         <td>Somtimes present, and even if present, possibly null</td>
+ *         <td>Sometimes present, and even if present, possibly null</td>
  *     </tr>
  * </table>
  * <p>
@@ -117,16 +117,29 @@ public final class Possible<T> {
      * @return True if no value is stored, otherwise false.
      */
     public boolean isAbsent() {
-        return value == ABSENT_VALUE;
+        return this.value == ABSENT_VALUE;
+    }
+
+    /**
+     * If a value is stored, returns true, otherwise false.
+     * <br>
+     * This is a convenience method for {@code !this.isAbsent()}.
+     *
+     * @return True if a value is stored, otherwise false.
+     * @see #isAbsent()
+     */
+    public boolean isPresent() {
+        return !this.isAbsent();
     }
 
     /**
      * Gets the stored value, if any.
      * @throws NoSuchElementException If no value is stored.
      * @return The stored value, if any.
+     * @see #isPresent()
      */
     public T get() {
-        if (isAbsent()) {
+        if (this.isAbsent()) {
             throw new NoSuchElementException();
         }
         return value;
@@ -139,10 +152,10 @@ public final class Possible<T> {
      * @return An {@code Optional} containing this {@code Possible}'s value, if it has one.
      */
     public Optional<T> toOptional() {
-        if (isAbsent()) {
+        if (this.isAbsent()) {
             return Optional.empty();
         }
-        return Optional.of(value);
+        return Optional.of(this.value);
     }
 
     @Override
@@ -150,24 +163,24 @@ public final class Possible<T> {
         if (this == o) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (o == null || this.getClass() != o.getClass()) {
             return false;
         }
         Possible<?> possible = (Possible<?>) o;
-        return Objects.equals(value, possible.value);
+        return Objects.equals(this.value, possible.value);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(value);
+        return Objects.hash(this.value);
     }
 
     @Override
     public String toString() {
-        if (isAbsent()) {
+        if (this.isAbsent()) {
             return "Possible.absent";
         }
-        return "Possible{" + value + '}';
+        return "Possible{" + this.value + '}';
     }
 
     /**
@@ -178,6 +191,6 @@ public final class Possible<T> {
      * @param <R> the new type
      */
     public <R> Possible<R> map(Function<T, R> mapper) {
-        return isAbsent() ? Possible.absent() : Possible.of(mapper.apply(value));
+        return this.isAbsent() ? Possible.absent() : Possible.of(mapper.apply(this.value));
     }
 }
