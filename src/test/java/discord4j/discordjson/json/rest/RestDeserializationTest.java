@@ -267,4 +267,10 @@ public class RestDeserializationTest {
         SoundboardSoundData[] data = read("/rest/SoundboardSoundData.json", SoundboardSoundData[].class);
         log.info("{}", Arrays.asList(data));
     }
+
+    @Test
+    public void readGuildRolesMemberCountResponseData() throws IOException {
+        GuildRolesMemberCountResponseData data = read("/rest/GuildRolesMemberCountResponseData.json", GuildRolesMemberCountResponseData.class);
+        log.info("{}", data);
+    }
 }
