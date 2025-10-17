@@ -20,7 +20,7 @@ public interface RoleModifyRequest {
     Possible<Long> permissions();
     @Deprecated
     Possible<Integer> color();
-    Possible<RoleColorData> colors();
+    Possible<RoleColorRequest> colors();
     Possible<Boolean> hoist();
     Possible<Boolean> mentionable();
     Possible<Optional<String>> icon();
