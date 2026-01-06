@@ -14,7 +14,7 @@ ext {
         jdk_javadoc = "https://docs.oracle.com/en/java/javase/$jdk/docs/api/".toString()
     }
 
-    jackson_bom_version = '2.18.4'
+    jackson_bom_version = '2.20.1'
     immutables_group = 'org.immutables'
     immutables_version = '2.12.0'
 
