@@ -19,7 +19,7 @@ ext {
     immutables_version = '2.12.1'
 
     junit_version = '5.7.1'
-    logback_version = '1.5.19'
+    logback_version = '1.5.31'
 
     isJitpack = "true" == System.getenv("JITPACK")
     isRelease = !version.toString().endsWith('-SNAPSHOT')
