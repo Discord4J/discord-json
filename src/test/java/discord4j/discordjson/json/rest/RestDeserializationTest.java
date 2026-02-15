@@ -271,6 +271,8 @@ public class RestDeserializationTest {
     @Test
     public void readGuildRolesMemberCountResponseData() throws IOException {
         GuildRolesMemberCountResponseData data = read("/rest/GuildRolesMemberCountResponseData.json", GuildRolesMemberCountResponseData.class);
+        assertNotNull(data);
+        assertFalse(data.data().isEmpty(), "Data should not be empty");
         log.info("{}", data);
     }
 }
