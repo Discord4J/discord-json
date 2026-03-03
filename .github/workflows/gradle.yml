@@ -19,7 +19,7 @@ jobs:
     if: ${{ github.event_name == 'push' || github.event.pull_request.head.repo.full_name != github.repository }}
     strategy:
       matrix:
-        java: [ 11 ]
+        java: [ 25 ]
     steps:
       - uses: actions/checkout@v5
       - name: Setup Gradle

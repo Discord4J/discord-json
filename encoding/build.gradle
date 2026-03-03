@@ -10,13 +10,15 @@ dependencies {
     }
 }
 
-archivesBaseName = "discord-json-$project.name"
+base {
+    archivesName = "discord-json-$project.name"
+}
 
 publishing {
     publications {
         mavenJava(MavenPublication) {
             from components.java
-            artifactId archivesBaseName
+            artifactId jar.archiveBaseName.get()
 
             versionMapping {
                 usage('java-api') {
@@ -94,7 +96,7 @@ if (!isJitpack && isRelease) {
 
 jar {
     manifest {
-        attributes 'Implementation-Title': archivesBaseName,
+        attributes 'Implementation-Title': base.archivesName.get(),
                 'Implementation-Version': archiveVersion,
                 'Automatic-Module-Name': 'discord4j.discordjson.encoding'
     }
