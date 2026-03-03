@@ -20,7 +20,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import discord4j.discordjson.Id;
 import discord4j.discordjson.json.ActivityUpdateRequest;
 import discord4j.discordjson.possible.Possible;
-import java.util.List;
+import java.util.Arrays;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
@@ -132,7 +132,7 @@ public class GatewaySerializationTest {
     public void testRequestSoundboardSound() throws IOException {
         String expected = readResourceAsString("/gateway/outbound/RequestSoundboardSounds.json");
 
-        RequestSoundboardSounds requestSoundboardSounds = ImmutableRequestSoundboardSounds.of(List.of("613425648685547541", "81384788765712384"));
+        RequestSoundboardSounds requestSoundboardSounds = ImmutableRequestSoundboardSounds.of(Arrays.asList("613425648685547541", "81384788765712384"));
         GatewayPayload<RequestSoundboardSounds> payload = GatewayPayload.requestSoundboardSound(requestSoundboardSounds);
         String result = mapper.writeValueAsString(payload);
 
