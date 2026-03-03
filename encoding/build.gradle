@@ -101,3 +101,8 @@ jar {
                 'Automatic-Module-Name': 'discord4j.discordjson.encoding'
     }
 }
+
+compileJava {
+    // https://github.com/immutables/immutables/issues/1516
+    options.sourcepath = files("${project.projectDir}/src/main/java")
+}
