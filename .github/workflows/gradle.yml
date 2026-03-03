@@ -21,12 +21,12 @@ jobs:
       matrix:
         java: [ 25 ]
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v5
         with:
           validate-wrappers: true
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         with:
           path: ~/.gradle/caches
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
@@ -52,13 +52,13 @@ jobs:
         run: |
             echo "The secrets for publish are not set."
             exit 0
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         if: ${{ env.HAVE_NEEDED_DATA == 'true' }}
       - uses: gradle/actions/setup-gradle@v5
         if: ${{ env.HAVE_NEEDED_DATA == 'true' }}
         with:
             validate-wrappers: true
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         if: ${{ env.HAVE_NEEDED_DATA == 'true' }}
         with:
           path: ~/.gradle/caches
@@ -69,7 +69,7 @@ jobs:
         uses: actions/setup-java@v5
         if: ${{ env.HAVE_NEEDED_DATA == 'true' }}
         with:
-          java-version: 11
+          java-version: 25
           distribution: 'corretto'
       - name: Publish with Gradle
         if: ${{ env.HAVE_NEEDED_DATA == 'true' }}
