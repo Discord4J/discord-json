@@ -18,7 +18,9 @@ publishing {
     publications {
         mavenJava(MavenPublication) {
             from components.java
-            artifactId jar.archiveBaseName.get()
+            afterEvaluate {
+                artifactId = jar.archiveBaseName.get()
+            }
 
             versionMapping {
                 usage('java-api') {
@@ -66,16 +68,16 @@ publishing {
         repositories {
             maven {
                 if (isRelease) {
-                    url 'https://ossrh-staging-api.central.sonatype.com/service/local/staging/deploy/maven2'
+                    url = 'https://ossrh-staging-api.central.sonatype.com/service/local/staging/deploy/maven2'
                 } else {
-                    url 'https://central.sonatype.com/repository/maven-snapshots'
+                    url = 'https://central.sonatype.com/repository/maven-snapshots'
                 }
                 def sonatypeUsername = findProperty('sonatypeUsername')
                 def sonatypePassword = findProperty('sonatypePassword')
                 if (sonatypeUsername != null && sonatypePassword != null) {
                     credentials {
-                        username sonatypeUsername
-                        password sonatypePassword
+                        username = sonatypeUsername
+                        password = sonatypePassword
                     }
                 }
             }

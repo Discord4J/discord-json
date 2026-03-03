@@ -33,16 +33,16 @@ allprojects {
         apply plugin: 'signing'
     }
 
-    group 'com.discord4j'
-    description 'Discord entity domain as immutable Jackson objects'
+    group = 'com.discord4j'
+    description = 'Discord entity domain as immutable Jackson objects'
 
     repositories {
         mavenCentral()
         if (!isRelease || isJitpack) {
-            maven { url 'https://central.sonatype.com/repository/maven-snapshots' }
+            maven { url = 'https://central.sonatype.com/repository/maven-snapshots' }
         }
-        maven { url 'https://jitpack.io' }
-        maven { url 'https://repo.spring.io/milestone' }
+        maven { url = 'https://jitpack.io' }
+        maven { url = 'https://repo.spring.io/milestone' }
     }
 
     dependencies {
@@ -50,11 +50,11 @@ allprojects {
         testCompileOnly "com.google.code.findbugs:jsr305:3.0.1"
     }
 
-    configurations.all {
+    configurations.configureEach {
         resolutionStrategy.cacheChangingModulesFor 60, 'seconds'
     }
 
-    tasks.withType(Javadoc) {
+    tasks.withType(Javadoc).configureEach {
         options {
             encoding = 'UTF-8'
             tags = ["apiNote:a:API Note:",
@@ -64,8 +64,8 @@ allprojects {
             addStringOption 'encoding', 'UTF-8'
             // adding links to javadocs for filling specific classes when not existing inside current javadoc
             links = [
-                    jdk_javadoc,
-                    "https://javadoc.io/doc/com.fasterxml.jackson.core/jackson-databind/2.18.4/" // match with $jackson_bom_version
+                jdk_javadoc,
+                "https://javadoc.io/doc/com.fasterxml.jackson.core/jackson-databind/2.18.4/" // match with $jackson_bom_version
             ]
         }
         if (JavaVersion.current().isJava9Compatible()) {
@@ -73,20 +73,24 @@ allprojects {
         }
     }
 
-    tasks.withType(JavaCompile) {
+    tasks.withType(JavaCompile).configureEach {
         options.encoding = 'UTF-8'
         options.incremental = true
         options.release = 8
     }
 
     java {
-        sourceCompatibility = 8
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(25)
+        }
         withJavadocJar()
         withSourcesJar()
     }
 
-    tasks.withType(Test) {
-        useJUnitPlatform()
+    tasks.withType(Test).tap {
+        configureEach {
+            useJUnitPlatform()
+        }
     }
 
 }
@@ -168,16 +172,16 @@ publishing {
         repositories {
             maven {
                 if (isRelease) {
-                    url 'https://ossrh-staging-api.central.sonatype.com/service/local/staging/deploy/maven2'
+                    url = 'https://ossrh-staging-api.central.sonatype.com/service/local/staging/deploy/maven2'
                 } else {
-                    url 'https://central.sonatype.com/repository/maven-snapshots'
+                    url = 'https://central.sonatype.com/repository/maven-snapshots'
                 }
                 def sonatypeUsername = findProperty('sonatypeUsername')
                 def sonatypePassword = findProperty('sonatypePassword')
                 if (sonatypeUsername != null && sonatypePassword != null) {
                     credentials {
-                        username sonatypeUsername
-                        password sonatypePassword
+                        username = sonatypeUsername
+                        password = sonatypePassword
                     }
                 }
             }
