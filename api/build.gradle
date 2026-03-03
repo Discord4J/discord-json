@@ -1,6 +1,7 @@
 dependencies {
     api platform("com.fasterxml.jackson:jackson-bom:$jackson_bom_version")
     api "com.fasterxml.jackson.core:jackson-databind"
+    api "org.jspecify:jspecify:$jspecify_version"
     implementation "com.fasterxml.jackson.datatype:jackson-datatype-jdk8"
 }
 
