@@ -19,7 +19,7 @@ package discord4j.discordjson.json.gateway;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.Nullable;
 
 import java.util.Objects;
 
@@ -61,15 +61,15 @@ public class GatewayPayload<T extends PayloadData> {
 
     @JsonSerialize(converter = OpcodeConverter.class)
     private Opcode<T> op;
+
     @JsonProperty("d")
-    @Nullable
-    private T data;
+    private @Nullable T data;
+
     @JsonProperty("s")
-    @Nullable
-    private Integer sequence;
+    private @Nullable Integer sequence;
+
     @JsonProperty("t")
-    @Nullable
-    private String type;
+    private @Nullable String type;
 
     public GatewayPayload(Opcode<T> op, @Nullable T data, @Nullable Integer sequence, @Nullable String type) {
         this.op = op;
@@ -79,27 +79,24 @@ public class GatewayPayload<T extends PayloadData> {
     }
 
     public Opcode<T> getOp() {
-        return op;
+        return this.op;
     }
 
-    @Nullable
-    public T getData() {
-        return data;
+    public @Nullable T getData() {
+        return this.data;
     }
 
-    @Nullable
-    public Integer getSequence() {
-        return sequence;
+    public @Nullable Integer getSequence() {
+        return this.sequence;
     }
 
-    @Nullable
-    public String getType() {
-        return type;
+    public @Nullable String getType() {
+        return this.type;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(op, data, sequence, type);
+        return Objects.hash(this.op, this.data, this.sequence, this.type);
     }
 
     @Override
@@ -119,10 +116,10 @@ public class GatewayPayload<T extends PayloadData> {
     @Override
     public String toString() {
         return "GatewayPayload{" +
-                "op=" + op +
-                ", data=" + data +
-                ", sequence=" + sequence +
-                ", type='" + type + '\'' +
+                "op=" + this.op +
+                ", data=" + this.data +
+                ", sequence=" + this.sequence +
+                ", type='" + this.type + '\'' +
                 '}';
     }
 }

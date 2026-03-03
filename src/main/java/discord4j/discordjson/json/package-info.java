@@ -8,11 +8,11 @@
         defaultAsDefault = true,
         allowedClasspathAnnotations = Nullable.class
 )
-@Nonnull
+@NullMarked
 @MetaEncodingEnabled
 package discord4j.discordjson.json;
 
 import discord4j.discordjson.encoding.MetaEncodingEnabled;
 import org.immutables.value.Value;
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NullMarked;
+import org.jspecify.annotations.Nullable;

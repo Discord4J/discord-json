@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.Id;
 import org.immutables.value.Value;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.Nullable;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableVoiceServerUpdate.class)
@@ -17,8 +17,9 @@ public interface VoiceServerUpdate extends Dispatch {
     }
 
     String token();
+
     @JsonProperty("guild_id")
     Id guildId();
-    @Nullable
-    String endpoint();
+
+    @Nullable String endpoint();
 }
