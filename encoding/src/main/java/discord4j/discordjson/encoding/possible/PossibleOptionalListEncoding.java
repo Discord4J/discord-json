@@ -2,11 +2,11 @@ package discord4j.discordjson.encoding.possible;
 
 import discord4j.discordjson.possible.Possible;
 import org.immutables.encode.Encoding;
-import javax.annotation.Nullable;
 
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
+import org.jspecify.annotations.Nullable;
 
 @Encoding
 public class PossibleOptionalListEncoding<T> {
