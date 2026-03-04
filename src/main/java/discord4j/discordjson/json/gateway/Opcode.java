@@ -16,7 +16,7 @@
  */
 package discord4j.discordjson.json.gateway;
 
-import javax.annotation.Nullable;
+import org.jspecify.annotations.Nullable;
 
 public final class Opcode<T extends PayloadData> {
 
@@ -35,15 +35,14 @@ public final class Opcode<T extends PayloadData> {
     public static final Opcode<?> HEARTBEAT_ACK = newOp(11, null);
 
     private final int rawOp;
-    private final Class<T> payloadType;
+    private final @Nullable Class<T> payloadType;
 
     private Opcode(int rawOp, @Nullable Class<T> payloadType) {
         this.rawOp = rawOp;
         this.payloadType = payloadType;
     }
 
-    @Nullable
-    public static Opcode<?> forRaw(int rawOp) {
+    public static @Nullable Opcode<?> forRaw(int rawOp) {
         switch (rawOp) {
             case 0: return DISPATCH;
             case 1: return HEARTBEAT;
@@ -67,16 +66,15 @@ public final class Opcode<T extends PayloadData> {
     }
 
     public int getRawOp() {
-        return rawOp;
+        return this.rawOp;
     }
 
-    @Nullable
-    public Class<T> getPayloadType() {
-        return payloadType;
+    public @Nullable Class<T> getPayloadType() {
+        return this.payloadType;
     }
 
     @Override
     public String toString() {
-        return Integer.toString(getRawOp());
+        return Integer.toString(this.getRawOp());
     }
 }

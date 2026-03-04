@@ -5,9 +5,11 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.Id;
 import discord4j.discordjson.possible.Possible;
-import org.immutables.value.Value;
 
 import java.util.Optional;
+
+import org.immutables.value.Value;
+import org.jspecify.annotations.Nullable;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableUserData.class)
@@ -26,11 +28,11 @@ public interface UserData {
     String username();
 
     /**
-     * @deprecated For removal
      * @return "0" if the user is using the new username system, otherwise the discriminator
+     * @deprecated For removal
      */
     @Deprecated
-    String discriminator();
+    @Nullable String discriminator();
 
     Optional<String> avatar();
 

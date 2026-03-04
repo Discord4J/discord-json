@@ -1,11 +1,10 @@
 package discord4j.discordjson.possible;
 
-import javax.annotation.Nullable;
-
 import java.util.NoSuchElementException;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Function;
+import org.jspecify.annotations.Nullable;
 
 /**
  * A container for a value which may or may not be absent. If {@link #isAbsent()} is true, no value is present.
@@ -142,7 +141,7 @@ public final class Possible<T> {
         if (this.isAbsent()) {
             throw new NoSuchElementException();
         }
-        return value;
+        return this.value;
     }
 
     /**
@@ -190,7 +189,11 @@ public final class Possible<T> {
      * @return a new Possible with the mapped data
      * @param <R> the new type
      */
-    public <R> Possible<R> map(Function<T, R> mapper) {
-        return this.isAbsent() ? Possible.absent() : Possible.of(mapper.apply(this.value));
+    public <R> Possible<R> map(Function<? super T, ? extends R> mapper) {
+        Objects.requireNonNull(mapper);
+        if (this.isAbsent()) {
+            return Possible.absent();
+        }
+        return Possible.of(mapper.apply(this.get()));
     }
 }

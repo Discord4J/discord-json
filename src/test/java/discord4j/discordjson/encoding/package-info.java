@@ -14,9 +14,9 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with Discord4J.  If not, see <http://www.gnu.org/licenses/>.
  */
-@Nonnull
+@NullMarked
 @MetaEncodingEnabled
 @SpecStyle
 package discord4j.discordjson.encoding;
 
-import javax.annotation.Nonnull;
+import org.jspecify.annotations.NullMarked;

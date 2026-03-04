@@ -11,8 +11,7 @@ import discord4j.discordjson.possible.PossibleModule;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class IdTests {
 
@@ -41,6 +40,11 @@ public class IdTests {
         String expected = "{\"id\":\"1234567890\"}";
         IdObject obj = ImmutableIdObject.builder().id(1234567890L).build();
         assertEquals(expected, mapper.writeValueAsString(obj));
+    }
+
+    @Test
+    public void testIdSerializationEmptyException() {
+        assertThrows(NullPointerException.class, () -> ImmutableIdObject.builder().build());
     }
 
     @Test

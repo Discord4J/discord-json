@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.jsontype.TypeSerializer;
 import com.fasterxml.jackson.databind.ser.std.ReferenceTypeSerializer;
 import com.fasterxml.jackson.databind.type.ReferenceType;
 import com.fasterxml.jackson.databind.util.NameTransformer;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.Nullable;
 
 public class PossibleSerializer extends ReferenceTypeSerializer<Possible<?>> {
 

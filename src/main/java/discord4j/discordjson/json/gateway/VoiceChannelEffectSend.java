@@ -7,7 +7,6 @@ import discord4j.discordjson.Id;
 import discord4j.discordjson.json.EmojiData;
 import discord4j.discordjson.possible.Possible;
 import java.util.Optional;
-import javax.annotation.Nullable;
 import org.immutables.value.Value;
 
 @Value.Immutable

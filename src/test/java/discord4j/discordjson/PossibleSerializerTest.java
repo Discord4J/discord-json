@@ -22,6 +22,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class PossibleSerializerTest {
 
@@ -43,7 +44,10 @@ public class PossibleSerializerTest {
         MyJson myJson = ImmutableMyJson.of(Possible.of(Optional.of("isHere")));
         String serialized = mapper.writeValueAsString(myJson);
 
-        String expected = read(getClass().getResourceAsStream("/singleFieldPresent.json"));
+        final InputStream resourceAsStream = getClass().getResourceAsStream("/singleFieldPresent.json");
+        assertNotNull(resourceAsStream, "Resource not found");
+
+        String expected = read(resourceAsStream);
 
         assertEquals(expected, serialized);
     }
@@ -53,7 +57,10 @@ public class PossibleSerializerTest {
         MyJson myJson = ImmutableMyJson.of(Possible.of(Optional.empty()));
         String serialized = mapper.writeValueAsString(myJson);
 
-        String expected = read(getClass().getResourceAsStream("/singleFieldNull.json"));
+        final InputStream resourceAsStream = getClass().getResourceAsStream("/singleFieldNull.json");
+        assertNotNull(resourceAsStream, "Resource not found");
+
+        String expected = read(resourceAsStream);
 
         assertEquals(expected, serialized);
     }
@@ -63,7 +70,10 @@ public class PossibleSerializerTest {
         MyJson myJson = ImmutableMyJson.of(Possible.absent());
         String serialized = mapper.writeValueAsString(myJson);
 
-        String expected = read(getClass().getResourceAsStream("/singleFieldAbsent.json"));
+        final InputStream resourceAsStream = getClass().getResourceAsStream("/singleFieldAbsent.json");
+        assertNotNull(resourceAsStream, "Resource not found");
+
+        String expected = read(resourceAsStream);
 
         assertEquals(expected, serialized);
     }

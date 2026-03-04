@@ -2,6 +2,7 @@ package discord4j.discordjson.encoding.possible;
 
 import discord4j.discordjson.possible.Possible;
 import org.immutables.encode.Encoding;
+import org.jspecify.annotations.Nullable;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -13,13 +14,13 @@ public class PossibleListEncoding<T> {
     @Encoding.Impl(virtual = true)
     private Possible<List<T>> possible = discord4j.discordjson.possible.Possible.absent();
 
-    private final List<T> value = possible.toOptional().orElse(null);
+    private final @Nullable List<T> value = possible.toOptional().orElse(null);
     private final boolean absent = possible.isAbsent();
 
     @Encoding.Expose
     Possible<List<T>> get() {
         return absent ? discord4j.discordjson.possible.Possible.absent() :
-                discord4j.discordjson.possible.Possible.of(value);
+                discord4j.discordjson.possible.Possible.ofNullable(value);
     }
 
     @Encoding.Naming("is*Present")
@@ -28,10 +29,11 @@ public class PossibleListEncoding<T> {
     }
 
     @Encoding.Naming("*OrElse")
-    List<T> orElse(List<T> defaultValue) {
+    @Nullable List<T> orElse(List<T> defaultValue) {
         return !absent ? value : defaultValue;
     }
 
+    @SuppressWarnings("unchecked")
     @Encoding.Copy
     public Possible<List<T>> withPossible(Possible<? extends List<? extends T>> possible) {
         return (discord4j.discordjson.possible.Possible<List<T>>) Objects.requireNonNull(possible);
@@ -72,7 +74,7 @@ public class PossibleListEncoding<T> {
     @Encoding.Builder
     static class Builder<T> {
 
-        private List<T> list = null;
+        private @Nullable List<T> list = null;
 
         @Encoding.Naming(standard = Encoding.StandardNaming.ADD)
         @Encoding.Init

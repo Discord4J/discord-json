@@ -169,7 +169,7 @@ public class RestDeserializationTest {
         List<IntegrationData> list = read("/rest/v8/GuildIntegrations.json",
             new TypeReference<List<IntegrationData>>() {
             });
-        assertEquals(list.get(0).account().name(), "Reacton");
+        assertEquals("Reacton", list.get(0).account().name());
     }
 
     @Test

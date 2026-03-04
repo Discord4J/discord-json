@@ -1,7 +1,7 @@
 /**
  * Possible is a custom type that can handle absent/present values.
  */
-@Nonnull
+@NullMarked
 package discord4j.discordjson.possible;
 
-import javax.annotation.Nonnull;
+import org.jspecify.annotations.NullMarked;

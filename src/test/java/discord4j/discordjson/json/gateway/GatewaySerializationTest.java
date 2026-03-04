@@ -20,7 +20,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import discord4j.discordjson.Id;
 import discord4j.discordjson.json.ActivityUpdateRequest;
 import discord4j.discordjson.possible.Possible;
+
 import java.util.Arrays;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
@@ -34,6 +36,7 @@ import java.util.Collections;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class GatewaySerializationTest {
 
@@ -132,8 +135,10 @@ public class GatewaySerializationTest {
     public void testRequestSoundboardSound() throws IOException {
         String expected = readResourceAsString("/gateway/outbound/RequestSoundboardSounds.json");
 
-        RequestSoundboardSounds requestSoundboardSounds = ImmutableRequestSoundboardSounds.of(Arrays.asList("613425648685547541", "81384788765712384"));
-        GatewayPayload<RequestSoundboardSounds> payload = GatewayPayload.requestSoundboardSound(requestSoundboardSounds);
+        RequestSoundboardSounds requestSoundboardSounds = ImmutableRequestSoundboardSounds.of(Arrays.asList(
+                "613425648685547541", "81384788765712384"));
+        GatewayPayload<RequestSoundboardSounds> payload =
+                GatewayPayload.requestSoundboardSound(requestSoundboardSounds);
         String result = mapper.writeValueAsString(payload);
 
         assertEquals(mapper.readTree(expected), mapper.readTree(result));
@@ -141,6 +146,7 @@ public class GatewaySerializationTest {
 
     String readResourceAsString(String name) throws IOException {
         try (InputStream inputStream = getClass().getResourceAsStream(name)) {
+            assertNotNull(inputStream, "Resource not found: " + name);
             ByteArrayOutputStream buffer = new ByteArrayOutputStream();
             int nRead;
             byte[] data = new byte[1024];

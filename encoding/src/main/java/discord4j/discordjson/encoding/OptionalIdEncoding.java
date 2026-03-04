@@ -9,6 +9,7 @@ import java.util.Optional;
 @Encoding
 public class OptionalIdEncoding {
 
+    @SuppressWarnings("OptionalUsedAsFieldOrParameterType")
     @Encoding.Impl(virtual = true)
     private Optional<Id> optional = Optional.empty();
 
@@ -45,6 +46,7 @@ public class OptionalIdEncoding {
     @Encoding.Builder
     static class Builder {
 
+        @SuppressWarnings("OptionalUsedAsFieldOrParameterType")
         private Optional<Id> optional = Optional.empty();
 
         @Encoding.Init
@@ -57,6 +59,7 @@ public class OptionalIdEncoding {
             this.optional = Optional.of(discord4j.discordjson.Id.of(value));
         }
 
+        @SuppressWarnings("OptionalUsedAsFieldOrParameterType")
         @Encoding.Init
         @Encoding.Copy
         public void copyOptionalId(Optional<Id> value) {

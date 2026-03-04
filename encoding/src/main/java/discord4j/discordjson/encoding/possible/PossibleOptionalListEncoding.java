@@ -2,11 +2,11 @@ package discord4j.discordjson.encoding.possible;
 
 import discord4j.discordjson.possible.Possible;
 import org.immutables.encode.Encoding;
-import javax.annotation.Nullable;
 
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
+import org.jspecify.annotations.Nullable;
 
 @Encoding
 public class PossibleOptionalListEncoding<T> {
@@ -14,7 +14,7 @@ public class PossibleOptionalListEncoding<T> {
     @Encoding.Impl(virtual = true)
     private Possible<Optional<List<T>>> possible = discord4j.discordjson.possible.Possible.absent();
 
-    private final List<T> value = discord4j.discordjson.possible.Possible.flatOpt(possible).orElse(null);
+    private final @Nullable List<T> value = discord4j.discordjson.possible.Possible.flatOpt(possible).orElse(null);
     private final boolean absent = possible.isAbsent();
 
     @Encoding.Expose
@@ -29,10 +29,11 @@ public class PossibleOptionalListEncoding<T> {
     }
 
     @Encoding.Naming("*OrElse")
-    List<T> orElse(List<T> defaultValue) {
+    @Nullable List<T> orElse(List<T> defaultValue) {
         return !absent ? value : defaultValue;
     }
 
+    @SuppressWarnings("unchecked")
     @Encoding.Copy
     public Possible<Optional<List<T>>> withPossible(Possible<? extends Optional<? extends List<? extends T>>> possible) {
         return (discord4j.discordjson.possible.Possible<Optional<List<T>>>) Objects.requireNonNull(possible);
@@ -75,7 +76,7 @@ public class PossibleOptionalListEncoding<T> {
     @Encoding.Builder
     static class Builder<T> {
 
-        private List<T> list = null;
+        private @Nullable List<T> list = null;
         private boolean explicitNull;
 
         @Encoding.Naming(standard = Encoding.StandardNaming.ADD)
@@ -140,7 +141,7 @@ public class PossibleOptionalListEncoding<T> {
         @SafeVarargs
         @Encoding.Naming("*OrNull")
         @Encoding.Init
-        final void setValueVarargsOrNull(@Nullable T... elements) {
+        final void setValueVarargsOrNull(T @Nullable ... elements) {
             if (elements == null) {
                 this.list = null;
                 this.explicitNull = true;
