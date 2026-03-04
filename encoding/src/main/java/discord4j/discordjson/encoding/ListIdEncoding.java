@@ -2,6 +2,7 @@ package discord4j.discordjson.encoding;
 
 import discord4j.discordjson.Id;
 import org.immutables.encode.Encoding;
+import org.jspecify.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,7 +45,7 @@ public class ListIdEncoding {
     @Encoding.Builder
     static class Builder {
 
-        private List<Long> list = null;
+        private @Nullable List<Long> list = null;
 
         private List<Long> getOrCreate() {
             if (this.list == null) {

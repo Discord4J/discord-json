@@ -2,6 +2,7 @@ package discord4j.discordjson.encoding.possible;
 
 import discord4j.discordjson.possible.Possible;
 import org.immutables.encode.Encoding;
+import org.jspecify.annotations.Nullable;
 
 import java.util.Objects;
 
@@ -11,7 +12,7 @@ public class PossibleEncoding<T> {
     @Encoding.Impl(virtual = true)
     private Possible<T> possible = discord4j.discordjson.possible.Possible.absent();
 
-    private final T value = possible.toOptional().orElse(null);
+    private final @Nullable T value = possible.toOptional().orElse(null);
     private final boolean absent = possible.isAbsent();
 
     @Encoding.Expose
@@ -25,7 +26,7 @@ public class PossibleEncoding<T> {
     }
 
     @Encoding.Naming("*OrElse")
-    T orElse(T defaultValue) {
+    @Nullable T orElse(T defaultValue) {
         return !absent ? value : defaultValue;
     }
 

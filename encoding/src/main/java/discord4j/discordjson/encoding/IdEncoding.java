@@ -2,6 +2,7 @@ package discord4j.discordjson.encoding;
 
 import discord4j.discordjson.Id;
 import org.immutables.encode.Encoding;
+import org.jspecify.annotations.Nullable;
 
 import java.util.Objects;
 
@@ -45,7 +46,7 @@ public class IdEncoding {
     @Encoding.Builder
     static class Builder {
 
-        private Id id = null;
+        private @Nullable Id id = null;
 
         @Encoding.Init
         public void setStringValue(String value) {
@@ -64,7 +65,7 @@ public class IdEncoding {
 
         @Encoding.Build
         Id build() {
-            return this.id;
+            return Objects.requireNonNull(this.id);
         }
     }
 }
