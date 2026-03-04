@@ -33,6 +33,7 @@ public class OptionalIdEncoding {
         return present ? value : defaultValue;
     }
 
+    @SuppressWarnings("OptionalUsedAsFieldOrParameterType")
     @Encoding.Copy
     public Optional<Id> withOptional(final Optional<Id> value) {
         return Objects.requireNonNull(value);
