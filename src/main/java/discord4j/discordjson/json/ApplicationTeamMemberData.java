@@ -7,8 +7,6 @@ import discord4j.discordjson.Id;
 import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
-import java.util.List;
-
 @Value.Immutable
 @JsonSerialize(as = ImmutableApplicationTeamMemberData.class)
 @JsonDeserialize(as = ImmutableApplicationTeamMemberData.class)
@@ -26,5 +24,5 @@ public interface ApplicationTeamMemberData {
 
     UserData user();
 
-    Possible<String> role(); // Not present for owner
+    Possible<String> role(); // Not present for the owner of a team
 }
