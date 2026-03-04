@@ -169,14 +169,17 @@ public class GatewayDeserializationTest {
     public void testMessageCreate() throws IOException {
         MessageCreate type0 = (MessageCreate) read("/gateway/MessageCreate.Type0.json",
                 new TypeReference<GatewayPayload<?>>() {}).getData();
+        assertNotNull(type0);
         assertEquals("32309dbaaf65eae4c58a351318f44c9d", type0.message().author().avatar().orElse(""));
 
         MessageCreate type6 = (MessageCreate) read("/gateway/MessageCreate.Type6.json",
                 new TypeReference<GatewayPayload<?>>() {}).getData();
+        assertNotNull(type6);
         assertEquals("2020-03-01T21:02:35.282000+00:00", type6.message().timestamp());
 
         MessageCreate reply = (MessageCreate) read("/gateway/MessageCreate.Type19.json",
                 new TypeReference<GatewayPayload<?>>() {}).getData();
+        assertNotNull(reply);
         assertEquals(Id.of("563557393640849437"), reply.message().messageReference().get().channelId().get());
     }
 
@@ -222,6 +225,7 @@ public class GatewayDeserializationTest {
         GatewayPayload<?> json = read("/gateway/Ready.json", new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json.getData());
         Ready data = (Ready) json.getData();
+        assertNotNull(data);
         assertEquals("344487830824943618", data.application().id());
     }
 
@@ -242,6 +246,7 @@ public class GatewayDeserializationTest {
         GatewayPayload<?> json = read("/gateway/VoiceServerUpdate.json", new TypeReference<GatewayPayload<?>>() {});
         assertEquals(477069, json.getSequence());
         VoiceServerUpdate data = (VoiceServerUpdate) json.getData();
+        assertNotNull(data);
         assertEquals("f8eb804ee40ebf3d", data.token());
         assertEquals(Id.of("691022703368601651"), data.guildId());
         assertNull(data.endpoint());
@@ -283,7 +288,7 @@ public class GatewayDeserializationTest {
     public void testGuildScheduledEventCreate() throws IOException {
         GatewayPayload<?> json = read("/gateway/GuildScheduledEventCreate.json", new TypeReference<GatewayPayload<?>>() {});
         log.info("{}", json.getData());
-        assertTrue(json.getData() instanceof GuildScheduledEventCreate);
+        assertInstanceOf(GuildScheduledEventCreate.class, json.getData());
     }
 
 }
