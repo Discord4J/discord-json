@@ -19,7 +19,7 @@ public class PossibleListEncoding<T> {
     @Encoding.Expose
     Possible<List<T>> get() {
         return absent ? discord4j.discordjson.possible.Possible.absent() :
-                discord4j.discordjson.possible.Possible.of(value);
+                discord4j.discordjson.possible.Possible.ofNullable(value);
     }
 
     @Encoding.Naming("is*Present")
@@ -32,6 +32,7 @@ public class PossibleListEncoding<T> {
         return !absent ? value : defaultValue;
     }
 
+    @SuppressWarnings("unchecked")
     @Encoding.Copy
     public Possible<List<T>> withPossible(Possible<? extends List<? extends T>> possible) {
         return (discord4j.discordjson.possible.Possible<List<T>>) Objects.requireNonNull(possible);

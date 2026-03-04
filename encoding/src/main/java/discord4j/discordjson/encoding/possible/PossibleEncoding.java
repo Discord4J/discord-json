@@ -16,7 +16,7 @@ public class PossibleEncoding<T> {
 
     @Encoding.Expose
     Possible<T> get() {
-        return absent ? discord4j.discordjson.possible.Possible.absent() : discord4j.discordjson.possible.Possible.of(value);
+        return absent ? discord4j.discordjson.possible.Possible.absent() : discord4j.discordjson.possible.Possible.ofNullable(value);
     }
 
     @Encoding.Naming("is*Present")
