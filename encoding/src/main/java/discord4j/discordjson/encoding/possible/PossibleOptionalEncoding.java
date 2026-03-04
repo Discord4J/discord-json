@@ -28,7 +28,7 @@ public class PossibleOptionalEncoding<T> {
     }
 
     @Encoding.Naming("*OrElse")
-    T orElse(T defaultValue) {
+    @Nullable T orElse(T defaultValue) {
         return !absent ? value : defaultValue;
     }
 
