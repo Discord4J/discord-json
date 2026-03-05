@@ -275,4 +275,11 @@ public class RestDeserializationTest {
         assertFalse(data.data().isEmpty(), "Data should not be empty");
         log.info("{}", data);
     }
+
+    @Test
+    public void readInviteTargetUsersJobStatus() throws IOException {
+        InviteTargetUsersJobStatusData data = read("/rest/InviteTargetUsersJobStatus.json", InviteTargetUsersJobStatusData.class);
+        assertNotNull(data);
+        log.info("{}", data);
+    }
 }

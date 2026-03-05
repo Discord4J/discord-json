@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
+import java.util.List;
 import java.util.Optional;
 
 @Value.Immutable
@@ -62,5 +63,7 @@ public interface InviteData {
     Optional<String> expiresAt();
 
     Possible<Integer> flags();
+
+    Possible<List<PartialRoleDataFields>> roles();
 
 }
