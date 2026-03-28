@@ -93,4 +93,7 @@ public interface ComponentData {
     Possible<UnfurledMediaItemData> media();
 
     Possible<List<MediaGalleryItemData>> items();
+
+    @JsonProperty("default")
+    Possible<Boolean> isDefault();
 }
