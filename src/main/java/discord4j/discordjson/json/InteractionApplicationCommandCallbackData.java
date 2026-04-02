@@ -43,7 +43,7 @@ public interface InteractionApplicationCommandCallbackData {
      */
     Possible<Integer> flags();
 
-    Possible<List<ComponentData>> components();
+    Possible<List<ComponentData>> components(); // TODO
 
     /**
      * A list of choices the user may pick in an auto-complete response

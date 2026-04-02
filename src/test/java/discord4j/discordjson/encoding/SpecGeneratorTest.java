@@ -4,6 +4,8 @@ import discord4j.discordjson.component.ActionRow;
 import discord4j.discordjson.component.Button;
 import discord4j.discordjson.component.MessageComponent;
 import discord4j.discordjson.json.ComponentData;
+import discord4j.discordjson.json.component.ActionRowComponentData;
+import discord4j.discordjson.json.component.ButtonComponentData;
 import discord4j.discordjson.possible.Possible;
 import org.junit.jupiter.api.Test;
 
@@ -28,14 +30,14 @@ public class SpecGeneratorTest {
         List<ComponentData> data = spec.asRequest();
         assertEquals(1, data.size());
 
-        ComponentData actionRow = data.get(0);
+        ActionRowComponentData actionRow = (ActionRowComponentData) data.get(0);
         assertEquals(MessageComponent.Type.ACTION_ROW.getValue(), actionRow.type());
 
-        List<ComponentData> rowComponents = actionRow.components().get();
+        List<ComponentData> rowComponents = actionRow.components();
         assertEquals(1, rowComponents.size());
 
-        ComponentData button = rowComponents.get(0);
-        assertEquals("A", Possible.flatOpt(button.label()).orElse(""));
+        ButtonComponentData button = (ButtonComponentData) rowComponents.get(0);
+        assertEquals("A", button.label().toOptional().orElse(""));
         assertEquals("id1", button.customId().get());
     }
 }

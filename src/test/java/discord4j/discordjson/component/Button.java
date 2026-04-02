@@ -17,7 +17,8 @@
 package discord4j.discordjson.component;
 
 import discord4j.discordjson.json.ComponentData;
-import discord4j.discordjson.json.ImmutableComponentData;
+import discord4j.discordjson.json.component.ButtonComponentData;
+import discord4j.discordjson.json.component.ImmutableButtonComponentData;
 import discord4j.discordjson.possible.Possible;
 import org.jspecify.annotations.Nullable;
 
@@ -86,7 +87,7 @@ public class Button extends ActionComponent {
     }
 
     private static Button of(Style style, @Nullable String customId, @Nullable String label, @Nullable String url) {
-        ImmutableComponentData.Builder builder = ComponentData.builder()
+        ImmutableButtonComponentData.Builder builder = ImmutableButtonComponentData.builder()
                 .type(MessageComponent.Type.BUTTON.getValue())
                 .style(style.getValue());
 
@@ -112,9 +113,7 @@ public class Button extends ActionComponent {
      * @return The button's style.
      */
     public Style getStyle() {
-        return getData().style().toOptional()
-                .map(Style::of)
-                .orElseThrow(IllegalStateException::new); // style should always be present on buttons
+        return Style.of(((ButtonComponentData) getData()).style());
     }
 
     /**
@@ -123,7 +122,7 @@ public class Button extends ActionComponent {
      * @return The button's label.
      */
     public Optional<String> getLabel() {
-        return Possible.flatOpt(getData().label());
+        return ((ButtonComponentData) getData()).label().toOptional();
     }
 
     /**
@@ -132,7 +131,7 @@ public class Button extends ActionComponent {
      * @return The button's custom id.
      */
     public Optional<String> getCustomId() {
-        return getData().customId().toOptional();
+        return ((ButtonComponentData) getData()).customId().toOptional();
     }
 
     /**
@@ -141,7 +140,7 @@ public class Button extends ActionComponent {
      * @return The button's url.
      */
     public Optional<String> getUrl() {
-        return getData().url().toOptional();
+        return ((ButtonComponentData) getData()).url().toOptional();
     }
 
     /**
@@ -150,7 +149,7 @@ public class Button extends ActionComponent {
      * @return Whether the button is disabled.
      */
     public boolean isDisabled() {
-        return getData().disabled().toOptional().orElse(false);
+        return ((ButtonComponentData) getData()).disabled().toOptional().orElse(false);
     }
 
     /**
@@ -169,7 +168,7 @@ public class Button extends ActionComponent {
      * @return A new possibly disabled button with the same data as this one.
      */
     public Button disabled(boolean value) {
-        return new Button(ComponentData.builder().from(getData()).disabled(value).build());
+        return new Button(ButtonComponentData.builder().from(getData()).disabled(value).build());
     }
 
     /**

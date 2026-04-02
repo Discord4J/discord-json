@@ -17,6 +17,7 @@
 package discord4j.discordjson.component;
 
 import discord4j.discordjson.json.ComponentData;
+import discord4j.discordjson.json.component.ActionRowComponentData;
 
 import java.util.Arrays;
 import java.util.List;
@@ -46,7 +47,7 @@ public class ActionRow extends LayoutComponent {
      * @return An {@code ActionRow} containing the given components.
      */
     public static ActionRow of(List<? extends ActionComponent> components) {
-        return new ActionRow(ComponentData.builder()
+        return new ActionRow(ActionRowComponentData.builder()
                 .type(Type.ACTION_ROW.getValue())
                 .components(components.stream().map(MessageComponent::getData).collect(Collectors.toList()))
                 .build());

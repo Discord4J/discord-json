@@ -17,6 +17,7 @@
 package discord4j.discordjson.component;
 
 import discord4j.discordjson.json.ComponentData;
+import discord4j.discordjson.json.component.attribute.IHasChildsComponentData;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -32,10 +33,10 @@ public abstract class LayoutComponent extends MessageComponent {
     }
 
     public List<MessageComponent> getChildren() {
-        return getData().components().toOptional()
-                .map(components -> components.stream()
-                        .map(MessageComponent::fromData)
-                        .collect(Collectors.toList()))
-                .orElseThrow(IllegalStateException::new); // components should always be present on a layout component
+        return ((IHasChildsComponentData) getData())
+                .components()
+                .stream()
+                .map(MessageComponent::fromData)
+                .collect(Collectors.toList());
     }
 }
