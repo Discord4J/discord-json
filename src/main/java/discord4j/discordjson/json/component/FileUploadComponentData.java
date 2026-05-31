@@ -20,7 +20,7 @@ public interface FileUploadComponentData extends ComponentData, IHasCustomId, IC
     int COMPONENT_TYPE_ID = 19;
 
     static ImmutableFileUploadComponentData.Builder builder() {
-        return ImmutableFileUploadComponentData.builder();
+        return ImmutableFileUploadComponentData.builder().type(FileUploadComponentData.COMPONENT_TYPE_ID);
     }
 
     Possible<List<Id>> values();

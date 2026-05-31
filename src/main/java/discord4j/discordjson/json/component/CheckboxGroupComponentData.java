@@ -23,7 +23,7 @@ public interface CheckboxGroupComponentData extends ComponentData, IHasCustomId,
     int COMPONENT_TYPE_ID = 22;
 
     static ImmutableCheckboxGroupComponentData.Builder builder() {
-        return ImmutableCheckboxGroupComponentData.builder();
+        return ImmutableCheckboxGroupComponentData.builder().type(CheckboxGroupComponentData.COMPONENT_TYPE_ID);
     }
 
     List<CheckboxGroupOptionData> options();

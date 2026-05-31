@@ -14,7 +14,7 @@ public interface SeparatorComponentData extends ComponentData {
     int COMPONENT_TYPE_ID = 14;
 
     static ImmutableSeparatorComponentData.Builder builder() {
-        return ImmutableSeparatorComponentData.builder();
+        return ImmutableSeparatorComponentData.builder().type(SeparatorComponentData.COMPONENT_TYPE_ID);
     }
 
     Possible<Boolean> divider();

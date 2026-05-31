@@ -14,7 +14,7 @@ public interface SectionComponentData extends ComponentData, IHasChildsComponent
     int COMPONENT_TYPE_ID = 9;
 
     static ImmutableSectionComponentData.Builder builder() {
-        return ImmutableSectionComponentData.builder();
+        return ImmutableSectionComponentData.builder().type(SectionComponentData.COMPONENT_TYPE_ID);
     }
 
     ComponentData accessory();

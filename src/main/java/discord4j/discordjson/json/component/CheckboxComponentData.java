@@ -16,7 +16,7 @@ public interface CheckboxComponentData extends ComponentData, IHasCustomId, ICan
     int COMPONENT_TYPE_ID = 23;
 
     static ImmutableCheckboxComponentData.Builder builder() {
-        return ImmutableCheckboxComponentData.builder();
+        return ImmutableCheckboxComponentData.builder().type(CheckboxComponentData.COMPONENT_TYPE_ID);
     }
 
 }

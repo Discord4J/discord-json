@@ -21,7 +21,7 @@ public interface StringSelectComponentData extends SelectComponentDataBase {
     int COMPONENT_TYPE_ID = 3;
 
     static ImmutableStringSelectComponentData.Builder builder() {
-        return ImmutableStringSelectComponentData.builder();
+        return ImmutableStringSelectComponentData.builder().type(StringSelectComponentData.COMPONENT_TYPE_ID);
     }
 
     List<StringSelectOptionData> options();

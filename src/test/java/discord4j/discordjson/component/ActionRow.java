@@ -48,7 +48,6 @@ public class ActionRow extends LayoutComponent {
      */
     public static ActionRow of(List<? extends ActionComponent> components) {
         return new ActionRow(ActionRowComponentData.builder()
-                .type(Type.ACTION_ROW.getValue())
                 .components(components.stream().map(MessageComponent::getData).collect(Collectors.toList()))
                 .build());
     }

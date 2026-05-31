@@ -19,7 +19,7 @@ public interface ContainerComponentData extends ComponentData, IHasChildsCompone
     int COMPONENT_TYPE_ID = 17;
 
     static ImmutableContainerComponentData.Builder builder() {
-        return ImmutableContainerComponentData.builder();
+        return ImmutableContainerComponentData.builder().type(ContainerComponentData.COMPONENT_TYPE_ID);
     }
 
     @JsonProperty("accent_color")

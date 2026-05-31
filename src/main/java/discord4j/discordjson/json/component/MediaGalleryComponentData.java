@@ -16,7 +16,7 @@ public interface MediaGalleryComponentData extends ComponentData {
     int COMPONENT_TYPE_ID = 12;
 
     static ImmutableMediaGalleryComponentData.Builder builder() {
-        return ImmutableMediaGalleryComponentData.builder();
+        return ImmutableMediaGalleryComponentData.builder().type(MediaGalleryComponentData.COMPONENT_TYPE_ID);
     }
 
     List<MediaGalleryItemData> items();

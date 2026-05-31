@@ -21,7 +21,7 @@ public interface TextInputComponentData extends ComponentData, IHasCustomId, ICa
     int COMPONENT_TYPE_ID = 4;
 
     static ImmutableTextInputComponentData.Builder builder() {
-        return ImmutableTextInputComponentData.builder();
+        return ImmutableTextInputComponentData.builder().type(TextInputComponentData.COMPONENT_TYPE_ID);
     }
 
     @JsonProperty("min_length")

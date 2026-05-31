@@ -20,7 +20,7 @@ public interface ButtonComponentData extends ComponentData, ICanHaveCustomId, IC
     int COMPONENT_TYPE_ID = 2;
 
     static ImmutableButtonComponentData.Builder builder() {
-        return ImmutableButtonComponentData.builder();
+        return ImmutableButtonComponentData.builder().type(ButtonComponentData.COMPONENT_TYPE_ID);
     }
 
     Possible<String> label();

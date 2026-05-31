@@ -10,14 +10,14 @@ import org.immutables.value.Value;
 import java.util.List;
 
 @Value.Immutable
-@JsonSerialize(as = ImmutableStringSelectComponentData.class)
-@JsonDeserialize(as = ImmutableStringSelectComponentData.class)
+@JsonSerialize(as = ImmutableChannelSelectComponentData.class)
+@JsonDeserialize(as = ImmutableChannelSelectComponentData.class)
 public interface ChannelSelectComponentData extends SelectComponentData {
 
     int COMPONENT_TYPE_ID = 8;
 
-    static ImmutableStringSelectComponentData.Builder builder() {
-        return ImmutableStringSelectComponentData.builder();
+    static ImmutableChannelSelectComponentData.Builder builder() {
+        return ImmutableChannelSelectComponentData.builder().type(ChannelSelectComponentData.COMPONENT_TYPE_ID);
     }
 
     @JsonProperty("channel_types")

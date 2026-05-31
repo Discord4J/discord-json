@@ -6,14 +6,14 @@ import discord4j.discordjson.json.component.type.SelectComponentData;
 import org.immutables.value.Value;
 
 @Value.Immutable
-@JsonSerialize(as = ImmutableStringSelectComponentData.class)
-@JsonDeserialize(as = ImmutableStringSelectComponentData.class)
+@JsonSerialize(as = ImmutableUserSelectComponentData.class)
+@JsonDeserialize(as = ImmutableUserSelectComponentData.class)
 public interface UserSelectComponentData extends SelectComponentData {
 
     int COMPONENT_TYPE_ID = 5;
 
-    static ImmutableStringSelectComponentData.Builder builder() {
-        return ImmutableStringSelectComponentData.builder();
+    static ImmutableUserSelectComponentData.Builder builder() {
+        return ImmutableUserSelectComponentData.builder().type(UserSelectComponentData.COMPONENT_TYPE_ID);
     }
 
 }

@@ -22,7 +22,7 @@ public interface RadioGroupComponentData extends ComponentData, IHasCustomId, IC
     int COMPONENT_TYPE_ID = 21;
 
     static ImmutableRadioGroupComponentData.Builder builder() {
-        return ImmutableRadioGroupComponentData.builder();
+        return ImmutableRadioGroupComponentData.builder().type(RadioGroupComponentData.COMPONENT_TYPE_ID);
     }
 
     List<RadioGroupOptionData> options();

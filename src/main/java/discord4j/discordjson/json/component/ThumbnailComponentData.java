@@ -16,7 +16,7 @@ public interface ThumbnailComponentData extends ComponentData, ICanHaveDescripti
     int COMPONENT_TYPE_ID = 11;
 
     static ImmutableThumbnailComponentData.Builder builder() {
-        return ImmutableThumbnailComponentData.builder();
+        return ImmutableThumbnailComponentData.builder().type(ThumbnailComponentData.COMPONENT_TYPE_ID);
     }
 
 }

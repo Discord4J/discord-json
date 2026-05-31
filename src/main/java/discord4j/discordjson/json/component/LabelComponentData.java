@@ -15,7 +15,7 @@ public interface LabelComponentData extends ComponentData, IHasLabel, ICanHaveDe
     int COMPONENT_TYPE_ID = 18;
 
     static ImmutableLabelComponentData.Builder builder() {
-        return ImmutableLabelComponentData.builder();
+        return ImmutableLabelComponentData.builder().type(LabelComponentData.COMPONENT_TYPE_ID);
     }
 
     ComponentData component();

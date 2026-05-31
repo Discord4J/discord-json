@@ -88,7 +88,6 @@ public class Button extends ActionComponent {
 
     private static Button of(Style style, @Nullable String customId, @Nullable String label, @Nullable String url) {
         ImmutableButtonComponentData.Builder builder = ImmutableButtonComponentData.builder()
-                .type(MessageComponent.Type.BUTTON.getValue())
                 .style(style.getValue());
 
         if (customId != null)

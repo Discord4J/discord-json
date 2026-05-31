@@ -14,7 +14,7 @@ public interface ActionRowComponentData extends ComponentData, IHasChildsCompone
     int COMPONENT_TYPE_ID = 1;
 
     static ImmutableActionRowComponentData.Builder builder() {
-        return ImmutableActionRowComponentData.builder();
+        return ImmutableActionRowComponentData.builder().type(ActionRowComponentData.COMPONENT_TYPE_ID);
     }
 
 }

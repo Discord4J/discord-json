@@ -16,7 +16,7 @@ public interface FileComponentData extends ComponentData, ICanBeSpoiler {
     int COMPONENT_TYPE_ID = 13;
 
     static ImmutableFileComponentData.Builder builder() {
-        return ImmutableFileComponentData.builder();
+        return ImmutableFileComponentData.builder().type(FileComponentData.COMPONENT_TYPE_ID);
     }
 
     UnfurledMediaItemData file();

@@ -13,7 +13,7 @@ public interface TextDisplayComponentData extends ComponentData {
     int COMPONENT_TYPE_ID = 10;
 
     static ImmutableTextDisplayComponentData.Builder builder() {
-        return ImmutableTextDisplayComponentData.builder();
+        return ImmutableTextDisplayComponentData.builder().type(TextDisplayComponentData.COMPONENT_TYPE_ID);
     }
 
     String content();
