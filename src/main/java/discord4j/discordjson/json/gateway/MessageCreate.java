@@ -1,9 +1,11 @@
 package discord4j.discordjson.json.gateway;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.json.MessageData;
+import discord4j.discordjson.possible.Possible;
 import org.immutables.value.Value;
 
 @Value.Immutable
@@ -17,4 +19,7 @@ public interface MessageCreate extends Dispatch {
 
     @JsonUnwrapped
     MessageData message();
+
+    @JsonProperty("channel_type")
+    Possible<Integer> channelType();
 }
