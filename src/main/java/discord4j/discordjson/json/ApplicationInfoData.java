@@ -48,15 +48,6 @@ public interface ApplicationInfoData {
 
     Possible<PartialUserData> owner();
 
-    /**
-     * @deprecated This field is deprecated and will be removed in Discord API v11. This field always returns an empty
-     * string, you should use {@link #description() description} instead.
-     *
-     * @return An empty string.
-     */
-    @Deprecated
-    String summary();
-
     @JsonProperty("verify_key")
     String verifyKey();
 
@@ -77,6 +68,9 @@ public interface ApplicationInfoData {
 
     Possible<Integer> flags();
 
+    @JsonProperty("flags_new")
+    Possible<String> flagsNew();
+
     @JsonProperty("approximate_guild_count")
     Possible<Integer> approximateGuildCount();
 
@@ -91,6 +85,15 @@ public interface ApplicationInfoData {
 
     @JsonProperty("role_connections_verification_url")
     Possible<Optional<String>> roleConnectionsVerificationUrl(); // Use of both Possible and Optional due to https://github.com/Discord4J/Discord4J/issues/1243
+
+    @JsonProperty("event_webhooks_url")
+    Possible<Optional<String>> eventWebhooksUrl();
+
+    @JsonProperty("event_webhooks_status")
+    Possible<Integer> eventWebhooksStatus();
+
+    @JsonProperty("event_webhooks_types")
+    Possible<List<String>> eventWebhooksTypes();
 
     Possible<List<String>> tags();
 
