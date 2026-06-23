@@ -2,9 +2,9 @@ plugins {
     id 'java-library'
     id 'maven-publish'
     id 'signing'
-    id 'io.github.gradle-nexus.publish-plugin' version '2.0.0'
-    id 'com.github.ben-manes.versions' version '0.54.0'
-    id 'net.researchgate.release' version '3.1.0'
+    alias libs.plugins.nexus.publish
+    alias libs.plugins.versions
+    alias libs.plugins.release
 }
 
 ext {
@@ -14,15 +14,6 @@ ext {
         jdk_javadoc = "https://docs.oracle.com/en/java/javase/$jdk/docs/api/".toString()
     }
 
-    jackson_bom_version = '2.21.0'
-    immutables_group = 'org.immutables'
-    immutables_version = '2.12.1'
-
-    jspecify_version = '1.0.0'
-
-    junit_version = '5.14.2'
-    logback_version = '1.5.31'
-
     isJitpack = "true" == System.getenv("JITPACK")
     isRelease = !version.toString().endsWith('-SNAPSHOT')
 }
@@ -31,7 +22,7 @@ allprojects {
     apply plugin: 'java-library'
     apply plugin: 'com.github.ben-manes.versions'
     apply plugin: 'maven-publish'
-    if (!isJitpack && isRelease) {
+    if (!rootProject.ext.isJitpack && rootProject.ext.isRelease) {
         apply plugin: 'signing'
     }
 
@@ -40,7 +31,7 @@ allprojects {
 
     repositories {
         mavenCentral()
-        if (!isRelease || isJitpack) {
+        if (!rootProject.ext.isRelease || rootProject.ext.isJitpack) {
             maven { url = 'https://central.sonatype.com/repository/maven-snapshots' }
         }
         maven { url = 'https://jitpack.io' }
@@ -48,8 +39,8 @@ allprojects {
     }
 
     dependencies {
-        compileOnly "com.google.code.findbugs:jsr305:3.0.1"
-        testCompileOnly "com.google.code.findbugs:jsr305:3.0.1"
+        compileOnly rootProject.libs.jsr305
+        testCompileOnly rootProject.libs.jsr305
     }
 
     configurations.configureEach {
@@ -66,8 +57,8 @@ allprojects {
             addStringOption 'encoding', 'UTF-8'
             // adding links to javadocs for filling specific classes when not existing inside current javadoc
             links = [
-                jdk_javadoc,
-                "https://javadoc.io/doc/com.fasterxml.jackson.core/jackson-databind/2.21.0/" // match with $jackson_bom_version
+                    rootProject.ext.jdk_javadoc,
+                    "https://javadoc.io/doc/com.fasterxml.jackson.core/jackson-databind/${rootProject.libs.versions.jackson.get()}/".toString() // match with jackson version
             ]
         }
         if (JavaVersion.current().isJava9Compatible()) {
@@ -101,23 +92,23 @@ dependencies {
     api project(':api')
     compileOnly project(':encoding')
 
-    implementation platform("com.fasterxml.jackson:jackson-bom:$jackson_bom_version")
+    implementation platform(libs.jackson.bom)
 
-    api "com.fasterxml.jackson.core:jackson-databind"
-    implementation "com.fasterxml.jackson.datatype:jackson-datatype-jsr310"
-    implementation "com.fasterxml.jackson.datatype:jackson-datatype-jdk8"
+    api libs.jackson.databind
+    implementation libs.jackson.datatype.jsr310
+    implementation libs.jackson.datatype.jdk8
 
-    compileOnly "$immutables_group:value:$immutables_version"
-    compileOnly "$immutables_group:builder:$immutables_version"
-    annotationProcessor "$immutables_group:value:$immutables_version"
+    compileOnly libs.immutables.value
+    compileOnly libs.immutables.builder
+    annotationProcessor libs.immutables.value
 
     testCompileOnly project(':encoding')
-    testCompileOnly "$immutables_group:value:$immutables_version"
-    testAnnotationProcessor "$immutables_group:value:$immutables_version"
-    testImplementation platform("org.junit:junit-bom:$junit_version")
-    testImplementation "org.junit.jupiter:junit-jupiter-engine"
-    testRuntimeOnly "org.junit.platform:junit-platform-launcher:"
-    testImplementation "ch.qos.logback:logback-classic:$logback_version"
+    testCompileOnly libs.immutables.value
+    testAnnotationProcessor libs.immutables.value
+    testImplementation platform(libs.junit.bom)
+    testImplementation libs.junit.jupiter.engine
+    testRuntimeOnly libs.junit.platform.launcher
+    testImplementation libs.logback.classic
 }
 
 publishing {

@@ -1,13 +1,13 @@
 dependencies {
     compileOnly project(':api')
-    compileOnly "$immutables_group:value:$immutables_version"
-    annotationProcessor "$immutables_group:value:$immutables_version"
-    api "$immutables_group:encode:$immutables_version"
-    api "org.jspecify:jspecify:$jspecify_version"
+    compileOnly libs.immutables.value
+    annotationProcessor libs.immutables.value
+    api libs.immutables.encode
+    api libs.jspecify
 
     if (JavaVersion.current().isJava8()) {
-        compileOnly "com.google.code.findbugs:annotations:3.0.1"
-        testCompileOnly "com.google.code.findbugs:annotations:3.0.1"
+        compileOnly libs.findbugs.annotations
+        testCompileOnly libs.findbugs.annotations
     }
 }
 
@@ -65,10 +65,10 @@ publishing {
         }
     }
 
-    if (!isJitpack) {
+    if (!rootProject.ext.isJitpack) {
         repositories {
             maven {
-                if (isRelease) {
+                if (rootProject.ext.isRelease) {
                     url = 'https://ossrh-staging-api.central.sonatype.com/service/local/staging/deploy/maven2'
                 } else {
                     url = 'https://central.sonatype.com/repository/maven-snapshots'
@@ -86,7 +86,7 @@ publishing {
     }
 }
 
-if (!isJitpack && isRelease) {
+if (!rootProject.ext.isJitpack && rootProject.ext.isRelease) {
     signing {
         def signingKey = findProperty("signingKey")
         def signingPassword = findProperty("signingPassword")

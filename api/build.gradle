@@ -1,8 +1,8 @@
 dependencies {
-    api platform("com.fasterxml.jackson:jackson-bom:$jackson_bom_version")
-    api "com.fasterxml.jackson.core:jackson-databind"
-    api "org.jspecify:jspecify:$jspecify_version"
-    implementation "com.fasterxml.jackson.datatype:jackson-datatype-jdk8"
+    api platform(libs.jackson.bom)
+    api libs.jackson.databind
+    api libs.jspecify
+    implementation libs.jackson.datatype.jdk8
 }
 
 base {
@@ -59,10 +59,10 @@ publishing {
         }
     }
 
-    if (!isJitpack) {
+    if (!rootProject.ext.isJitpack) {
         repositories {
             maven {
-                if (isRelease) {
+                if (rootProject.ext.isRelease) {
                     url = 'https://ossrh-staging-api.central.sonatype.com/service/local/staging/deploy/maven2'
                 } else {
                     url = 'https://central.sonatype.com/repository/maven-snapshots'
@@ -80,7 +80,7 @@ publishing {
     }
 }
 
-if (!isJitpack && isRelease) {
+if (!rootProject.ext.isJitpack && rootProject.ext.isRelease) {
     signing {
         def signingKey = findProperty("signingKey")
         def signingPassword = findProperty("signingPassword")

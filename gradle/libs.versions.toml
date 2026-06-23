@@ -1,0 +1,39 @@
+[versions]
+# Dependencies
+jackson = "2.21.0"
+immutables = "2.12.1"
+jspecify = "1.0.0"
+junit = "5.14.2"
+logback = "1.5.31"
+jsr305 = "3.0.1"
+findbugs-annotations = "3.0.1"
+# Plugins
+nexus-publish = "2.0.0"
+versions-plugin = "0.54.0"
+release-plugin = "3.1.0"
+
+[libraries]
+jackson-bom = { group = "com.fasterxml.jackson", name = "jackson-bom", version.ref = "jackson" }
+jackson-databind = { group = "com.fasterxml.jackson.core", name = "jackson-databind" }
+jackson-datatype-jdk8 = { group = "com.fasterxml.jackson.datatype", name = "jackson-datatype-jdk8" }
+jackson-datatype-jsr310 = { group = "com.fasterxml.jackson.datatype", name = "jackson-datatype-jsr310" }
+
+immutables-value = { group = "org.immutables", name = "value", version.ref = "immutables" }
+immutables-builder = { group = "org.immutables", name = "builder", version.ref = "immutables" }
+immutables-encode = { group = "org.immutables", name = "encode", version.ref = "immutables" }
+
+jspecify = { group = "org.jspecify", name = "jspecify", version.ref = "jspecify" }
+
+jsr305 = { group = "com.google.code.findbugs", name = "jsr305", version.ref = "jsr305" }
+findbugs-annotations = { group = "com.google.code.findbugs", name = "annotations", version.ref = "findbugs-annotations" }
+
+junit-bom = { group = "org.junit", name = "junit-bom", version.ref = "junit" }
+junit-jupiter-engine = { group = "org.junit.jupiter", name = "junit-jupiter-engine" }
+junit-platform-launcher = { group = "org.junit.platform", name = "junit-platform-launcher" }
+
+logback-classic = { group = "ch.qos.logback", name = "logback-classic", version.ref = "logback" }
+
+[plugins]
+nexus-publish = { id = "io.github.gradle-nexus.publish-plugin", version.ref = "nexus-publish" }
+versions = { id = "com.github.ben-manes.versions", version.ref = "versions-plugin" }
+release = { id = "net.researchgate.release", version.ref = "release-plugin" }
