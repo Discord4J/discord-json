@@ -99,4 +99,13 @@ public interface ApplicationCommandOptionData {
      */
     @JsonProperty("max_length")
     Possible<Integer> maxLength();
+
+    /**
+     * Specifies a list of allowed file types for this option.
+     * ex: ["image", ".pdf"]
+     * </p>
+     * If not provided, any attachment type is allowed.
+     */
+    @JsonProperty("file_types")
+    Possible<List<String>> fileTypes();
 }
