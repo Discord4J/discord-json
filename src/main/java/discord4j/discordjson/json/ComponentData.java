@@ -94,6 +94,9 @@ public interface ComponentData {
 
     Possible<List<MediaGalleryItemData>> items();
 
+    @JsonProperty("file_types")
+    Possible<List<String>> fileTypes();
+
     @JsonProperty("default")
     Possible<Boolean> isDefault();
 }
