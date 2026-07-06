@@ -20,9 +20,14 @@ public interface PartialAttachmentData {
 
     String filename();
 
+    Possible<String> title();
+
     Possible<String> description();
 
     @JsonProperty("content_type")
     Possible<String> contentType();
+
+    @JsonProperty("is_spoiler")
+    Possible<Boolean> isSpoiler();
 
 }
