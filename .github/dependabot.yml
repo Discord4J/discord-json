@@ -1,0 +1,28 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      github-actions:
+        update-types:
+          - major
+  - package-ecosystem: "gradle"
+    directories:
+      - "/"
+      - "api"
+      - "encoding"
+    schedule:
+      interval: "cron"
+      cronjob: "0 0 * * *"
+    groups:
+      gradle-wrapper:
+        patterns:
+          - "gradle-wrapper"
+      minor-and-patch:
+        update-types:
+          - minor
+          - patch
+        exclude-patterns:
+          - "gradle-wrapper"
