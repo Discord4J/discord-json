@@ -1,0 +1,6 @@
+{
+    "message": "Index not yet available. Try again later",
+    "code": 110000,
+    "documents_indexed": 0,
+    "retry_after": 2
+}
