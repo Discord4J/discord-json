@@ -11,6 +11,7 @@ import org.immutables.value.Value;
 public interface GuildMessageSearchNotIndexedResponse {
 
     String message();
+
     int code();
 
     @JsonProperty("documents_indexed")
