@@ -75,6 +75,12 @@ public class RestDeserializationTest {
     }
 
     @Test
+    public void testGetSearchGuildMessages() throws IOException {
+        GuildMessageSearchNotIndexedResponse res = read("/rest/GuildMessageSearchNotIndexedResponse.json", GuildMessageSearchNotIndexedResponse.class);
+        log.info("{}", res);
+    }
+
+    @Test
     public void testGetChannelInvites() throws IOException {
         InviteData[] invites = read("/rest/ChannelInvites.json", InviteData[].class);
         log.info("{}", Arrays.asList(invites));
