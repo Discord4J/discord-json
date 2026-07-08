@@ -67,4 +67,6 @@ public interface ApplicationCommandRequest {
     Possible<List<Integer>> contexts();
 
     Possible<Boolean> nsfw();
+
+    Possible<Integer> handler();
 }

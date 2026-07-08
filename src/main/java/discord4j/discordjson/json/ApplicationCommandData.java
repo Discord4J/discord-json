@@ -97,4 +97,9 @@ public interface ApplicationCommandData {
     List<Integer> contexts();
 
     Possible<Boolean> nsfw();
+
+    /**
+     * Determines whether the interaction is handled by the app’s interactions handler or by Discord
+     */
+    Possible<Integer> handler();
 }
