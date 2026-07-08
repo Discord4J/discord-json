@@ -58,7 +58,7 @@ allprojects {
             // adding links to javadocs for filling specific classes when not existing inside current javadoc
             links = [
                     rootProject.ext.jdk_javadoc,
-                    "https://javadoc.io/doc/com.fasterxml.jackson.core/jackson-databind/${rootProject.libs.versions.jackson.get()}/".toString() // match with jackson version
+                    "https://www.javadocs.dev/com.fasterxml.jackson.core/jackson-databind/${rootProject.libs.versions.jackson.get()}/".toString()
             ]
         }
         if (JavaVersion.current().isJava9Compatible()) {
