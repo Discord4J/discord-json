@@ -30,4 +30,6 @@ public interface Identify extends PayloadData {
 
     Possible<Long> intents();
 
+    Possible<Long> capabilities();
+
 }
