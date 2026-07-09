@@ -30,7 +30,6 @@ public interface Identify extends PayloadData {
 
     Possible<Long> intents();
 
-    @Value.Parameter(value = false)
     Possible<Long> capabilities();
 
 }
