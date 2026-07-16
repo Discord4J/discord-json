@@ -38,6 +38,10 @@ public interface ResolvedChannelData {
     Possible<Optional<String>> permissions();
 
     // This field can be given in a resolved channel data object, but it has the same properties as the channel object
+    @JsonProperty("app_permissions")
+    Possible<Optional<String>> appPermissions();
+
+    // This field can be given in a resolved channel data object, but it has the same properties as the channel object
     @JsonProperty("last_message_id")
     Possible<Optional<Id>> lastMessageId();
 
