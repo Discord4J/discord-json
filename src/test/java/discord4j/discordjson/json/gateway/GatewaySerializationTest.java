@@ -144,6 +144,21 @@ public class GatewaySerializationTest {
         assertEquals(mapper.readTree(expected), mapper.readTree(result));
     }
 
+    @Test
+    public void testRequestChannelInfo() throws IOException {
+        String expected = readResourceAsString("/gateway/outbound/RequestChannelInfo.json");
+
+        RequestChannelInfo requestChannelInfo = ImmutableRequestChannelInfo.of(
+                Id.of(613425648685547541L),
+                Arrays.asList("status", "voice_start_time")
+        );
+        GatewayPayload<RequestChannelInfo> payload =
+                GatewayPayload.requestChannelInfo(requestChannelInfo);
+        String result = mapper.writeValueAsString(payload);
+
+        assertEquals(mapper.readTree(expected), mapper.readTree(result));
+    }
+
     String readResourceAsString(String name) throws IOException {
         try (InputStream inputStream = getClass().getResourceAsStream(name)) {
             assertNotNull(inputStream, "Resource not found: " + name);
