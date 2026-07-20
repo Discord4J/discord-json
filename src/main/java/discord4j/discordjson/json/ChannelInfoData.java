@@ -18,8 +18,7 @@ public interface ChannelInfoData {
         return ImmutableChannelInfoData.builder();
     }
 
-    @JsonProperty("guild_id")
-    Id guildId();
+    Id id();
 
     Possible<Optional<String>> status();
 
