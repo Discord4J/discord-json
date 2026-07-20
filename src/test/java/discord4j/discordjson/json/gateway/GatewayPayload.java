@@ -59,6 +59,10 @@ public class GatewayPayload<T extends PayloadData> {
         return new GatewayPayload<>(Opcode.REQUEST_SOUNDBOARD_SOUNDS, data, null, null);
     }
 
+    public static GatewayPayload<RequestChannelInfo> requestChannelInfo(RequestChannelInfo data) {
+        return new GatewayPayload<>(Opcode.REQUEST_CHANNEL_INFO, data, null, null);
+    }
+
     @JsonSerialize(converter = OpcodeConverter.class)
     private Opcode<T> op;
 
