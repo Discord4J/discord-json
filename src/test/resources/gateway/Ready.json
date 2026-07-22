@@ -1,70 +1,71 @@
 {
-  "t": "READY",
-  "s": 1,
-  "op": 0,
-  "d": {
-    "v": 6,
-    "user_settings": {},
-    "user": {
-      "verified": true,
-      "username": "Reacton",
-      "mfa_enabled": true,
-      "id": "344487830824943618",
-      "flags": 0,
-      "email": null,
-      "discriminator": "6221",
-      "bot": true,
-      "avatar": "1c295705ae50fdbc755f1eda5ed8d268"
-    },
-    "shard": [
-      0,
-      1
-    ],
-    "session_id": "c5adc7ce7f411cde10440df5f888dc22",
-    "resume_gateway_url": "wss://gateway.discord.gg/",
-    "relationships": [],
-    "private_channels": [],
-    "presences": [],
-    "guilds": [
-      {
-        "unavailable": true,
-        "id": "135197118292819968"
-      },
-      {
-        "unavailable": true,
-        "id": "173583899539013632"
-      },
-      {
-        "unavailable": true,
-        "id": "185949590652977152"
-      },
-      {
-        "unavailable": true,
-        "id": "208023865127862272"
-      },
-      {
-        "unavailable": true,
-        "id": "346719828784185375"
-      },
-      {
-        "unavailable": true,
-        "id": "697833083201650689"
-      }
-    ],
-    "guild_join_requests": [],
-    "geo_ordered_rtc_regions": [
-      "brazil",
-      "us-south",
-      "us-east",
-      "us-central",
-      "southafrica"
-    ],
-    "application": {
-      "id": "344487830824943618",
-      "flags": 40960
-    },
-    "_trace": [
-      "[\"gateway-prd-main-kdrz\",{\"micros\":54043,\"calls\":[\"discord-sessions-prd-2-115\",{\"micros\":53180,\"calls\":[\"start_session\",{\"micros\":34509,\"calls\":[\"api-prd-main-hgg1\",{\"micros\":31481,\"calls\":[\"get_user\",{\"micros\":2264},\"add_authorized_ip\",{\"micros\":1496},\"get_guilds\",{\"micros\":6258},\"coros_wait\",{\"micros\":2}]}]},\"guilds_connect\",{\"micros\":6,\"calls\":[]},\"presence_connect\",{\"micros\":9302,\"calls\":[]}]}]}]"
-    ]
-  }
+    "t": "READY",
+    "s": 1,
+    "op": 0,
+    "d": {
+        "v": 6,
+        "user_settings": {},
+        "user": {
+            "verified": true,
+            "username": "Reacton",
+            "mfa_enabled": true,
+            "id": "344487830824943618",
+            "flags": 0,
+            "email": null,
+            "discriminator": "6221",
+            "bot": true,
+            "avatar": "1c295705ae50fdbc755f1eda5ed8d268"
+        },
+        "shard": [
+            0,
+            1
+        ],
+        "session_id": "c5adc7ce7f411cde10440df5f888dc22",
+        "resume_gateway_url": "wss://gateway.discord.gg/",
+        "relationships": [],
+        "private_channels": [],
+        "presences": [],
+        "guilds": [
+            {
+                "unavailable": true,
+                "id": "135197118292819968"
+            },
+            {
+                "unavailable": true,
+                "id": "173583899539013632"
+            },
+            {
+                "unavailable": true,
+                "id": "185949590652977152"
+            },
+            {
+                "unavailable": true,
+                "id": "208023865127862272"
+            },
+            {
+                "unavailable": true,
+                "id": "346719828784185375"
+            },
+            {
+                "unavailable": true,
+                "id": "697833083201650689"
+            }
+        ],
+        "guild_join_requests": [],
+        "geo_ordered_rtc_regions": [
+            "brazil",
+            "us-south",
+            "us-east",
+            "us-central",
+            "southafrica"
+        ],
+        "application": {
+            "id": "344487830824943618",
+            "flags": 40960,
+            "flags_new": 40960
+        },
+        "_trace": [
+            "[\"gateway-prd-main-kdrz\",{\"micros\":54043,\"calls\":[\"discord-sessions-prd-2-115\",{\"micros\":53180,\"calls\":[\"start_session\",{\"micros\":34509,\"calls\":[\"api-prd-main-hgg1\",{\"micros\":31481,\"calls\":[\"get_user\",{\"micros\":2264},\"add_authorized_ip\",{\"micros\":1496},\"get_guilds\",{\"micros\":6258},\"coros_wait\",{\"micros\":2}]}]},\"guilds_connect\",{\"micros\":6,\"calls\":[]},\"presence_connect\",{\"micros\":9302,\"calls\":[]}]}]}]"
+        ]
+    }
 }

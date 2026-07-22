@@ -1,5 +1,6 @@
 package discord4j.discordjson.json;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import discord4j.discordjson.possible.Possible;
@@ -15,5 +16,9 @@ public interface PartialApplicationInfoData {
     }
 
     String id();
+
     Possible<Integer> flags();
+
+    @JsonProperty("flags_new")
+    Possible<String> flagsNew();
 }
