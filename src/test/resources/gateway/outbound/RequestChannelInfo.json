@@ -1,0 +1,12 @@
+{
+    "op": 43,
+    "d": {
+        "guild_id": "613425648685547541",
+        "fields": [
+            "status",
+            "voice_start_time"
+        ]
+    },
+    "s": null,
+    "t": null
+}

@@ -48,4 +48,6 @@ public interface AuditEntryInfoData {
 
     @JsonProperty("auto_moderation_rule_trigger_type")
     Possible<String> autoModerationRuleTriggerType();
+
+    Possible<String> status();
 }
