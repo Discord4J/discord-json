@@ -56,7 +56,7 @@ public interface ChannelData {
     Possible<Id> ownerId();
 
     @JsonProperty("application_id")
-    Possible<Id> applicationId();
+    Possible<Optional<Id>> applicationId();
 
     @JsonProperty("parent_id")
     Possible<Optional<Id>> parentId();
