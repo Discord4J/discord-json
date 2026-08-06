@@ -3,7 +3,6 @@ plugins {
     id 'maven-publish'
     id 'signing'
     alias libs.plugins.nexus.publish
-    alias libs.plugins.versions
     alias libs.plugins.release
 }
 
@@ -20,7 +19,6 @@ ext {
 
 allprojects {
     apply plugin: 'java-library'
-    apply plugin: 'com.github.ben-manes.versions'
     apply plugin: 'maven-publish'
     if (!rootProject.ext.isJitpack && rootProject.ext.isRelease) {
         apply plugin: 'signing'

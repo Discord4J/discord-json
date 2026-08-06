@@ -9,7 +9,6 @@ jsr305 = "3.0.2"
 findbugs-annotations = "3.0.1"
 # Plugins
 nexus-publish = "2.0.0"
-versions-plugin = "0.58.0"
 release-plugin = "3.1.0"
 
 [libraries]
@@ -35,5 +34,4 @@ logback-classic = { group = "ch.qos.logback", name = "logback-classic", version.
 
 [plugins]
 nexus-publish = { id = "io.github.gradle-nexus.publish-plugin", version.ref = "nexus-publish" }
-versions = { id = "com.github.ben-manes.versions", version.ref = "versions-plugin" }
 release = { id = "net.researchgate.release", version.ref = "release-plugin" }
