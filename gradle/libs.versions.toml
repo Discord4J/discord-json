@@ -4,7 +4,7 @@ jackson = "2.22.1"
 immutables = "2.12.2"
 jspecify = "1.0.1"
 junit = "5.14.4"
-logback = "1.6.2"
+logback = "1.6.3"
 jsr305 = "3.0.2"
 findbugs-annotations = "3.0.1"
 # Plugins
