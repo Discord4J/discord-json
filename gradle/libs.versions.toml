@@ -1,6 +1,6 @@
 [versions]
 # Dependencies
-jackson = "2.22.1"
+jackson = "2.22.2"
 immutables = "2.12.2"
 jspecify = "1.0.1"
 junit = "5.14.4"
