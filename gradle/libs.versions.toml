@@ -4,12 +4,12 @@ jackson = "2.22.3"
 immutables = "2.12.2"
 jspecify = "1.0.1"
 junit = "5.14.4"
-logback = "1.6.4"
+logback = "1.6.5"
 jsr305 = "3.0.2"
 findbugs-annotations = "3.0.1"
 # Plugins
 nexus-publish = "2.0.0"
-release-plugin = "3.1.0"
+release-plugin = "3.2.0"
 
 [libraries]
 jackson-bom = { group = "com.fasterxml.jackson", name = "jackson-bom", version.ref = "jackson" }
