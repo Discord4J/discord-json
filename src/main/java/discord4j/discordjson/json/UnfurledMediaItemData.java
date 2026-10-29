@@ -36,6 +36,9 @@ public interface UnfurledMediaItemData {
     @JsonProperty("loading_state")
     Possible<Optional<Integer>> loadingState();
 
-    Possible<Integer> flags();
+    Possible<Optional<Integer>> flags();
+
+    @JsonProperty("content_scan_metadata")
+    Possible<Optional<ContentScanMetadata>> contentScanMetadata();
 
 }
