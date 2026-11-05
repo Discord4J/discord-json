@@ -37,6 +37,9 @@ public interface InviteCreateRequest {
     @JsonProperty("target_application_id")
     Possible<String> targetApplicationId();
 
+    @JsonProperty("target_user_ids")
+    Possible<List<Id>> targetUserIds();
+
     @JsonProperty("role_ids")
     Possible<List<Id>> roleIds();
 
