@@ -97,6 +97,8 @@ public interface ComponentData {
     @JsonProperty("file_types")
     Possible<List<String>> fileTypes();
 
+    Possible<List<OverflowMenuGroupData>> groups();
+
     @JsonProperty("default")
     Possible<Boolean> isDefault();
 }
